@@ -1,0 +1,2 @@
+RAID_CLASS_COLORS["SHAMAN"] = CreateColor(0, .44, .86)
+RAID_CLASS_COLORS["SHAMAN"].colorStr = RAID_CLASS_COLORS["SHAMAN"]:GenerateHexColor()

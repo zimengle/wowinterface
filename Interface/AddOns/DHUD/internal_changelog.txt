@@ -1,0 +1,372 @@
+changelog 2.0.80200.64:
+- heal absorb tracking works once again (removed spell ids, using blizzard API)
+- test change: cooldowns stay in combat
+- support for WoW Vanilla servers (Support for out of date addons should be enabled due to TOC file not supporting multiple version values)
+
+changelog 2.0.80200.63:
+- added racial cooldown tracking along with azerite traits
+
+changelog 2.0.80000.62:
+- health tracker will now be updated frequently due to bug with Blizzard API (UNIT_HEALTH event)
+
+changelog 2.0.80000.61:
+- fixed error with pet cooldowns tracking when info for spell is not available
+
+changelog 2.0.80000.60:
+- fixed pet cooldowns tracking
+- fixed vehicle combo points tracking
+- fixed color picker in dhud settings addon (color was displayed incorrectly)
+- dhud settings addon now has options to change player maelstrom, fury, pain
+
+changelog 2.0.80000.59:
+- if there is error in "lua start up code" setting - it will be disabled for next launch
+- fixed druid eclipse/lunar power color
+- removed spell ids that are no longer present
+- fixed priest insanity power color
+- removed priest shadow orbs power tracker
+- added mage arcane charges
+- fixed death knight rune tracking and colors
+- stagger should be displayed for monk tank spec only
+
+changelog 2.0.80000.58:
+- updated dhud settings to 8.0.1
+- fixed settings for blizzard frames
+
+changelog 2.0.80000.57:
+- updated to 8.0.1
+- added demon hunter resource colors
+- restructured data trackers
+
+changelog 2.0.70100.57:
+-removed rogue anticipation buff tracking, it's no longer the cases
+-removed rogue bandits guile tracking, it's no longer part of outlaw spec
+-removed demonic fury/burning ember from dhud settings (they were already removed from addon itself)
+
+changelog 2.0.70000.56:
+-death knight compatibility - updated rune types, also changed default value for font outline on resource bar
+-shaman compatibility - updated resource type
+-warlock compatibility - updated resource types
+
+changelog 2.0.70000.55:
+-minor fixes (tagging check)
+
+changelog 2.0.70000.54:
+-updated toc
+-made changes to lua calls so that addon is compatible with 7.0
+
+changelog 2.0.60200.54:
+-improved performance for base class of custom trackers (e.g. rogue bandit's guile)
+-added help text for lua startup code (buttons to insert code still not implemented and currently on hold)
+
+changelog 2.0.60200.53:
+-updated toc to 60200
+-added templates for startup lua code, e.g. hide Recruia A Friend reward, this are not in settings yet
+
+changelog 2.0.60100.52:
+-updated toc to 60100
+-maximum amount of shield will be updated on target switch (this bug was noticable on Korag boss fight)
+-rogue's bandit's guile tracking is now reset when entering instances, etc...
+-rogue's bandit's guile will also be updated when damage is fully absorbed (e.g. fighting discipline priest in arena)
+-dhud will now print chat error messages when programmed spell ids are no longer valid
+
+changelog 2.0.60000.51:
+-fixed target cast bar info after gcd updates
+
+changelog 2.0.60000.50:
+-updated bandit's guile tracking and removed logs
+
+changelog 2.0.60000.49:
+-prioritizied timers without duration (e.g. blade fury) will no longer be attempted to animate
+-added tracking of global cooldown, if enabled it will be shown on player's cast bar
+-added advanced tracking of some auras, currently supported only rogue's Bandit's Guile, it will add aura to list when bandits guile is not progressed and update stacks count
+
+changelog 2.0.60000.48:
+-disappear animation for prioritizied spells should stop once aura time left is less or equal to 0
+-fixed exception with animation of priority spells in rare cases of reloading UI
+-added option to disable mouse click and mouse over handlers by default and enable them only with certain modifier keys
+-player class should correctly display for player targets (due to changes in UnitIsPlayer API)
+-cooldowns for spells like "Death from above" that incur a global 2 seconds cd and get grouped together should be degrouped once actual cooldown starts
+
+changelog 2.0.60000.47:
+-added option to show only player self short buffs, instead of all short buffs
+-changed default value of minimum time for aura to be considered short to 180 up from 60
+-added option to animate prioritizied spell circles at 30% time left, animation: icon is blinking each second
+-added option to animate prioritizied spell circles at 1 second left, animation: icon increases and fades out
+-your opinion and ideas on animations is welcomed
+
+changelog 2.0.60000.46:
+-priest shadow orbs resourse is now restricted to shadow specialization only
+-warlock burning embers base amount is now set as 25% to correctly transition hud from regen alpha
+-updated api calls for combo points, this should allow to show them at all times correctly (like monk chi)
+-removed option to show stored combo-points as it's no longer required with new API
+-separated combo-points tracker into two: vehicle (blizzard reports it using old API) and player (uses new api) combo-points trackers
+-updated ace3 lib for DHUD Options
+-updated vengeance tracking to resolve, so that addon should no longer crash on tank characters
+
+changelog 2.0.60000.45:
+-removed invalid spell ids
+
+changelog 2.0.50400.44:
+-fixed bug with dragon elite icon not disappering when changing zone (e.g. teleporting out of instance)
+-fixed bug with data trackers not updating it's existance during zone change (e.g. mana bar was still displayed for druids that were teleporting out of instance as bear to flight form)
+-fixed necrotic strikes value to be displayed with "-" sign instead of "+" sign by default in health bar text
+-added new setting to show shields, it will behave more like usual wow frames, shields are shown but cann't go over maximum health
+-added tracking for cooldowns of flyout spells like shaman totems or mage portals
+-added tracking for cooldowns with charges like monk roll
+-added tracking for shaman totems, it also tracks totem that is persistent through Totemic Persistance talent
+-added tracking for pet spells that are not set on autocast
+-cooldowns that are trigerred for multiple spells (e.g. shaman shock spells) are now grouped together
+-cooldowns that are trigerred when school is  locked are now grouped together and colorized according to school type
+-cast bar tracker can now identify who interrupted spell, this information is shown in the UI
+-cast bar ui will now correctly wait 1 second after cast was ended before fading out
+-added tracking for monk stagger
+-added tracking for tank vengeance
+-added option to hide bar during pet battles
+-added translation for Chinese by http://www.curseforge.com/profiles/zhTW/, not everything is translated yet
+
+changelog 2.0.50400.43:
+-fixed error with "endTime" for channeling spells
+-added various player character buffs to be shown in target short auras (like Shield Wall, Cloak of Shadows, etc..)
+
+changelog 2.0.50400.42:
+-fixed vehicle power update for some vehicles (plants vs zombies: power was returned as SUN_POWER but events where reporting it as ENERGY)
+-added setting to set scale of blizzard power auras
+-settings that affect blizzard power auras will be reapplied to frame when required
+-fixed font scaling bug on first game run (since game API function FontInstance:SetFont("filename", fontHeight, "flags") is now working asynchronously for not loaded fonts)
+-added various player character buffs to be shown in target short auras (like Shield Wall, Cloak of Shadows, etc..)
+-added visual settings for previous command line options
+-fixed slider behaviour for DHUD Settings, it was broken in 5.4 (the 'value step' property is ignored by WoW API)
+
+changelog 2.0.50400.41:
+-toc update
+-target and self drop down menus will now initialize on-demand to reduce possibility of tainting blizzard code (never saw a taint after that)
+-added setting to hide "not enough energy" and simmiliar errors (currently only command line)
+-added setting that contains code to be executed when logging-in, changing camera max. distance, etc. (currently only command line)
+-added color setting for pet energy (dk ghouls) (currently only command line)
+
+changelog 2.0.50300.40:
+-Reverse cast bar animation settings is now handled by the addon
+-Fixed issue with timers disappearing at certain conditions
+-Fixed exception in cooldowns update function when teleporting on some system
+-Fixed vehicle bars not showing for certain vehicles
+-Castbar should display proper cast time at the end of animation
+
+changelog 2.0.50300.39:
+-Fixed exception when copying profile with custom layout from character with different class
+-Fixed exception on some systems during init in createBar function, need confirmation
+-Fixed bug with combat state not updating when player encounters loading screen
+-Unit elite icon is now updated when unit changes it's classification
+-Death-knight runes should no longer disappear when player enters vehicle or settings preview stops
+-Cast delay is now correctly displayed
+-Fixed non-interruptible cast shield icon coordinates
+-Resource bars will now hide when player is dead
+-Paladin holy power now colorizes circles in following order: red, orange, green, green, green
+-Added option to always show bar background texture under cast bars
+-Added code to make bitwise operations using integer arithmetic (WoW return incorrect results for bitwise operations on Mac OS X), this should solve Mac issues, need confirmation, thanks TheSin for help with identifying the source of the problem
+
+changelog 2.0.50300.38:
+-Target short auras are now correctly shown when player is in vehicle
+-Fixed exception when hiding frames for dead state
+-All data should now be correctly updated after player encounters loading screen
+-Settings should now correctly apply when changing profiles
+-Icon settings are now handled by the addon
+-Target buffs and debuffs timers settings are now handled by the addon
+-Background texture setting is now handled by the addon
+-Offset settings are now handled by the addon
+-Scale settings should now correctly scale circle and rectangle frames
+-Castbar preview should now correctly disappear
+-Target short auras white list is now correctly handled
+-Short auras priority lists are now handled by the addon
+-Health bar should no longer display wrong health percent when shield is active, but display shields setting is off
+
+changelog 2.0.50300.37:
+-DHUD Settings addon rewritten to be compatible with new DHUD addon.
+
+changelog 2.0.50300.36:
+-bug fixes
+
+changelog 2.0.50300.35:
+-bug fixes
+
+changelog 2.0.50300.34:
+-Updated MyMinimapButton class from version 0.4 to version 1.0 and fixed code to work with MoP
+-Addon code have been rewritten and uses OOP design. Cpu and memory consumption is reduced
+-Code is documented and easily readable.
+-Added new features:
+-Health bars are now able to display shields, incoming heal and absorbed heal.
+-Numbers are now truncated if enabled in settings
+-Cooldowns can be shown like it's done with auras
+-Auras whitelists and blacklists
+-DHUD Settings addon is currently in process of rewriting, all settings can be set via command line
+
+changelog 1.5.50000f MADCAT revision33:
+-reduced error spam when there are not enough buff frames (this was accidently not included in previous release)
+-rogues will see up to 10 combopoints if specced into corresponding talent
+-added tracking of chi for monks
+-added tracking of ember for warlock, it will use pet mana bar
+-fixed bug with casting bar time staying at 0.0 when closing world map
+
+changelog 1.5.50000e MADCAT revision32:
+-reduced error spam when there are not enough buff frames
+-Added support for up to 10 combopoints, scale function for points 6 to 10 is not finished yet
+-Recolored combo points for pally power
+-added track for priest spheres
+
+changelog 1.5.50000d MADCAT revision31:
+-fixed CastGlyph() error in glyphs interface, thanks to Priss2035
+
+changelog 1.5.50000c MADCAT revision30:
+-paladin can now have up to 5 holy power stacks, updated addon to reflect it
+
+changelog 1.5.50000b MADCAT revision29:
+-fixed bug with initialization on some characters
+
+changelog 1.5.50000a MADCAT revision28:
+-toc update
+-fixed lua errors
+-fixed path to default font
+
+changelog 1.5.40300a MADCAT revision27:
+-toc update
+
+changelog 1.5.40100b MADCAT revision26:
+-fixed death knigth runic power color (accidently deleted happiness from power types)
+
+changelog 1.5.40100a MADCAT revision26:
+-layout and texture settings now persist forever (not until opening settings)
+-increased target player debuffs limit to 12
+-added layouts with target player debuffs located outside (opposite to player buffs)
+-fixed bug with hunters pet happiness and removed pet happiness icon
+
+changelog 1.5.40000g MADCAT revision25:
+-added option to track player debuffs on target like it's done for player buffs
+-fixed player buffs tooltips when in vehicle
+
+changelog 1.5.40000f MADCAT revision24:
+-added option to change color of hunters focus resource (player)
+-added tracking for warlock shards
+-fixed player debuff tooltips
+-added option to colorize player debuffs according to debuff type
+-added option to select texture in layout panel
+
+changelog 1.5.40000e MADCAT revision23:
+-fixed ace3 library loading if it's already loaded
+-added curse client support
+
+changelog 1.5.40000d MADCAT revision22:
+-options window now can be moved with mouse
+-fixed color change settings not working for mid and right button
+
+changelog 1.5.40000c MADCAT revision21:
+-added holly power tracking for paladins, it will shop up as rogue combopoints
+-fixed target power(mana) bars not changing amount of power(mana)
+-blizzard DK Runes now hiding with players frame
+-druid mana bar now doesn't requre you to have "DruidBar" addon
+-slightly improved perfomance, using _G[] instead of getglobal(), etc...
+
+changelog 1.5.40000b MADCAT revision20:
+-fixed minimap icon and options to work with cataclysm
+-fixed target dropdown menu not showing on target name click
+
+changelog 1.5.40000a MADCAT revision19:
+-updated addon to work with Cataclysm
+-minimap icon and options are currently not working
+
+changelog 1.5.30300a MADCAT revision18:
+-update TOC file and TODO list for Cataclysm
+
+Changelog 1.5.30200a MADCAT Revision17:
+-fixed GetDifficultyColor(level); error. 
+-updated TOC file.
+
+changelog 1.5.30100c MADCAT revision16:
+-fixed SetTexCoord() error. Maximum Unit Health can be 0 in blizzard's opinion :)
+
+changelog 1.5.30100b MADCAT revision15:
+-fixed blizzard combo frame to properly hide when blizzard target frame turned off
+-added option to show player debuffs
+-added option to scale combo points
+
+changelog 1.5.30100a MADCAT revision14:
+-quick update to fix 3.1 error for NPC that have no mana
+
+changelog 1.5.30000k MADCAT Revision13:
+-fixed getTypUnit error(hellicopter in Howling Fjord) caused by blizzard function returning UnitPowerType=-1, there is no such power type :).
+-added mirror layouts to standart layouts for those who want DK_Runes on the right side, etc...
+-added color change option for DK Runic Power.
+-If color settings in saved variables are damaged DHUD will use default ones instead.
+-fixed changing color in options to not produce error on next login.
+-DHUD will change texture for units that can cast but have nomana only if they have hitpoints(probably will help with report string "PH_PM_TM" error)
+-Background texture and HUD color now changes instantly on act of Druid shapeshift.
+
+Changelog 1.5.30000j MADCAT Revision12:
+-added option to show buffs with charges
+-fixed some background textures, it should fix "DHUD: Please report MadCat this String: ph_pm_eh_th_tm" message
+-some people reported about error when logging in with druid character. It's caused by corrupted saved variables file. To fix it go to "setting window->profiles->[reset profile]", then choose your settings. If it doesn't solve the problem please report it to me.
+-clicking on minimap icon won't reset it's position for the next logins anymore. However if you change minimap position after clicking on minimap icon new position won't be saved.
+-If mob can cast but have no mana DHUD will change texture, so the cast won't be showed on blank space.
+-Enemy Channeling spells now show information about them.
+-fixed enemy cast bar to no longer flash for long amounts of time.
+-fixed druidbar not showing info if ShowPet option enabled.
+-fixed debuff timer to not show random numbers when debuff have no expire time. Also there will be no text if you turn it off during the game.
+-added option to show DK Runes. Report any errors you will encouter.
+
+
+Changelog 1.5.30000i MADCAT Revision11:
+-increased player buff slots limit to 24.
+-fixed Death Knight regen alpha bug.
+-changed how vehicles are shown. Vehicle combopoints are shown instead of player combopoints(good for Malygos fight and Borean Tundra daily), vehicle health and mana are shown as player health and mana bars. Your current health in vehicle are shown as pet health. You can turn off pet bar in options if you don't need it. Also VehicleAuras are shown while you are in vehicle.
+-Added raid icons. They are now shown near PvP status icon.
+-Player Auras now show it's stack.
+-Added debuff timers for target. It may increase you CPU usage if turned on.
+
+
+Changelog 1.5.30000h MADCAT Revision10:
+-fixed maximum player mana issue on update
+-added ace3 profiles support, in order to save or load profile you should load DHUD_Options addon(as it is "load on demand" you should click on the minimap icon). Your current character settings will be loaded to profile on first load.
+-fixed enemy castbar to nolonger flash for a huge amount of time after spell complete or failed.
+-Enemy castbar now show "interrupted" message if the cast was interrupted.
+-Added spell info for your cast. By default it's disabled.
+
+Changelog 1.5.30000g MADCAT Revision9:
+-Added enemycastbar to layout2.
+-Fixed enemycastbar compare with nil error.
+
+Changelog 1.5.30000f MADCAT Revision8:
+-Added enemy castbar and spell info. Currently working only with layout1. On target change enemy spell info is not updated(If enemy is already casting a spell - you won't see it). Need your feedback for enemy cast bar.
+
+Changelog 1.5.30000e MADCAT Revision6:
+-fixed dropdown options
+-modified some code, so it may solve glyps error, but i'm not sure
+
+
+Changelog 1.5.30000d Beta2:
+-fixed recent achievements window
+-probably fixed glyph window, need to test it.
+
+Changelog 1.5.30000c Beta1:
+-Pet Mana Updated every 0.1sec
+-removed MobInfo, MobHealth, MobHealth2 support, nolonger needed
+-fixed tab shifting
+-fixed "..\FrameXML\UIPanelTemplates.lua line 32: attempt to index local 'tab' (a number value)" error when opening options.
+
+Changelog 1.5.30000b Beta0:
+-rewrited functions to work with 3.0 interface
+-Added basic support for DK
+-Player Mana Updated every 0.1 sec
+
+Changelog 1.3.20000 Beta1:
+- Fixed a bug with tab 3 of the options where the dropdown menu was not properly synchronized with the actual value
+- Added options to colorize the player buffs
+- Added a the player buff colors to the DHUD Options and default config
+- Added a toggle for targetoftarget in DHUD Options
+- Added playerbuffs to layout2/transform
+- Upped the limit of the player buffs from 8 to 16
+- Upped the maximum player buff time threshold from 600 seconds to 3600 seconds.
+
+Changelog 1.3.20000 Beta0:
+- Added duration filtered player buffs which can be configured to show only buffs with less than X seconds remaining
+- Added the player buff time threshold. Only buffs less than this time will be shown. Auras with no duration like Devotion and Trueshot will not be shown. Item buffs will not be shown. Debuffs will not be shown.
+- Added the ability to change font sizes and font outlines for player buffs
+- Added a text template for target of target
+- Fixed a bug where it was not possible to type a negative number into the offsets

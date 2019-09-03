@@ -1,0 +1,23 @@
+﻿## Interface: 11302
+## Author: Lag, Proteyer, Arith	
+## Version: v1.1.4-beta
+## Dependencies: AtlasLootClassic
+## LoadOnDemand: 1
+
+## Title: AtlasLootClassic |cFF0099FF[地下城&团队副本]|r
+## Title-deDE: AtlasLootClassic |cFF0099FF[Instanzen and Raids]|r
+
+## Notes: AtlasLoot loot tables from Dungeons and Raids
+## Notes-deDE: AtlasLoot loottabellen für Instanzen und Raids
+
+## Notes-zhCN: AtlasLoot 地下城&团队副本掉落列表
+
+
+## X-Category: Map
+## X-License: GPL v2
+
+## X-AtlasLootClassic-LootModule: 1
+
+Locales\Locales.xml
+
+data.lua

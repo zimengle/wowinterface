@@ -1,0 +1,22 @@
+﻿## Interface: 11302
+## Author: Lag, Proteyer, Arith	
+## Version: v1.1.4-beta
+## Dependencies: AtlasLootClassic
+## LoadOnDemand: 1
+
+## Title: AtlasLootClassic |cFF0099FF[阵营]|r
+## Title-deDE: AtlasLootClassic |cFF0099FF[Fraktionen]|r
+
+## Notes: AtlasLoot loot tables from Factions
+## Notes-deDE: AtlasLoot Fraktionen
+
+## Notes-zhCN: AtlasLoot 阵营掉落列表
+
+## X-Category: Map
+## X-License: GPL v2
+
+## X-AtlasLootClassic-LootModule: 1
+
+Locales\Locales.xml
+
+data.lua

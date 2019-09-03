@@ -1,0 +1,35 @@
+
+GuidelimeDataChar = {
+	["mainFrameHeight"] = 400,
+	["showUnavailableSteps"] = false,
+	["guideSkip"] = {
+		["Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化 1-6 试炼谷"] = {
+		},
+		["Thacen 导航, 中文由Qcat汉化 1-15 兽人巨魔出生地->贫瘠之地"] = {
+		},
+	},
+	["arrowY"] = -20,
+	["arrowRelative"] = "TOP",
+	["mainFrameX"] = 0,
+	["mainFrameLocked"] = false,
+	["mainFrameWidth"] = 350,
+	["arrowLocked"] = false,
+	["editorFrameY"] = 0,
+	["showCompletedSteps"] = false,
+	["mainFrameAlpha"] = 0.5,
+	["currentGuide"] = "Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化 1-6 试炼谷",
+	["mainFrameY"] = 0,
+	["arrowX"] = 0,
+	["mainFrameFontSize"] = 14,
+	["editorFrameRelative"] = "CENTER",
+	["showArrow"] = true,
+	["guideSize"] = {
+		["Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化 1-6 试炼谷"] = 77,
+		["Thacen 导航, 中文由Qcat汉化 1-15 兽人巨魔出生地->贫瘠之地"] = 103,
+	},
+	["arrowAlpha"] = 0.8,
+	["mainFrameShowing"] = true,
+	["version"] = "1.0",
+	["mainFrameRelative"] = "RIGHT",
+	["editorFrameX"] = 0,
+}

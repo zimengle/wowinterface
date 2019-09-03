@@ -1,0 +1,15 @@
+Version: 1
+Frame: ColorPickerFrame
+FrameLevel: 1
+Anchor: CENTER
+X: 0
+Y: 0
+W: 365
+H: 200
+Frame: CodexBrowser
+FrameLevel: 1
+Anchor: BOTTOMRIGHT
+X: -266
+Y: 113
+W: 640
+H: 480

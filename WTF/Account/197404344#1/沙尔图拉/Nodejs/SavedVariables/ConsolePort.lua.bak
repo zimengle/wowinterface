@@ -1,0 +1,37 @@
+
+ConsolePortBindingSet = {
+	{
+	}, -- [1]
+}
+ConsolePortMouse = {
+	["Events"] = {
+		["QUEST_AUTOCOMPLETE"] = true,
+		["QUEST_FINISHED"] = true,
+		["QUEST_GREETING"] = true,
+		["QUEST_DETAIL"] = true,
+		["UNIT_SPELLCAST_SENT"] = true,
+		["PLAYER_STARTED_MOVING"] = true,
+		["GOSSIP_SHOW"] = true,
+		["PLAYER_TARGET_CHANGED"] = true,
+		["LOOT_CLOSED"] = true,
+		["TAXIMAP_OPENED"] = true,
+		["TAXIMAP_CLOSED"] = true,
+		["MERCHANT_CLOSED"] = true,
+		["GOSSIP_CLOSED"] = true,
+		["QUEST_COMPLETE"] = true,
+		["MERCHANT_SHOW"] = true,
+		["QUEST_PROGRESS"] = true,
+		["SHIPMENT_CRAFTER_OPENED"] = true,
+		["SHIPMENT_CRAFTER_CLOSED"] = true,
+		["LOOT_OPENED"] = true,
+		["UNIT_SPELLCAST_FAILED"] = true,
+	},
+	["Cursor"] = {
+		["Scroll"] = "CP_M1",
+		["Right"] = "CP_R_RIGHT",
+		["Left"] = "CP_R_DOWN",
+		["Special"] = "CP_R_UP",
+	},
+}
+ConsolePortUtility = {
+}
