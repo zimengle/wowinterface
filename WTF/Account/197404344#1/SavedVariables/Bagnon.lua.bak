@@ -1,5 +1,22 @@
 
 Bagnon_Sets = {
+	["tackleColor"] = {
+	},
+	["leatherColor"] = {
+	},
+	["enchantColor"] = {
+	},
+	["glowAlpha"] = 0.5,
+	["engineerColor"] = {
+	},
+	["refrigeColor"] = {
+	},
+	["profiles"] = {
+	},
+	["mineColor"] = {
+	},
+	["inscribeColor"] = {
+	},
 	["reagentColor"] = {
 	},
 	["gemColor"] = {
@@ -37,13 +54,13 @@ Bagnon_Sets = {
 			},
 			["hiddenRules"] = {
 			},
-			["y"] = 100,
+			["y"] = 100.000045776367,
 			["x"] = -50,
 			["borderColor"] = {
 			},
-			["itemScale"] = 1,
-			["scale"] = 1,
 			["alpha"] = 1,
+			["scale"] = 1,
+			["itemScale"] = 1,
 		},
 		["vault"] = {
 			["rules"] = {
@@ -110,6 +127,7 @@ Bagnon_Sets = {
 			},
 		},
 		["bank"] = {
+			["y"] = -261.491943359375,
 			["rules"] = {
 				"all", -- [1]
 				"all/normal", -- [2]
@@ -131,38 +149,24 @@ Bagnon_Sets = {
 				"trade/recipe", -- [18]
 				"quest", -- [19]
 				"misc", -- [20]
+				"equip/ammo", -- [21]
 			},
+			["point"] = "TOPLEFT",
 			["hiddenBags"] = {
 			},
 			["color"] = {
 			},
+			["x"] = 95,
 			["hiddenRules"] = {
 			},
 			["borderColor"] = {
 			},
 		},
 	},
-	["glowAlpha"] = 0.5,
-	["engineerColor"] = {
-	},
 	["normalColor"] = {
-	},
-	["refrigeColor"] = {
-	},
-	["profiles"] = {
-	},
-	["mineColor"] = {
-	},
-	["inscribeColor"] = {
-	},
-	["enchantColor"] = {
-	},
-	["herbColor"] = {
-	},
-	["tackleColor"] = {
 	},
 	["quiverColor"] = {
 	},
-	["leatherColor"] = {
+	["herbColor"] = {
 	},
 }

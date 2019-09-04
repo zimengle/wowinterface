@@ -8,8 +8,8 @@ ConsolePortBarSetup = {
 	["disablecastonrelease"] = false,
 	["lock"] = true,
 	["disableCastBarHook"] = false,
-	["classicBorders"] = true,
 	["defaultCastBar"] = false,
+	["classicBorders"] = true,
 	["layout"] = {
 		["CP_L_RIGHT"] = {
 			["dir"] = "right",
@@ -47,29 +47,11 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_T3"] = {
-			["dir"] = "down",
-			["point"] = {
-				"LEFT", -- [1]
-				396, -- [2]
-				16, -- [3]
-			},
-			["size"] = 64,
-		},
 		["CP_L_LEFT"] = {
 			["dir"] = "left",
 			["point"] = {
 				"LEFT", -- [1]
 				176, -- [2]
-				56, -- [3]
-			},
-			["size"] = 64,
-		},
-		["CP_T1"] = {
-			["dir"] = "right",
-			["point"] = {
-				"LEFT", -- [1]
-				456, -- [2]
 				56, -- [3]
 			},
 			["size"] = 64,
@@ -83,12 +65,21 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_R_UP"] = {
-			["dir"] = "up",
+		["CP_T1"] = {
+			["dir"] = "right",
+			["point"] = {
+				"LEFT", -- [1]
+				456, -- [2]
+				56, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_R_RIGHT"] = {
+			["dir"] = "right",
 			["point"] = {
 				"RIGHT", -- [1]
-				-240, -- [2]
-				100, -- [3]
+				-176, -- [2]
+				56, -- [3]
 			},
 			["size"] = 64,
 		},
@@ -101,12 +92,21 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_R_RIGHT"] = {
-			["dir"] = "right",
+		["CP_R_UP"] = {
+			["dir"] = "up",
 			["point"] = {
 				"RIGHT", -- [1]
-				-176, -- [2]
-				56, -- [3]
+				-240, -- [2]
+				100, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_T3"] = {
+			["dir"] = "down",
+			["point"] = {
+				"LEFT", -- [1]
+				396, -- [2]
+				16, -- [3]
 			},
 			["size"] = 64,
 		},
@@ -121,7 +121,7 @@ ConsolePortBarSetup = {
 		},
 	},
 	["mousewheel"] = false,
-	["showbuttons"] = true,
+	["hidepet"] = false,
 	["showline"] = true,
 	["hideModifiers"] = false,
 	["combatpethide"] = false,
@@ -129,5 +129,5 @@ ConsolePortBarSetup = {
 	["width"] = 1100,
 	["hidewatchbars"] = false,
 	["disablednd"] = false,
-	["hidepet"] = false,
+	["showbuttons"] = true,
 }

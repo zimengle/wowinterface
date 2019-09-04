@@ -8,7 +8,7 @@ ConsolePortBarSetup = {
 	["disablecastonrelease"] = false,
 	["lock"] = true,
 	["disableCastBarHook"] = false,
-	["showbuttons"] = true,
+	["hidepet"] = false,
 	["disablednd"] = false,
 	["layout"] = {
 		["CP_L_RIGHT"] = {
@@ -47,33 +47,6 @@ ConsolePortBarSetup = {
 			},
 			["dir"] = "up",
 		},
-		["CP_T2"] = {
-			["size"] = 64,
-			["point"] = {
-				"RIGHT", -- [1]
-				-456, -- [2]
-				56, -- [3]
-			},
-			["dir"] = "left",
-		},
-		["CP_R_UP"] = {
-			["size"] = 64,
-			["point"] = {
-				"RIGHT", -- [1]
-				-240, -- [2]
-				100, -- [3]
-			},
-			["dir"] = "up",
-		},
-		["CP_T1"] = {
-			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				456, -- [2]
-				56, -- [3]
-			},
-			["dir"] = "right",
-		},
 		["CP_R_RIGHT"] = {
 			["size"] = 64,
 			["point"] = {
@@ -92,14 +65,14 @@ ConsolePortBarSetup = {
 			},
 			["dir"] = "down",
 		},
-		["CP_L_LEFT"] = {
+		["CP_T1"] = {
 			["size"] = 64,
 			["point"] = {
 				"LEFT", -- [1]
-				176, -- [2]
+				456, -- [2]
 				56, -- [3]
 			},
-			["dir"] = "left",
+			["dir"] = "right",
 		},
 		["CP_T3"] = {
 			["size"] = 64,
@@ -109,6 +82,33 @@ ConsolePortBarSetup = {
 				16, -- [3]
 			},
 			["dir"] = "down",
+		},
+		["CP_R_UP"] = {
+			["size"] = 64,
+			["point"] = {
+				"RIGHT", -- [1]
+				-240, -- [2]
+				100, -- [3]
+			},
+			["dir"] = "up",
+		},
+		["CP_T2"] = {
+			["size"] = 64,
+			["point"] = {
+				"RIGHT", -- [1]
+				-456, -- [2]
+				56, -- [3]
+			},
+			["dir"] = "left",
+		},
+		["CP_L_LEFT"] = {
+			["size"] = 64,
+			["point"] = {
+				"LEFT", -- [1]
+				176, -- [2]
+				56, -- [3]
+			},
+			["dir"] = "left",
 		},
 		["CP_R_DOWN"] = {
 			["size"] = 64,
@@ -121,13 +121,13 @@ ConsolePortBarSetup = {
 		},
 	},
 	["mousewheel"] = false,
-	["hidepet"] = false,
+	["showbuttons"] = true,
 	["combatpethide"] = false,
 	["hideModifiers"] = false,
 	["showline"] = true,
 	["showart"] = true,
 	["width"] = 1100,
 	["hidewatchbars"] = false,
-	["defaultCastBar"] = false,
 	["classicBorders"] = true,
+	["defaultCastBar"] = false,
 }

@@ -26,11 +26,11 @@ ConsolePortBindingSet = {
 			[""] = "MULTIACTIONBAR1BUTTON12",
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 		},
-		["CP_T2"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
-			["SHIFT-"] = "ACTIONBUTTON10",
-			[""] = "ACTIONBUTTON5",
-			["CTRL-SHIFT-"] = "STARTAUTORUN",
+		["CP_R_RIGHT"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
+			["SHIFT-"] = "ACTIONBUTTON8",
+			[""] = "ACTIONBUTTON3",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
 		},
 		["CP_L_DOWN"] = {
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
@@ -38,17 +38,17 @@ ConsolePortBindingSet = {
 			[""] = "ACTIONBUTTON11",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
 		},
-		["CP_R_RIGHT"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
-			["SHIFT-"] = "ACTIONBUTTON8",
-			[""] = "ACTIONBUTTON3",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
+		["CP_T2"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
+			["SHIFT-"] = "ACTIONBUTTON10",
+			[""] = "ACTIONBUTTON5",
+			["CTRL-SHIFT-"] = "STARTAUTORUN",
 		},
-		["CP_X_LEFT"] = {
-			["CTRL-"] = "CP_CAMZOOMOUT",
-			["SHIFT-"] = "TOGGLEWORLDMAP",
-			[""] = "OPENALLBAGS",
-			["CTRL-SHIFT-"] = "REPLY",
+		["CP_T1"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+			["SHIFT-"] = "TARGETNEARESTENEMY",
+			[""] = "ACTIONBUTTON4",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
 		},
 		["CP_L_LEFT"] = {
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
@@ -62,11 +62,11 @@ ConsolePortBindingSet = {
 			[""] = "ACTIONBUTTON2",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
 		},
-		["CP_T1"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-			["SHIFT-"] = "TARGETNEARESTENEMY",
-			[""] = "ACTIONBUTTON4",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+		["CP_X_LEFT"] = {
+			["CTRL-"] = "CP_CAMZOOMOUT",
+			["SHIFT-"] = "TOGGLEWORLDMAP",
+			[""] = "OPENALLBAGS",
+			["CTRL-SHIFT-"] = "REPLY",
 		},
 		["CP_X_RIGHT"] = {
 			["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",

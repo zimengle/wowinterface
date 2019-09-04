@@ -24,14 +24,14 @@ ConsolePortSettings = {
 	["CP_M1"] = "CP_TL1",
 	["TargetNearestUseNew"] = false,
 	["unitHotkeyPool"] = "player$;party%d$;raid%d+$",
-	["interactCache"] = true,
-	["autoExtra"] = true,
 	["stickRadialType"] = 2,
+	["autoExtra"] = true,
+	["interactCache"] = true,
 	["stickRadialLocal"] = false,
-	["type"] = "XBOX",
 	["actionBarStyle"] = 4,
-	["interactWith"] = false,
 	["nameplateShowFriends"] = true,
+	["interactWith"] = false,
+	["mouseInvertPitch"] = false,
 	["mouseInvertYaw"] = false,
 	["raidCursorDirect"] = false,
 	["id"] = "132119966022137425",
@@ -42,14 +42,14 @@ ConsolePortSettings = {
 		["CP_X_CENTER"] = "NUMPADMULTIPLY",
 		["CP_R_PULL"] = "",
 		["TOGGLERUN"] = "NUMPADDIVIDE",
-		["CP_T2"] = "F8",
-		["CP_R_UP"] = "F9",
 		["CP_R_RIGHT"] = "F10",
+		["CP_R_UP"] = "F9",
+		["CP_T2"] = "F8",
 		["CP_L_PULL"] = "",
-		["CP_T1"] = "F7",
+		["CP_X_LEFT"] = "F5",
 		["CP_L_LEFT"] = "F4",
 		["CP_L_DOWN"] = "F3",
-		["CP_X_LEFT"] = "F5",
+		["CP_T1"] = "F7",
 		["CP_X_RIGHT"] = "F6",
 		["CP_R_DOWN"] = "F11",
 	},
@@ -58,7 +58,7 @@ ConsolePortSettings = {
 	["autoInteract"] = false,
 	["UIdisableHoldRepeat"] = false,
 	["CP_T1"] = "CP_TR1",
-	["mouseInvertPitch"] = false,
+	["type"] = "XBOX",
 	["autoSellJunk"] = true,
 	["disableUI"] = false,
 	["CP_T2"] = "CP_TR2",
@@ -76,7 +76,7 @@ ConsolePortCharacterSettings = {
 			["disablecastonrelease"] = false,
 			["lock"] = true,
 			["disableCastBarHook"] = false,
-			["showbuttons"] = true,
+			["hidepet"] = false,
 			["disablednd"] = false,
 			["layout"] = {
 				["CP_L_RIGHT"] = {
@@ -115,33 +115,6 @@ ConsolePortCharacterSettings = {
 					},
 					["dir"] = "up",
 				},
-				["CP_T2"] = {
-					["size"] = 64,
-					["point"] = {
-						"RIGHT", -- [1]
-						-456, -- [2]
-						56, -- [3]
-					},
-					["dir"] = "left",
-				},
-				["CP_R_UP"] = {
-					["size"] = 64,
-					["point"] = {
-						"RIGHT", -- [1]
-						-240, -- [2]
-						100, -- [3]
-					},
-					["dir"] = "up",
-				},
-				["CP_T1"] = {
-					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						456, -- [2]
-						56, -- [3]
-					},
-					["dir"] = "right",
-				},
 				["CP_R_RIGHT"] = {
 					["size"] = 64,
 					["point"] = {
@@ -160,14 +133,14 @@ ConsolePortCharacterSettings = {
 					},
 					["dir"] = "down",
 				},
-				["CP_L_LEFT"] = {
+				["CP_T1"] = {
 					["size"] = 64,
 					["point"] = {
 						"LEFT", -- [1]
-						176, -- [2]
+						456, -- [2]
 						56, -- [3]
 					},
-					["dir"] = "left",
+					["dir"] = "right",
 				},
 				["CP_T3"] = {
 					["size"] = 64,
@@ -177,6 +150,33 @@ ConsolePortCharacterSettings = {
 						16, -- [3]
 					},
 					["dir"] = "down",
+				},
+				["CP_R_UP"] = {
+					["size"] = 64,
+					["point"] = {
+						"RIGHT", -- [1]
+						-240, -- [2]
+						100, -- [3]
+					},
+					["dir"] = "up",
+				},
+				["CP_T2"] = {
+					["size"] = 64,
+					["point"] = {
+						"RIGHT", -- [1]
+						-456, -- [2]
+						56, -- [3]
+					},
+					["dir"] = "left",
+				},
+				["CP_L_LEFT"] = {
+					["size"] = 64,
+					["point"] = {
+						"LEFT", -- [1]
+						176, -- [2]
+						56, -- [3]
+					},
+					["dir"] = "left",
 				},
 				["CP_R_DOWN"] = {
 					["size"] = 64,
@@ -189,15 +189,15 @@ ConsolePortCharacterSettings = {
 				},
 			},
 			["mousewheel"] = false,
-			["hidepet"] = false,
+			["showbuttons"] = true,
 			["combatpethide"] = false,
 			["hideModifiers"] = false,
 			["showline"] = true,
 			["showart"] = true,
 			["width"] = 1100,
 			["hidewatchbars"] = false,
-			["defaultCastBar"] = false,
 			["classicBorders"] = true,
+			["defaultCastBar"] = false,
 		},
 		["Spec"] = 1,
 		["Class"] = "WARRIOR",
@@ -227,11 +227,11 @@ ConsolePortCharacterSettings = {
 				[""] = "MULTIACTIONBAR1BUTTON12",
 				["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 			},
-			["CP_X_LEFT"] = {
-				["CTRL-"] = "CP_CAMZOOMOUT",
-				["SHIFT-"] = "TOGGLEWORLDMAP",
-				[""] = "OPENALLBAGS",
-				["CTRL-SHIFT-"] = "REPLY",
+			["CP_T1"] = {
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+				["SHIFT-"] = "TARGETNEARESTENEMY",
+				[""] = "ACTIONBUTTON4",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
 			},
 			["CP_R_UP"] = {
 				["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
@@ -245,17 +245,17 @@ ConsolePortCharacterSettings = {
 				[""] = "MULTIACTIONBAR1BUTTON11",
 				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
 			},
-			["CP_T1"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-				["SHIFT-"] = "TARGETNEARESTENEMY",
-				[""] = "ACTIONBUTTON4",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+			["CP_X_LEFT"] = {
+				["CTRL-"] = "CP_CAMZOOMOUT",
+				["SHIFT-"] = "TOGGLEWORLDMAP",
+				[""] = "OPENALLBAGS",
+				["CTRL-SHIFT-"] = "REPLY",
 			},
-			["CP_R_RIGHT"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
-				["SHIFT-"] = "ACTIONBUTTON8",
-				[""] = "ACTIONBUTTON3",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
+			["CP_T2"] = {
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
+				["SHIFT-"] = "ACTIONBUTTON10",
+				[""] = "ACTIONBUTTON5",
+				["CTRL-SHIFT-"] = "STARTAUTORUN",
 			},
 			["CP_L_DOWN"] = {
 				["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
@@ -263,11 +263,11 @@ ConsolePortCharacterSettings = {
 				[""] = "ACTIONBUTTON11",
 				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
 			},
-			["CP_T2"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
-				["SHIFT-"] = "ACTIONBUTTON10",
-				[""] = "ACTIONBUTTON5",
-				["CTRL-SHIFT-"] = "STARTAUTORUN",
+			["CP_R_RIGHT"] = {
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
+				["SHIFT-"] = "ACTIONBUTTON8",
+				[""] = "ACTIONBUTTON3",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
 			},
 			["CP_X_RIGHT"] = {
 				["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",
@@ -318,8 +318,8 @@ ConsolePortUIFrames = {
 	["Blizzard_AlliedRacesUI"] = {
 		"AlliedRacesFrame", -- [1]
 	},
-	["Blizzard_ChallengesUI"] = {
-		"ChallengesKeystoneFrame", -- [1]
+	["Blizzard_Calendar"] = {
+		"CalendarFrame", -- [1]
 	},
 	["Blizzard_AzeriteUI"] = {
 		"AzeriteEmpoweredItemUI", -- [1]
@@ -327,8 +327,8 @@ ConsolePortUIFrames = {
 	["Blizzard_QuestChoice"] = {
 		"QuestChoiceFrame", -- [1]
 	},
-	["Blizzard_Calendar"] = {
-		"CalendarFrame", -- [1]
+	["Blizzard_ChallengesUI"] = {
+		"ChallengesKeystoneFrame", -- [1]
 	},
 	["Blizzard_EncounterJournal"] = {
 		"EncounterJournal", -- [1]
