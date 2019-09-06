@@ -1,0 +1,31 @@
+Guidelime.registerGuide([[
+[GA Horde]
+[N20-24 影牙城堡至剃刀沼泽路线]
+[NX24-30 剃刀沼泽至塔伦米尔路线]
+[D 该副本&任务升级导航由 *Haukrai* 编写,中文由*Qcat*汉化, 作者的油管: www.youtube.com/user/Domeran/Videos]
+提交\\[QT1098 Deathstalkers in Shadowfang]
+[XP22] 级...能组个全刷任务队..
+完成\\[QC1013]\\[QC1014]
+[XP24] 级时离开并完成\\[G1.74,33.48,103Hillsbrad Foothills][QC516]
+接受\\[G20.78,47.4Hillsbrad Foothills][QA494]
+开鸟点[P 塔伦米尔]
+提交\\[G61.11,82.3Alterac Mountains][QT494]\\[G60.09,80.71Alterac Mountains][QT493 Journey to Hillsbrad Foothills]\\[G60.09,80.71Alterac Mountains][QT1065 Journey to Tarren Mill]
+接受\\[G60.09,80.71Alterac Mountains][QA1066 Blood of Innocents]\\[G62.15,82.53Alterac Mountains][QA498]\\[G61.46,82.64Alterac Mountains][QA549]
+去完成\\[G17.36,16.43,161Arathi Highlands][QC549]\\[G16.73,15.54,163Arathi Highlands][QC1066 Blood of Innocents]
+完成\\[G15.23,13.84,158Arathi Highlands][QC498]
+提交\\[G61.11,82.3Alterac Mountains][QT549]\\[G62.15,82.53Alterac Mountains][QT498]\\[G60.09,80.71Alterac Mountains][QT1066 Blood of Innocents]
+接受\\[G60.09,80.71Alterac Mountains][QA1067 Return to Thunder Bluff]
+飞到 [F 瑟伯切尔]
+提交\\[G44.19,39.77Silverpine Forest][QT1014 Arugal Must Die]\\[G43.97,40.93Silverpine Forest][QT516]
+炉石回到 [H 雷霆崖]
+去提交\\[G96.95,62.21Desolace][QT1130]
+接受\\[G96.95,62.21Desolace][QA1131]\\[G91.11,56.14Desolace][QA742]
+提交\\[G28.88,39.38The Barrens][QT3369]\\[G87.96,48.28Desolace][QT1067] (不要接后续)
+飞到 [F 陶拉祖营地]
+接受\\[G43.36,8.56Thousand Needles][QA857]
+完成\\[G43.81,3.65,103Thousand Needles][QC846]\\[G43.68,3.85Thousand Needles][QC857]
+提交\\[G45.89,77The Barrens][QT846]
+完成\\[G38.72,7.03Thousand Needles][QC849]
+提交\\[G45.89,77The Barrens][QT849]
+进入剃刀沼泽...
+]], 'Haukrai 的任务&副本升级路线')

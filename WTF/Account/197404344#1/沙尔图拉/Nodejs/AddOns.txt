@@ -28,3 +28,5 @@ ElvUI: enabled
 ElvUI_OptionsUI: enabled
 ConsolePortUI: disabled
 ConsolePortUI_NPC: disabled
+Bagnon: disabled
+Questie: enabled

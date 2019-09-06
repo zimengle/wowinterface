@@ -95,4 +95,4 @@ Guidelime.registerGuide(
 [T]学新技能，如果需要的话[A Warrior, Warlock, Hunter, Priest, Shaman, Rogue, Druid]
 [NX 16-18 贫瘠之地]
 
-]], "Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化")
+]], "Ettern 兽人/巨魔/亡灵 - 中文由Qcat汉化")

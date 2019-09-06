@@ -53,7 +53,9 @@ function UF:Construct_PartyFrames()
 		self.AuraWatch = UF:Construct_AuraWatch(self)
 		self.RaidDebuffs = UF:Construct_RaidDebuffs(self)
 		--self.DebuffHighlight = UF:Construct_DebuffHighlight(self)
+		self.RaidRoleFramesAnchor = UF:Construct_RaidRoleFrames(self)
 		self.MouseGlow = UF:Construct_MouseGlow(self)
+		self.PhaseIndicator = UF:Construct_PhaseIcon(self)
 		self.TargetGlow = UF:Construct_TargetGlow(self)
 		self.RaidTargetIndicator = UF:Construct_RaidIcon(self)
 		self.ReadyCheckIndicator = UF:Construct_ReadyCheckIcon(self)
@@ -62,7 +64,6 @@ function UF:Construct_PartyFrames()
 
 		self.Sparkle = CreateFrame("Frame", nil, self)
 		self.Sparkle:SetAllPoints(self.Health)
-		self.Castbar = UF:Construct_Castbar(self)
 
 		self.unitframeType = "party"
 	end
@@ -215,6 +216,8 @@ function UF:Update_PartyFrames(frame, db)
 
 		UF:UpdateNameSettings(frame)
 
+		UF:Configure_PhaseIcon(frame)
+
 		UF:Configure_Power(frame)
 
 		UF:Configure_Portrait(frame)
@@ -225,13 +228,13 @@ function UF:Update_PartyFrames(frame, db)
 
 		UF:Configure_RaidDebuffs(frame)
 
-		UF:Configure_Castbar(frame)
-
 		UF:Configure_RaidIcon(frame)
 
 	--	UF:Configure_DebuffHighlight(frame)
 
 	--	UF:Configure_HealComm(frame)
+
+		UF:Configure_RaidRoleIcons(frame)
 
 		UF:UpdateAuraWatch(frame)
 

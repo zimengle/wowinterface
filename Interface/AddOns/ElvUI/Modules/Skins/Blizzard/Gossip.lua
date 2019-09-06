@@ -8,6 +8,75 @@ local _G = _G
 local function LoadSkin()
 	if E.private.skins.blizzard.enable ~= true or E.private.skins.blizzard.gossip ~= true then return end
 
+	-- GossipFrame
+	local GossipFrame = _G.GossipFrame
+	S:HandlePortraitFrame(GossipFrame, true)
+	GossipFrame.backdrop:SetPoint("TOPLEFT", 11, -12)
+	GossipFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 0)
+
+	_G.GossipGreetingScrollFrame:Height(400)
+
+	S:HandleCloseButton(_G.GossipFrameCloseButton, GossipFrame.backdrop)
+	_G.GossipFrameCloseButton:Point('TOPRIGHT', -28, -9)
+
+	local GossipGreetingScrollFrame = _G.GossipGreetingScrollFrame
+	GossipGreetingScrollFrame:SetTemplate()
+
+	S:HandleScrollBar(GossipGreetingScrollFrameScrollBar, 5)
+
+	GossipNpcNameFrame:Width(300)
+	GossipNpcNameFrame:Point("TOPLEFT", GossipFrame.backdrop, "TOPLEFT", 18, -10)
+
+	_G.GossipFrameNpcNameText:ClearAllPoints()
+	_G.GossipFrameNpcNameText:Point('TOP', GossipNpcNameFrame, 'TOP', 13, 8)
+
+	for i = 1, _G.NUMGOSSIPBUTTONS do
+		_G['GossipTitleButton'..i..'GossipIcon']:SetSize(16, 16)
+		_G['GossipTitleButton'..i..'GossipIcon']:SetPoint('TOPLEFT', 3, 1)
+	end
+
+	_G.GossipGreetingText:SetTextColor(1, 1, 1)
+
+	hooksecurefunc('GossipFrameUpdate', function()
+		for i = 1, _G.NUMGOSSIPBUTTONS do
+			local button = _G['GossipTitleButton'..i]
+			local icon = _G['GossipTitleButton'..i..'GossipIcon']
+			local text = button:GetFontString()
+
+			if text and text:GetText() then
+				local textString = gsub(text:GetText(), "|c[Ff][Ff]%x%x%x%x%x%x(.+)|r", "%1")
+
+				button:SetText(textString)
+				text:SetTextColor(1, 1, 1)
+
+				if button.type == 'Available' or button.type == 'Active' then
+					if button.type == 'Active' then
+						icon:SetDesaturation(1)
+						text:SetTextColor(.6, .6, .6)
+					else
+						icon:SetDesaturation(0)
+						text:SetTextColor(1, .8, .1)
+					end
+
+					local numEntries = GetNumQuestLogEntries()
+					for k = 1, numEntries, 1 do
+						local questLogTitleText, _, _, _, _, isComplete, _, questId = GetQuestLogTitle(k)
+						if strmatch(questLogTitleText, textString) then
+							if (isComplete == 1 or IsQuestComplete(questId)) then
+								icon:SetDesaturation(0)
+								button:GetFontString():SetTextColor(1, .8, .1)
+								break
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+
+	S:HandleButton(_G.GossipFrameGreetingGoodbyeButton)
+	_G.GossipFrameGreetingGoodbyeButton:Point("BOTTOMRIGHT", -37, 4)
+
 	-- ItemTextFrame
 	_G.ItemTextFrame:StripTextures(true)
 	_G.ItemTextFrame:CreateBackdrop('Transparent')
@@ -40,61 +109,6 @@ local function LoadSkin()
 	S:HandleScrollBar(_G.ItemTextScrollFrameScrollBar)
 
 	S:HandleCloseButton(_G.ItemTextCloseButton)
-
-	-- GossipFrame
-	local GossipFrame = _G.GossipFrame
-	S:HandlePortraitFrame(GossipFrame, true)
-	GossipFrame.backdrop:SetPoint("TOPLEFT", 15, -11)
-	GossipFrame.backdrop:SetPoint("BOTTOMRIGHT", -30, 0)
-
-	_G.GossipGreetingScrollFrame:Height(400)
-
-	S:HandleCloseButton(_G.GossipFrameCloseButton, GossipFrame.backdrop)
-
-	local GossipGreetingScrollFrame = _G.GossipGreetingScrollFrame
-	GossipGreetingScrollFrame:SetTemplate()
-
-	S:HandleScrollBar(GossipGreetingScrollFrameScrollBar, 5)
-
-	GossipNpcNameFrame:Width(300)
-	GossipNpcNameFrame:Point("TOPLEFT", GossipFrame.backdrop, "TOPLEFT", 18, -10)
-
-	for i = 1, _G.NUMGOSSIPBUTTONS do
-		_G['GossipTitleButton'..i]:SetSize(16, 16)
-		_G['GossipTitleButton'..i]:SetPoint('TOPLEFT', 3, 1)
-	end
-
-	_G.GossipGreetingText:SetTextColor(1, 1, 1)
-
-	hooksecurefunc('GossipFrameUpdate', function()
-		for i = 1, _G.NUMGOSSIPBUTTONS do
-			local button = _G['GossipTitleButton'..i]
-			local icon = _G['GossipTitleButton'..i..'GossipIcon']
-			local Text = button:GetText()
-
-			if Text and strfind("|c%x%x%x%x%x%x%x%x", Text) then
-				button:SetText(gsub(Text, "|c[Ff][Ff]%x%x%x%x%x%x(.+)|r", "%1"))
-
-				icon:SetDesaturation(1)
-				button:GetFontString():SetTextColor(.6, .6, .6)
-
-				local numEntries = GetNumQuestLogEntries()
-				for k = 1, numEntries, 1 do
-					local questLogTitleText, _, _, _, _, isComplete, _, questId = GetQuestLogTitle(k)
-					if strmatch(questLogTitleText, Text:GetText()) then
-						if (isComplete == 1 or IsQuestComplete(questId)) then
-							icon:SetDesaturation(0)
-							button:GetFontString():SetTextColor(1, .8, .1)
-							break
-						end
-					end
-				end
-			end
-		end
-	end)
-
-	S:HandleButton(_G.GossipFrameGreetingGoodbyeButton)
-	_G.GossipFrameGreetingGoodbyeButton:Point("BOTTOMRIGHT", -37, 4)
 
 	local NPCFriendshipStatusBar = _G.NPCFriendshipStatusBar
 	NPCFriendshipStatusBar:StripTextures()

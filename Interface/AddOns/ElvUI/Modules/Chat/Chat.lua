@@ -158,14 +158,17 @@ do --this can save some main file locals
 	local ElvBlue		= E:TextureString(E.Media.ChatLogos.ElvBlue,y)
 	local ElvPurple		= E:TextureString(E.Media.ChatLogos.ElvPurple,y)
 	local ElvPink		= E:TextureString(E.Media.ChatLogos.ElvPink,y)
-	local Bathrobe		= E:TextureString(E.Media.ChatLogos.Bathrobe,x)
-	local MrHankey		= E:TextureString(E.Media.ChatLogos.MrHankey,x)
-	local Rainbow		= E:TextureString(E.Media.ChatLogos.Rainbow,x)
+	--local Bathrobe		= E:TextureString(E.Media.ChatLogos.Bathrobe,x)
+	--local MrHankey		= E:TextureString(E.Media.ChatLogos.MrHankey,x)
+	--local Rainbow		= E:TextureString(E.Media.ChatLogos.Rainbow,x)
 
 	local a, b, c = 0, false, {ElvRed, ElvOrange, ElvYellow, ElvGreen, ElvBlue, ElvPurple, ElvPink}
 	local itsSimpy = function() a = a - (b and 1 or -1) if (b and a == 1 or a == 0) or a == #c then b = not b end return c[a] end
 
 	specialChatIcons = {
+		-- Simpy
+		["Simpy-Myzrael"]		= itsSimpy, -- Warlock
+		["Cutepally-Myzrael"]	= itsSimpy, -- Paladin
 	}
 end
 
@@ -1568,14 +1571,9 @@ function CH:SetupChat()
 		local _, fontSize = FCF_GetChatWindowInfo(id)
 		self:StyleChat(frame)
 		FCFTab_UpdateAlpha(frame)
+
 		frame:FontTemplate(LSM:Fetch("font", self.db.font), fontSize, self.db.fontOutline)
-		if self.db.fontOutline ~= 'NONE' then
-			frame:SetShadowColor(0, 0, 0, 0.2)
-		else
-			frame:SetShadowColor(0, 0, 0, 1)
-		end
 		frame:SetTimeVisible(100)
-		frame:SetShadowOffset(E.mult, -E.mult)
 		frame:SetFading(self.db.fade)
 
 		if not frame.scriptsSet then
@@ -1775,19 +1773,10 @@ function CH:ChatEdit_OnEnterPressed(editBox)
 end
 
 function CH:SetChatFont(dropDown, chatFrame, fontSize)
-	if ( not chatFrame ) then
-		chatFrame = FCF_GetCurrentChatFrame()
-	end
-	if ( not fontSize ) then
-		fontSize = dropDown.value
-	end
+	if not chatFrame then chatFrame = FCF_GetCurrentChatFrame() end
+	if not fontSize then fontSize = dropDown.value end
+
 	chatFrame:FontTemplate(LSM:Fetch("font", self.db.font), fontSize, self.db.fontOutline)
-	if self.db.fontOutline ~= 'NONE' then
-		chatFrame:SetShadowColor(0, 0, 0, 0.2)
-	else
-		chatFrame:SetShadowColor(0, 0, 0, 1)
-	end
-	chatFrame:SetShadowOffset(E.mult, -E.mult)
 end
 
 function CH:ChatEdit_AddHistory(_, line) -- editBox, line

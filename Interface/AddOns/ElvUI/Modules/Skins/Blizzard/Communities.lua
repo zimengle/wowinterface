@@ -38,6 +38,10 @@ local function LoadSkin()
 	CommunitiesFrame.CommunitiesList.InsetFrame:StripTextures()
 
 	S:HandlePortraitFrame(CommunitiesFrame, true)
+	CommunitiesFrame.backdrop:SetPoint("TOPLEFT", -5, 0)
+	CommunitiesFrame.backdrop:SetPoint("BOTTOMRIGHT", -1, 0)
+
+	_G.CommunitiesFrameCloseButton:Point('TOPRIGHT', 2, 3)
 
 	local CommunitiesFrameCommunitiesList = _G.CommunitiesFrameCommunitiesList
 	CommunitiesFrameCommunitiesList.FilligreeOverlay:Hide()
@@ -126,8 +130,6 @@ local function LoadSkin()
 
 	S:HandleInsetFrame(CommunitiesFrame.CommunitiesList)
 	S:HandleMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame)
-	CommunitiesFrame.MaximizeMinimizeFrame:ClearAllPoints()
-	CommunitiesFrame.MaximizeMinimizeFrame:Point("RIGHT", CommunitiesFrame.CloseButton, "LEFT", 12, 0)
 
 	S:HandleButton(CommunitiesFrame.InviteButton)
 	CommunitiesFrame.AddToChatButton:ClearAllPoints()
@@ -161,8 +163,6 @@ local function LoadSkin()
 	-- Member Details
 	CommunitiesFrame.InvitationFrame:StripTextures()
 	CommunitiesFrame.InvitationFrame:CreateBackdrop("Transparent")
-
-	S:HandleCloseButton(CommunitiesFrame.CloseButton)
 
 	-- [[ ROSTER TAB ]]
 	local MemberList = CommunitiesFrame.MemberList

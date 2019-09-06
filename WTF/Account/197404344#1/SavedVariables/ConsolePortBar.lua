@@ -12,10 +12,9 @@ ConsolePortBarManifest = {
 		},
 		["PRIEST"] = {
 		},
-		["HUNTER"] = {
-			[6197] = "鹰眼术",
-			[13813] = "爆炸陷阱",
-			[1543] = "照明弹",
+		["SHAMAN"] = {
+			[2484] = "地缚图腾",
+			[6196] = "视界术",
 		},
 		["WARLOCK"] = {
 			[1122] = "地狱火",
@@ -30,9 +29,10 @@ ConsolePortBarManifest = {
 		},
 		["MONK"] = {
 		},
-		["SHAMAN"] = {
-			[2484] = "地缚图腾",
-			[6196] = "视界术",
+		["HUNTER"] = {
+			[6197] = "鹰眼术",
+			[13813] = "爆炸陷阱",
+			[1543] = "照明弹",
 		},
 	},
 	["BindingIcons"] = {
@@ -44,7 +44,7 @@ ConsolePortBarManifest = {
 		["TARGETNEARESTFRIEND"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
 		["CLICK ConsolePortRaidCursorTarget:LeftButton"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Group",
 		["ATTACKTARGET"] = "Interface\\Icons\\Ability_SteelMelee",
-		["JUMP"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Jump",
+		["TOGGLERUN"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Run",
 		["STARTATTACK"] = "Interface\\Icons\\Ability_SteelMelee",
 		["CLICK ConsolePortRaidCursorToggle:LeftButton"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Group",
 		["TARGETPREVIOUSFRIENDPLAYER"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
@@ -53,13 +53,13 @@ ConsolePortBarManifest = {
 		["FOCUSTARGET"] = "Interface\\Icons\\Ability_Hunter_MasterMarksman",
 		["TOGGLEWORLDMAP"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Map",
 		["PETATTACK"] = "Interface\\Icons\\ABILITY_HUNTER_INVIGERATION",
-		["TARGETPREVIOUSENEMY"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
+		["TARGETPREVIOUSFRIEND"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
 		["OPENALLBAGS"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Bags",
 		["TARGETPET"] = "Interface\\Icons\\Spell_Hunter_AspectOfTheHawk",
 		["CLICK ConsolePortUtilityToggle:LeftButton"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Ring",
-		["TARGETPREVIOUSFRIEND"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
+		["TARGETPREVIOUSENEMY"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
 		["TARGETPREVIOUSENEMYPLAYER"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
-		["TOGGLERUN"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Run",
+		["JUMP"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Jump",
 		["TARGETSCANENEMY"] = "Interface\\AddOns\\ConsolePortBar\\Textures\\Icons\\Target",
 	},
 }

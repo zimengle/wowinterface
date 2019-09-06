@@ -1,4 +1,11 @@
 Version: 1
+Frame: Spy_MainWindow
+FrameLevel: 10
+Anchor: BOTTOMLEFT
+X: 265
+Y: 214
+W: 160
+H: 35
 Frame: ColorPickerFrame
 FrameLevel: 1
 Anchor: CENTER
@@ -6,10 +13,3 @@ X: 0
 Y: 0
 W: 365
 H: 240
-Frame: CodexBrowser
-FrameLevel: 1
-Anchor: BOTTOMRIGHT
-X: -266
-Y: 113
-W: 640
-H: 480

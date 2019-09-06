@@ -477,10 +477,14 @@ function AB:StyleButton(button, noBackdrop, useMasque, ignoreNormal)
 	button.useMasque = useMasque
 	button.ignoreNormal = ignoreNormal
 
-	if flash then flash:SetTexture() end
 	if normal and not ignoreNormal then normal:SetTexture(); normal:Hide(); normal:SetAlpha(0) end
 	if normal2 then normal2:SetTexture(); normal2:Hide(); normal2:SetAlpha(0) end
 	if border and not button.useMasque then border:Kill() end
+
+	if flash then
+		flash:SetInside()
+		flash:SetTexCoord(unpack(E.TexCoords))
+	end
 
 	if count then
 		count:ClearAllPoints()
@@ -893,6 +897,8 @@ function AB:Initialize()
 	-- We handle actionbar lock for regular bars, but the lock on PetBar needs to be handled by WoW so make some necessary updates
 	SetCVar('lockActionBars', (self.db.lockActionBars == true and 1 or 0))
 	_G.LOCK_ACTIONBAR = (self.db.lockActionBars == true and "1" or "0") -- Keep an eye on this, in case it taints
+
+	AB:MoveTaxiButton()
 end
 
 E:RegisterModule(AB:GetName())

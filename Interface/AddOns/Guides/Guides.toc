@@ -1,10 +1,10 @@
 ## Title: Guides
 ## Title-zhCN: Guidelime - 全汉化升级攻略
 ## Author: Shikushiku,TUGs,WillScarlettOhara,MarkyMark,Bustea,CauthonLuck,Ettern,Dreamcast1991,THACEN,Qcat
-## Version: 1.0
-## Interface: 11302
+## Version: 1.1
+## Interface: 101300
 ## Dependencies: Guidelime
-## Notes: The Ultimate (Leveling) Guide
+## Notes: Full Guide
 ## Notes-zhCN: 联盟&部落 汉化攻略 by 60addons Qcat汉化
 
 Alliance\Hakurai - Shikushiku\Hakurai1-12.lua
@@ -64,6 +64,8 @@ Alliance\TUGs\52-53Felwood.lua
 Alliance\TUGs\53-55Winterspring,Un'Goro.lua
 Alliance\TUGs\55-56BS,WPL.lua
 Alliance\TUGs\56-60WPL,EPL,BS.lua
+Alliance\TUGs 5man\18-41DungeonGrind.lua
+Alliance\TUGs 5man\41-60DungeonGrind.lua
 
 Alliance\WillScarlettOhara\WillScarlettOhara_-_NElf_Hunter_1-6.lua
 Alliance\WillScarlettOhara\WillScarlettOhara_-_NElf_Hunter_6-12.lua
@@ -90,9 +92,29 @@ Alliance\sage\Sage_Guide_Uldaman.lua
 Alliance\sage\Sage_Guide_Onyxia's_Lair.lua
 Alliance\sage\Sage_Guide_Zul'Farrak.lua
 
+Horde\DungeonGrind\11-17 Ragefire Chasm to Stonetalon Mountains.lua
+Horde\DungeonGrind\17-19 Stonetalon Mountains to Wailing Caverns.lua
+Horde\DungeonGrind\18-20 Wailing Caverns to Shadowfang Keep.lua
+Horde\DungeonGrind\20-24 Shadowfang Keep to Razorfen Kraul.lua
+Horde\DungeonGrind\24-30 Razorfen Kraul to Tarren Mill.lua
+Horde\DungeonGrind\30-43 Tarren Mill to Scarlet Monastery.lua
+Horde\DungeonGrind\43-49 Scarlet Monastery to Maraudon.lua
+Horde\DungeonGrind\49-50 Zul'Furrak to Blackrock Depths.lua
+Horde\DungeonGrind\50-58 Blackrock Depths to Western Plaguelands.lua
+Horde\DungeonGrind\58-60 Western Plaguelands to Eastern Plaguelands.lua
+
 Horde\Ettern\Ettern_1-6_Durotar.lua
 Horde\Ettern\Ettern_6-12_Durotar.lua
+Horde\Ettern\1-6_Freezy3_Undead_Starter.lua
+Horde\Ettern\6-12_Freezy3_Undead_Starter.lua
 Horde\Ettern\Ettern_12-16_Barrens.lua
+Horde\Ettern\Ettern_Dungeon_RFC.lua
+Horde\Ettern\Ettern_Dungeon_WC.lua
+Horde\Ettern\Ettern_Dungeon_SFK.lua
+Horde\Ettern\Ettern_Dungeon_BFD.lua
+Horde\Ettern\Ettern_Dungeon_RFK.lua
+Horde\Ettern\Ettern_Dungeon_SM.lua
+Horde\Ettern\Ettern_Dungeon_RFD.lua
 
 Horde\CauthonLuck\CauthonLuck1-10.lua
 
@@ -166,4 +188,14 @@ Horde\Guidelime_Undead-Guide\Thacen_57-58.lua
 Horde\Guidelime_Undead-Guide\Thacen_58-59.lua
 Horde\Guidelime_Undead-Guide\Thacen_59-60.lua
 Horde\Guidelime_Undead-Guide\Thacen_6-10.lua
+
+both\Professional\lianjin1-300.lua
+both\Professional\caifeng1-300.lua
+both\Professional\duanzao1-300.lua
+both\Professional\fumo1-300.lua
+both\Professional\gongcheng1-300.lua
+both\Professional\zhipi1-300.lua
+both\Professional\pengren1-300h.lua
+both\Professional\pengren1-300a.lua
+both\Others\mage1-60 AOE.lua
 

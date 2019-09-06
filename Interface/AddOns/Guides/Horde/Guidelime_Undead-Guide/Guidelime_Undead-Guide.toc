@@ -1,7 +1,7 @@
 ## Title: Guidelime_Undead-Guide(Mage)
 ## Author: Thacen
 ## Version: 0.001-Beta
-## Interface: 11302
+## Interface: 101300
 ## Dependencies: Guidelime
 ## Notes: Leveling Guide for Undead Mage in Classic. Based on https://www.joanasworld.com/azeroth.htm
 

@@ -158,4 +158,4 @@ Guidelime.registerGuide(
 祝贺你,此部分导航结束,本导航作者 |cFF69CCF0Ettern - Dreamstate|r，中文由|cFF69CCF0Qcat|r汉化
 [NX 12-16 贫瘠之地]
 
-]], "Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化")
+]], "Ettern 兽人/巨魔/亡灵 - 中文由Qcat汉化")

@@ -1,0 +1,43 @@
+Guidelime.registerGuide([[
+[GA Horde]
+[N24-30 剃刀沼泽至塔伦米尔路线]
+[NX30-31 塔伦米尔至血色修道院路线]
+[D 该副本&任务升级导航由 *Haukrai* 编写,中文由*Qcat*汉化, 作者的油管: www.youtube.com/user/Domeran/Videos]
+完成\\[G62.32,37.61,12The Barrens][QC1221]
+接受\\[QA1144 Willix the Importer]
+刷到 [XP29] 级
+一个人炉石到 [H 雷霆崖]
+接受\\[G91.02,57.33Desolace][QA1102]
+完成\\[QC1102]
+刷到 [XP30] 级
+接受\\[G32.24,22.17Thousand Needles][QA4542]
+击杀\\加拉克信使
+接受\\[G39.42,33.09Thousand Needles][QA4881]\\[G21.43,32.55Thousand Needles][QA5151]
+完成\\[G22.75,24.61Thousand Needles][QC5151]\\[G17.79,19.78Thousand Needles][QC1131]
+提交\\[G21.25,32.07Thousand Needles][QT4881]
+等一会儿并 接受\\[G21.25,32.07Thousand Needles][QA4966]
+开鸟点 [P 乱风岗]
+提交\\[G45.66,50.73Thousand Needles][QT4542]
+炉石回到 [H 雷霆崖]
+提交\\[G96.95,62.21Desolace][QT1131]
+接受\\[G96.95,62.21Desolace][QA1136]\\[G90.65,54.31Desolace][QA1049 Compendium of the Fallen][A Troll,Tauren,Orc]
+提交\\[G91.02,57.33Desolace][QT1102]
+飞到 [F 十字路口] 然后跑到碎木岗哨
+接受\\[G71.1,68.11Ashenvale][QA6503]
+提交\\[G73.78,61.46Ashenvale][QT742 The Ashenvale Hunt]
+接受\\[G73.78,61.46Ashenvale][QA6383]\\[G73.66,60Ashenvale][QA25]
+去击杀并接受\\[G74.98,70.06Ashenvale][QA2]
+完成\\[G71.68,74.95,166Ashenvale][QC6503]
+接受\\[G68.34,75.29Ashenvale][QA6544]
+完成\\[G46.89,69.45,119Ashenvale][QC25]
+去击杀并接受\\[G42.07,68.74Ashenvale][QA23]
+去击杀并接受\\[G57.49,56.05Ashenvale][QA24]
+碎木岗哨提交\\[G71.1,68.11Ashenvale][QT6503]\\[G73.03,62.46Ashenvale][QT6544]\\[G73.78,61.46Ashenvale][QT2]\\[G73.78,61.46Ashenvale][QT23]\\[G73.78,61.46Ashenvale][QT24]
+接受\\[G73.78,61.46Ashenvale][QA247]
+提交\\[G73.66,60Ashenvale][QT25]
+飞到 [F 棘齿城]
+提交\\[G62.36,37.61The Barrens][QT1221]
+飞到[F 奥格瑞玛] 做飞艇去提瑞斯法林地
+提交\\[G53.74,54.45Undercity][QT1013 The Book of Ur]
+飞到 [F 塔伦米尔]
+]], 'Haukrai 的任务&副本升级路线')

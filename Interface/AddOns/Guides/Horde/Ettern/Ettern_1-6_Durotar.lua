@@ -77,4 +77,4 @@ Guidelime.registerGuide(
 去接受 [QA2161 A Peon's Burden][G52.1,68.3].
 [G52.23,71.88]一路杀怪到森金村直到你 [XP6] 级[A Mage]
 [NX 6-12 杜隆塔尔]
-]], "Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化")
+]], "Ettern 兽人/巨魔/亡灵 - 中文由Qcat汉化")

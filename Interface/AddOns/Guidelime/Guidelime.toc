@@ -1,7 +1,7 @@
 ## Title: Guidelime
 ## Title-zhCN: Guidelime - 导航主体
 ## Author: Borick of Arthas(EU)
-## Version: 1.009
+## Version: 1.015
 ## Interface: 11302
 ## SavedVariables: GuidelimeData
 ## SavedVariablesPerCharacter: GuidelimeDataChar

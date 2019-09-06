@@ -39,7 +39,7 @@ DBM-Naxx: disabled
 DBM-BWL: disabled
 DBM-DefaultSkin: disabled
 QuestieDev-master: disabled
-Questie: disabled
+Questie: enabled
 AtlasLootClassic_Factions: enabled
 AtlasLootClassic_Options: enabled
 aux-addon: enabled
@@ -54,3 +54,4 @@ TipTop: enabled
 WeaponSwingTimer: enabled
 ElvUI: enabled
 ElvUI_OptionsUI: enabled
+Bagnon: disabled

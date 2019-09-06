@@ -11,7 +11,7 @@
 	<Script file='Channels.lua'/>
 	<Script file='Character.lua'/>
 	<Script file='Communities.lua'/>
-	<!-- <Script file='Craft.lua'/> -->
+	<Script file='Craft.lua'/>
 	<Script file='Debug.lua'/>
 	<Script file='DressingRoom.lua'/>
 	<Script file='Friends.lua'/>
@@ -36,9 +36,10 @@
 	<Script file='Tabard.lua'/>
 	<Script file='Talent.lua'/>
 	<Script file='Taxi.lua'/>
+	<Script file='TimeManager.lua'/>
 	<Script file='Tooltip.lua'/>
 	<Script file='Trade.lua'/>
-	<!-- <Script file='TradeSkill.lua'/> -->
+	<Script file='TradeSkill.lua'/>
 	<Script file='Trainer.lua'/>
 	<Script file='Tutorial.lua'/>
 	<Script file='WorldMap.lua'/>

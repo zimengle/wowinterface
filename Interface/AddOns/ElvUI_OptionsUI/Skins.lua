@@ -99,6 +99,11 @@ E.Options.args.skins = {
 					name = L['Character Frame'],
 					desc = L['TOGGLESKIN_DESC']
 				},
+				craft = {
+					type = 'toggle',
+					name = L['Craft'],
+					desc = L['TOGGLESKIN_DESC']
+				},
 				debug = {
 					type = 'toggle',
 					name = L['Debug Tools'],
@@ -219,6 +224,11 @@ E.Options.args.skins = {
 				taxi = {
 					type = 'toggle',
 					name = L['Taxi Frame'],
+					desc = L['TOGGLESKIN_DESC']
+				},
+				timemanager = {
+					type = 'toggle',
+					name = L['TIMEMANAGER_TITLE'],
 					desc = L['TOGGLESKIN_DESC']
 				},
 				tooltip = {
