@@ -11,3 +11,6 @@
 *.Dll
 *.mfil
 *.info
+*.app
+sikul*
+.DS_*
