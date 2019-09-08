@@ -1,3 +1,4 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 奇美拉
+/target 血顶
+/script SetRaidTarget("target",8)
 END

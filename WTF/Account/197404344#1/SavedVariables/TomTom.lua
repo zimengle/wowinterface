@@ -33,6 +33,36 @@ TomTomWaypointsM = {
 	},
 	["profiles"] = {
 		["Typescript - 沙尔图拉"] = {
+			[1417] = {
+				["1417:714505792.46685:260307923.29688:TomTom 路径点"] = {
+					1417, -- [1]
+					0.714505792466854, -- [2]
+					0.260307923296876, -- [3]
+					["minimap"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom 路径点",
+					["arrivaldistance"] = 15,
+					["callbacks"] = {
+						["distance"] = {
+							[10] = nil --[[ skipped inline function ]],
+							[15] = nil --[[ skipped inline function ]],
+						},
+						["world"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+						["minimap"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+					},
+					["crazy"] = true,
+					["persistent"] = true,
+					["world"] = true,
+				},
+			},
 		},
 	},
 }

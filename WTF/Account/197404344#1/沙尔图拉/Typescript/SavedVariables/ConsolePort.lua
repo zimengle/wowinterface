@@ -126,6 +126,11 @@ ConsolePortUtility = {
 		["action"] = "spell",
 		["cursorID"] = 37,
 	},
+	[6] = {
+		["value"] = "科多兽诱引器",
+		["action"] = "item",
+		["cursorID"] = 13892,
+	},
 	[4] = {
 		["value"] = "英勇打击",
 		["action"] = "spell",

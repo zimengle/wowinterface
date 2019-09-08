@@ -55,3 +55,4 @@ WeaponSwingTimer: enabled
 ElvUI: enabled
 ElvUI_OptionsUI: enabled
 Bagnon: disabled
+ItemRackOptions: enabled

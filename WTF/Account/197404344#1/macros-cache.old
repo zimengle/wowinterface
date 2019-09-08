@@ -1,3 +1,5 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 猎影
+/target 滑刃巫师
+/target 滑刃纳迦
+/script SetRaidTarget("target",8)
 END

@@ -47,14 +47,14 @@ ConsolePortBarSetup = {
 			},
 			["dir"] = "up",
 		},
-		["CP_T2"] = {
+		["CP_T3"] = {
 			["size"] = 64,
 			["point"] = {
-				"RIGHT", -- [1]
-				-456, -- [2]
-				56, -- [3]
+				"LEFT", -- [1]
+				396, -- [2]
+				16, -- [3]
 			},
-			["dir"] = "left",
+			["dir"] = "down",
 		},
 		["CP_R_UP"] = {
 			["size"] = 64,
@@ -74,14 +74,14 @@ ConsolePortBarSetup = {
 			},
 			["dir"] = "right",
 		},
-		["CP_R_RIGHT"] = {
+		["CP_L_LEFT"] = {
 			["size"] = 64,
 			["point"] = {
-				"RIGHT", -- [1]
-				-176, -- [2]
+				"LEFT", -- [1]
+				176, -- [2]
 				56, -- [3]
 			},
-			["dir"] = "right",
+			["dir"] = "left",
 		},
 		["CP_L_DOWN"] = {
 			["size"] = 64,
@@ -92,23 +92,23 @@ ConsolePortBarSetup = {
 			},
 			["dir"] = "down",
 		},
-		["CP_L_LEFT"] = {
+		["CP_R_RIGHT"] = {
 			["size"] = 64,
 			["point"] = {
-				"LEFT", -- [1]
-				176, -- [2]
+				"RIGHT", -- [1]
+				-176, -- [2]
+				56, -- [3]
+			},
+			["dir"] = "right",
+		},
+		["CP_T2"] = {
+			["size"] = 64,
+			["point"] = {
+				"RIGHT", -- [1]
+				-456, -- [2]
 				56, -- [3]
 			},
 			["dir"] = "left",
-		},
-		["CP_T3"] = {
-			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				396, -- [2]
-				16, -- [3]
-			},
-			["dir"] = "down",
 		},
 		["CP_R_DOWN"] = {
 			["size"] = 64,
