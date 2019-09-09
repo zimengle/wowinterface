@@ -38,9 +38,6 @@ TomTomWaypointsM = {
 					1417, -- [1]
 					0.714505792466854, -- [2]
 					0.260307923296876, -- [3]
-					["minimap"] = true,
-					["cleardistance"] = 10,
-					["title"] = "TomTom 路径点",
 					["arrivaldistance"] = 15,
 					["callbacks"] = {
 						["distance"] = {
@@ -58,8 +55,13 @@ TomTomWaypointsM = {
 							["tooltip_show"] = nil --[[ skipped inline function ]],
 						},
 					},
-					["crazy"] = true,
 					["persistent"] = true,
+					["desc"] = "TomTom 路径点",
+					["silent"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom 路径点",
+					["crazy"] = true,
+					["minimap"] = true,
 					["world"] = true,
 				},
 			},

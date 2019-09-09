@@ -9,7 +9,7 @@ aux-addon: enabled
 ClassicCastbars: enabled
 ClassicCastbars_Options: enabled
 ClassicCodex: enabled
-ConsolePort: disabled
+ConsolePort: enabled
 ConsolePortBar: enabled
 ConsolePortAdvanced: enabled
 ConsolePortHelp: enabled
@@ -24,9 +24,11 @@ Leatrix_Maps: enabled
 QuestLogEx: enabled
 TipTop: enabled
 WeaponSwingTimer: enabled
-ElvUI: enabled
+ElvUI: disabled
 ElvUI_OptionsUI: enabled
 ConsolePortUI: disabled
 ConsolePortUI_NPC: disabled
 Bagnon: disabled
 Questie: enabled
+Spy: enabled
+ElvUI_QuestXP_Classic: enabled

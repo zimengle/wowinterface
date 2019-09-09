@@ -1,4 +1,4 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 血顶
+/target 黑雾
 /script SetRaidTarget("target",8)
 END

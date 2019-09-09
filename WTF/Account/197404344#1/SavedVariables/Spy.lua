@@ -49,30 +49,30 @@ SpyDB = {
 						["isEnemy"] = true,
 						["loses"] = 3,
 						["mapX"] = 0.38,
-						["isGuess"] = true,
+						["name"] = "阿肥",
 						["subZone"] = "",
 						["race"] = "暗夜精灵",
 						["level"] = 1,
-						["name"] = "阿肥",
 						["time"] = 1567863691,
+						["isGuess"] = true,
 					},
 					["盗咣咣"] = {
-						["wins"] = 1,
-						["mapID"] = 1417,
 						["kos"] = 1,
+						["mapID"] = 1417,
+						["wins"] = 1,
 						["zone"] = "阿拉希高地",
-						["mapY"] = 0.51,
+						["loses"] = 3,
 						["class"] = "ROGUE",
 						["added"] = 1567856609,
 						["isEnemy"] = true,
-						["loses"] = 3,
-						["mapX"] = 0.5,
 						["isGuess"] = false,
+						["mapX"] = 0.5,
+						["name"] = "盗咣咣",
 						["race"] = "人类",
 						["subZone"] = "外禁锢法阵",
 						["level"] = 45,
-						["name"] = "盗咣咣",
 						["time"] = 1567857833,
+						["mapY"] = 0.51,
 					},
 				},
 			},
@@ -91,21 +91,23 @@ SpyDB = {
 		["Typescript - 沙尔图拉"] = {
 			["MainWindow"] = {
 				["Position"] = {
-					["y"] = 619.947448730469,
+					["y"] = 434.078308105469,
 					["h"] = 34.9999923706055,
-					["w"] = 160.000122070313,
-					["x"] = 581.496337890625,
+					["x"] = 436.238555908203,
 				},
 			},
 			["Colors"] = {
 				["Alert"] = {
+					["KOS Guild Text"] = {
+						["a"] = 1,
+					},
 					["Stealth Text"] = {
 						["a"] = 1,
 					},
-					["KOS Text"] = {
+					["Name Text"] = {
 						["a"] = 1,
 					},
-					["Name Text"] = {
+					["KOS Text"] = {
 						["a"] = 1,
 					},
 				},

@@ -31,13 +31,13 @@ ClassicCastbarsDB = {
 			-23.1, -- [3]
 		},
 		["height"] = 11,
+		["iconPositionY"] = 0,
 		["statusColor"] = {
 			1, -- [1]
 			0.7, -- [2]
 			0, -- [3]
 			1, -- [4]
 		},
-		["iconPositionY"] = 0,
 		["textColor"] = {
 			1, -- [1]
 			1, -- [2]
@@ -77,13 +77,13 @@ ClassicCastbarsDB = {
 			-87, -- [3]
 		},
 		["height"] = 15,
+		["iconPositionY"] = 0,
 		["statusColor"] = {
 			1, -- [1]
 			0.7, -- [2]
 			0, -- [3]
 			1, -- [4]
 		},
-		["iconPositionY"] = 0,
 		["textColor"] = {
 			1, -- [1]
 			1, -- [2]

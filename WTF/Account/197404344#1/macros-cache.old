@@ -1,5 +1,4 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 滑刃巫师
-/target 滑刃纳迦
+/target 玛格索尔
 /script SetRaidTarget("target",8)
 END
