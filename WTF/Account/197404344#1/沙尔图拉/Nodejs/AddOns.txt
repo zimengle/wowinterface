@@ -32,3 +32,4 @@ Bagnon: disabled
 Questie: enabled
 Spy: enabled
 ElvUI_QuestXP_Classic: enabled
+StatCompare: disabled

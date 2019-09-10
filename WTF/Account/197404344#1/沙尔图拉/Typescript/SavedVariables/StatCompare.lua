@@ -1,0 +1,2 @@
+
+StatCompare_Player = nil

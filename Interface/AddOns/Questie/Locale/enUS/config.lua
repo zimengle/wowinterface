@@ -120,9 +120,11 @@ QuestieLocale.locale['enUS'] = {
     ['ICON_SHIFTLEFT_CLICK'] = "Shift + Left Click",
     ['ICON_TOGGLE_QUESTIE'] = "Toggle Questie",
     ['ICON_CTRLRIGHT_CLICK'] = "Ctrl + Right Click",
+    ['ICON_CTRLLEFT_CLICK'] = "Ctrl + Left Click",
     ['ICON_HIDE'] = "Hide Minimap Button",
     ['ICON_RIGHT_CLICK'] = "Right Click",
     ['ICON_JOURNEY'] = "Toggle My Journey",
+    ['ICON_RELOAD'] = "Reload Questie",
     ['CONFIRM_HIDE_QUEST'] = "Are you sure you want to hide the quest \"%s\"?\nIf this quest isn't actually available, please report it to us!",
     ['CONFIRM_HIDE_YES'] = "Yes",
     ['CONFIRM_HIDE_NO'] = "No",
@@ -219,4 +221,6 @@ QuestieLocale.locale['enUS'] = {
     ['DEBUG_DRAW'] = "%s available quests drawn. PlayerLevel = %s",
     ['DEBUG_UNLOAD_QFRAMES'] = "Unloading quest frames: %s",
     ['DEBUG_UNLOAD_ALL'] = "Unloading all frames, count: %s",
+    ['QUESTIE_UPDATED_RESTART'] = "|cFFFF0000WARNING!|r You have updated questie without restarting the game, this will likely cause problems. Please restart the game before continuing",
+
 };

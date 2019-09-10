@@ -1,0 +1,8 @@
+Version: 1
+Frame: SilverDragonPopupButton
+FrameLevel: 1
+Anchor: RIGHT
+X: -260
+Y: -150
+W: 302
+H: 119

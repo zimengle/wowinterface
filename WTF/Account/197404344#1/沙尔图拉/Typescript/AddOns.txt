@@ -58,3 +58,7 @@ Bagnon: disabled
 ItemRackOptions: enabled
 Spy: enabled
 ElvUI_QuestXP_Classic: enabled
+BigWigs_Plugins: enabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+StatCompare: disabled

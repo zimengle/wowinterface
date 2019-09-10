@@ -17,5 +17,13 @@ ItemTooltipIconsConfig = {
 			["iconSize"] = 16,
 			["showQuests"] = true,
 		},
+		["Lua"] = {
+			["showProfs"] = true,
+			["profFlags"] = 255,
+			["includeVendor"] = false,
+			["questFlags"] = 2097151,
+			["iconSize"] = 16,
+			["showQuests"] = true,
+		},
 	},
 }

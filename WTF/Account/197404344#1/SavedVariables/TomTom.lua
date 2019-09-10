@@ -2,6 +2,7 @@
 TomTomDB = {
 	["profileKeys"] = {
 		["Typescript - 沙尔图拉"] = "Default",
+		["Lua - 沙尔图拉"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -30,6 +31,7 @@ TomTomWaypoints = nil
 TomTomWaypointsM = {
 	["profileKeys"] = {
 		["Typescript - 沙尔图拉"] = "Typescript - 沙尔图拉",
+		["Lua - 沙尔图拉"] = "Lua - 沙尔图拉",
 	},
 	["profiles"] = {
 		["Typescript - 沙尔图拉"] = {
@@ -65,6 +67,8 @@ TomTomWaypointsM = {
 					["world"] = true,
 				},
 			},
+		},
+		["Lua - 沙尔图拉"] = {
 		},
 	},
 }

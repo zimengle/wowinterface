@@ -1,0 +1,24 @@
+#@retail@
+## Interface: 80200
+#@end-retail@
+#@non-retail@
+# ## Interface: 11302
+#@end-non-retail@
+
+
+## Title: Lib: LibWho-2.0
+## Notes: Queing of /who and SendWho() queries and a much better interface (see docs), with gurantee to be executed & callback.
+## Version: @project-version@
+## Author: ALeX Kazik, Sylvanaar, Pazza
+## X-Category: Library
+
+## OptionalDeps: LibStub, CallbackHandler-1.0
+
+## LoadOnDemand: 1
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+#@end-no-lib-strip@
+
+LibWho-2.0\LibWho-2.0.lua

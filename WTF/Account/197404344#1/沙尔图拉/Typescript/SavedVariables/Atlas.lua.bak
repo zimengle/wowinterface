@@ -2,8 +2,8 @@
 AtlasOptions = {
 	["AtlasLocked"] = false,
 	["AtlasClamped"] = true,
-	["AtlasAlpha"] = 1,
 	["AtlasRightClick"] = false,
+	["AtlasAlpha"] = 1,
 	["AtlasAcronyms"] = true,
 	["AtlasType"] = 1,
 	["AtlasButtonShown"] = true,

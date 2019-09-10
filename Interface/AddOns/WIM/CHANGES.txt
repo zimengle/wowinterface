@@ -1,0 +1,602 @@
+commit 9817032b9b0f62672e9ac42eb8af3ca02f5d74e1
+Author: Jon S Akhtar <sylvanaar@mindspring.com>
+Date:   Sun Aug 25 14:55:14 2019 -0700
+
+    Fix LibWho reference
+
+commit 51593b21fa725c8246e90f689229f1a0bce5d640
+Author: Jon S Akhtar <sylvanaar@mindspring.com>
+Date:   Sun Aug 25 12:21:03 2019 -0700
+
+    Create README.md
+
+commit ea052389e6f818256aee3bb3faf64795bde511c1
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Aug 17 18:01:54 2019 +0000
+
+    + add an option in the chat and whisper window behavior to obey to the autofocus rules when opening the window via the minimap/LDB menu (old/default behavior = autofocus, setting unchecked)
+    + add check for classic
+
+commit ea1a7b69bd61c798ede7eabe0c417f8859d9c845
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Aug 11 08:16:35 2019 +0000
+
+    * fix bug with spec handler in Classic (WIP)
+
+commit a4a49c3a5856cb2013eb04a1a7fe6c0edcf1abbc
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Aug 6 13:48:23 2019 +0000
+
+    * make BN whisper handler more robust
+
+commit 7be2fd465860f2479495103226560ec0008cbfcd
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Aug 6 13:27:46 2019 +0000
+
+    * make BN whisper handler more robust
+
+commit 6ecc1bf0ca40080a9df4652e890f0e3f6f629701
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Aug 2 20:52:27 2019 +0000
+
+    * make BN whisper handler more robust
+
+commit 5e42df6af6b92e1b75c3645a2b2df6b0d3d6a002
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Jul 28 08:32:04 2019 +0000
+
+    * make BN whisper handler more robust
+
+commit ddb2e65fc78e156e4e56eb7c4d63d5cd6483dff1
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Jul 23 15:00:32 2019 +0000
+
+commit acb80e3ff37b842ddbf3c7c499d8c361855ce207
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Jul 16 21:25:39 2019 +0000
+
+    * remove unnecessary ShowUIPanel / HideUIPanel calls
+
+commit aad5c118d048322a9a01487d7ee0e438242650af
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Jul 14 17:16:17 2019 +0000
+
+    * fix potential bug with emoticons in system messages (e.g. offline/online message)
+
+commit 4a634e27fc67adfe8a6e732673ee3bbeb34a0c2c
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Wed Jun 12 02:20:23 2019 +0000
+
+    Don’t call ShowUIPanel or HideUIPanel in combat
+
+commit d0e9318377e4b4b664de9ffaebf3d80eacc8aca1
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Jun 7 07:15:55 2019 +0000
+
+    * tag as 3.7.26
+
+commit 5af6586ced3bb3a5bc8a5a2c8c7554e1eddb003e
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Jun 1 23:26:28 2019 +0000
+
+    * updated C_Friendlist API
+
+commit fef0f7844f420c38f35e12e9b7b41c7f6c8426da
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri May 31 07:58:42 2019 +0000
+
+    * updated C_Friendlist API
+
+commit ba0039d485ad1732af9ec3bf223c16489f75a0e0
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Mon May 27 18:11:58 2019 +0000
+
+    * updated whisper handling to fix various bugs like sticky chat and chain/tail calls
+    - removed unused code
+
+commit 264c9af4c12d57da5f7dc853b76f6d43b71115cc
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Mar 30 20:22:28 2019 +0000
+
+    * fix invite button for BNet whispers
+
+commit 7c477f4d053d07b2e7c3657b9b1151180f0d7982
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Mar 28 11:18:01 2019 +0000
+
+    * some code cleanup
+
+commit 64f1192fdbf64e0370417502c8665bbef4d066cf
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Mar 26 12:31:13 2019 +0000
+
+    * fix invite button for BNet whispers
+
+commit 8993df08be803e1e11f1efafb86bddcc1ee30fc9
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Mar 26 11:45:57 2019 +0000
+
+    * fix invite button for BNet whispers
+    * restructure BN whisper handling
+
+commit 53b5316dd9dfc19d51458fffcbe2f3f0482b0e3f
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Mar 26 01:28:03 2019 +0000
+
+    This should quiet a lua error I was seeing from this code, but probably merits more investigating on why sometimes presence ID is a string and not a number
+
+commit 9bb973715264416f8eab2057d57af75aa7c5adf4
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Mar 24 21:49:50 2019 +0000
+
+    * fix invite button for BNet whispers
+
+commit 47a09cc40b7bcf03bb506329076746440a3cf5b8
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Mar 17 21:36:57 2019 +0000
+
+    * make friend/guild member online/offline messages more readable (like the BNet ones)
+
+commit 59de67fe6e097d6c7b276272f4db7449d850709b
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Mar 14 21:28:47 2019 +0000
+
+    release 3.7.24
+
+commit e755a4485b934b2e09d951c8adb546cbf62fff3a
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Mar 10 12:45:35 2019 +0000
+
+    * more URL fixes
+    * fix bug when clicking your own name in the chat window
+
+commit a1b83a7c31fae91afdaf7ad4839f0265bb0a5d74
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Mar 9 22:42:24 2019 +0000
+
+    * fix armory links containing spaces and/or an apostrophe (only tested for EU and US)
+    * show the whisper window's player names with realm in a more readable way
+
+commit 14bb02d11d3ed4c20715ed2dc59c8dabc93e0875
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Mon Feb 25 18:27:10 2019 +0000
+
+    * fix window handler when using a players BNet chat hyperlink
+
+commit a9f544209cc9869618a41edd54ac4d347e72d2dc
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Mon Feb 25 11:32:10 2019 +0000
+
+    * fix window handler when using a players BNet chat hyperlink
+
+commit ff93a74e52a3e099b0342ab54431e01663a357ad
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Wed Feb 6 21:52:54 2019 +0000
+
+    * add a check for Prat's `stickychannel´ handler
+
+commit 5a9faa73b79362febecc896defc01c9881331ef1
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Wed Feb 6 21:15:48 2019 +0000
+
+    * add a check for Prat's `stickychannel´ handler
+
+commit cadff4c34ff128372584c07121ff3a096f1f7829
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Wed Feb 6 21:11:15 2019 +0000
+
+    * add a check for Prat's `stickychannel´ handler
+
+commit 58859f477b818797e2d8d14e11f24ac591f06ed3
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Feb 3 19:40:24 2019 +0000
+
+    * fix missing name coloring for Demon Hunter
+
+commit 615a02073d7edccc156b4107b3282c8108e53084
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Feb 2 20:07:41 2019 +0000
+
+    * add online/offline notification for BNet friends
+    * fix potential bug with WIM history viewer on first display
+    * fix emote misbehavior in BNet names introduced with patch 8.1
+
+commit 8bea2ae19536924a27d49011942e908b7ad15770
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Feb 2 19:36:55 2019 +0000
+
+    * add online/offline notification for BNet friends
+
+commit fea24fc4faf1a2e695b1fa472d760ffa11542886
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Feb 2 15:59:59 2019 +0000
+
+    * fix potential bug with WIM history viewer on first display
+
+commit 5db30c5cb91f2580a8d295b9917d958bb15df2a7
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Feb 2 15:55:21 2019 +0000
+
+    * fix potential bug with WIM history viewer on first display
+
+commit a02c6551f5396fbf787d6e6b2f24a9cd108762bd
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Feb 2 15:07:14 2019 +0000
+
+    * trying to fix emote misbehavior in BNet names introduced with patch 8.1
+
+commit 9c94f8490617039c44823871ac6dd3cc3a74e688
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Feb 1 22:28:57 2019 +0000
+
+    * trying to fix emote misbehavior in BNet names introduced with patch 8.1
+    * fix class names and icon display for non-english clients
+    * rebuild class and talent table creation
+    * remove unneeded localization strings
+    * fix format bug in options window
+    * trying to fix editbox misbehavior
+
+commit 461bfed99b1ec36b25e6b557c7560e15ced1a1d5
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 31 08:21:46 2019 +0000
+
+    *trying to fix editbox misbehavior
+
+commit 377ac57afeed2232b941a645ae71161a25d1a0ab
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 31 08:21:08 2019 +0000
+
+    *trying to fix editbox misbehavior
+
+commit 0427b94b691ea51fcea70a43d43cfe0a11060fbb
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Tue Jan 29 19:42:39 2019 +0000
+
+commit c9e05b3af6a4a57480506d0b881523b0ec903621
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Jan 27 10:32:47 2019 +0000
+
+    * fix format bug in options window
+
+commit 96dc2e4b8270b72d93de57430e95ee50d43596a0
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Jan 27 10:12:02 2019 +0000
+
+    * trying to fix emote misbehavior in BNet names introduced with patch 8.1
+    * fix class names and icon display for non-english clients
+    * rebuild class and talent table creation
+    * remove unneeded localization strings
+
+commit 1592b2e81eaf3f3276f5f594203948c04f05bcd7
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sun Jan 27 09:17:46 2019 +0000
+
+    * trying to fix emote misbehavior in BNet names introduced with patch 8.1
+    * fix class names and icon display for non-english clients
+
+commit 7da91f494d61702083109d0375a1203c26b5519b
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Jan 26 19:42:24 2019 +0000
+
+    * trying to fix emote misbehavior in BNet names introduced with patch 8.1
+
+commit 8858b439ffaaae980f942e26d6b778a1f2597273
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Jan 26 10:58:15 2019 +0000
+
+    * update BNetWhisper handler for 8.1
+    * update ExtractTellTarget handler
+
+commit b09e14630d233e4cb22bfadb5b71cbad90cfaa44
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Sat Jan 26 10:39:12 2019 +0000
+
+    * update BNetWhisper handler for 8.1
+    * update ExtractTellTarget handler
+
+commit dc73ce14198fe882ee84ec2924f4fd518ac51bfc
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 16:41:21 2019 +0000
+
+    TOC update for 8.1
+    *fixed LibWho error (updated the LibWho repo aswell)
+    *fixed changed BNet name handler
+
+commit 11583483ece0bef44d1eea136ce77af1b25c781c
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 16:25:37 2019 +0000
+
+commit d78bfe0bc9b42ea831d23223e66d6b5213fd9ba2
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 16:08:40 2019 +0000
+
+commit bca5b1445ef1bcbc3d3e381e44b4f1e357710e6d
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:33:09 2019 +0000
+
+commit 1ee9f868ee1c9bbc978bae2adea62ef149b6d57f
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:27:08 2019 +0000
+
+commit c311bbf67fa84816bce38d800618d3840455f8e4
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:17:10 2019 +0000
+
+commit d118f9e367980e71733ec1579a55ad6b72f4728e
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:13:04 2019 +0000
+
+commit 01bf373c30dc4c75592ffed8a98e5d51df728c8e
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:07:58 2019 +0000
+
+commit 1653769eecf19c2feabfc5c285aaf2f37be0e667
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 14:00:23 2019 +0000
+
+commit e888a2fa559dfd67b126dca899d7e9aae01271ad
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Thu Jan 24 13:40:45 2019 +0000
+
+commit cdcf84259ea29d7ad4b4aec287377fc387556343
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Dec 11 04:59:00 2018 +0000
+
+    Bumped TOCs
+
+commit e7818132f46364a47598aef08863f0a275321a62
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Oct 13 04:49:12 2018 +0000
+
+    Ambiguate last tell in reply keybind to prevent opening a 2nd whisper window, should fix #533
+
+commit 79b1d70e42d4b1bae51c44c2d290daf6e753558b
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Oct 13 04:35:50 2018 +0000
+
+    Support for CoD in windowHandler Icons
+
+commit c28c79d6bedf120b9692f0d2410962badb7a2ceb
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Fri Sep 28 19:55:22 2018 +0000
+
+    8.1 compat
+
+commit 77e3d33403feec54bcc2090db933373448071ca7
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Fri Jul 27 22:41:05 2018 +0000
+
+    URL fix
+
+commit b31d9ca3b35ae956fd405388dd6e6ad40bed24c5
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Fri Jul 27 20:26:46 2018 +0000
+
+    bump version
+
+commit 8a2b350b6a779f6d208981204b1ca75a2fea0959
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Fri Jul 27 20:11:58 2018 +0000
+
+    Fix link copying
+
+commit e6632aeb8acf68b4f890392841aa72d3cb0d61d5
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Jul 22 23:27:42 2018 +0000
+
+    A bit more compatible with 8.x
+
+commit 3a307cc43b48b830914ddd8e2ebd152dd11152a7
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Jul 22 23:23:53 2018 +0000
+
+    Fix _G.NORMAL_FONT_COLOR since wim declares it’s own global space
+    Update changelog
+
+commit 333cc6aa4871114047b081cab61e875ac689edff
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Jul 22 23:16:36 2018 +0000
+
+    Guild chat is fully fixed now
+
+commit 11f64acc9a0bc4ebcefdbc5da015e0f79bc462d9
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Jul 22 23:00:17 2018 +0000
+
+    update GuildControlGetRankFlags usage, which is now under C_GuildInfo
+
+commit f7c7a0a95a57cb4cdf8e15c8850c82cdaa1fe8b5
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Jul 22 22:44:46 2018 +0000
+
+    use correct api for getting chat color.
+    In addition, added fallback to NORMAL_FONT_COLOR if Chat_GetChannelColor doesn’t return.
+
+commit e6f6188f03845b412dd85f7e98c3adb3e7d80063
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Jul 21 20:23:23 2018 +0000
+
+    Re-enable say message handling if NOT in a boss encounter. if in a boss encounter, do nothing so boss mods can continue to handle them.
+
+commit 199f8c2d8c77096cb85285592fbaeab70741f9e4
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Jul 21 20:05:06 2018 +0000
+
+    update url handling for WoW Armory
+
+commit 25368dc25e7b81aad66b45b8a8c9b19de4edfe37
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Jul 21 19:54:05 2018 +0000
+
+    nothing fancy, just a toc bump and removal of some 7.x compat code.
+
+commit 48d38363811c61502bd2f9ab9013cf97a8e26dad
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue May 8 02:50:26 2018 +0000
+
+    Another 8.x fix. Also, the real .16 this time, .15 was tagged incorrectly as .16 when it had a version string of .15
+
+commit 857d0b5bdfb9c0a9cc689fcb58c349907dcaed87
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue May 8 02:48:03 2018 +0000
+
+    prep
+
+commit 2c938386b82c0e6c8aa2a3c1146e50c2b5b58407
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Thu May 3 02:27:46 2018 +0000
+
+    Handle GetAutoCompleteResults changes in 8.x
+
+commit ea4cad583231ae39741e8427753222254bc792e1
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Apr 21 00:34:53 2018 +0000
+
+    Grabbed latest CTL so WIM mostly functional with 8.x
+
+commit 5275bb7302cc8e2bd02d6cb95d6c383a2356072e
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Apr 21 00:31:56 2018 +0000
+
+    Grab updated CTL
+
+commit a00c897c28f4dd372250558da7f6a4377bb1a941
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Fri Sep 15 04:07:40 2017 +0000
+
+    Improve window server handling for battle.net mobile app
+
+commit 8a54ce06ea2d19e9eac3ea9cc67f2b9ad827a590
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Sep 5 04:04:20 2017 +0000
+
+    Fixed another GuildControlSetRank
+
+commit bc46f1a0f912d583fdc078f44972a80483e916ff
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Sep 5 04:03:26 2017 +0000
+
+    missed a GuildControlSetRank
+
+commit 208ed9a0792024effce2a9504d624d4a5184722f
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Sep 3 08:10:52 2017 +0000
+
+    Destiny 2 icon
+    Less taint
+
+commit 56e8fd4bdad9c41fb1641aa6e82102ea7d926c17
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Sep 3 08:07:59 2017 +0000
+
+    Remove _G.GuildControlSetRank
+    Add an iffy destiny 2 icon
+
+commit 401d5996b0fa348eac49cae47d29c7eb38f137da
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sun Sep 3 07:41:08 2017 +0000
+
+    Remove _G.GuildControlSetRank
+
+commit bfa9e57577017be31ff9c612fa70b1d83c1403ff
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Thu Aug 31 00:50:41 2017 +0000
+
+    7.3 Compat, and other stuff
+
+commit a2bc8eafe596067f3a3423d2542876e1cf2d7d65
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Thu Aug 31 00:35:17 2017 +0000
+
+    Update externals defs
+
+commit d8e5e2699a36d9d2316ade5115f3575d5dbc5294
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Thu Aug 31 00:30:11 2017 +0000
+
+    Changelog and stuff
+
+commit a835005be9cc22b4885ec2ee642e66fa42670f08
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Thu Aug 31 00:25:48 2017 +0000
+
+    PlaySound Fixes
+
+commit ffbb1cbbbd3c48b129cb3a06437fd8a3abec99b4
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Aug 29 08:59:41 2017 +0000
+
+    Bump TOC
+
+commit e41b3b8981e5a8c4f124deec79391b743a6e1875
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Tue Aug 15 05:34:57 2017 +0000
+
+    starcraft 1 client icon
+
+commit f0bd1f8eb9258e15bbb3d512960787fb6e035a0c
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Aug 12 00:10:28 2017 +0000
+
+    update Urls
+
+commit f64c0d29bb0eb459bb37dfef6f4c5d77a46d5b65
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Jun 16 13:04:03 2017 +0000
+
+commit b1553ace08406cb34f93bbaffd1d4683a89627e6
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Jun 16 13:02:24 2017 +0000
+
+commit 50946b7345457e1f250c43ece06bc3c18ed95edf
+Author: humfras <humfras@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Jun 16 12:59:57 2017 +0000
+
+commit 57fb75149e299116fdd808d63dfbeaf000d3d8f4
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Wed Mar 29 16:33:59 2017 +0000
+
+    Seems to still work so bump toc
+
+commit e3878e62b74e5b6e369ee745fab7b4a48b273628
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Wed Jan 4 07:06:08 2017 +0000
+
+    add wowprogress patch
+
+commit 072660c4ac5bab4eb2a25fecc9586afd0cfa530a
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Mon Dec 19 22:07:52 2016 +0000
+
+    prep to tag last alpha to avoid so many duplicate CYR font issue complaints.
+
+commit be217037cbf98b371d151ef4fc790c0f51b1640a
+Author: nobody <nobody@70514d9e-cf7d-479a-a7bd-7141c05b143a>
+Date:   Fri Nov 18 07:23:27 2016 +0000
+
+    Better way to avoid font issues
+
+commit dd28e013e8943b310d5906487a7b57c3b9e1cd33
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Nov 12 20:14:42 2016 +0000
+
+    Tagging as 3.7.10
+
+commit 38581d0e624a21ba297af2468c4feae8ac0d3694
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Nov 12 19:57:21 2016 +0000
+
+    version
+
+commit 2cc5f06510f80cc9cf98522ca9febf4399d53584
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Nov 12 19:38:21 2016 +0000
+
+    Another link fix
+
+commit 70afdca3e713b19ed65372b48748c27ea4362d51
+Author: Adam <MysticalOS@users.noreply.github.com>
+Date:   Sat Nov 12 19:34:57 2016 +0000
+
+    enable hyperlinks
+

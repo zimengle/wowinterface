@@ -1,0 +1,6 @@
+ConsolePortUI: disabled
+ConsolePortUI_NPC: disabled
+ConsolePort: enabled
+ElvUI: disabled
+ConsolePortBar: enabled
+StatCompare: disabled

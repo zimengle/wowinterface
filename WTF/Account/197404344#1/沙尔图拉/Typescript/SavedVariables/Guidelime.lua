@@ -3,6 +3,26 @@ GuidelimeDataChar = {
 	["mainFrameHeight"] = 400,
 	["showUnavailableSteps"] = false,
 	["guideSkip"] = {
+		["Thacen 导航, 中文由Qcat汉化 28-29 千针石林"] = {
+			[13] = true,
+			[27] = true,
+			[4] = true,
+			[30] = true,
+			[15] = true,
+			[17] = true,
+			[5] = true,
+			[19] = true,
+			[11] = true,
+			[3] = true,
+			[22] = true,
+			[21] = true,
+			[29] = true,
+		},
+		["Thacen 导航, 中文由Qcat汉化 31-32 闪光平原"] = {
+			[14] = true,
+			[13] = true,
+			[4] = true,
+		},
 		["Thacen 导航, 中文由Qcat汉化 23-25 石爪山脉"] = {
 			[27] = true,
 			[29] = true,
@@ -54,6 +74,8 @@ GuidelimeDataChar = {
 			[19] = true,
 			[67] = true,
 			[93] = true,
+		},
+		["Thacen 导航, 中文由Qcat汉化 38-40 荆棘谷"] = {
 		},
 		["Thacen 导航, 中文由Qcat汉化 20-21 石爪山脉"] = {
 			true, -- [1]
@@ -111,39 +133,22 @@ GuidelimeDataChar = {
 		["Thacen 导航, 中文由Qcat汉化 15-16 石爪山脉"] = {
 			[3] = true,
 		},
-		["Thacen 导航, 中文由Qcat汉化 28-29 千针石林"] = {
-			[13] = true,
-			[27] = true,
-			[4] = true,
-			[30] = true,
-			[15] = true,
-			[17] = true,
+		["Thacen 导航, 中文由Qcat汉化 42-43 荆棘谷"] = {
 			[5] = true,
-			[19] = true,
-			[11] = true,
-			[3] = true,
-			[22] = true,
-			[21] = true,
-			[29] = true,
+			[8] = true,
 		},
 		["Thacen 导航, 中文由Qcat汉化 37-37 奥特兰克山脉"] = {
 			[5] = true,
 			[6] = true,
 		},
-		["Thacen 导航, 中文由Qcat汉化 31-32 闪光平原"] = {
-			[14] = true,
-			[13] = true,
-			[4] = true,
-		},
 		["Thacen 导航, 中文由Qcat汉化 26-27 灰谷"] = {
 			[3] = true,
 		},
-		["Thacen 导航, 中文由Qcat汉化 1-15 兽人巨魔出生地->贫瘠之地"] = {
+		["Thacen 导航, 中文由Qcat汉化 40-41 荆棘谷"] = {
 		},
-		["Thacen 导航, 中文由Qcat汉化 36-37 阿拉希高地"] = {
-			true, -- [1]
-			[10] = true,
-			[11] = true,
+		["Thacen 导航, 中文由Qcat汉化 27-28 石爪山脉"] = {
+		},
+		["Thacen 导航, 中文由Qcat汉化 1-15 兽人巨魔出生地->贫瘠之地"] = {
 		},
 		["Thacen 导航, 中文由Qcat汉化 32-34 凄凉之地"] = {
 			[24] = true,
@@ -159,20 +164,11 @@ GuidelimeDataChar = {
 		},
 		["Thacen 导航, 中文由Qcat汉化 30-31 荆棘谷"] = {
 		},
-		["Thacen 导航, 中文由Qcat汉化 27-28 石爪山脉"] = {
-		},
-		["Haukrai 的任务&副本升级路线 30-43 塔伦米尔至血色修道院路线"] = {
-			true, -- [1]
-		},
 		["Thacen 导航, 中文由Qcat汉化 25-26 千针石林"] = {
 			true, -- [1]
 		},
-		["Thacen 导航, 中文由Qcat汉化 34-36 荆棘谷"] = {
-			[6] = true,
-			[2] = true,
-			[15] = true,
-			[27] = true,
-			[8] = true,
+		["Thacen 导航, 中文由Qcat汉化 30-30 阿拉希高地"] = {
+			[3] = true,
 		},
 		["Thacen 导航, 中文由Qcat汉化 21-21 灰谷"] = {
 			true, -- [1]
@@ -181,10 +177,22 @@ GuidelimeDataChar = {
 			true, -- [4]
 			[7] = true,
 		},
-		["Thacen 导航, 中文由Qcat汉化 30-30 阿拉希高地"] = {
-			[3] = true,
+		["Thacen 导航, 中文由Qcat汉化 34-36 荆棘谷"] = {
+			[6] = true,
+			[2] = true,
+			[15] = true,
+			[27] = true,
+			[8] = true,
 		},
 		["Thacen 导航, 中文由Qcat汉化 1-15 牛头人出生地->贫瘠之地"] = {
+		},
+		["Haukrai 的任务&副本升级路线 30-43 塔伦米尔至血色修道院路线"] = {
+			true, -- [1]
+		},
+		["Thacen 导航, 中文由Qcat汉化 36-37 阿拉希高地"] = {
+			true, -- [1]
+			[10] = true,
+			[11] = true,
 		},
 		["Ettern - 副本指南 17-24 哀嚎洞穴攻略"] = {
 		},
@@ -261,7 +269,7 @@ GuidelimeDataChar = {
 	["showCompletedSteps"] = false,
 	["mainFrameAlpha"] = 0.5,
 	["showArrow"] = true,
-	["currentGuide"] = "Thacen 导航, 中文由Qcat汉化 38-38 尘泥沼泽",
+	["currentGuide"] = "Thacen 导航, 中文由Qcat汉化 42-43 荆棘谷",
 	["mainFrameY"] = 8.43426704406738,
 	["arrowX"] = 0,
 	["mainFrameFontSize"] = 14,
@@ -271,28 +279,31 @@ GuidelimeDataChar = {
 	["arrowAlpha"] = 0.8,
 	["mainFrameShowing"] = true,
 	["guideSize"] = {
+		["Thacen 导航, 中文由Qcat汉化 28-29 千针石林"] = 42,
+		["Thacen 导航, 中文由Qcat汉化 31-32 闪光平原"] = 28,
 		["Thacen 导航, 中文由Qcat汉化 23-25 石爪山脉"] = 34,
 		["Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化 6-12 杜隆塔尔"] = 157,
+		["Thacen 导航, 中文由Qcat汉化 38-40 荆棘谷"] = 42,
 		["Thacen 导航, 中文由Qcat汉化 20-21 石爪山脉"] = 23,
 		["Thacen 导航, 中文由Qcat汉化 22-23 石爪山脉"] = 33,
 		["Thacen 导航, 中文由Qcat汉化 25-25 南贫瘠之地"] = 16,
 		["Thacen 导航, 中文由Qcat汉化 16-20 贫瘠之地"] = 85,
 		["Thacen 导航, 中文由Qcat汉化 15-16 石爪山脉"] = 10,
-		["Thacen 导航, 中文由Qcat汉化 28-29 千针石林"] = 42,
+		["Thacen 导航, 中文由Qcat汉化 42-43 荆棘谷"] = 39,
 		["Thacen 导航, 中文由Qcat汉化 37-37 奥特兰克山脉"] = 24,
-		["Thacen 导航, 中文由Qcat汉化 31-32 闪光平原"] = 28,
 		["Thacen 导航, 中文由Qcat汉化 26-27 灰谷"] = 38,
+		["Thacen 导航, 中文由Qcat汉化 40-41 荆棘谷"] = 36,
+		["Thacen 导航, 中文由Qcat汉化 27-28 石爪山脉"] = 15,
 		["Thacen 导航, 中文由Qcat汉化 1-15 兽人巨魔出生地->贫瘠之地"] = 103,
-		["Thacen 导航, 中文由Qcat汉化 36-37 阿拉希高地"] = 48,
 		["Thacen 导航, 中文由Qcat汉化 32-34 凄凉之地"] = 66,
 		["Thacen 导航, 中文由Qcat汉化 30-31 荆棘谷"] = 23,
-		["Thacen 导航, 中文由Qcat汉化 27-28 石爪山脉"] = 15,
-		["Haukrai 的任务&副本升级路线 30-43 塔伦米尔至血色修道院路线"] = 79,
 		["Thacen 导航, 中文由Qcat汉化 25-26 千针石林"] = 25,
-		["Thacen 导航, 中文由Qcat汉化 34-36 荆棘谷"] = 46,
-		["Thacen 导航, 中文由Qcat汉化 21-21 灰谷"] = 13,
 		["Thacen 导航, 中文由Qcat汉化 30-30 阿拉希高地"] = 15,
+		["Thacen 导航, 中文由Qcat汉化 21-21 灰谷"] = 13,
+		["Thacen 导航, 中文由Qcat汉化 34-36 荆棘谷"] = 46,
 		["Thacen 导航, 中文由Qcat汉化 1-15 牛头人出生地->贫瘠之地"] = 114,
+		["Haukrai 的任务&副本升级路线 30-43 塔伦米尔至血色修道院路线"] = 79,
+		["Thacen 导航, 中文由Qcat汉化 36-37 阿拉希高地"] = 48,
 		["Ettern - 副本指南 17-24 哀嚎洞穴攻略"] = 28,
 		["Thacen 导航, 中文由Qcat汉化 37-38 千针石林"] = 22,
 		["Ettern 兽人/巨魔 终极导航 - 中文由Qcat汉化 1-6 试炼谷"] = 77,
