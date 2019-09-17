@@ -139,7 +139,8 @@ addon_data.target.OnCombatLogUnfiltered = function(combat_info)
             local miss_type, is_offhand = select(12, unpack(combat_info))
             addon_data.core.MissHandler("target", miss_type, is_offhand)
         elseif (event == "SPELL_DAMAGE") or (event == "SPELL_MISSED") then
-            addon_data.core.SpellHandler("target", spell_name)
+            local _, _, _, _, _, _, spell_id = GetSpellInfo(spell_name)
+            addon_data.core.SpellHandler("target", spell_id)
         end
     end
     
@@ -255,7 +256,7 @@ addon_data.target.UpdateVisualsOnUpdate = function()
             frame.main_spark:Show()
         end
         -- Update the main bars text
-        frame.main_left_text:SetText("主手")
+        frame.main_left_text:SetText("主手(目标)")
         frame.main_right_text:SetText(tostring(addon_data.utils.SimpleRound(main_timer, 0.1)))
         -- Update the off hand bar
         if addon_data.target.has_offhand and settings.show_offhand then
@@ -289,7 +290,7 @@ addon_data.target.UpdateVisualsOnUpdate = function()
                 frame.off_spark:Show()
             end
             -- Update the off-hand bar's text
-            frame.off_left_text:SetText("副手")
+            frame.off_left_text:SetText("副手(目标)")
             frame.off_right_text:SetText(tostring(addon_data.utils.SimpleRound(off_timer, 0.1)))
         else
             frame.off_bar:Hide()
@@ -332,7 +333,7 @@ addon_data.target.UpdateVisualsOnSettingsChange = function()
                 bgFile = "Interface/AddOns/WeaponSwingTimer/Images/Background", 
                 edgeFile = nil, 
                 tile = true, tileSize = 16, edgeSize = 16, 
-                insets = { left = 11, right = 11, top = 11, bottom = 11}})
+                insets = { left = 8, right = 8, top = 8, bottom = 8}})
         end
         frame.backplane:SetBackdropColor(0, 0, 0, settings.backplane_alpha)
         frame.main_bar:SetPoint("TOPLEFT", 0, 0)
@@ -441,12 +442,12 @@ addon_data.target.InitializeVisuals = function()
     frame.main_spark:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Spark')
     -- Create the main hand bar left text
     frame.main_left_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.main_left_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.main_left_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.main_left_text:SetJustifyV("CENTER")
     frame.main_left_text:SetJustifyH("LEFT")
     -- Create the main hand bar right text
     frame.main_right_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.main_right_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.main_right_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.main_right_text:SetJustifyV("CENTER")
     frame.main_right_text:SetJustifyH("RIGHT")
     -- Create the off hand bar
@@ -456,12 +457,12 @@ addon_data.target.InitializeVisuals = function()
     frame.off_spark:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Spark')
     -- Create the off hand bar left text
     frame.off_left_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.off_left_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.off_left_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.off_left_text:SetJustifyV("CENTER")
     frame.off_left_text:SetJustifyH("LEFT")
     -- Create the off hand bar right text
     frame.off_right_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.off_right_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.off_right_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.off_right_text:SetJustifyV("CENTER")
     frame.off_right_text:SetJustifyH("RIGHT")
     -- Show it off
@@ -687,7 +688,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     local panel = addon_data.target.config_frame
     local settings = character_target_settings
     -- Title Text
-    panel.title_text = addon_data.config.TextFactory(panel, "目标攻击条设置", 20)
+    panel.title_text = addon_data.config.TextFactory(panel, "目标进展条设置", 20)
     panel.title_text:SetPoint("TOPLEFT", 10, -10)
     panel.title_text:SetTextColor(1, 0.82, 0, 1)
     
@@ -719,7 +720,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     panel.classic_bars_checkbox = addon_data.config.CheckBoxFactory(
         "TargetClassicBarsCheckBox",
         panel,
-        " Classic 条",
+        " 经典风格",
         "Enables the classic texture for the target's bars.",
         addon_data.target.ClassicBarsCheckBoxOnClick)
     panel.classic_bars_checkbox:SetPoint("TOPLEFT", 10, -100)
@@ -727,15 +728,15 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     panel.fill_empty_checkbox = addon_data.config.CheckBoxFactory(
         "TargetFillEmptyCheckBox",
         panel,
-        " 满或空",
-        "反转你的条，当一个攻击ok时选择显示满条还是空条",
+        " 反向显示",
+        "Determines if the bar is full or empty when a swing is ready.",
         addon_data.target.FillEmptyCheckBoxOnClick)
     panel.fill_empty_checkbox:SetPoint("TOPLEFT", 10, -120)
     -- Show Left Text Checkbox
     panel.show_left_text_checkbox = addon_data.config.CheckBoxFactory(
         "TargetShowLeftTextCheckBox",
         panel,
-        " 显示左文本",
+        " 左侧文字",
         "Enables the target's left side text.",
         addon_data.target.ShowLeftTextCheckBoxOnClick)
     panel.show_left_text_checkbox:SetPoint("TOPLEFT", 10, -140)
@@ -743,7 +744,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     panel.show_right_text_checkbox = addon_data.config.CheckBoxFactory(
         "TargetShowRightTextCheckBox",
         panel,
-        " 显示右文本",
+        " 右侧文字",
         "Enables the target's right side text.",
         addon_data.target.ShowRightTextCheckBoxOnClick)
     panel.show_right_text_checkbox:SetPoint("TOPLEFT", 10, -160)
@@ -752,7 +753,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     panel.width_editbox = addon_data.config.EditBoxFactory(
         "TargetWidthEditBox",
         panel,
-        "条宽度",
+        "条的宽度",
         75,
         25,
         addon_data.target.WidthEditBoxOnEnter)
@@ -761,7 +762,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
     panel.height_editbox = addon_data.config.EditBoxFactory(
         "TargetHeightEditBox",
         panel,
-        "条高度",
+        "条的高度",
         75,
         25,
         addon_data.target.HeightEditBoxOnEnter)
@@ -790,7 +791,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
         'TargetMainColorPicker',
         panel,
         settings.main_r, settings.main_g, settings.main_b, settings.main_a,
-        '主手颜色',
+        '主手条颜色',
         addon_data.target.MainColorPickerOnClick)
     panel.main_color_picker:SetPoint('TOPLEFT', 205, -150)
     -- Main-hand color text picker
@@ -798,7 +799,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
         'TargetMainTextColorPicker',
         panel,
         settings.main_text_r, settings.main_text_g, settings.main_text_b, settings.main_text_a,
-        '主手文本颜色',
+        '主手文字颜色',
         addon_data.target.MainTextColorPickerOnClick)
     panel.main_text_color_picker:SetPoint('TOPLEFT', 205, -170)
     -- Off-hand color picker
@@ -806,7 +807,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
         'TargetOffColorPicker',
         panel,
         settings.off_r, settings.off_g, settings.off_b, settings.off_a,
-        '副手颜色',
+        '副手条颜色',
         addon_data.target.OffColorPickerOnClick)
     panel.off_color_picker:SetPoint('TOPLEFT', 205, -200)
     -- Off-hand color text picker
@@ -814,7 +815,7 @@ addon_data.target.CreateConfigPanel = function(parent_panel)
         'TargetOffTextColorPicker',
         panel,
         settings.off_text_r, settings.off_text_g, settings.off_text_b, settings.off_text_a,
-        '副手文本颜色',
+        '副手文字颜色',
         addon_data.target.OffTextColorPickerOnClick)
     panel.off_text_color_picker:SetPoint('TOPLEFT', 205, -220)
     

@@ -16,7 +16,8 @@ local SlashCommands = AtlasLoot.SlashCommands
 local AL = AtlasLoot.Locales
 local ALButton = LibStub("LibDBIcon-1.0")
 
-local TT_H_1, TT_H_2 = "|cff00FF00"..AL["AtlasLoot"].."|r", string.format("|cffFFFFFF%s|r", AtlasLoot.IsDevVersion and "dev" or AtlasLoot.__addonversion)
+local TT_H_1, TT_H_2 = "|cff00FF00"..AL["AtlasLoot"].."|r", string.format("|cffFFFFFF%s|r", AtlasLoot.__addonversion)
+local TT_ENTRY = "|cFFCFCFCF%s:|r %s" --|cffFFFFFF%s|r"
 
 
 -- LDB
@@ -29,14 +30,19 @@ local MiniMapLDB = LibStub:GetLibrary("LibDataBroker-1.1"):NewDataObject("AtlasL
 	icon = "Interface\\Icons\\INV_Box_01",
 	OnTooltipShow = function(tooltip)
 		tooltip:AddDoubleLine(TT_H_1, TT_H_2);
-		tooltip:AddLine(AL["|cffFF0000左键: |cffFFFFFF打开 AtlasLoot\n|cffFF0000Shift+左键: |cffFFFFFF打开 AtlasLoot 设置"]);
+		tooltip:AddLine(format(TT_ENTRY, AL["Left Click"], AL["Open AtlasLoot"]))
+		tooltip:AddLine(format(TT_ENTRY, AL["Shift + Left Click"], AL["Open Options"]))
+		tooltip:AddLine(format(TT_ENTRY, AL["Right Click"], AL["Open Favourites"]))
 	end,
 	OnClick = function(self, button)
-		if button == "RightButton" then return end
-		if IsShiftKeyDown() then
-			SlashCommands:Run("options")
+		if button == "RightButton" then
+			AtlasLoot.Addons:GetAddon("Favourites").GUI:Toggle()
 		else
-			SlashCommands:Run("")
+			if IsShiftKeyDown() then
+				SlashCommands:Run("options")
+			else
+				SlashCommands:Run("")
+			end
 		end
 	end,
 })

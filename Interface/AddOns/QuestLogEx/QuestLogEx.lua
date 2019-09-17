@@ -31,7 +31,11 @@ function QuestLogEx:ToggleExtended(extend)
 		QuestLogExFrameMaximizeButton:Show()
 		QuestLogExDetailCloseButton:Hide()
 		QuestLogExDetailMinimizeButton:Hide()
-	
+
+		QuestLogExDetailResetButton:Hide()
+		QuestLogExDetailHideButton:Hide()
+		QuestLogExDetailShowButton:Hide()
+
 		HideUIPanel(QuestLogExFrameDescription)
 	else
 		QuestLogExTopRightExtended:Show()
@@ -45,7 +49,17 @@ function QuestLogEx:ToggleExtended(extend)
 		QuestLogExFrameMaximizeButton:Hide()
 		QuestLogExDetailCloseButton:Show()
 		QuestLogExDetailMinimizeButton:Show()
-		
+
+		if CodexQuest ~= nil and CodexQuest.ResetAll ~= nil and CodexQuest.HideCurrentQuest ~= nil and CodexQuest.ShowCurrentQuest ~= nil then
+			QuestLogExDetailResetButton:Show()
+			QuestLogExDetailHideButton:Show()
+			QuestLogExDetailShowButton:Show()
+		else
+			QuestLogExDetailResetButton:Hide()
+			QuestLogExDetailHideButton:Hide()
+			QuestLogExDetailShowButton:Hide()
+		end
+				
 		ShowUIPanel(QuestLogExFrameDescription)
 	end
 end

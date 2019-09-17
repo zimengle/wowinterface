@@ -13,7 +13,7 @@ local function atl_table(p_table)
 	for i,v in ipairs(p_table) do
 		L[v] = L[v] or v;
 	end
-	
+
 end
 
 atl("ResetCategoryDescription", "Removes ALL custom categories")
@@ -35,10 +35,12 @@ atl("AutoBar.Garrison", "Garrison");
 atl("AutoBarButtonGarrison", "Garrison");
 atl("AutoBarButtonToyBox", "Toy Box");
 atl("Spell.Stealth", "Spell.Stealth");
+atl("Spell.Track", "Spell.Track");
 atl("AutoBarButtonInterrupt", "Interrupts");
 
 atl("Tradeskill.Gather.Herbalism", "Herbs");
 atl("AutoBarButtonMillHerbs", "Milling");
+atl("AutoBarButtonTrack", "Track");
 
 atl("MountShowQiraji", "Show Qiraji");
 atl("MountShowFavourites", "Show Favourites");
@@ -122,7 +124,7 @@ atl("Raid 6","Raid Square")
 atl("Raid 7","Raid X")
 atl("Raid 8","Raid Skull")
 
-local quick_sets = 
+local quick_sets =
 {
 	--Categories
 	"Battle Pet.Favourites",
@@ -156,7 +158,7 @@ local quick_sets =
 	"Muffin.Order Hall.Troop Recruit",
 	"Muffin.Order Hall.Order Resources",
 	"Muffin.Potion.Mana",
-	"Muffin.Reputation",
+	"Muffin.Misc.Reputation",
 	"Muffin.Skill.Fishing.Misc",
 	"Muffin.Skill.Fishing.Rare Fish",
 	"Muffin.SunSongRanch",
@@ -178,6 +180,8 @@ local quick_sets =
 	"Dynamic.Quest",
 	"Macro.Mount.SummonRandomFave",
 	"Muffin.Order Hall.Nethershard",
+	"Spell.AquaticForm",
+	"Muffin.Misc.StartsQuest",
 }
 
 atl_table(quick_sets);

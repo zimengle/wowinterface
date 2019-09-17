@@ -1,2 +1,4 @@
 
 SortBagsRightToLeft = nil
+BagSlotFlag = {
+}

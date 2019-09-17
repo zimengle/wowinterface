@@ -12,6 +12,6 @@ AtlasOptions = {
 	["AtlasZone"] = 1,
 	["AtlasButtonRadius"] = 78,
 	["AtlasAutoSelect"] = true,
-	["AtlasRightClick"] = false,
 	["AtlasAlpha"] = 1,
+	["AtlasRightClick"] = false,
 }

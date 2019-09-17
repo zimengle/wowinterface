@@ -1,11 +1,13 @@
 ## Interface: 11302
-## X-Min-Interface: 11302
-
 ## Title: ClassicCodex
+## Title-zhCN: ClassicCodex
+## TItle-zhTW: ClassicCodex
 ## Notes: ClassicCodex
+## Notes-zhCN: |cff00ff00ClassicCodex|r
+## Notes-zhTW: |cff00ff00ClassicCodex|r
 ## Author: Pgarneau, Shagu
 ## Version: 1.2.1
-## SavedVariablesPerCharacter: CodexConfig, CodexHistory, CodexBrowserFavorites, CodexColors
+## SavedVariablesPerCharacter: CodexConfig, CodexHiddenQuests, CodexBrowserFavorites, CodexColors
 
 # database index
 db\init.lua
@@ -24,7 +26,6 @@ db\enUS\quests.lua
 db\enUS\zones.lua
 db\enUS\professions.lua
 
-
 # database zhCN
 db\zhCN\items.lua
 db\zhCN\units.lua
@@ -41,7 +42,6 @@ db\zhTW\quests.lua
 db\zhTW\zones.lua
 db\zhTW\professions.lua
 
-
 # libs
 lib\LibStub\LibStub.lua
 lib\CallbackHandler-1.0\CallbackHandler-1.0.xml
@@ -57,3 +57,5 @@ map.lua
 quest.lua
 ui.lua
 browser.lua
+
+## Q-CAT-Version: 211

@@ -15,7 +15,7 @@ ItemRackSettings = {
 	["HidePetBattle"] = "ON",
 	["CharacterSheetMenus"] = "ON",
 	["DisableAltClick"] = "OFF",
-	["IconPos"] = 15.3094013714487,
+	["IconPos"] = 24.6379289260078,
 	["MenuOnRight"] = "OFF",
 	["TooltipFollow"] = "OFF",
 	["NotifyThirty"] = "OFF",
@@ -132,9 +132,11 @@ ItemRackEvents = {
 		},
 	},
 	["骑术装"] = {
-		["Unequip"] = 1,
+		["Unequip"] = true,
 		["Type"] = "Buff",
-		["Anymount"] = 1,
+		["Anymount"] = true,
+		["NotInPVP"] = false,
+		["Buff"] = "Any mount",
 	},
 	["喝水中"] = {
 		["Unequip"] = 1,

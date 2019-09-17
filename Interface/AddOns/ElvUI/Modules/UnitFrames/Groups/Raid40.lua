@@ -37,7 +37,7 @@ function UF:Construct_Raid40Frames()
 	self.Debuffs = UF:Construct_Debuffs(self)
 	self.AuraWatch = UF:Construct_AuraWatch(self)
 	self.RaidDebuffs = UF:Construct_RaidDebuffs(self)
-	--self.DebuffHighlight = UF:Construct_DebuffHighlight(self)
+	self.DebuffHighlight = UF:Construct_DebuffHighlight(self)
 	self.RaidRoleFramesAnchor = UF:Construct_RaidRoleFrames(self)
 	self.PhaseIndicator = UF:Construct_PhaseIcon(self)
 	self.MouseGlow = UF:Construct_MouseGlow(self)
@@ -47,6 +47,7 @@ function UF:Construct_Raid40Frames()
 	self.ReadyCheckIndicator = UF:Construct_ReadyCheckIcon(self)
 	self.Fader = UF:Construct_Fader()
 	self.Cutaway = UF:Construct_Cutaway(self)
+	self.HealthPrediction = UF:Construct_HealComm(self)
 
 	self.customTexts = {}
 
@@ -202,10 +203,10 @@ function UF:Update_Raid40Frames(frame, db)
 	UF:Configure_RaidIcon(frame)
 
 	--Debuff Highlight
-	--UF:Configure_DebuffHighlight(frame)
+	UF:Configure_DebuffHighlight(frame)
 
 	--OverHealing
-	--UF:Configure_HealComm(frame)
+	UF:Configure_HealComm(frame)
 
 	--Raid Roles
 	UF:Configure_RaidRoleIcons(frame)

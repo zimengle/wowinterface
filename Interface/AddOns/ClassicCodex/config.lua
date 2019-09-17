@@ -3,22 +3,22 @@ CodexColors = {}
 
 DefaultCodexConfig = {
     ["trackingMethod"] = 1, -- 1: All Quests; 2: Tracked Quests; 3: Manual; 4: Hide
-    ["autoAccept"] = true, -- Auto-accept quests
-    ["autoTurnin"] = true, -- Auto-turnin quests
-    ["nameplateIcon"] = true, -- Show quest icon above nameplates
+    ["autoAccept"] = false, -- Auto-accept quests
+    ["autoTurnin"] = false, -- Auto-turnin quests
+    ["nameplateIcon"] = false, -- Show quest icon above nameplates
     ["allQuestGivers"] = true, -- Show available quest givers
     ["currentQuestGivers"] = true, -- Show current quest giver nodes
     ["showLowLevel"] = false, -- Show low level quest giver nodes
     ["showHighLevel"] = true, -- Show level+3 quest giver nodes
-    ["showFestival"] = true, -- Show event quest giver nodes
+    ["showFestival"] = false, -- Show event quest giver nodes
     ["colorBySpawn"] = true,
-    ["questMarkerSize"] = 14,
-    ["spawnMarkerSize"] = 10,
+    ["questMarkerSize"] = 15,
+    ["spawnMarkerSize"] = 15,
 }
 
 function textFactory(parent, value, size)
     local text = parent:CreateFontString(nil, "ARTWORK")
-    text:SetFont("Fonts/FRIZQT__.ttf", size)
+    text:SetFont("Fonts/ARKai_T.ttf", size)
     text:SetJustifyV("CENTER")
     text:SetJustifyH("CENTER")
     text:SetText(value)
@@ -184,66 +184,66 @@ function createConfigPanel(parent)
     config.titleText:SetTextColor(1, 0.9, 0, 1)
     
     -- Auto-Accept Quests
-    config.autoAcceptQuestsCheckbox = checkboxFactory(config, "自动接受任务", "自动接受任务开关", function(self)
+    config.autoAcceptQuestsCheckbox = checkboxFactory(config, "自动接任务", "开启/关闭自动接任务", function(self)
         CodexConfig.autoAccept = self:GetChecked()
     end)
     config.autoAcceptQuestsCheckbox:SetPoint("TOPLEFT", 10, -35)
 
     -- Auto-Turnin Quests
-    config.autoTurninQuestsCheckbox = checkboxFactory(config, "自动提交任务", "自动提交任务开关", function(self)
+    config.autoTurninQuestsCheckbox = checkboxFactory(config, "自动交任务", "开启/关闭自动交任务", function(self)
         CodexConfig.autoTurnin = self:GetChecked()
     end)
     config.autoTurninQuestsCheckbox:SetPoint("TOPLEFT", 10, -70)
 
     -- Quest Icon on Nameplate
-    config.nameplateIconCheckbox = checkboxFactory(config, "姓名板任务图标", "敌人姓名板上的任务图标开关", function(self)
+    config.nameplateIconCheckbox = checkboxFactory(config, "姓名板任务图标", "在任务怪姓名板上方显示任务感叹号", function(self)
         CodexConfig.nameplateIcon = self:GetChecked()
     end)
     config.nameplateIconCheckbox:SetPoint("TOPLEFT", 10, -105)
 
-    config.allQuestGiversCheckbox = checkboxFactory(config, "显示所有任务给予者", "将在地图上显示所有任务给予者", function(self)
+    config.allQuestGiversCheckbox = checkboxFactory(config, "显示所有可接任务", "选中后，在地图和小地图上显示可接任务的图标", function(self)
         CodexConfig.allQuestGivers = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.allQuestGiversCheckbox:SetPoint("TOPLEFT", 10, -140)
 
-    config.currentQuestGiversCheckbox = checkboxFactory(config, "当前任务给予者", "当前任务结束NPC/对象将显示在地图上", function(self)
+    config.currentQuestGiversCheckbox = checkboxFactory(config, "显示当前任务NPC", "选中后，可交付当前任务的NPC或物体会显示在地图上", function(self)
         CodexConfig.currentQuestGivers = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.currentQuestGiversCheckbox:SetPoint("TOPLEFT", 10, -175)
 
-    config.showLowLevelCheckbox = checkboxFactory(config, "显示低等级任务", "低等级任务将隐藏", function(self)
+    config.showLowLevelCheckbox = checkboxFactory(config, "显示低等级任务", "选中后，地图上的低等级任务(比玩家等级低10级)不再被隐藏", function(self)
         CodexConfig.showLowLevel = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.showLowLevelCheckbox:SetPoint("TOPLEFT", 10, -210)
 
-    config.showHighLevelCheckbox = checkboxFactory(config, "显示高等级任务", "在地图上显示高于你3级可接的任务", function(self)
+    config.showHighLevelCheckbox = checkboxFactory(config, "显示高等级任务", "选中后，可接等级比玩家等级高3级的任务也会显示在地图上", function(self)
         CodexConfig.showHighLevel = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.showHighLevelCheckbox:SetPoint("TOPLEFT", 10, -245)
 
-    config.showFestivalCheckbox = checkboxFactory(config, "显示节日任务", "节日相关的任务将显示在地图上", function(self)
+    config.showFestivalCheckbox = checkboxFactory(config, "显示节日任务", "选中后，节日相关任务会被显示在地图上", function(self)
         CodexConfig.showFestival = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.showFestivalCheckbox:SetPoint("TOPLEFT", 10, -280)
 
-    config.colorBySpawnCheckbox = checkboxFactory(config, "按刷新类型决定着色", "节点标记的颜色将根据刷新类型或任务设置", function(self)
+    config.colorBySpawnCheckbox = checkboxFactory(config, "按任务怪类型标记颜色", "选中后，不同任务怪的地图标记颜色不同。如果未选中，则一个任务的所有任务怪都是同一个颜色。", function(self)
         CodexConfig.colorBySpawn = self:GetChecked()
         CodexQuest:ResetAll()
     end)
     config.colorBySpawnCheckbox:SetPoint("TOPLEFT", 10, -315)
 
-    config.questMarkerSizeSlider = sliderFactory(config, "questMarkerSize", "任务接受&完成者标记大小", 10, 25, 1, function(self)
+    config.questMarkerSizeSlider = sliderFactory(config, "questMarkerSize", "任务标记大小", 10, 25, 1, function(self)
         CodexConfig.questMarkerSize = tonumber(self:GetValue())
         CodexMap:UpdateNodes()
     end)
     config.questMarkerSizeSlider:SetPoint("TOPLEFT", 45, -400)
 
-    config.spawnMarkerSizeSlider = sliderFactory(config, "spawnMarkerSize", "任务目标节点标记大小", 6, 20, 1, function(self)
+    config.spawnMarkerSizeSlider = sliderFactory(config, "spawnMarkerSize", "怪物标记大小", 6, 20, 1, function(self)
         CodexConfig.spawnMarkerSize = tonumber(self:GetValue())
         CodexMap:UpdateNodes()
     end)
@@ -261,7 +261,7 @@ function createConfigPanel(parent)
     -- config.restoreColorsButton:SetHighlightTexture("Interface/Buttons/UI-Panel-Button-Highlight")
     -- config.restoreColorsButton:SetPushedTexture("Interface/Buttons/UI-Panel-Button-Down")
     -- local font = config.restoreColorsButton:CreateFontString()
-    -- font:SetFont("Fonts/FRIZQT__.TTF", 12)
+    -- font:SetFont("Fonts/ARKai_T.TTF", 12)
     -- font:SetPoint("TOPLEFT", config.restoreColorsButton, "TOPLEFT", 10, -6)
     -- font:SetText("Restore Defaults")
     -- config.restoreColorsButton:SetFontString(font)

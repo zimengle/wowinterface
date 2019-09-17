@@ -52,3 +52,5 @@ gui/GuiManager.lua
 DHUD_Debug.lua
 DHUD_Main.lua
 MyMinimapButton.lua
+
+## Q-CAT-Version: 1

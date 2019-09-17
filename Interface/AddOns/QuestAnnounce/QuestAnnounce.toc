@@ -23,3 +23,5 @@ Localization.lua
 
 QuestAnnounce.lua
 Config.lua
+
+## Q-CAT-Version: 1

@@ -35,7 +35,7 @@ addon_data.config.InitializeVisuals = function()
     panel.config_melee_panel.target_panel = addon_data.target.CreateConfigPanel(panel.config_melee_panel)
     panel.config_melee_panel.target_panel:SetPoint('TOPLEFT', 0, -275)
     panel.config_melee_panel.target_panel:SetSize(1, 1)
-    panel.config_melee_panel.name = 'Melee Settings'
+    panel.config_melee_panel.name = '近战设置'
     panel.config_melee_panel.parent = panel.name
     panel.config_melee_panel.default = addon_data.config.OnDefault
     InterfaceOptions_AddCategory(panel.config_melee_panel)
@@ -46,7 +46,7 @@ addon_data.config.InitializeVisuals = function()
     panel.config_hunter_panel.hunter_panel = addon_data.hunter.CreateConfigPanel(panel.config_hunter_panel)
     panel.config_hunter_panel.hunter_panel:SetPoint('TOPLEFT', 0, 0)
     panel.config_hunter_panel.hunter_panel:SetSize(1, 1)
-    panel.config_hunter_panel.name = 'Hunter & Wand Settings'
+    panel.config_hunter_panel.name = '猎人 & 魔杖设置'
     panel.config_hunter_panel.parent = panel.name
     panel.config_hunter_panel.default = addon_data.config.OnDefault
     InterfaceOptions_AddCategory(panel.config_hunter_panel)
@@ -56,7 +56,7 @@ end
 
 addon_data.config.TextFactory = function(parent, text, size)
     local text_obj = parent:CreateFontString(nil, "ARTWORK")
-    text_obj:SetFont("Fonts/FRIZQT__.ttf", size)
+    text_obj:SetFont("Fonts/ARHei.ttf", size)
     text_obj:SetJustifyV("CENTER")
     text_obj:SetJustifyH("CENTER")
     text_obj:SetText(text)
@@ -195,13 +195,13 @@ addon_data.config.CreateConfigPanel = function(parent_panel)
     panel.is_locked_checkbox = addon_data.config.CheckBoxFactory(
         "IsLockedCheckBox",
         panel,
-        " 锁定所有条",
+        " 锁定所有",
         "Locks all of the swing bar frames, preventing them from being dragged.",
         addon_data.config.IsLockedCheckBoxOnClick)
     panel.is_locked_checkbox:SetPoint("TOPLEFT", 0, -30)
     
     -- Guidance Text
-    panel.guidance_text = addon_data.config.TextFactory(panel, "<- 点击 '+' \n 进入更多选项", 16)
+    panel.guidance_text = addon_data.config.TextFactory(panel, "<- 点击左边的 '+'\n进入设置", 16)
     panel.guidance_text:SetPoint("TOPLEFT", 0, -100)
     panel.guidance_text:SetTextColor(1, 1, 1, 1)
     

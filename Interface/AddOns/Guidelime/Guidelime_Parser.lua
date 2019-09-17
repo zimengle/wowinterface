@@ -135,9 +135,8 @@ local function textFormatting(text, color)
 		:gsub("(www%.[%w%./#%-%?=#]*)", function(u) if url == nil then url = u end; return "|cFFAAAAAA" .. u .. "|r" end)
 		:gsub("%*([^%*]+)%*", (color or "|cFFFFD100") .. "%1|r")
 		:gsub("%*%*","%*")
-	if formatted:gsub("%s", "") == "" then return end
 	local formattedInactive = formatted:gsub("|r", addon.COLOR_INACTIVE)
-	return formatted, formattedInactive, url
+	return formatted, formattedInactive, url, formatted:gsub("%s", "") == ""
 end
 
 function addon.parseLine(step, guide, strict, nameOnly)
@@ -152,7 +151,7 @@ function addon.parseLine(step, guide, strict, nameOnly)
 		if text ~= "" then
 			local element = {}
 			element.t = "TEXT"
-			element.text, element.textInactive, element.url = textFormatting(text, addon.COLOR_WHITE)
+			element.text, element.textInactive, element.url, element.empty = textFormatting(text, addon.COLOR_WHITE)
 			if element.text ~= nil then
 				element.startPos = pos
 				pos = pos + #text
@@ -181,7 +180,13 @@ function addon.parseLine(step, guide, strict, nameOnly)
 		if element.t == "NEXT" then
 			local _, c = tag:gsub("%s*(%d*%.?%d*)%s*%-?%s*(%d*%.?%d*)%s*(.*)", function (minLevel, maxLevel, title)
 				if guide.next == nil then guide.next = {} end
-				table.insert(guide.next, minLevel .. "-" .. maxLevel .. " " .. title)
+				if minLevel ~= "" or maxLevel ~= "" then
+					title = " " .. title
+					if maxLevel ~= "" then title = maxLevel .. title end
+					title = "-" .. title
+					if minLevel ~= "" then title = minLevel .. title end
+				end
+				table.insert(guide.next, title)
 			end, 1)
 			if c ~= 1 then
 				addon.createPopupFrame(string.format(L.ERROR_CODE_NOT_RECOGNIZED, guide.title or "", code, (step.line or "") .. " " .. step.text)):Show()
@@ -399,7 +404,7 @@ function addon.parseLine(step, guide, strict, nameOnly)
 			end
 		elseif element.t == "FLY" or element.t == "GET_FLIGHT_POINT" then
 			if tag:gsub(" ", "") ~= "" then
-				element.text, element.textInactive, _ = textFormatting(tag)
+				element.text, element.textInactive = textFormatting(tag)
 				element.flightmaster = addon.getFlightmasterByPlace(tag, step.faction or guide.faction)
 --TODO: active this error check
 --				if element.flightmaster == nil then
@@ -408,7 +413,7 @@ function addon.parseLine(step, guide, strict, nameOnly)
 --				end
 			end
 		else
-			element.text, element.textInactive, _ = textFormatting(tag)
+			element.text, element.textInactive = textFormatting(tag)
 		end
 		return ""
 	end)
@@ -417,7 +422,7 @@ function addon.parseLine(step, guide, strict, nameOnly)
 	if t ~= nil and t ~= "" then
 		local element = {}
 		element.t = "TEXT"
-		element.text, element.textInactive, element.url = textFormatting(t, addon.COLOR_WHITE)
+		element.text, element.textInactive, element.url, element.empty = textFormatting(t, addon.COLOR_WHITE)
 		if element.text ~= nil then
 			element.startPos = pos 
 			element.endPos = pos + #t - 1

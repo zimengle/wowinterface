@@ -86,6 +86,10 @@ Alliance\sage\Sage_Guide_23-24_Wetlands.lua
 Alliance\sage\Sage_Guide_24-25_Ashenvale.lua
 Alliance\sage\Sage_Guide_25-28_Wetlands.lua
 Alliance\sage\Sage_Guide_28-30_Duskwood.lua
+Alliance\sage\Sage_Guide_31-32_Thousand_Needles.lua
+Alliance\sage\Sage_Guide_32-33_Hillsbrad.lua
+Alliance\sage\Sage_Guide_32_Stranglethorn.lua
+Alliance\sage\Sage_Guide_33-35_Desolace.lua
 Alliance\sage\Sage_Guide_Blackrock_Depths.lua
 Alliance\sage\Sage_Guide_Molten_Core.lua
 Alliance\sage\Sage_Guide_Uldaman.lua

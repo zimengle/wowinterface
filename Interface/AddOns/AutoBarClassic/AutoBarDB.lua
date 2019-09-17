@@ -109,7 +109,7 @@ end
 
 local function get_bar_default_settings()
 
-	local settings = 
+	local settings =
 	{
 		enabled = true,
 		rows = 1,
@@ -139,7 +139,7 @@ local function get_bar_default_settings()
 		SHAMAN = true,
 		WARLOCK = true,
 		WARRIOR = true,
-		buttonKeys = {},	
+		buttonKeys = {},
 	}
 
 	return settings
@@ -148,7 +148,7 @@ end
 
 local function get_class_bar_default_settings(p_class_name)
 
-	local settings = 
+	local settings =
 	{
 		enabled = true,
 		share = "2",
@@ -170,10 +170,9 @@ local function get_class_bar_default_settings(p_class_name)
 		showOnModifier = nil,
 		posX = 300,
 		posY = 280,
-		DEMONHUNTER = true,
 		buttonKeys = {},
 	}
-	
+
 	settings[p_class_name] = true
 
 	return settings
@@ -235,7 +234,7 @@ function AutoBar:InitializeDefaults()
 	-- Create the various class bars
 	--
 
-	local class_bar_map = 
+	local class_bar_map =
 	{
 		DRUID = "AutoBarClassBarDruid",
 		HUNTER = "AutoBarClassBarHunter",
@@ -290,12 +289,12 @@ function AutoBar:InitializeDefaults()
 			}
 		end
 
-		if (not AutoBar.db.class.buttonList["AutoBarButtonStagForm"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonStagForm"] = {
-				buttonKey = "AutoBarButtonStagForm",
-				buttonClass = "AutoBarButtonStagForm",
+		if (not AutoBar.db.class.buttonList["AutoBarButtonAquatic"]) then
+			AutoBar.db.class.buttonList["AutoBarButtonAquatic"] = {
+				buttonKey = "AutoBarButtonAquatic",
+				buttonClass = "AutoBarButtonAquatic",
 				barKey = AutoBar.classBar,
-				defaultButtonIndex = 4,
+				defaultButtonIndex = 3,
 				enabled = true,
 				noPopup = true,
 			}
@@ -332,7 +331,6 @@ function AutoBar:InitializeDefaults()
 			barKey = "AutoBarClassBarBasic",
 			defaultButtonIndex = 1,
 			enabled = true,
-			hearth_include_ancient_dalaran = false,
 		}
 	end
 
@@ -588,7 +586,7 @@ function AutoBar:InitializeDefaults()
 			enabled = true,
 		}
 	end
-	
+
 	if (not AutoBar.db.account.buttonList["AutoBarButtonBattleStandards"]) then
 		AutoBar.db.account.buttonList["AutoBarButtonBattleStandards"] = {
 			buttonKey = "AutoBarButtonBattleStandards",
@@ -614,17 +612,6 @@ function AutoBar:InitializeDefaults()
 			buttonClass = "AutoBarButtonMiscFun",
 			barKey = "AutoBarClassBarExtras",
 			defaultButtonIndex = 8,
-			enabled = true,
-			arrangeOnUse = true,
-		}
-	end
-
-	if (not AutoBar.db.account.buttonList["AutoBarButtonGuildSpell"]) then
-		AutoBar.db.account.buttonList["AutoBarButtonGuildSpell"] = {
-			buttonKey = "AutoBarButtonGuildSpell",
-			buttonClass = "AutoBarButtonGuildSpell",
-			barKey = "AutoBarClassBarExtras",
-			defaultButtonIndex = 9,
 			enabled = true,
 			arrangeOnUse = true,
 		}
@@ -689,8 +676,21 @@ function AutoBar:InitializeDefaults()
 			}
 		end
 	end
-	
-	if (AutoBar.CLASS == "DEMONHUNTER" or AutoBar.CLASS == "HUNTER") then
+
+	if (AutoBar.CLASS == "HUNTER") then
+		if (not AutoBar.db.class.buttonList["AutoBarButtonTrack"]) then
+			AutoBar.db.class.buttonList["AutoBarButtonTrack"] = {
+				buttonKey = "AutoBarButtonTrack",
+				buttonClass = "AutoBarButtonTrack",
+				barKey = "AutoBarClassBarHunter",
+				defaultButtonIndex = "*",
+				enabled = true,
+				arrangeOnUse = true,
+			}
+		end
+	end
+
+	if (AutoBar.CLASS == "HUNTER") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonTrap"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonTrap"] = {
 				buttonKey = "AutoBarButtonTrap",
@@ -798,20 +798,18 @@ function AutoBar:InitializeDefaults()
 		}
 	end
 
-	if (AutoBar.CLASS ~= "MONK") then
-		if (not AutoBar.db.class.buttonList["AutoBarButtonER"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonER"] = {
-				buttonKey = "AutoBarButtonER",
-				buttonClass = "AutoBarButtonER",
-				barKey = AutoBar.classBar,
-				defaultButtonIndex = "*",
-				enabled = true,
-				noPopup = true,
-			}
-		end
+	if (not AutoBar.db.class.buttonList["AutoBarButtonER"]) then
+		AutoBar.db.class.buttonList["AutoBarButtonER"] = {
+			buttonKey = "AutoBarButtonER",
+			buttonClass = "AutoBarButtonER",
+			barKey = AutoBar.classBar,
+			defaultButtonIndex = "*",
+			enabled = true,
+			noPopup = true,
+		}
 	end
 
-	if (AutoBar.CLASS == "DEMONHUNTER" or AutoBar.CLASS == "DRUID" or AutoBar.CLASS == "HUNTER" or AutoBar.CLASS == "ROGUE" or AutoBar.CLASS == "WARRIOR") then
+	if (AutoBar.CLASS == "WARRIOR") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonCharge"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonCharge"] = {
 				buttonKey = "AutoBarButtonCharge",
@@ -823,7 +821,7 @@ function AutoBar:InitializeDefaults()
 			}
 		end
 	end
-	
+
 	if (not AutoBar.db.class.buttonList["AutoBarButtonInterrupt"]) then
 		AutoBar.db.class.buttonList["AutoBarButtonInterrupt"] = {
 			buttonKey = "AutoBarButtonInterrupt",
@@ -944,7 +942,7 @@ function AutoBar:InitializeDefaults()
 	end
 
 
-	if (AutoBar.CLASS == "WARRIOR") then
+	if (AutoBar.CLASS == "WARRIOR" or AutoBar.CLASS == "DRUID") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonStance"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonStance"] = {
 				buttonKey = "AutoBarButtonStance",
@@ -956,12 +954,13 @@ function AutoBar:InitializeDefaults()
 		end
 	end
 
-	local deprecated_buttons = 
+	local deprecated_buttons =
 	{
 		"AutoBarButtonWarlockStones", "AutoBarButtonSting", "AutoBarButtonAura",
-		"AutoBarButtonTrack", "AutoBarButtonRotationDrums", "AutoBarButtonAmmo",
+		"AutoBarButtonRotationDrums", "AutoBarButtonAmmo",
 		"AutoBarButtonSeal", "AutoBarButtonOrderHall", "AutoBarButtonPowerShift",
-		"AutoBarButtonCooldownStoneCombat", "AutoBarButtonBoomkinTree"
+		"AutoBarButtonCooldownStoneCombat", "AutoBarButtonBoomkinTree",
+		"AutoBarButtonGuildSpell", "AutoBarButtonStagForm"
 	}
 
 	for _, dep in ipairs(deprecated_buttons) do
@@ -977,9 +976,10 @@ function AutoBar:InitializeDefaults()
 
 	end
 
-	if(AutoBar.CLASS == "MONK" and AutoBar.db.class.buttonList["AutoBarButtonER"]) then
-		AutoBar.db.class.buttonList["AutoBarButtonER"] = nil
-	end
+-- save as sample to remove buttons per class
+--	if(AutoBar.CLASS == "xx" and AutoBar.db.class.buttonList["AutoBarButtonER"]) then
+--		AutoBar.db.class.buttonList["AutoBarButtonER"] = nil
+--	end
 
 end
 

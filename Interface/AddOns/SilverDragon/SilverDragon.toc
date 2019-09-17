@@ -46,3 +46,5 @@ integration\handynotes.lua
 ## Q-CAT-Version: 1
 
 ## Q-CAT-Version: 2
+
+## Q-CAT-Version: 3

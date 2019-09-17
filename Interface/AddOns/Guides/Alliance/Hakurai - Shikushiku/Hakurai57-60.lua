@@ -10,12 +10,12 @@ Guidelime.registerGuide(
 去月神殿并提交[QT4508]
 接受[QA4510]
 往北走提交[QT4510] 在达纳苏斯中心的银行
-[G35.2,8Darnassus]在树的中层, 提交[QT4986]
+[G35.2,8 Darnassus]在树的中层, 提交[QT4986]
 [T]学习技能，如果你需要的话
 跑回到鸟点
 如果你做过希利苏斯任务 -- 飞到月光林地
 如果你没做过 -- 飞到冬泉谷
-如果你做过希利苏斯任务 -- [G47.8,39.4Moonglade]提交[QT6844]
+如果你做过希利苏斯任务 -- [G47.8,39.4 Moonglade]提交[QT6844]
 如果你做过希利苏斯任务 -- 接受[QA6845]
 如果你做过希利苏斯任务 -- [G51.6,44.4]提交 [QT6845]
 如果你做过希利苏斯任务 -- 提交 [QT5527] 如果可接的话
@@ -23,7 +23,7 @@ Guidelime.registerGuide(
 如果你做过希利苏斯任务 -- 提交[QT1185]
 如果你做过希利苏斯任务 -- 飞到冬泉谷
 现在我们重新加入并跟随导航！
-[G60.8,37.6Winterspring]提交[QT5163]
+[G60.8,37.6 Winterspring]提交[QT5163]
 [G61.6,38.6]提交[QT4808]
 接受[QA4809]
 旅店内接受[QA6030]. 确保你没有接受杰希卡·查伯斯的任务!!!
@@ -35,10 +35,10 @@ Guidelime.registerGuide(
 [H]炉石到米港
 飞到铁炉堡
 [T]学技能，如果你需要的话
-[G38.6,55.2Ironforge]提交[QT3701]
+[G38.6,55.2 Ironforge]提交[QT3701]
 飞到暴风城
 把所有4个遗物从你的银行里取出来[OC]
-[G48.6,30.6Stormwind City]二楼, 提交[QT5022]
+[G48.6,30.6 Stormwind City]二楼, 提交[QT5022]
 接受[QA5048]
 [G52,43]二楼, 提交[QT5048]
 [G78,17]提交[QT4184]如果你有的话[OC]
@@ -52,19 +52,19 @@ Guidelime.registerGuide(
 接受[QA6184]
 如果你一直在做真正的主人的话,那么久继续,如果不是的话,就跳过下面的真正的主人部分然后飞到冰风岗!
 真正的主人 - 飞到赤脊山
-真正的主人 - [G30,44.2Redridge Mountains]提交[QT4186]
+真正的主人 - [G30,44.2 Redridge Mountains]提交[QT4186]
 真正的主人 - 接受[QA4223]
 真正的主人 - 飞到摩根的岗哨
-真正的主人 - [G84.8,69Burning Steppes]提交[QT4223]
+真正的主人 - [G84.8,69 Burning Steppes]提交[QT4223]
 真正的主人 - 接受[QA4224]
 真正的主人 - [G65.2,23.6]提交[QT4810]
 真正的主人 - 与狼狈不堪的约翰交谈直到你完成 [QC4224]
-真正的主人 - [G84.8,69Burning Steppes]提交[QT4224]
+真正的主人 - [G84.8,69 Burning Steppes]提交[QT4224]
 真正的主人 - 接受[QA4242]
 真正的主人 - 飞到冰风岗
 现在我们重新加入并跟随导航!
 开始找一个队伍去做召唤者阿拉基任务,我们在冰风岗接到了这个让我们去杀他并且这个任务有大量的经验！组队会轻松很多.
-[G42.8,84.2Western Plaguelands]接受[QA5225]
+[G42.8,84.2 Western Plaguelands]接受[QA5225]
 提交[QT5801] 如果你做过这个的话
 接受[QA5803]
 与弗林特·沙多摩尔交谈提交[QT6184]
@@ -80,7 +80,7 @@ Guidelime.registerGuide(
 提交[QT5225] 大锅处
 接受[QA5226]
 沿着主干道向东进入东瘟疫之地.[OC]
-[G7.5,43.7Eastern Plaguelands]接受 [QA5542]
+[G7.5,43.7 Eastern Plaguelands]接受 [QA5542]
 接受[QA5543]
 接受[QA5544]
 在前往下一个地点的同时，完成所有三个任务. 幼犬和蝙蝠只在东瘟的右边刷新
@@ -105,7 +105,7 @@ Guidelime.registerGuide(
 [G79.4,63.6]接受[QA5281]
 接受[QA6021]
 飞到冰封岗
-[G42.8,84.2Western Plaguelands]提交[QT5226]
+[G42.8,84.2 Western Plaguelands]提交[QT5226]
 接受[QA5238]
 提交[QT42.8,84]
 提交啊！安多哈尔，如果你完成了的话[OC]
@@ -113,11 +113,11 @@ Guidelime.registerGuide(
 接受[QA6186]
 你可以选择飞回暴风城去提交凋零者任务，但是会很远, 但是如果你不去提交的话那么只能等以后你有空了再自己去提交了.本导航会带你去提交.[OC]
 飞到暴风城
-[G78.7,17.8Stormwind City]提交[QT6186]
+[G78.7,17.8 Stormwind City]提交[QT6186]
 接受[QA6187]
 [H]炉石回到米港
 飞回冰封岗
-[G49,78Western Plaguelands]楼上, 提交[QT5152]
+[G49,78 Western Plaguelands]楼上, 提交[QT5152]
 接受[QA5153]
 [G49,76]外面, 清除白色墓碑周围的怪然后拾取 [QC5153]
 [G39,66]安多哈尔内, 建筑的楼上, 提交[QT5153]
@@ -135,7 +135,7 @@ Guidelime.registerGuide(
 提交[QT5154]
 接受[QA5210]
 向北行驶到主路, 走出安多哈尔, 沿着这条路到东瘟疫
-[G7.5,43.7Eastern Plaguelands]
+[G7.5,43.7 Eastern Plaguelands]
 提交[QT5542]
 提交[QT5543]
 提交[QT5544]
@@ -147,7 +147,7 @@ Guidelime.registerGuide(
 [G28,86]站在土堆上, 右键土堆召唤4个怪. 呆在土堆上直到你拾取了锤子. 击杀有名字的怪病拾取它的锤子.[QC5781]
 [G27,86]墓室中, 进入地窖并击杀 流亡者塞达尔 [QC6021]
 在地上点击大卷轴 [QA6024]
-[G7.5,43.7Eastern Plaguelands]提交[QT5781]
+[G7.5,43.7 Eastern Plaguelands]提交[QT5781]
 接受[QA5845]
 向东跑到礼拜堂[OC]
 [G81.4,59.6]提交[QT5210]
@@ -176,10 +176,10 @@ Guidelime.registerGuide(
 接受[QA6389]
 右击箱子顶部的桶，完成[QC6389]
 绕着山跑然后过河回到弗丁处[OC]
-[G7.5,43.7Eastern Plaguelands]提交[QT5845]
+[G7.5,43.7 Eastern Plaguelands]提交[QT5845]
 接受[QA5846]
 [G28,86]与土堆交谈提交 [QT6024]
-[G65,75Western Plaguelands]提交[QT5846]
+[G65,75 Western Plaguelands]提交[QT5846]
 接受[QA5848]这是一个起始任务, 但是作为奖励有会有在你Raid前很棒的装备
 回到冰封岗[OC]
 纳萨尼尔·杜马处提交[QT6389]

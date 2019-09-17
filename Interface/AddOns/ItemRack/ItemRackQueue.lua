@@ -26,7 +26,7 @@ function ItemRack.ProcessAutoQueue(slot)
 
 	local buff = GetItemSpell(baseID)
 	if buff then
-		if UnitAura("player",buff) or (start>0 and (duration-timeLeft)>30 and timeLeft<1) then
+		if AuraUtil.FindAuraByName(buff,"player") or (start>0 and (duration-timeLeft)>30 and timeLeft<1) then
 			icon:SetDesaturated(1)
 			return
 		end

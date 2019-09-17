@@ -16,7 +16,7 @@ ItemRackSettings = {
 	["LargeNumbers"] = "OFF",
 	["DisableAltClick"] = "OFF",
 	["MenuOnRight"] = "OFF",
-	["IconPos"] = 15.3094013714487,
+	["IconPos"] = 24.6379289260078,
 	["CooldownCount"] = "OFF",
 	["NotifyThirty"] = "OFF",
 	["AnotherOther"] = "OFF",
@@ -132,9 +132,11 @@ ItemRackEvents = {
 		["Type"] = "Stance",
 	},
 	["骑术装"] = {
-		["Unequip"] = 1,
+		["Unequip"] = true,
 		["Type"] = "Buff",
-		["Anymount"] = 1,
+		["Anymount"] = true,
+		["Buff"] = "Any mount",
+		["NotInPVP"] = false,
 	},
 	["获得Buffs"] = {
 		["Trigger"] = "UNIT_AURA",

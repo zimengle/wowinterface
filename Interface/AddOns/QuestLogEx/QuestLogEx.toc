@@ -14,3 +14,6 @@ embeds.xml
 core.lua
 db.lua
 QuestLogEx.xml
+## Q-CAT-Version: 102
+
+## Q-CAT-Version: 103

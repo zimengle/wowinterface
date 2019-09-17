@@ -1,10 +1,28 @@
-lightweight tag 4228d5e42980ece74d233222ccf4a120a7dab1c1 v11302-1.0.7
+lightweight tag c0e9d50624cd1934aaa23bc61b17990306bcaed9 v80200-1.0.0
 Author:	Ludovicus <ludovicus.maior@gmail.com>
-Date:	Sun Aug 25 15:06:44 2019 -0400
+Date:	Tue Jun 25 18:03:19 2019 -0400
 
-commit 4228d5e42980ece74d233222ccf4a120a7dab1c1
+commit c0e9d50624cd1934aaa23bc61b17990306bcaed9
 Author: Ludovicus <ludovicus.maior@gmail.com>
-Date:   Sun Aug 25 15:06:44 2019 -0400
+Date:   Tue Jun 25 18:01:38 2019 -0400
 
-    Add Interface for Classic.
+    Make comparison only using lowercase letters and no spaces (UTF-8 safety)
+
+commit c61ee88ab4054f8df582b5d73bc83abd7d668891
+Author: Ludovicus <ludovicus.maior@gmail.com>
+Date:   Mon Jun 24 19:51:29 2019 -0400
+
+    Bug #441:  Allow UIMapType.Continent for zones.
+
+commit 7cc3f9cd99294b2859630e2dee3403666d419544
+Author: Ludovicus <ludovicus.maior@gmail.com>
+Date:   Mon Jun 24 19:46:55 2019 -0400
+
+    Accept only maps that exist in a world for names.
+
+commit 8ad3eaa72b654d21ec660b1d3b9c0a7543495791
+Author: Ludovicus <ludovicus.maior@gmail.com>
+Date:   Mon Jun 24 19:29:43 2019 -0400
+
+    Bug #447: hbd:GetZoneDistance() may return nil
 

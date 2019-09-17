@@ -1,8 +1,7 @@
-#retail ## Interface: 80200
-## Interface: 11302
+## Interface: 80100
 ## Title: TomTom
 ## Author: jnwhiteh
-## Version: v11302-1.0.7
+## Version: v80200-1.0.0
 ## License: All Rights Reserved
 ## Notes: Acts as your portable navigation assistant
 ## Notes-frFR: Agit comme un assistant de navigation portable
@@ -43,3 +42,5 @@ TomTom_Corpse.lua
 TomTom_POIIntegration.lua
 
 TomTom_Config.lua
+
+## Q-CAT-Version: 101

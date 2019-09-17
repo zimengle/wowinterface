@@ -1,13 +1,9 @@
-local function GetSpecialization()
-	return 0;
-end
-
 ItemRack = {}
 
 local disable_delayed_swaps = nil -- temporary. change nil to 1 to stop attempting to delay set swaps while casting
 local _
 
-ItemRack.Version = "3.06"
+ItemRack.Version = "3.12"
 
 ItemRackUser = {
 	Sets = {}, -- user's sets
@@ -95,9 +91,9 @@ ItemRack.SlotInfo = {
 	[13] = { name="Trinket0Slot", real="Top Trinket", INVTYPE_TRINKET=1, other=14 },
 	[14] = { name="Trinket1Slot", real="Bottom Trinket", INVTYPE_TRINKET=1, other=13 },
 	[15] = { name="BackSlot", real="Cloak", INVTYPE_CLOAK=1 },
-	[16] = { name="MainHandSlot", real="Main hand", INVTYPE_WEAPONMAINHAND=1, INVTYPE_2HWEAPON=1, INVTYPE_WEAPON=1, INVTYPE_RANGED=1, INVTYPE_RANGEDRIGHT=1, other=17 },
-	[17] = { name="SecondaryHandSlot", real="Off hand", INVTYPE_WEAPON=1, INVTYPE_WEAPONOFFHAND=1, INVTYPE_SHIELD=1, INVTYPE_HOLDABLE=1, other=16 },
-	[18] = { name="RangedSlot", real="Ranged", INVTYPE_THROWN=1, INVTYPE_RELIC=1 },
+	[16] = { name="MainHandSlot", real="Main hand", INVTYPE_WEAPONMAINHAND=1, INVTYPE_2HWEAPON=1, INVTYPE_WEAPON=1, other=17, swappable=true },
+	[17] = { name="SecondaryHandSlot", real="Off hand", INVTYPE_WEAPON=1, INVTYPE_WEAPONOFFHAND=1, INVTYPE_SHIELD=1, INVTYPE_HOLDABLE=1, other=16, swappable=true },
+	[18] = { name="RangedSlot", real="Ranged", INVTYPE_RANGED=1, INVTYPE_RANGEDRIGHT=1, INVTYPE_THROWN=1, INVTYPE_RELIC=1, swappable=true },
 	[19] = { name="TabardSlot", real="Tabard", INVTYPE_TABARD=1 },
 }
 
@@ -149,10 +145,6 @@ ItemRack.TooltipInfo = {
 	{"ItemRackOptToggleInvAll","切换所有","切换所有插槽"}
 }
 
--- little fixes for Classic
-local UnitCastingInfo = _G.UnitCastingInfo or _G.CastingInfo
-ItemRack.isClassicWow = select(4,GetBuildInfo()) < 20000
-
 ItemRack.BankOpen = nil -- 1 if bank is open, nil if not
 
 ItemRack.LastCurrentSet = nil -- last known current set
@@ -187,12 +179,10 @@ function ItemRack.OnPlayerLogin()
 	handler.UNIT_SPELLCAST_SUCCEEDED = ItemRack.OnCastingStop
 	handler.UNIT_SPELLCAST_INTERRUPTED = ItemRack.OnCastingStop
 	handler.CHARACTER_POINTS_CHANGED = ItemRack.UpdateClassSpecificStuff
-	if not ItemRack.isClassicWow then
-		handler.PLAYER_TALENT_UPDATE = ItemRack.UpdateClassSpecificStuff
-		handler.ACTIVE_TALENT_GROUP_CHANGED = ItemRack.UpdateClassSpecificStuff
-		handler.PET_BATTLE_OPENING_START = ItemRack.OnEnteringPetBattle
-		handler.PET_BATTLE_CLOSE = ItemRack.OnLeavingPetBattle
-	end
+	handler.PLAYER_TALENT_UPDATE = ItemRack.UpdateClassSpecificStuff
+	handler.ACTIVE_TALENT_GROUP_CHANGED = ItemRack.UpdateClassSpecificStuff
+--	handler.PET_BATTLE_OPENING_START = ItemRack.OnEnteringPetBattle
+--	handler.PET_BATTLE_CLOSE = ItemRack.OnLeavingPetBattle
 
 	ItemRack.InitCore()
 	ItemRack.InitButtons()
@@ -315,26 +305,17 @@ end
 function ItemRack.UpdateClassSpecificStuff()
 	local _,class = UnitClass("player")
 
-	if class=="WARRIOR" or class=="ROGUE" or class=="HUNTER" or class=="DEATHKNIGHT" or class=="MONK" then
+	if class=="WARRIOR" or class=="ROGUE" or class=="HUNTER" or class=="MAGE" or class=="WARLOCK" then
 		ItemRack.CanWearOneHandOffHand = 1
 	end
 
 	if class=="WARRIOR" then
-		if (GetSpecialization() == 2) then
-			ItemRack.HasTitansGrip = 1
-			ItemRack.SlotInfo[17].INVTYPE_2HWEAPON = 1
-		else
-			ItemRack.HasTitansGrip = nil
-			ItemRack.SlotInfo[17].INVTYPE_2HWEAPON = nil
-		end
+		ItemRack.HasTitansGrip = nil
+		ItemRack.SlotInfo[17].INVTYPE_2HWEAPON = nil
 	end
 
 	if class=="SHAMAN" then
-		if (GetSpecialization() == 2) then
-			ItemRack.CanWearOneHandOffHand = 1
-		else
-			ItemRack.CanWearOneHandOffHand = nil
-		end
+		ItemRack.CanWearOneHandOffHand = 1
 	end
 end
 
@@ -386,19 +367,17 @@ function ItemRack.InitCore()
 	ItemRackFrame:RegisterEvent("BANKFRAME_CLOSED")
 	ItemRackFrame:RegisterEvent("BANKFRAME_OPENED")
 	ItemRackFrame:RegisterEvent("CHARACTER_POINTS_CHANGED")
-	if not ItemRack.isClassicWow then
-		ItemRackFrame:RegisterEvent("PLAYER_TALENT_UPDATE")
-		ItemRackFrame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-		ItemRackFrame:RegisterEvent("PET_BATTLE_OPENING_START")
-		ItemRackFrame:RegisterEvent("PET_BATTLE_CLOSE")
-	end
+	-- ItemRackFrame:RegisterEvent("PLAYER_TALENT_UPDATE")
+	-- ItemRackFrame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+	-- ItemRackFrame:RegisterEvent("PET_BATTLE_OPENING_START")
+	-- ItemRackFrame:RegisterEvent("PET_BATTLE_CLOSE")
 	if not disable_delayed_swaps then
 		-- in the event delayed swaps while casting don't work well,
 		-- make disable_delayed_swaps=1 at top of this file to disable it
-		ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_START")
-		ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_STOP")
-		ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-		ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
+		-- ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_START")
+		-- ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_STOP")
+		-- ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+		-- ItemRackFrame:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
 	end
 	ItemRack.StartTimer("CooldownUpdate")
 	ItemRack.MoveMinimap()
@@ -479,11 +458,7 @@ end
 -- itemrack itemstring updater.
 -- takes a saved ItemRack-style ID and returns an updated version with the latest player level and spec injected, which helps us update outdated IDs saved when the player was lower level or different spec
 function ItemRack.UpdateIRString(itemRackID)
-	if ItemRack.isClassicWow then
-		return (string.gsub(itemRackID or "", "^("..strrep("%d+:", 8)..")%d+", "%1"..UnitLevel("player"))) --note: parenthesis to discard 2nd return value (number of substitutions, which will always be 1)
-	else
-		return (string.gsub(itemRackID or "", "^("..strrep("%d+:", 8)..")%d+:%d+", "%1"..UnitLevel("player")..":"..GetInspectSpecialization("player"))) --note: parenthesis to discard 2nd return value (number of substitutions, which will always be 1
-	end
+	return (string.gsub(itemRackID or "", "^("..strrep("%d+:", 8)..")%d+:%d+", "%1"..UnitLevel("player")..":"..GetInspectSpecialization("player"))) --note: parenthesis to discard 2nd return value (number of substitutions, which will always be 1)
 end
 
 -- returns the provided ItemRack-style ID string with "item:" prepended, which turns it into a normal itemstring which we can then use for item lookups, itemlink generation and so on.
@@ -1310,7 +1285,7 @@ end
 function ItemRack.IsPlayerReallyDead()
 	local dead = UnitIsDeadOrGhost("player")
 	if select(2,UnitClass("player"))=="HUNTER" then
-		if GetLocale()=="zhCN" and AuraUtil.FindAuraByName("假死", "player") then
+		if GetLocale()=="enUS" and AuraUtil.FindAuraByName("Feign Death", "player") then
 			return nil
 		else
 			for i=1,40 do
@@ -1450,7 +1425,7 @@ function ItemRack.TooltipUpdate()
 		end
 		ItemRack.ShrinkTooltip(ItemRack.TooltipOwner) -- if TinyTooltips on, shrink it
 		if ItemRack.TooltipType=="INVENTORY" and ItemRack.TooltipBag then
-			GameTooltip:AddLine("队列: "..ItemRack.TooltipBag)
+			GameTooltip:AddLine("Queued: "..ItemRack.TooltipBag)
 		end
 		GameTooltip:Show()
 		if cooldown==0 then
@@ -1583,7 +1558,7 @@ function ItemRack.CooldownUpdate()
 				if ItemRackSettings.NotifyThirty=="ON" then
 					name = GetItemInfo(i)
 					if name then
-						ItemRack.Notify(name.." 即将就绪!")
+						ItemRack.Notify(name.." ready soon!")
 					end
 				end
 				ItemRackUser.ItemsUsed[i]=5 -- tag for just 0 notify now
@@ -1591,7 +1566,7 @@ function ItemRack.CooldownUpdate()
 				if ItemRackSettings.Notify=="ON" then
 					name = GetItemInfo(i)
 					if name then
-						ItemRack.Notify(name.." 就绪!")
+						ItemRack.Notify(name.." ready!")
 					end
 				end
 			end
@@ -1910,12 +1885,12 @@ function ItemRack.SlashHandler(arg1)
 	elseif arg1=="opt" or arg1=="options" or arg1=="config" then
 		ItemRack.ToggleOptions()
 	else
-		ItemRack.Print("/itemrack opt : 打开选项窗口.")
-		ItemRack.Print("/itemrack equip set name : 装备装备集 '名字'.")
-		ItemRack.Print("/itemrack toggle set name[, second set] : 切换装备集 '名字'.")
-		ItemRack.Print("/itemrack reset : 重置设置.")
-		ItemRack.Print("/itemrack reset everything : 重置所有为默认")
-		ItemRack.Print("/itemrack lock/unlock : 锁定/解锁按钮.")
+		ItemRack.Print("/itemrack opt : summons options window.")
+		ItemRack.Print("/itemrack equip set name : equip set 'set name'.")
+		ItemRack.Print("/itemrack toggle set name[, second set] : toggles set 'set name'.")
+		ItemRack.Print("/itemrack reset : resets buttons and their settings.")
+		ItemRack.Print("/itemrack reset everything : wipes ItemRack to default.")
+		ItemRack.Print("/itemrack lock/unlock : locks/unlocks the buttons.")
 	end
 
 end
@@ -1985,8 +1960,8 @@ end
 
 function ItemRack.ResetEverything()
 	StaticPopupDialogs["ItemRackCONFIRMRESET"] = {
-		text = "这将使itemRack恢复到默认状态, 擦除所有设置、按钮、事件和设置.\n将重新加载UI。继续吗？",
-		button1 = "是", button2 = "不", timeout = 0, hideOnEscape = 1, showAlert = 1,
+		text = "This will restore ItemRack to its default state, wiping all sets, buttons, events and settings.\nThe UI will be reloaded. Continue?",
+		button1 = "Yes", button2 = "No", timeout = 0, hideOnEscape = 1, showAlert = 1,
 		OnAccept = function() ItemRackUser=nil ItemRackSettings=nil ItemRackItems=nil ItemRackEvents=nil ReloadUI() end
 	}
 	StaticPopup_Show("ItemRackCONFIRMRESET")
@@ -2015,3 +1990,12 @@ function ItemRack.ProfileFuncs()
 		table.insert(TinyPadPages,info)
 	end
 end
+
+function GetInspectSpecialization()
+	return 0;
+end
+
+function GetSpecialization()
+	return 0;
+end
+

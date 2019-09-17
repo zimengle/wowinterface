@@ -310,6 +310,7 @@ data["MiscSets"] = {
 
 data["Azuregos"] = {
 	name = AL["Azuregos"],
+	AtlasMapFile = "Azuregos",
 	ContentType = WORLD_BOSS_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
 	ContentPhase = 2,
@@ -318,6 +319,7 @@ data["Azuregos"] = {
 			name = AL["Azuregos"],
 			npcId = 6109,
 			DisplayIDs = {{11460}},
+			AtlasMapBossID = 1,
 			[NORMAL_DIFF] = {
 				{ 1,  19132 }, -- Crystal Adorned Crown
 				{ 2,  18208 }, -- Drape of Benediction
@@ -336,6 +338,7 @@ data["Azuregos"] = {
 			name = AL["Spirit of Azuregos"],
 			npcId = 15481,
 			DisplayIDs = {{15473}},
+			AtlasMapBossID = 1,
 			ExtraList = true,
 			[NORMAL_DIFF] = {
 				{ 1,  20949 }, -- Magical Ledger
@@ -346,6 +349,7 @@ data["Azuregos"] = {
 
 data["LordKazzak"] = {
 	name = AL["Lord Kazzak"],
+	AtlasMapFile = "LordKazzak",
 	ContentType = WORLD_BOSS_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
 	ContentPhase = 2,
@@ -354,6 +358,7 @@ data["LordKazzak"] = {
 			name = AL["Lord Kazzak"],
 			npcId = 12397,
 			DisplayIDs = {{12449}},
+			AtlasMapBossID = 1,
 			[NORMAL_DIFF] = {
 				{ 1,  18546 }, -- Infernal Headcage
 				{ 2,  17111 }, -- Blazefury Medallion
@@ -373,6 +378,7 @@ data["LordKazzak"] = {
 
 data["DragonsOfNightmare"] = {
 	name = AL["Dragons of Nightmare"],
+	AtlasMapFile = "FourDragons",
 	ContentType = WORLD_BOSS_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
 	ContentPhase = 4,
@@ -594,6 +600,70 @@ data["WorldEpics"] = {
 	},
 }
 
+data["Mounts"] = {
+	name = ALIL["Mounts"],
+	ContentType = COLLECTIONS_CONTENT,
+	LoadDifficulty = LOAD_DIFF,
+	TableType = NORMAL_ITTYPE,
+	items = {
+		{
+			name = AL["Faction Mounts"],
+			[ALLIANCE_DIFF] = {
+				{ 1,  18785 }, -- Swift White Ram
+				{ 2,  18786 }, -- Swift Brown Ram
+				{ 3,  18787 }, -- Swift Gray Ram
+				{ 16,  5873 }, -- White Ram
+				{ 17,  5872 }, -- Brown Ram
+				{ 18,  5864 }, -- Gray Ram
+				{ 5,  18772 }, -- Swift Green Mechanostrider
+				{ 6,  18773 }, -- Swift White Mechanostrider
+				{ 7,  18774 }, -- Swift Yellow Mechanostrider
+				{ 20,  13321 }, -- Green Mechanostrider
+				{ 21,  13322 }, -- Unpainted Mechanostrider
+				{ 22,  8563 }, -- Red Mechanostrider
+				{ 23,  8595 }, -- Blue Mechanostrider
+				{ 9,  18776 }, -- Swift Palomino
+				{ 10,  18777 }, -- Swift Brown Steed
+				{ 11,  18778 }, -- Swift White Steed
+				{ 24,  2414 }, -- Pinto Bridle
+				{ 25,  5656 }, -- Brown Horse Bridle
+				{ 26,  5655 }, -- Chestnut Mare Bridle
+				{ 27,  2411 }, -- Black Stallion Bridle
+				{ 13,  18902 }, -- Reins of the Swift Stormsaber
+				{ 14,  18767 }, -- Reins of the Swift Mistsaber
+				{ 15,  18766 }, -- Reins of the Swift Frostsaber
+				{ 28,  8632 }, -- Reins of the Spotted Frostsaber
+				{ 29,  8631 }, -- Reins of the Striped Frostsaber
+				{ 30,  8629 }, -- Reins of the Striped Nightsaber
+			},
+			[HORDE_DIFF] = {
+				{ 1,  18798 }, -- Horn of the Swift Gray Wolf
+				{ 2,  18797 }, -- Horn of the Swift Timber Wolf
+				{ 3,  18796 }, -- Horn of the Swift Brown Wolf
+				{ 16,  5668 }, -- Horn of the Brown Wolf
+				{ 17,  5665 }, -- Horn of the Dire Wolf
+				{ 18,  1132 }, -- Horn of the Timber Wolf
+				{ 5,  18795 }, -- Great Gray Kodo
+				{ 6,  18794 }, -- Great Brown Kodo
+				{ 7,  18793 }, -- Great White Kodo
+				{ 20,  15290 }, -- Brown Kodo
+				{ 21,  15277 }, -- Gray Kodo
+				{ 9,  18790 }, -- Swift Orange Raptor
+				{ 10,  18789 }, -- Swift Olive Raptor
+				{ 11,  18788 }, -- Swift Blue Raptor
+				{ 24,  8592 }, -- Whistle of the Violet Raptor
+				{ 25,  8591 }, -- Whistle of the Turquoise Raptor
+				{ 26,  8588 }, -- Whistle of the Emerald Raptor
+				{ 13,  18791 }, -- Purple Skeletal Warhorse
+				{ 14,  13334 }, -- Green Skeletal Warhorse
+				{ 28,  13333 }, -- Brown Skeletal Horse
+				{ 29,  13332 }, -- Blue Skeletal Horse
+				{ 30,  13331 }, -- Red Skeletal Horse
+			},
+		},
+	},
+}
+
 data["Tabards"] = {
 	name = ALIL["Tabard"],
 	ContentType = COLLECTIONS_CONTENT,
@@ -691,13 +761,13 @@ data["ChildrensWeek"] = {
 }
 
 data["Valentineday"] = {
-	name = AL["Valentineday"],
+	name = AL["Love is in the Air"],
 	ContentType = WORLD_EVENT_CONTENT,
 	LoadDifficulty = NORMAL_DIFF,
 	TableType = NORMAL_ITTYPE,
 	items = {
 		{ -- Valentineday
-			name = AL["Valentineday"],
+			name = AL["Love is in the Air"],
 			[NORMAL_DIFF] = {
 				{ 1,  22206 }, -- Bouquet of Red Roses
 				{ 3, "INV_ValentinesBoxOfChocolates02", nil, AL["Gift of Adoration"] },

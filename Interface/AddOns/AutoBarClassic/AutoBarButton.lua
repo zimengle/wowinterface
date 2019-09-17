@@ -217,7 +217,7 @@ local snippetOnClick = [[
 		anchorButton:SetAttribute("macroName", self:GetAttribute("macroName"))
 		anchorButton:SetAttribute("macroBody", self:GetAttribute("macroBody"))
 	end
-	
+
 
 	-- Move the right click attributes
 	itemType = self:GetAttribute("type2")
@@ -260,7 +260,7 @@ local function UpdateHandlers(frame, sourceButton)
 	local buttonKey = frame.class.buttonName
 	local itemType = frame:GetAttribute("type")
 	local item_guid = frame:GetAttribute("AutoBarGUID")
-	
+
 	if(item_guid) then
 		itemId = item_guid
 	elseif (itemType) then
@@ -331,7 +331,7 @@ function AutoBarButton.prototype:SetupPopups(nItems)
 		splitRelativeSide = "BOTTOM"
 		splitPaddingY = -padding
 	end
-	
+
 	local max_popup_height = self.buttonDB.max_popup_height or MAX_POPUP_HEIGHT
 
 	-- For gigantic popups, split it up into a block
@@ -792,7 +792,7 @@ function AutoBarButton.prototype:SetupAttributes(button, bag, slot, spell, macro
 				button.macroActive = true
 				frame:SetAttribute("macroName", macroInfo.macroName)
 				frame:SetAttribute("macroBody", macroInfo.macroText)
-				
+
 				frame:SetAttribute("macro_action", macroInfo.macro_action)
 				--frame:SetAttribute("macro_tooltip", macroInfo.macro_tooltip)
 				frame:SetAttribute("itemLink", macroInfo.macro_tooltip)
@@ -1226,17 +1226,6 @@ function AutoBarButtonCustom.prototype:CreateButtonFrame()
 end
 
 
-local spellAquaticForm, spellAquaticFormIcon
-local spellTreeOfLifeForm, spellTreeOfLifeFormIcon
-local spellMoonkinForm, spellMoonkinFormIcon
-
-spellMoonkinForm, _, spellMoonkinFormIcon = AutoBar:LoggedGetSpellInfo(24858)
-spellAquaticForm, _, spellAquaticFormIcon = AutoBar:LoggedGetSpellInfo(1066)
-spellTreeOfLifeForm, _, spellTreeOfLifeFormIcon = AutoBar:LoggedGetSpellInfo(114282)
-
-
-
-
 local AutoBarButtonBear = AceOO.Class(AutoBarButton)
 AutoBar.Class["AutoBarButtonBear"] = AutoBarButtonBear
 
@@ -1278,6 +1267,16 @@ function AutoBarButtonCat.prototype:init(parentBar, buttonDB)
 
 end
 
+local AutoBarButtonAquatic = AceOO.Class(AutoBarButton)
+AutoBar.Class["AutoBarButtonAquatic"] = AutoBarButtonAquatic
+
+function AutoBarButtonAquatic.prototype:init(parentBar, buttonDB)
+	AutoBarButtonAquatic.super.prototype.init(self, parentBar, buttonDB)
+
+	self:AddCategory("Spell.AquaticForm")
+
+end
+
 
 local AutoBarButtonCharge = AceOO.Class(AutoBarButton)
 AutoBar.Class["AutoBarButtonCharge"] = AutoBarButtonCharge
@@ -1306,16 +1305,6 @@ function AutoBarButtonTravel.prototype:init(parentBar, buttonDB)
 	AutoBarButtonTravel.super.prototype.init(self, parentBar, buttonDB)
 
 	self:AddCategory("Spell.Travel")
-
-end
-
-local AutoBarButtonStagForm = AceOO.Class(AutoBarButton)
-AutoBar.Class["AutoBarButtonStagForm"] = AutoBarButtonStagForm
-
-function AutoBarButtonStagForm.prototype:init(parentBar, buttonDB)
-	AutoBarButtonStagForm.super.prototype.init(self, parentBar, buttonDB)
-
-	self:AddCategory("Spell.StagForm")
 
 end
 
@@ -1390,7 +1379,7 @@ function AutoBarButtonFishing.prototype:init(parentBar, buttonDB)
 	self:AddCategory("Muffin.Skill.Fishing.Lure")
 	self:AddCategory("Muffin.Skill.Fishing.Misc")
 	self:AddCategory("Muffin.Skill.Fishing.Rare Fish")
-	
+
 	self:AddCategory("Tradeskill.Tool.Fishing.Gear")
 	self:AddCategory("Tradeskill.Tool.Fishing.Other")
 	self:AddCategory("Tradeskill.Tool.Fishing.Tool")
@@ -1593,10 +1582,6 @@ function AutoBarButtonHearth.prototype:init(parentBar, buttonDB)
 	self:AddCategory("Misc.Hearth")
 end
 
-function AutoBarButtonHearth.prototype:AddOptions(optionList, passValue)
-	self:SetOptionBoolean(optionList, passValue, "hearth_include_ancient_dalaran", L["HearthIncludeAncientDalaran"])
-end
-
 
 local AutoBarButtonPickLock = AceOO.Class(AutoBarButton)
 AutoBar.Class["AutoBarButtonPickLock"] = AutoBarButtonPickLock
@@ -1636,7 +1621,7 @@ AutoBar.Class["AutoBarButtonReputation"] = AutoBarButtonReputation
 function AutoBarButtonReputation.prototype:init(parentBar, buttonDB)
 	AutoBarButtonReputation.super.prototype.init(self, parentBar, buttonDB)
 
-	self:AddCategory("Muffin.Reputation")
+	self:AddCategory("Muffin.Misc.Reputation")
 end
 
 
@@ -1648,6 +1633,7 @@ function AutoBarButtonQuest.prototype:init(parentBar, buttonDB)
 
 	self:AddCategory("Misc.Usable.StartsQuest")
 	self:AddCategory("Muffin.Misc.Quest")
+	self:AddCategory("Muffin.Misc.StartsQuest")
 	self:AddCategory("Misc.Usable.BossItem")
 	self:AddCategory("Dynamic.Quest")
 end
@@ -1771,7 +1757,7 @@ AutoBar.Class["AutoBarButtonCooldownStoneMana"] = AutoBarButtonCooldownStoneMana
 function AutoBarButtonCooldownStoneMana.prototype:init(parentBar, buttonDB)
 	AutoBarButtonCooldownStoneMana.super.prototype.init(self, parentBar, buttonDB)
 
-	if (AutoBar.CLASS ~= "ROGUE" and AutoBar.CLASS ~= "WARRIOR") then
+	if (AutoBar:ClassUsesMana(AutoBar.CLASS)) then
 		self:AddCategory("Consumable.Cooldown.Stone.Mana.Other")
 	end
 end
@@ -1826,9 +1812,7 @@ AutoBar.Class["AutoBarButtonStance"] = AutoBarButtonStance
 function AutoBarButtonStance.prototype:init(parentBar, buttonDB)
 	AutoBarButtonStance.super.prototype.init(self, parentBar, buttonDB)
 
-	if (AutoBar.CLASS == "WARRIOR") then
-		self:AddCategory("Spell.Stance")
-	end
+	self:AddCategory("Spell.Stance")
 end
 
 function AutoBarButtonStance.prototype:GetLastUsed()
@@ -1847,16 +1831,6 @@ function AutoBarButtonStealth.prototype:init(parentBar, buttonDB)
 	self:AddCategory("Spell.Stealth")
 end
 
-
-
-local AutoBarButtonGuildSpell = AceOO.Class(AutoBarButton)
-AutoBar.Class["AutoBarButtonGuildSpell"] = AutoBarButtonGuildSpell
-
-function AutoBarButtonGuildSpell.prototype:init(parentBar, buttonDB)
-	AutoBarButtonGuildSpell.super.prototype.init(self, parentBar, buttonDB)
-
-	self:AddCategory("Spell.Guild")
-end
 
 
 --------------------------------------------------ADDING NEW FUNCTIONALITY HERE
@@ -2036,6 +2010,14 @@ function AutoBarButtonTotemWater.prototype:UpdateCooldown()
 	end
 end
 
+local AutoBarButtonTrack = AceOO.Class(AutoBarButton)
+AutoBar.Class["AutoBarButtonTrack"] = AutoBarButtonTrack
+
+function AutoBarButtonTrack.prototype:init(parentBar, buttonDB)
+	AutoBarButtonTrack.super.prototype.init(self, parentBar, buttonDB)
+
+	self:AddCategory("Spell.Track")
+end
 
 local AutoBarButtonTrap = AceOO.Class(AutoBarButton)
 AutoBar.Class["AutoBarButtonTrap"] = AutoBarButtonTrap

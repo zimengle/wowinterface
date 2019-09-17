@@ -4,3 +4,11 @@ ConsolePort: enabled
 ElvUI: disabled
 ConsolePortBar: enabled
 StatCompare: disabled
+Recount: enabled
+Details_EncounterDetails: enabled
+Details: disabled
+BigWigs_Plugins: enabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+Prat-3.0: disabled
+Prat-3.0_Libraries: disabled

@@ -134,7 +134,8 @@ addon_data.player.OnCombatLogUnfiltered = function(combat_info)
             local miss_type, is_offhand = select(12, unpack(combat_info))
             addon_data.core.MissHandler("player", miss_type, is_offhand)
         elseif (event == "SPELL_DAMAGE") or (event == "SPELL_MISSED") then
-            addon_data.core.SpellHandler("player", spell_name)
+            local _, _, _, _, _, _, spell_id = GetSpellInfo(spell_name)
+            addon_data.core.SpellHandler("player", spell_id)
         end
     end
     
@@ -306,7 +307,7 @@ addon_data.player.UpdateVisualsOnSettingsChange = function()
                 bgFile = "Interface/AddOns/WeaponSwingTimer/Images/Background", 
                 edgeFile = nil, 
                 tile = true, tileSize = 16, edgeSize = 16, 
-                insets = { left = 11, right = 11, top = 11, bottom = 11}})
+                insets = { left = 8, right = 8, top = 8, bottom = 8}})
         end
         frame.backplane:SetBackdropColor(0,0,0,settings.backplane_alpha)
         frame.main_bar:SetPoint("TOPLEFT", 0, 0)
@@ -415,12 +416,12 @@ addon_data.player.InitializeVisuals = function()
     frame.main_spark:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Spark')
     -- Create the main hand bar left text
     frame.main_left_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.main_left_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.main_left_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.main_left_text:SetJustifyV("CENTER")
     frame.main_left_text:SetJustifyH("LEFT")
     -- Create the main hand bar right text
     frame.main_right_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.main_right_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.main_right_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.main_right_text:SetJustifyV("CENTER")
     frame.main_right_text:SetJustifyH("RIGHT")
     -- Create the off hand bar
@@ -430,12 +431,12 @@ addon_data.player.InitializeVisuals = function()
     frame.off_spark:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Spark')
     -- Create the off hand bar left text
     frame.off_left_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.off_left_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.off_left_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.off_left_text:SetJustifyV("CENTER")
     frame.off_left_text:SetJustifyH("LEFT")
     -- Create the off hand bar right text
     frame.off_right_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.off_right_text:SetFont("Fonts/FRIZQT__.ttf", 10)
+    frame.off_right_text:SetFont("Fonts/ARHei.ttf", 10)
     frame.off_right_text:SetJustifyV("CENTER")
     frame.off_right_text:SetJustifyH("RIGHT")
     -- Show it off
@@ -662,7 +663,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
     local settings = character_player_settings
     
     -- Title Text
-    panel.title_text = addon_data.config.TextFactory(panel, "玩家攻击条设置", 20)
+    panel.title_text = addon_data.config.TextFactory(panel, "玩家近战条设置", 20)
     panel.title_text:SetPoint("TOPLEFT", 10, -10)
     panel.title_text:SetTextColor(1, 0.82, 0, 1)
     
@@ -694,7 +695,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
     panel.classic_bars_checkbox = addon_data.config.CheckBoxFactory(
         "PlayerClassicBarsCheckBox",
         panel,
-        " Classic 条",
+        " 经典风格",
         "Enables the classic texture for the player's bars.",
         addon_data.player.ClassicBarsCheckBoxOnClick)
     panel.classic_bars_checkbox:SetPoint("TOPLEFT", 10, -100)
@@ -702,15 +703,15 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
     panel.fill_empty_checkbox = addon_data.config.CheckBoxFactory(
         "PlayerFillEmptyCheckBox",
         panel,
-        " 满或空",
-        "反转你的条，当一个攻击ok时选择显示满条还是空条",
+        " 反向显示",
+        "Determines if the bar is full or empty when a swing is ready.",
         addon_data.player.FillEmptyCheckBoxOnClick)
     panel.fill_empty_checkbox:SetPoint("TOPLEFT", 10, -120)
     -- Show Left Text Checkbox
     panel.show_left_text_checkbox = addon_data.config.CheckBoxFactory(
         "PlayerShowLeftTextCheckBox",
         panel,
-        " 显示左文本",
+        " 左侧文字",
         "Enables the player's left side text.",
         addon_data.player.ShowLeftTextCheckBoxOnClick)
     panel.show_left_text_checkbox:SetPoint("TOPLEFT", 10, -140)
@@ -718,7 +719,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
     panel.show_right_text_checkbox = addon_data.config.CheckBoxFactory(
         "PlayerShowRightTextCheckBox",
         panel,
-        " 显示右文本",
+        " 右侧文字",
         "Enables the player's right side text.",
         addon_data.player.ShowRightTextCheckBoxOnClick)
     panel.show_right_text_checkbox:SetPoint("TOPLEFT", 10, -160)
@@ -765,7 +766,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
         'PlayerMainColorPicker',
         panel,
         settings.main_r, settings.main_g, settings.main_b, settings.main_a,
-        '主手颜色',
+        '主手条颜色',
         addon_data.player.MainColorPickerOnClick)
     panel.main_color_picker:SetPoint('TOPLEFT', 205, -150)
     -- Main-hand color text picker
@@ -773,7 +774,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
         'PlayerMainTextColorPicker',
         panel,
         settings.main_text_r, settings.main_text_g, settings.main_text_b, settings.main_text_a,
-        '主手文本颜色',
+        '主手文字颜色',
         addon_data.player.MainTextColorPickerOnClick)
     panel.main_text_color_picker:SetPoint('TOPLEFT', 205, -170)
     -- Off-hand color picker
@@ -781,7 +782,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
         'PlayerOffColorPicker',
         panel,
         settings.off_r, settings.off_g, settings.off_b, settings.off_a,
-        '副手颜色',
+        '副手条颜色',
         addon_data.player.OffColorPickerOnClick)
     panel.off_color_picker:SetPoint('TOPLEFT', 205, -200)
     -- Off-hand color text picker
@@ -789,7 +790,7 @@ addon_data.player.CreateConfigPanel = function(parent_panel)
         'PlayerOffTextColorPicker',
         panel,
         settings.off_text_r, settings.off_text_g, settings.off_text_b, settings.off_text_a,
-        '副手文本颜色',
+        '副手文字颜色',
         addon_data.player.OffTextColorPickerOnClick)
     panel.off_text_color_picker:SetPoint('TOPLEFT', 205, -220)
     

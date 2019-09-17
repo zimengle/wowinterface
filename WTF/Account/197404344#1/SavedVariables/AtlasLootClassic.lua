@@ -7,7 +7,7 @@ AtlasLootClassicDB = {
 		["Lua - 沙尔图拉"] = "Lua - 沙尔图拉",
 	},
 	["global"] = {
-		["__addonrevision"] = 1010004,
+		["__addonrevision"] = 1010010,
 	},
 	["profiles"] = {
 		["Typescript - 伦鲁迪洛尔"] = {
@@ -25,13 +25,20 @@ AtlasLootClassicDB = {
 		},
 		["Typescript - 沙尔图拉"] = {
 			["minimap"] = {
-				["minimapPos"] = 192.860579036173,
+				["minimapPos"] = 246.196701617585,
 			},
 			["GUI"] = {
+				["point"] = {
+					nil, -- [1]
+					nil, -- [2]
+					"CENTER", -- [3]
+					-1.74887657165527, -- [4]
+					0.58299708366394, -- [5]
+				},
 				["selected"] = {
 					nil, -- [1]
-					"ScarletMonastery", -- [2]
-					10, -- [3]
+					"BlackrockDepths", -- [2]
+					nil, -- [3]
 					1, -- [4]
 					0, -- [5]
 				},

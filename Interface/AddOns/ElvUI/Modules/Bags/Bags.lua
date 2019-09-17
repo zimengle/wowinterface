@@ -39,8 +39,6 @@ local IsInventoryItemProfessionBag = IsInventoryItemProfessionBag
 local IsShiftKeyDown, IsControlKeyDown = IsShiftKeyDown, IsControlKeyDown
 local PickupContainerItem = PickupContainerItem
 local PlaySound = PlaySound
-local PutItemInBackpack = PutItemInBackpack
-local PutItemInBag = PutItemInBag
 local SetBagSlotFlag = SetBagSlotFlag
 local SetBankBagSlotFlag = SetBankBagSlotFlag
 local SetInsertItemsLeftToRight = SetInsertItemsLeftToRight
@@ -74,12 +72,13 @@ local NUM_BAG_SLOTS = NUM_BAG_SLOTS
 local NUM_BANKGENERIC_SLOTS = NUM_BANKGENERIC_SLOTS
 local NUM_CONTAINER_FRAMES = NUM_CONTAINER_FRAMES
 local NUM_LE_BAG_FILTER_FLAGS = NUM_LE_BAG_FILTER_FLAGS
+local LE_ITEM_CLASS_QUESTITEM = LE_ITEM_CLASS_QUESTITEM
+local BAG_FILTER_LABELS = BAG_FILTER_LABELS
 local SEARCH = SEARCH
 -- GLOBALS: ElvUIBags, ElvUIBagMover, ElvUIBankMover
 
-local MATCH_ITEM_LEVEL = ITEM_LEVEL:gsub('%%d', '(%%d+)')
-
 local ElvUIAssignBagDropdown
+local MATCH_ITEM_LEVEL = ITEM_LEVEL:gsub('%%d', '(%%d+)')
 local SEARCH_STRING = ""
 local BAG_FILTER_ICONS = {
 	[_G.LE_BAG_FILTER_FLAG_EQUIPMENT] = "Interface\\ICONS\\INV_Chest_Plate10",
@@ -1260,11 +1259,38 @@ function B:ContructContainerFrame(name, isBank)
 	f.ContainerHolder:Hide()
 
 	if isBank then
+		--Sort Button
+		f.sortButton = CreateFrame("Button", name..'SortButton', f)
+		f.sortButton:Size(16 + E.Border, 16 + E.Border)
+		f.sortButton:SetTemplate()
+		f.sortButton:Point('BOTTOMRIGHT', f.holderFrame, 'TOPRIGHT', -2, 4)
+		f.sortButton:SetNormalTexture("Interface\\AddOns\\ElvUI\\Media\\Textures\\INV_Pet_Broom")
+		f.sortButton:GetNormalTexture():SetTexCoord(unpack(E.TexCoords))
+		f.sortButton:GetNormalTexture():SetInside()
+		f.sortButton:SetPushedTexture("Interface\\AddOns\\ElvUI\\Media\\Textures\\INV_Pet_Broom")
+		f.sortButton:GetPushedTexture():SetTexCoord(unpack(E.TexCoords))
+		f.sortButton:GetPushedTexture():SetInside()
+		f.sortButton:SetDisabledTexture("Interface\\AddOns\\ElvUI\\Media\\Textures\\INV_Pet_Broom")
+		f.sortButton:GetDisabledTexture():SetTexCoord(unpack(E.TexCoords))
+		f.sortButton:GetDisabledTexture():SetInside()
+		f.sortButton:GetDisabledTexture():SetDesaturated(1)
+		f.sortButton:StyleButton(nil, true)
+		f.sortButton:SetScript('OnClick', function()
+			if f.holderFrame:IsShown() then
+				f:UnregisterAllEvents() --Unregister to prevent unnecessary updates
+				if not f.registerUpdate then B:SortingFadeBags(f, true) end
+				B:CommandDecorator(B.SortBags, 'bank')()
+			end
+		end)
+		if E.db.bags.disableBankSort then
+			f.sortButton:Disable()
+		end
+
 		--Toggle Bags Button
 		f.bagsButton = CreateFrame("Button", name..'BagsButton', f.holderFrame)
 		f.bagsButton:Size(16 + E.Border, 16 + E.Border)
 		f.bagsButton:SetTemplate()
-		f.bagsButton:Point('BOTTOMRIGHT', f.holderFrame, 'TOPRIGHT', -2, 4)
+		f.bagsButton:Point("RIGHT", f.sortButton, "LEFT", -5, 0)
 		f.bagsButton:SetNormalTexture("Interface\\Buttons\\Button-Backpack-Up")
 		f.bagsButton:GetNormalTexture():SetTexCoord(unpack(E.TexCoords))
 		f.bagsButton:GetNormalTexture():SetInside()

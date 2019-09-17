@@ -4,6 +4,7 @@ ClassicCastbarsDB = {
 		["castFontSize"] = 8,
 		["autoPosition"] = true,
 		["iconPositionX"] = -3,
+		["textPositionX"] = 0,
 		["hideIconBorder"] = false,
 		["castStatusBar"] = "Interface\\TargetingFrame\\UI-StatusBar",
 		["borderColor"] = {
@@ -18,6 +19,7 @@ ClassicCastbarsDB = {
 		["castFont"] = "Fonts\\ARKai_T.ttf",
 		["showCastInfoOnly"] = false,
 		["width"] = 106,
+		["textPositionY"] = 0,
 		["showTimer"] = false,
 		["statusColorChannel"] = {
 			0, -- [1]
@@ -45,11 +47,12 @@ ClassicCastbarsDB = {
 			1, -- [4]
 		},
 	},
-	["version"] = "8",
+	["version"] = "9",
 	["target"] = {
 		["castFontSize"] = 10,
 		["autoPosition"] = true,
 		["iconPositionX"] = -5,
+		["textPositionX"] = 0,
 		["hideIconBorder"] = false,
 		["castStatusBar"] = "Interface\\TargetingFrame\\UI-StatusBar",
 		["borderColor"] = {
@@ -64,6 +67,7 @@ ClassicCastbarsDB = {
 		["castFont"] = "Fonts\\ARKai_T.ttf",
 		["showCastInfoOnly"] = false,
 		["width"] = 150,
+		["textPositionY"] = 0,
 		["showTimer"] = false,
 		["statusColorChannel"] = {
 			0, -- [1]

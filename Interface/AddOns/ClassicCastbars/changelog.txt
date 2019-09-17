@@ -1,3 +1,15 @@
+v1.0.4:
+- Castbar is now stopped when unit is moving for players only since some mobs cast while running.
+- Add option to change text position.
+- Minor improvements to auto positioning of target castbar.
+- Fix some incorrect cast times.
+
+
+v1.0.3:
+- Castbar is now stopped when unit is moving.
+- Added simplified Chinese translations. (Thanks to Wolfcon)
+
+
 v1.0.2:
 - Improved cast pushback/slow detection.
 - Fix target castbar sometimes still auto positioning when auto position is disabled.
@@ -10,7 +22,7 @@ v1.0.1:
 - Fix castbar text ignoring alpha level from color picker option.
 - Fix incorrect cast times for some channeled spells.
 - Memory usage & load time improvements.
-- Added simplified Chinese translations. (Thanks to Asukachikaru)
+- Added traditional Chinese translations. (Thanks to Asukachikaru)
 
 
 v1.0.0:

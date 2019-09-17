@@ -1,6 +1,7 @@
 local AtlasLoot = _G.AtlasLoot
 local Prof = AtlasLoot.Button:AddType("Profession", "prof")
-local ItemQuery = AtlasLoot.Button:GetType("Item").Query
+local Item_ButtonType = AtlasLoot.Button:GetType("Item")
+local ItemQuery = Item_ButtonType.Query
 local AL = AtlasLoot.Locales
 local GetAlTooltip = AtlasLoot.Tooltip.GetTooltip
 local Profession = AtlasLoot.Data.Profession
@@ -21,16 +22,19 @@ AtlasLoot.ClickHandler:Add(
 		ChatLink = { "LeftButton", "Shift" },
 		ShowExtraItems = { "LeftButton", "None" },
 		DressUp = { "LeftButton", "Ctrl" },
+		WoWHeadLink = { "RightButton", "Shift" },
 		types = {
 			ChatLink = true,
 			ShowExtraItems = true,
 			DressUp = true,
+			WoWHeadLink = true,
 		},
 	},
 	{
 		{ "ChatLink", 		AL["Chat Link"], 			AL["Add profession link into chat"] },
 		{ "DressUp", 		AL["Dress up"], 			AL["Shows the item in the Dressing room"] },
 		{ "ShowExtraItems", AL["Show extra items"], 	AL["Shows extra items (tokens,mats)"] },
+		{ "WoWHeadLink", 	AL["Show WowHead link"], 	AL["Shows a copyable link for WoWHead"] },
 	}
 )
 
@@ -93,8 +97,10 @@ function Prof.OnMouseAction(button, mouseButton)
 	if mouseButton == "ChatLink" then
 		if button.ItemID then
 			local itemInfo, itemLink = GetItemInfo(button.ItemID)
-			AtlasLoot.Button:AddChatLink(itemLink)
+			AtlasLoot.Button:AddChatLink(itemLink, "item", button.ItemID)
 		end
+	elseif mouseButton == "WoWHeadLink" then
+		AtlasLoot.Button:OpenWoWHeadLink(button, "spell", button.SpellID)
 	elseif mouseButton == "DressUp" then
 		if button.ItemID then
 			local itemInfo, itemLink = GetItemInfo(button.ItemID)

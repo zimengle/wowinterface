@@ -5,8 +5,8 @@ Guidelime.registerGuide(
 注：我们的宗旨是只要路上有怪杀就不要无视它！只要它能给你经验！否则你就很有可能在一下步里落后经验。如果你学习了草药或者挖矿就一定要利用他们！[OC]
 本导航由Hakurai - Shikushiku编写，中文由Qcat汉化[OC]
 [V]清理背包[OC]
-[G45,66.8Duskwood]沿着这条路往西走
-[G38,3.4Stranglethorn Vale]向南进入荆棘谷
+[G45,66.8 Duskwood]沿着这条路往西走
+[G38,3.4 Stranglethorn Vale]向南进入荆棘谷
 提交[QT198]
 接受[QA215]
 [G38,3.4]接受[QA203]
@@ -61,10 +61,10 @@ Guidelime.registerGuide(
 提交[QT203]
 [V]卖垃圾，不要出售龙肉或虎肉，保留额外的丛林药剂.
 [H]炉石回藏宝海湾[A Warlock,Priest,Rogue,Druid,Paladin,Hunter,Mage]
-[G45,66.8Duskwood]沿着这条路往西走.[A Warrior]
+[G45,66.8 Duskwood]沿着这条路往西走.[A Warrior]
 [G73.8,46.1]回到夜色镇[A Warrior]
 [G77.6,44.4]飞到 [F 藏宝海湾][A Warrior]
-[G27,77.2Stranglethorn Vale]提交[QT201] 在客栈里
+[G27,77.2 Stranglethorn Vale]提交[QT201] 在客栈里
 提交[QT210]
 接受[QA627]
 [G27.2,76.8]提交[QT578]
@@ -77,10 +77,10 @@ Guidelime.registerGuide(
 [G27,77.2]设置炉石 [S 藏宝海湾][A Warrior]
 [G27.4,77.6]飞到 [F 夜色镇]
 如果你在一个新的服务器上玩，那就放弃克拉兹克。我们可能买不到矿石，具体你要去AH看看，如果你是挖矿就更好了。[OC]
-[G45,66.8Duskwood]沿着这条路往西走.
-[G35.6,10.6Stranglethorn Vale]向南进入荆棘谷
+[G45,66.8 Duskwood]沿着这条路往西走.
+[G35.6,10.6 Stranglethorn Vale]向南进入荆棘谷
 [G33,17.8]击杀辛达尔 [QC188]
-[G37.2,24.2]杀龙r [QC195]
+[G37.2,24.2]杀龙 [QC195]
 [G21.2,22]击杀水元素 [QC601] 尽量避开37级，如果必须的话就杀了他们.
 [G30.6,21]如果你之前没完成耳朵，就再去做 [QC189]
 [G30.6,21]完成獠牙 [QC1712,2][A Warrior]
@@ -109,7 +109,7 @@ Guidelime.registerGuide(
 [G26.6,76.4]把你还有的多余的页存起来，或者可以卖掉
 如果你想先学技能，你可以先飞铁炉堡而不是南海镇。[OC]
 [G27.4,77.6]飞到南海镇
-[G51.2,58.8Hillsbrad Foothills]设置你的炉石 [S 南海镇]
+[G51.2,58.8 Hillsbrad Foothills]设置你的炉石 [S 南海镇]
 [G50.2,58.8]接受[QA659]
 [G49.6,58.6]接受[QA500]
 [G48.2,59.4]接受[QA505]
@@ -118,7 +118,7 @@ Guidelime.registerGuide(
 [G46,32]进入洞穴拾取花岗岩 [QC689]
 [G46,32]离开洞穴，然后往西绕着山走
 [G38.6,23.4]上山，杀了所有的狮子, 如果你不能完成，我们稍后会再回来[OC]
-[G56.4,64Alterac Mountains]杀了一些辛迪加，为了任务
+[G56.4,64 Alterac Mountains]杀了一些辛迪加，为了任务
 [G58.3,68.1]桌子上的信，接受任务[QA510]
 接受任务 [QA511]
 完成击杀怪物 [QC505]
@@ -130,7 +130,7 @@ Guidelime.registerGuide(
 [G38.5,46.4]靠近这里然后自杀, 复活在墙的后面. 你可以从建筑物后面的墙里拾取你需要的物品. 或者简单点组个队伍[QC540,2]
 [H]炉石回到南海镇
 [V]卖垃圾
-[G49.6,58.6Hillsbrad Foothills]提交[QT500]
+[G49.6,58.6 Hillsbrad Foothills]提交[QT500]
 [G48.2,59.4]提交[QT505]
 提交[QT510]
 [G50.4,57]提交[QT540]
@@ -139,7 +139,7 @@ Guidelime.registerGuide(
 接受[QA542]
 [G52.4,56]提交[QT564]
 [G49.4,52.4]飞到 [F 避难点]
-[G46.2,47.6Arathi Highlands]接受[QA691]
+[G46.2,47.6 Arathi Highlands]接受[QA691]
 [G60.2,53.8]提交[QT659]
 接受[QA658]
 下一个任务很难单独完成, 可能需要组队[OC]
@@ -158,7 +158,7 @@ Guidelime.registerGuide(
 刷到 [XP36] 左右[OC]
 [G46.2,47.6]提交[QT691]
 飞到[F 南海镇]
-[G50.2,58.8Hillsbrad Foothills]提交[QT661]
+[G50.2,58.8 Hillsbrad Foothills]提交[QT661]
 如果你不是战士，就飞到铁炉炉[OC]
 [NX 36 - 37 凄凉之地]
 ]],"Hakurai - by Shikushiku 中文由Qcat汉化")

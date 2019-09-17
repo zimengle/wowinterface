@@ -25,3 +25,5 @@ Modules\Includes.xml
 ChangeLog.lua
 
 Skins\Default\skin.lua
+
+## Q-CAT-Version: 1

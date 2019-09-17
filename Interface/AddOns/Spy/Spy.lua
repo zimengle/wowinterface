@@ -6,7 +6,7 @@ local L = AceLocale:GetLocale("Spy")
 local _
 
 Spy = LibStub("AceAddon-3.0"):NewAddon("Spy", "AceConsole-3.0", "AceEvent-3.0", "AceComm-3.0", "AceTimer-3.0")
-Spy.Version = "1.0.2"
+Spy.Version = "1.0.6"
 Spy.DatabaseVersion = "1.1"
 Spy.Signature = "[Spy]"
 Spy.ButtonLimit = 15
@@ -229,7 +229,7 @@ Spy.options = {
 					order = 7,					
 					width = .6,					
 					func = function()
-						Spy:ResetPositions()
+--						Spy:ResetPositions()
 						C_UI.Reload()
 					end
 				},				
@@ -1126,7 +1126,6 @@ local Default_Profile = {
 				["UNKNOWN"] = { r = 0.1, g = 0.1, b = 0.1, a = 0.6 },
 				["HOSTILE"] = { r = 0.7, g = 0.1, b = 0.1, a = 0.6 },
 				["UNGROUPED"] = { r = 0.63, g = 0.58, b = 0.24, a = 0.6 },
-				
 			},
 		},
 		MainWindow={
@@ -1148,8 +1147,6 @@ local Default_Profile = {
 			Position={
 				x = 4,
 				y = 740,
---				x = 0,
---				y = 0,				
 				w = 160,
 				h = 34,
 			}
@@ -1171,7 +1168,7 @@ local Default_Profile = {
 		MinimapDetails=true,
 		DisplayOnMap=true,
 		SwitchToZone=true,
-		MapDisplayLimit="None",
+		MapDisplayLimit="SameZone",
 		DisplayWinLossStatistics=true,
 		DisplayKOSReason=true,
 		DisplayLastSeen=true,
@@ -1182,11 +1179,11 @@ local Default_Profile = {
 		InvertSpy=false,
 		ResizeSpy=true,
 		ResizeSpyLimit=15,	
-		Announce="Self",
+		Announce="None",
 		OnlyAnnounceKoS=false,
 		WarnOnStealth=true,
 		WarnOnKOS=true,
-		WarnOnKOSGuild=true,
+		WarnOnKOSGuild=false,
 		WarnOnRace=false,
 		SelectWarnRace="None",		
 		DisplayWarningsInErrorsFrame=false,
@@ -1198,8 +1195,8 @@ local Default_Profile = {
 		PurgeData="NinetyDays",
 		PurgeKoS=false,
 		PurgeWinLossData=false,
-		ShareData=true,
-		UseData=true,
+		ShareData=false,
+		UseData=false,
 		ShareKOSBetweenCharacters=true,
 		AppendUnitNameCheck=false,
 		AppendUnitKoSCheck=false,		
@@ -1441,10 +1438,10 @@ function Spy:OnEnable(first)
 	Spy:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", "CombatLogEvent")
 	Spy:RegisterEvent("PLAYER_REGEN_ENABLED", "LeftCombatEvent")
 	Spy:RegisterEvent("PLAYER_DEAD", "PlayerDeadEvent")
-	Spy:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE", "ChannelNoticeEvent")		
+--	Spy:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE", "ChannelNoticeEvent")		
 	Spy:RegisterComm(Spy.Signature, "CommReceived")
 	Spy.IsEnabled = true
-	Spy:RefreshCurrentList()
+--	Spy:RefreshCurrentList()
 end
 
 function Spy:OnDisable()
@@ -1566,9 +1563,9 @@ function Spy:OnInitialize()
 
 	Spy:LockWindows(Spy.db.profile.Locked)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", Spy.FilterNotInParty)
-	DEFAULT_CHAT_FRAME:AddMessage(L["LoadDescription"])
+--	DEFAULT_CHAT_FRAME:AddMessage(L["LoadDescription"])
 end
-
+--[[
 function Spy:ChannelNoticeEvent(_, chStatus, _, _, Channel)
 	if chStatus ~= "SUSPENDED" then
 	Spy.zName = strsub(Channel, 14)
@@ -1577,7 +1574,7 @@ function Spy:ChannelNoticeEvent(_, chStatus, _, _, Channel)
 			Spy.EnabledInZone = false
 		end	
 	end	
-end
+end ]]--
 
 function Spy:PlayerEnteringWorldEvent()
  	local zone = GetZoneText()
@@ -1966,10 +1963,18 @@ function Spy:ShowMapNote(player)
 	if playerData then
 		local currentMapID, TOP_MOST = C_Map.GetBestMapForUnit('player'), true
 		local currentContinentInfo = MapUtil.GetMapParentInfo(currentMapID, Enum.UIMapType.Continent, true)
-		local currentContinentID = currentContinentInfo.mapID
+		if currentContinentInfo then 
+			currentContinentID = currentContinentInfo.mapID	
+		else
+			currentContinentID = currentMapID
+		end
 		local mapID, mapX, mapY = playerData.mapID, playerData.mapX, playerData.mapY
  		local continentInfo = MapUtil.GetMapParentInfo(mapID, Enum.UIMapType.Continent, true)
-		local continentID = continentInfo.mapID	
+		if continentInfo then
+			continentID = continentInfo.mapID	
+		else
+			continentID = mapID
+		end
 		if continentID ~= nil and mapID ~= nil and type(playerData.mapX) == "number" and type(playerData.mapY) == "number" and (Spy.db.profile.MapDisplayLimit == "None" or (Spy.db.profile.MapDisplayLimit == "SameZone" and mapID == currentMapID) or (Spy.db.profile.MapDisplayLimit == "SameContinent" and continentID == currentContinentID)) then
 			local note = Spy.MapNoteList[Spy.CurrentMapNote]
 			note.displayed = true

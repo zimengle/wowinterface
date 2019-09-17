@@ -6,7 +6,7 @@ DHUD_SavedVars = {
 		["mmb"] = {
 			["enabled"] = 1,
 			["drag"] = "CIRCLE",
-			["position"] = -4.95746876854628,
+			["position"] = 12.9146236170461,
 		},
 	},
 }

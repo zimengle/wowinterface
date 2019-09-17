@@ -843,8 +843,7 @@ function Spy:ParseUnitAbility(analyseSpell, event, player, flags, spellId, spell
 		if analyseSpell then
 			local abilityType = strsub(event, 1, 5)
 			if abilityType == "SWING" or abilityType == "SPELL" or abilityType == "RANGE" then
---				local ability = Spy_AbilityList[spellName]
-				local ability = Spy_AbilityList[spellId]				
+				local ability = Spy_AbilityList[spellName]
 				if ability then
 					if ability.class and not (playerData and playerData.class) then
 						class = ability.class
@@ -862,6 +861,8 @@ function Spy:ParseUnitAbility(analyseSpell, event, player, flags, spellId, spell
 						race = ability.race
 						learnt = true
 					end
+				else	
+--					print(spellId, " - ", spellName)
 				end
 				if class and race and level == Spy.MaximumPlayerLevel then
 					isGuess = false
@@ -1023,7 +1024,7 @@ Spy.ListTypes = {
 	{L["Ignore"], Spy.ManageIgnoreList},
 	{L["KillOnSight"], Spy.ManageKillOnSightList},
 }
-
+--[[
 Spy_AbilityList = {
 
 --++ Racial Traits ++	
@@ -2532,4 +2533,4 @@ Spy_AbilityList = {
 	[23881]={ class = "WARRIOR", level = 40, },
 	[12294]={ class = "WARRIOR", level = 40, },
 	[23922]={ class = "WARRIOR", level = 40, },
-};
+};]]--

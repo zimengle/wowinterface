@@ -1,3 +1,12 @@
+__ New in 3.08 - By Kharthus __
+
+* Bug fixes for event and queue errors
+* Fixed error due to UIPanelButtonTemplate2
+
+__ New in 3.07 - By Kharthus __
+
+* TOC update for 8.2 patch
+
 __ New in 3.06 - By Kharthus __
 
 * Fixes for 8.0 patch

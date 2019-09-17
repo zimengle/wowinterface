@@ -9,49 +9,62 @@ if not L then return end
 ]]
 
 L["AUTO_POS_BAR"] = "自动调整施法条位置"
-L["AUTO_POS_BAR_TOOLTIP"] = "勾选此选项时，施法条将依据当前持有增益效果及其他数量自动调整位置。此选项无法与第三方头像UI同时使用。"
-L["BORDER_COLOR"] = "选择施法条颜色"
-L["CAST_BORDER"] = "施法条外框纹理"
-L["CAST_BORDER_TOOLTIP"] = "选择施法条外框纹理"
+L["AUTO_POS_BAR_TOOLTIP"] = [=[勾选此选项时, 将会根据用户框体显示的增益效果及其他内容来自动调整位置.
+
+注意: 可能不兼容第三方用户框体.]=]
+L["BORDER_COLOR"] = "边框颜色"
+L["CAST_BORDER"] = "边框纹理"
+L["CAST_BORDER_TOOLTIP"] = "为施法条选择边框纹理."
 L["CAST_FONT"] = "施法条字体"
-L["CAST_FONT_TOOLTIP"] = "选择法术名称与吟唱时间的字体"
-L["CAST_STATUSBAR"] = "施法条背景纹理"
-L["CAST_STATUSBAR_TOOLTIP"] = "选择施法条/状态条的背景纹理"
+L["CAST_FONT_TOOLTIP"] = "为法术名称和计时器文字选择字体类型."
+L["CAST_STATUSBAR"] = "施法条纹理"
+L["CAST_STATUSBAR_TOOLTIP"] = "为施法条/状态条选择纹理类型."
 L["CASTBAR"] = "施法条"
 L["CASTBAR_COLORS"] = "施法条颜色"
-L["CASTBAR_ICON"] = "施法条图示"
-L["CASTBAR_SIZING"] = "施法条尺寸"
-L["CASTBAR_TEXTURE_FONT"] = "施法条背景纹理"
-L["DEFAULT"] = "预设值"
+L["CASTBAR_ICON"] = "施法条图标"
+L["CASTBAR_SIZING"] = "施法条大小"
+L["CASTBAR_TEXTURE_FONT"] = "施法条纹理"
+L["DEFAULT"] = "默认"
 L["FONT_SIZE"] = "字体大小"
-L["FONT_SIZE_TOOLTIP"] = "选择法术名称与吟唱时间的字体大小"
-L["GENERAL"] = "主设定"
+L["FONT_SIZE_TOOLTIP"] = "为法术名称和计时器文字选择字体大小."
+L["GENERAL"] = "通用设置"
 L["HEIGHT"] = "施法条高度"
-L["HEIGHT_TOOLTIP"] = "设定施法条高度"
-L["ICON_HIDE_BORDER"] = "隐藏图示边框"
-L["ICON_POS_TOOLTIP"] = "调整法术图示的水平及垂直位置"
-L["ICON_POS_X"] = "图示水平位置"
-L["ICON_POS_Y"] = "图示垂直位置"
-L["ICON_SIZE"] = "图示尺寸"
-L["ICON_SIZE_TOOLTIP"] = "设定施法条图示尺寸"
-L["LSM_TEXTURE_NOTE"] = "注意：若您删除了进行此设定时使用的第三方背景纹理/字体包，您需要于此页面重新设定。"
-L["NAMEPLATE"] = "角色头顶"
-L["PUSHBACK"] = "侦测施法中受攻击延迟"
-L["PUSHBACK_TOOLTIP"] = "启用此选项时，将显示施法中受攻击或其他因素（例：语言诅咒）导致的吟唱延迟。此延迟为估测值，特定法术或天赋可能不受吟唱延迟影响而与显示吟唱时间有所出入。"
-L["RESET_ALL"] = "回到预设值"
-L["SHOW_CAST_INFO_ONLY"] = "不显示吟唱时间"
-L["SHOW_CAST_INFO_ONLY_TOOLTIP"] = "勾选此选项时将停止显示吟唱时间。若您想完全关闭施法条特效只显示法术名称，您可设定施法条高度为0并选择无施法条外框。"
-L["SHOW_TIMER"] = "显示吟唱时间"
-L["SHOW_TIMER_TOOLTIP"] = "显示目前施展法术的吟唱时间倒数"
-L["STATUS_CHANNEL_COLOR"] = "选择状态条充填特效颜色"
-L["STATUS_COLOR"] = "选择施法条充填特效颜色"
-L["TARGET"] = "目标头像"
-L["TEST"] = "开关测试模式"
-L["TEST_MODE_DRAG"] = "测试模式：拉曳以移动施法条"
-L["TEST_PLATE_TOOLTIP"] = "显示测试用的角色头顶施法条。在此模式下您可以拉曳施法条以调整位置。测试时请先开启显示角色头顶施法条并点选一个目标。"
-L["TEST_TARGET_TOOLTIP"] = "显示测试用的人物头像施法条。在此模式下您可以拉曳施法条以调整位置。测试时请先点选一个目标以显示人物头像。"
-L["TEXT_COLOR"] = "选择文字颜色"
-L["TOGGLE_CASTBAR"] = "启用施法条功能"
-L["TOGGLE_CASTBAR_TOOLTIP"] = "设定是否在此UI设定启用施法条功能"
+L["HEIGHT_TOOLTIP"] = "设置施法条高度."
+L["ICON_HIDE_BORDER"] = "隐藏图标边框"
+L["ICON_POS_X"] = "图标位置 X"
+L["ICON_POS_Y"] = "图标位置 Y"
+L["ICON_SIZE"] = "图标大小"
+L["ICON_SIZE_TOOLTIP"] = "为施法条图标设置大小."
+L["LSM_TEXTURE_NOTE"] = [=[
+
+备注: 如果您使用了第三方纹理/字体, 并且随后删除了它们, 那么为了确保插件能够正常工作, 您必须手动在此重置它们.]=]
+L["NAMEPLATE"] = "角色头顶姓名条"
+L["PUSHBACK"] = "侦测施法延迟"
+L["PUSHBACK_TOOLTIP"] = [=[为施法时受到攻击以及减益效果 (例如: 语言诅咒) 而造成的延迟启用侦测功能.
+
+注意: 由于特定法术和天赋可能会忽略延迟, 故侦测到的延迟不完全准确, 仅供参考.
+]=]
+L["RESET_ALL"] = "重置所有设置"
+L["SHOW_CAST_INFO_ONLY"] = "仅显示施法信息"
+L["SHOW_CAST_INFO_ONLY_TOOLTIP"] = [=[启用将隐藏施法计时器, 但是仍然会显示施法信息.
+
+如果您仅想显示施法名称而不是整个施法条, 则需要将施法条高度设置为 '0', 並且将边框设置为 '无'.]=]
+L["SHOW_TIMER"] = "显示计时器文字"
+L["SHOW_TIMER_TOOLTIP"] = "为当前的施法显示倒计时."
+L["STATUS_CHANNEL_COLOR"] = "引导指示器填充颜色"
+L["STATUS_COLOR"] = "施法指示器填充颜色"
+L["TARGET"] = "目标"
+L["TEST"] = "切换测试模式"
+L["TEST_MODE_DRAG"] = "测试模式 - 拖动来调整施法条位置"
+L["TEST_PLATE_TOOLTIP"] = [=[在角色头顶显示测试施法条, 以便于您可以拖动来调整位置.
+注意: 您首先需要选择一个目标来让施法条显示出来, 才能看到测试施法条.
+]=]
+L["TEST_TARGET_TOOLTIP"] = [=[在目标框体上显示施法条, 以便于您可以拖动来调整位置.
+注意: 您需要首先选择一个目标, 才能看到测试施法条.
+]=]
+L["TEXT_COLOR"] = "文字颜色"
+L["TOGGLE_CASTBAR"] = "启用施法条"
+L["TOGGLE_CASTBAR_TOOLTIP"] = "为当前框体启用/停用施法条."
 L["WIDTH"] = "施法条宽度"
-L["WIDTH_TOOLTIP"] = "设定施法条宽度"
+L["WIDTH_TOOLTIP"] = "设置施法条宽度."
+

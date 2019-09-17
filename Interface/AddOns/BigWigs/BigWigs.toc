@@ -31,3 +31,5 @@ locales.xml
 Media\Media.lua
 Loader.lua
 modules.xml
+
+## Q-CAT-Version: 2

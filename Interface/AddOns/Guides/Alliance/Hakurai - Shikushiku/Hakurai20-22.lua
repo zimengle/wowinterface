@@ -91,48 +91,48 @@ Guidelime.registerGuide(
 [G43.6,76.4]提交[QT950]
 [G43.8,76.4][V]卖垃圾, 留着鱼鳍和蚌肉
 [G44.4,76.4]接受 [QA5321] 护送任务, 在她旁边的地上拾取箱子
-[G27.2,35.6Ashenvale]远离道路，不会有怪物刷新. 偶尔用喇叭叫醒她.[OC]
+[G27.2,35.6 Ashenvale]远离道路，不会有怪物刷新. 偶尔用喇叭叫醒她.[OC]
 提交 [QT5321]
-[G26.2,38.6]提交 [QT967]
+[G26.2,38.6 Ashenvale]提交 [QT967]
 接受 [QA970]
-[G26.4,38.6]接受 [QA1010]
+[G26.4,38.6 Ashenvale]接受 [QA1010]
 [G31,31.6]击杀暮光，为了 [QC970]掉率很低。。如果你有的话就跳过[OC]
-[G30.4,25.6]拾取植物为了 [QC1010]
-[G26.2,38.6]提交[QT970]
-[G26.4,38.6]提交[QT1010]
+[G30.4,25.6 Ashenvale]拾取植物为了 [QC1010]
+[G26.2,38.6 Ashenvale]提交[QT970]
+[G26.4,38.6 Ashenvale]提交[QT1010]
 接受 [QA1020]
 [G22.6,51.8]提交 [QT945]
-[G34.4,48]开鸟点
-[G37.2,51.8]提交[QT1020]
-[G49.6,67][V]为以后买一本烹饪专家书，如果你需要的话
+[G34.4,48 Ashenvale]开鸟点
+[G37.2,51.8 Ashenvale]提交[QT1020]
+[G49.6,67 Ashenvale][V]为以后买一本烹饪专家书，如果你需要的话
 [H]炉石回到奥伯丁
-[G38.6,45.4Darkshore]提交所有你的海洋生物任务
-[G37.6,43.4]提交[QT4740]
-[G37.4,41.8]提交[QT731]
+[G38.6,45.4 Darkshore]提交所有你的海洋生物任务
+[G37.6,43.4 Darkshore]提交[QT4740]
+[G37.4,41.8 Darkshore]提交[QT731]
 接受 [QA741]
-[G37.3,43.8]
-[G37,41.2][V]卖垃圾
+[G37.3,43.8 Darkshore]
+[G37,41.2 Darkshore][V]卖垃圾
 坐船去泰达希尔，如果你是暗夜精灵也可以飞，把红色传送机带到达纳苏斯[OC]
-[G31.2,84.2Darnassus]提交 [QT741]
+[G31.2,84.2 Darnassus]提交 [QT741]
 接受 [QA942]
 德鲁伊在离开前在这里训练 [OC][A Druid]
-T把红色传送机带出达纳苏斯[OC]
-[G58.4,94Teldrassil]开鸟点并飞回 [F 奥伯丁]
+把红色传送机带出达纳苏斯[OC]
+[G58.4,94 Teldrassil]开鸟点并飞回 [F 奥伯丁]
 乘船去米奈希尔港。等船的时候做绷带消磨时间[OC]
-[G10.8,60.4Wetlands]提交[QT942] 不要接受后续，还不到时候
+[G10.8,60.4 Wetlands]提交[QT942] 不要接受后续，还不到时候
 [G10.6,56.8][V]确保你有一个青铜管[OC]
 [G9.4,59.6]飞到 [F 铁炉堡]
-[G50.8,6Ironforge]提交[QT968]
-[G25.2,10.2Ironforge][T]学习新技能[A Priest]
-[G25.6,7.4Ironforge][T]学习新技能 [A Mage]
-[G23.4,6.2Ironforge][T]学习新技能[A Paladin]
-[G50.8,6.6Ironforge][T]学习新技能[A Warlock]
-[G51.8,15.6Ironforge][T]学习新技能[A Rogue]
-[G70.8,84Ironforge][T]学习新技能[A Hunter]
-[G70.2,90.6Ironforge][T]学习新技能[A Warrior]
-[G54.8,58.6Ironforge][T]学急救
-[G55.6,58.8][T]学草药学
-[G60,36.8][T]学烹饪
-[G55.6,48.2]飞到 [F 湖畔镇]
+[G50.8,6 Ironforge]提交[QT968]
+[G25.2,10.2 Ironforge][T]学习新技能[A Priest]
+[G25.6,7.4 Ironforge][T]学习新技能 [A Mage]
+[G23.4,6.2 Ironforge][T]学习新技能[A Paladin]
+[G50.8,6.6 Ironforge][T]学习新技能[A Warlock]
+[G51.8,15.6 Ironforge][T]学习新技能[A Rogue]
+[G70.8,84 Ironforge][T]学习新技能[A Hunter]
+[G70.2,90.6 Ironforge][T]学习新技能[A Warrior]
+[G54.8,58.6 Ironforge][T]学急救
+[G55.6,58.8 Ironforge][T]学草药学
+[G60,36.8 Ironforge][T]学烹饪
+[G55.6,48.2 Ironforge]飞到 [F 湖畔镇]
 [NX 22 - 25 赤脊山,暮色森林]
 ]],"Hakurai - by Shikushiku 中文由Qcat汉化")

@@ -1,6 +1,8 @@
 ## Interface: 11302
 ## Title: SortBags
+## Version: 0.1.0
 ## Notes: Sorts and stacks your items
 ## Author: shirsig
-## SavedVariablesPerCharacter: SortBagsRightToLeft
+## SavedVariablesPerCharacter: SortBagsRightToLeft, BagSlotFlag
 SortBags.lua
+## Q-CAT-Version: 3

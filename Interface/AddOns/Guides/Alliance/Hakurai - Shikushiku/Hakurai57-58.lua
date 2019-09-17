@@ -5,7 +5,7 @@ Guidelime.registerGuide(
 本导航由Hakurai - Shikushiku编写，中文由Qcat汉化[OC]
 如果服务器的塞纳里奥议会/异种蝎任务是可接的话，才选择这个导航，否则的话就无视!!!
 跑到希利苏斯[OC]
-[G81.8,18.6Silithus]提交[QT1124]
+[G81.8,18.6 Silithus]提交[QT1124]
 接受[QA1125]
 [G51,38]提交[QT8275]
 接受[QA8280]

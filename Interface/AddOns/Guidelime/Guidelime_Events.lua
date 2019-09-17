@@ -11,6 +11,7 @@ function addon.frame:PLAYER_ENTERING_WORLD()
 	--if addon.debugging then print("LIME: Player entering world...") end
 	if not addon.dataLoaded then addon.loadData() end
 	if GuidelimeDataChar.mainFrameShowing then addon.showMainFrame() end
+	addon.alive = HBD:GetPlayerZone() == nil or C_DeathInfo.GetCorpseMapPosition(HBD:GetPlayerZone()) == nil
 end
 
 addon.frame:RegisterEvent('PLAYER_LEVEL_UP')
@@ -43,6 +44,7 @@ function addon.updateFromQuestLog()
 			questLog[id] = {}
 			questLog[id].index = i
 			questLog[id].finished = (completed == 1)
+			questLog[id].failed = (completed == -1)
 			questLog[id].name = name
 			questLog[id].sort = currentHeader
 		end
@@ -53,7 +55,7 @@ function addon.updateFromQuestLog()
 	local questFound = false
 	local newQuest = false
 	for id, q in pairs(addon.quests) do
-		if questLog[id] ~= nil then
+		if questLog[id] ~= nil and not questLog[id].failed then
 			if q.logIndex ~= nil then
 				questFound = true
 				if q.logIndex ~= questLog[id].index or q.finished ~= questLog[id].finished then
@@ -84,23 +86,24 @@ function addon.updateFromQuestLog()
 			if q.logIndex ~= nil and q.logIndex ~= -1 and not isCollapsed[q.sort] then
 				checkCompleted = true
 				q.logIndex = nil
+				newQuest = true
 				--if addon.debugging then print("LIME: removed log entry ".. id) end
 			end
 		end
 	end
 	if GuidelimeData.showQuestIds and newQuest then
 		local msg = "LIME: current quests: "
-		for id, q in pairs(questLog) do
-			msg = msg .. q.name .. "(#" .. id .. "), "
+		for id, q in pairs(addon.quests) do
+			if q.logIndex ~= nil then 
+				msg = msg .. q.name .. "(#" .. id .. "), "
+			end
 		end
 		print(msg:sub(1, #msg - 2))
 	end
 	return checkCompleted, questChanged, questFound
 end
 
-addon.frame:RegisterEvent('QUEST_LOG_UPDATE')
-function addon.frame:QUEST_LOG_UPDATE()
-	--if addon.debugging then print("LIME: QUEST_LOG_UPDATE", addon.firstLogUpdate) end
+local function doQuestUpdate()
 	addon.xp = UnitXP("player")
 	addon.xpMax = UnitXPMax("player")
 	addon.y, addon.x = UnitPosition("player")
@@ -121,7 +124,7 @@ function addon.frame:QUEST_LOG_UPDATE()
 				if questFound then
 					addon.updateStepsText()
 				end
-				C_Timer.After(1, function() 
+				C_Timer.After(0.1, function() 
 					local completed = GetQuestsCompleted()
 					local questCompleted = false
 					for id, q in pairs(addon.quests) do
@@ -131,7 +134,7 @@ function addon.frame:QUEST_LOG_UPDATE()
 							q.completed = true
 						end
 					end
-					if questCompleted == true or not GuidelimeDataChar.hideCompletedSteps then
+					if questCompleted == true or GuidelimeDataChar.showCompletedSteps then
 						addon.updateSteps()
 					else
 						-- quest was abandoned so redraw erverything since completed steps might have to be done again
@@ -148,9 +151,15 @@ function addon.frame:QUEST_LOG_UPDATE()
 	addon.firstLogUpdate = true
 end
 
+addon.frame:RegisterEvent('QUEST_LOG_UPDATE')
+function addon.frame:QUEST_LOG_UPDATE()
+	if addon.debugging then print("LIME: QUEST_LOG_UPDATE", addon.firstLogUpdate) end
+	doQuestUpdate()
+end
+
 addon.frame:RegisterEvent('GOSSIP_SHOW')
 function addon.frame:GOSSIP_SHOW()
-	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() then 
+	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.activeQuests ~= nil then 
 		if addon.debugging then print ("LIME: GOSSIP_SHOW", GetGossipActiveQuests()) end
 		if addon.debugging then print ("LIME: GOSSIP_SHOW", GetGossipAvailableQuests()) end
 		local q = { GetGossipActiveQuests() }
@@ -191,11 +200,28 @@ function addon.frame:GOSSIP_SHOW()
 			end)
 		end
 	end
+	if GuidelimeData.autoSelectFlight and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.firstActiveIndex ~= nil and	addon.currentGuide.lastActiveIndex ~= nil then
+		for i = addon.currentGuide.firstActiveIndex, addon.currentGuide.lastActiveIndex do
+			local step = addon.currentGuide.steps[i]
+			for _, element in ipairs(step.elements) do
+				if not element.completed then
+					if element.t == "FLY" or element.t == "GET_FLIGHT_POINT" then
+						local gossip = {GetGossipOptions()}
+						for i = 1, GetNumGossipOptions() do
+							if gossip[i * 2] == "taxi" then
+								SelectGossipOption(i)
+							end
+						end
+					end
+				end
+			end
+		end
+	end
 end
 
 addon.frame:RegisterEvent('QUEST_GREETING')
 function addon.frame:QUEST_GREETING()
-	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() then 
+	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.activeQuests ~= nil then 
 		if addon.debugging then print ("LIME: QUEST_GREETING", GetNumActiveQuests()) end
 		if addon.debugging then print ("LIME: QUEST_GREETING", GetNumAvailableQuests()) end
 		local selectActive = nil
@@ -240,7 +266,7 @@ addon.frame:RegisterEvent('QUEST_DETAIL')
 function addon.frame:QUEST_DETAIL()
 	local id = GetQuestID()
 	if addon.debugging then print ("LIME: QUEST_DETAIL", id) end
-	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide.activeQuests ~= nil and addon.contains(addon.currentGuide.activeQuests, id) then 
+	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.activeQuests ~= nil and addon.contains(addon.currentGuide.activeQuests, id) then 
 		C_Timer.After(addon.AUTO_COMPLETE_DELAY, function() 
 			AcceptQuest()
 			if addon.openNpcAgain then 
@@ -254,7 +280,7 @@ addon.frame:RegisterEvent('QUEST_PROGRESS')
 function addon.frame:QUEST_PROGRESS()
 	local id = GetQuestID()
 	if addon.debugging then print ("LIME: QUEST_PROGRESS", id) end
-	if IsQuestCompletable() and GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.contains(addon.currentGuide.activeQuests, id) then 
+	if IsQuestCompletable() and GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.activeQuests ~= nil and addon.contains(addon.currentGuide.activeQuests, id) then 
 		C_Timer.After(addon.AUTO_COMPLETE_DELAY, function() 
 			CompleteQuest()
 			if addon.openNpcAgain then 
@@ -267,7 +293,7 @@ end
 addon.frame:RegisterEvent('QUEST_COMPLETE')
 function addon.frame:QUEST_COMPLETE()
 	local id = GetQuestID()
-	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.contains(addon.currentGuide.activeQuests, id) then 
+	if GuidelimeData.autoCompleteQuest and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.activeQuests ~= nil and addon.contains(addon.currentGuide.activeQuests, id) then 
 		if addon.debugging then print ("LIME: QUEST_COMPLETE", id) end
 		if (GetNumQuestChoices() <= 1) then
 			C_Timer.After(addon.AUTO_COMPLETE_DELAY, function() 
@@ -289,24 +315,20 @@ addon.frame:RegisterEvent('TAXIMAP_OPENED')
 function addon.frame:TAXIMAP_OPENED()
 	if addon.debugging then print ("LIME: TAXIMAP_OPENED") end
 	if GuidelimeData.autoSelectFlight and not IsShiftKeyDown() and addon.currentGuide ~= nil and addon.currentGuide.firstActiveIndex ~= nil and	addon.currentGuide.lastActiveIndex ~= nil then
-		local mapID = C_Map.GetBestMapForUnit("player")
-		if not mapID then return end -- no mapID for player found
 		for i = addon.currentGuide.firstActiveIndex, addon.currentGuide.lastActiveIndex do
 			local step = addon.currentGuide.steps[i]
 			for _, element in ipairs(step.elements) do
 				if not element.completed then
 					if element.flightmaster ~= nil then
 						local master = addon.flightmasterDB[element.flightmaster]
-						local taxiNodes = C_TaxiMap.GetAllTaxiNodes(mapID)
-						for i = 1, #taxiNodes do
-							local taxiNodeData = taxiNodes[i]
-							if master.place == taxiNodeData.name:sub(1, #master.place) then
-								if element.t == "FLY" and taxiNodeData.state == Enum.FlightPathState.Reachable then
+						for i = 1, NumTaxiNodes() do
+							if (master.place or master.zone) == TaxiNodeName(i):sub(1, #(master.place or master.zone)) then
+								if element.t == "FLY" and TaxiNodeGetType(i) == "REACHABLE" then
 									if IsMounted() then Dismount() end -- dismount before using the flightpoint
-									if addon.debugging then print ("LIME: Flying to " .. master.place) end
-									TakeTaxiNode(taxiNodeData.slotIndex)
+									if addon.debugging then print ("LIME: Flying to " .. (master.place or master.zone)) end
+									TakeTaxiNode(i)
 									addon.completeSemiAutomatic(element)
-								elseif element.t == "GET_FLIGHT_POINT" and taxiNodeData.state == Enum.FlightPathState.Current then
+								elseif element.t == "GET_FLIGHT_POINT" and TaxiNodeGetType(i) == "CURRENT" then
 									addon.completeSemiAutomatic(element)
 								end
 								return
@@ -320,10 +342,14 @@ function addon.frame:TAXIMAP_OPENED()
 end
 
 addon.frame:RegisterEvent('PLAYER_CONTROL_LOST')
-function addon.frame:PLAYER_CONTROL_LOST(errorType, message)
-	if event == "PLAYER_CONTROL_LOST" and UnitOnTaxi("player") then
-		addon.completeSemiAutomaticByType("FLY")
-	end
+function addon.frame:PLAYER_CONTROL_LOST()
+	if addon.debugging then print ("LIME: PLAYER_CONTROL_LOST") end
+	C_Timer.After(1, function() 
+		if UnitOnTaxi("player") then
+			if addon.debugging then print ("LIME: UnitOnTaxi") end
+			addon.completeSemiAutomaticByType("FLY")
+		end
+	end)
 end
 
 addon.frame:RegisterEvent('UI_INFO_MESSAGE')
@@ -349,4 +375,18 @@ function addon.frame:UNIT_SPELLCAST_SUCCEEDED(unitTarget, castGUID, spellID)
 	if spellID == 8690 then
 		addon.completeSemiAutomaticByType("HEARTH")
 	end
+end
+
+addon.frame:RegisterEvent('PLAYER_ALIVE')
+function addon.frame:PLAYER_ALIVE()
+	if addon.debugging then print ("LIME: PLAYER_ALIVE") end
+	C_Timer.After(1, function() 
+		addon.alive = HBD:GetPlayerZone() == nil or C_DeathInfo.GetCorpseMapPosition(HBD:GetPlayerZone()) == nil
+	end)
+end
+
+addon.frame:RegisterEvent('PLAYER_UNGHOST')
+function addon.frame:PLAYER_UNGHOST()
+	if addon.debugging then print ("LIME: PLAYER_UNGHOST") end
+	addon.alive = true
 end

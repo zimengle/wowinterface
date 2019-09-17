@@ -12,3 +12,5 @@ TrinketMenuOpt.lua
 TrinketMenuOpt.xml
 TrinketMenuQueue.lua
 TrinketMenuQueue.xml
+
+## Q-CAT-Version: 1

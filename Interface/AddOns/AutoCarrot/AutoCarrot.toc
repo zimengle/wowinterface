@@ -1,0 +1,8 @@
+## Interface: 11302 
+## Title: AutoCarrot
+## Author: kebabstorm
+## Notes: Equips Carrot on a Stick automatically when mounted
+## Version: 1.13.2
+AutoCarrot.lua
+
+## Q-CAT-Version: 1

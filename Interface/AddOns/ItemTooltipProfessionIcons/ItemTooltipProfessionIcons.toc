@@ -8,3 +8,4 @@
 ItemProfConstants.lua
 ItemTooltipProfessionIcons.lua
 ItemTooltipProfessionConfigFrame.lua
+## Q-CAT-Version: 3

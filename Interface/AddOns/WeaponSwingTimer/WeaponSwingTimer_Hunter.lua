@@ -3,21 +3,46 @@ local addon_name, addon_data = ...
 addon_data.hunter = {}
 
 addon_data.hunter.shot_spell_ids = {
-    [75] = {spell_name = '自动射击', rank = nil, cast_time = nil, cooldown = nil},
-    [2643] = {spell_name = '多重射击', rank = 1, cast_time = 0.5, cooldown = 10},
-    [14288] = {spell_name = '多重射击', rank = 2, cast_time = 0.5, cooldown = 10},
-    [14289] = {spell_name = '多重射击', rank = 3, cast_time = 0.5, cooldown = 10},
-    [14290] = {spell_name = '多重射击', rank = 4, cast_time = 0.5, cooldown = 10},
-    [25294] = {spell_name = '多重射击', rank = 5, cast_time = 0.5, cooldown = 10},
-    [19434] = {spell_name = '瞄准射击', rank = 1, cast_time = 3, cooldown = 6},
-    [20900] = {spell_name = '瞄准射击', rank = 2, cast_time = 3, cooldown = 6},
-    [20901] = {spell_name = '瞄准射击', rank = 3, cast_time = 3, cooldown = 6},
-    [20902] = {spell_name = '瞄准射击', rank = 4, cast_time = 3, cooldown = 6},
-    [20903] = {spell_name = '瞄准射击', rank = 5, cast_time = 3, cooldown = 6},
-    [20904] = {spell_name = '瞄准射击', rank = 6, cast_time = 3, cooldown = 6},
-    [5019] = {spell_name = '射击', rank = nil, cast_time = nil, cooldown = nil}
+    [75] = {spell_name = 'Auto Shot', rank = nil, cast_time = nil, cooldown = nil},
+    [2643] = {spell_name = 'Multi-Shot', rank = 1, cast_time = 0.5, cooldown = 10},
+    [14288] = {spell_name = 'Multi-Shot', rank = 2, cast_time = 0.5, cooldown = 10},
+    [14289] = {spell_name = 'Multi-Shot', rank = 3, cast_time = 0.5, cooldown = 10},
+    [14290] = {spell_name = 'Multi-Shot', rank = 4, cast_time = 0.5, cooldown = 10},
+    [25294] = {spell_name = 'Multi-Shot', rank = 5, cast_time = 0.5, cooldown = 10},
+    [19434] = {spell_name = 'Aimed Shot', rank = 1, cast_time = 3, cooldown = 6},
+    [20900] = {spell_name = 'Aimed Shot', rank = 2, cast_time = 3, cooldown = 6},
+    [20901] = {spell_name = 'Aimed Shot', rank = 3, cast_time = 3, cooldown = 6},
+    [20902] = {spell_name = 'Aimed Shot', rank = 4, cast_time = 3, cooldown = 6},
+    [20903] = {spell_name = 'Aimed Shot', rank = 5, cast_time = 3, cooldown = 6},
+    [20904] = {spell_name = 'Aimed Shot', rank = 6, cast_time = 3, cooldown = 6},
+    [5019] = {spell_name = 'Shoot', rank = nil, cast_time = nil, cooldown = nil}
 }
 
+addon_data.hunter.is_spell_multi_shot = function(spell_id)
+    if (spell_id == 2643) or (spell_id == 14288) or (spell_id == 14289) or 
+       (spell_id == 14290) or (spell_id == 25294) then
+            return true
+    else
+            return false
+    end
+end
+
+addon_data.hunter.is_spell_aimed_shot = function(spell_id)
+    if (spell_id == 19434) or (spell_id == 20900) or (spell_id == 20901) or 
+       (spell_id == 20902) or (spell_id == 20903) or (spell_id == 20904) then
+            return true
+    else
+            return false
+    end
+end
+
+addon_data.hunter.is_spell_auto_shot = function(spell_id)
+    return (spell_id == 75)
+end
+
+addon_data.hunter.is_spell_shoot = function(spell_id)
+    return (spell_id == 5019)
+end
 
 addon_data.hunter.default_settings = {
 	enabled = true,
@@ -34,7 +59,7 @@ addon_data.hunter.default_settings = {
     show_text = true,
     show_aimedshot_cast_bar = true,
     show_multishot_cast_bar = true,
-    show_latency_bars = true,
+    show_latency_bars = false,
     show_multishot_clip_bar = false,
     show_border = true,
     classic_bars = true,
@@ -67,37 +92,42 @@ addon_data.hunter.OnUseAction = function(action_id)
     addon_data.hunter.scan_tip:SetAction(action_id)
     name, _, _, cast_time, _, _, real_spell_id = GetSpellInfo(WSTScanTipTextLeft1:GetText())
     if not addon_data.hunter.casting and name then
-        addon_data.hunter.StartCastingSpell(name, real_spell_id)
+        addon_data.hunter.StartCastingSpell(real_spell_id)
     end
 end
 
 addon_data.hunter.OnCastSpellByName = function(name, on_self)
     name, _, _, cast_time, _, _, real_spell_id = GetSpellInfo(name)
     if not addon_data.hunter.casting then
-        addon_data.hunter.StartCastingSpell(name, real_spell_id)
+        addon_data.hunter.StartCastingSpell(real_spell_id)
     end
 end
 
 addon_data.hunter.OnCastSpell = function(spell_id, spell_book_type)
     name, _, _, cast_time, _, _, real_spell_id = GetSpellInfo(spell_id, spell_book_type)
     if not addon_data.hunter.casting then
-        addon_data.hunter.StartCastingSpell(name, real_spell_id)
+        addon_data.hunter.StartCastingSpell(real_spell_id)
     end
 end
 
-addon_data.hunter.StartCastingSpell = function(spell_name, spell_id)
+addon_data.hunter.StartCastingSpell = function(spell_id)
     local settings = character_hunter_settings
     if (GetTime() - addon_data.hunter.last_failed_time) > 0 then
         if not addon_data.hunter.casting and UnitCanAttack('player', 'target') then
-            _, _, _, cast_time, _, _, _ = GetSpellInfo(spell_id)
-            if spell_name ~= '自动射击' and cast_time > 0 then
-                addon_data.hunter.casting = true
+            spell_name, _, _, cast_time, _, _, _ = GetSpellInfo(spell_id)
+            if cast_time == nil then 
+                return 
+            end
+            if not addon_data.hunter.is_spell_auto_shot(spell_id) and 
+               not addon_data.hunter.is_spell_shoot(spell_id) and 
+               cast_time > 0 then
+                    addon_data.hunter.casting = true
             end
             local settings = character_hunter_settings
             for id, spell_table in pairs(addon_data.hunter.shot_spell_ids) do
                 if spell_id == id then
-                    if ((spell_name == '瞄准射击') and settings.show_aimedshot_cast_bar) or
-                       ((spell_name == '多重射击') and settings.show_multishot_cast_bar) then
+                    if (addon_data.hunter.is_spell_aimed_shot(spell_id) and settings.show_aimedshot_cast_bar) or
+                       (addon_data.hunter.is_spell_multi_shot(spell_id) and settings.show_multishot_cast_bar) then
                             local base_cast_time = addon_data.hunter.shot_spell_ids[spell_id].cast_time
                             addon_data.hunter.casting_shot = true
                             addon_data.hunter.cast_timer = 0
@@ -124,7 +154,7 @@ addon_data.hunter.LoadSettings = function()
     if not character_hunter_settings then
         character_hunter_settings = {}
         _, class, _ = UnitClass("player")
-        character_hunter_settings.enabled = (class == "HUNTER")
+        character_hunter_settings.enabled = (class == "HUNTER" or class == "MAGE" or class == "PRIEST" or class == "WARLOCK")
     end
     -- If the carried over settings aren't set then set them to the defaults
     for setting, value in pairs(addon_data.hunter.default_settings) do
@@ -144,7 +174,7 @@ addon_data.hunter.RestoreDefaults = function()
         character_hunter_settings[setting] = value
     end
     _, class, _ = UnitClass("player")
-    character_hunter_settings.enabled = (class == "HUNTER")
+    character_hunter_settings.enabled = (class == "HUNTER" or class == "MAGE" or class == "PRIEST" or class == "WARLOCK")
     addon_data.hunter.UpdateVisualsOnSettingsChange()
     addon_data.hunter.UpdateConfigPanelValues()
 end
@@ -159,20 +189,20 @@ addon_data.hunter.UpdateRangeCastSpeedModifier = function()
     local speed = 1.0
     for i=1, 40 do
         name, _ = UnitAura("player", i)
-        if name == "快速射击" then
+        if name == "Quick Shots" then
             speed = speed/1.3
         end
-        if name == "急速射击" then
+        if name == "Rapid Shot" then
             speed = speed/1.4
         end
-        if name == "狂暴" then
+        if name == "Berserking" then
             addon_data.hunter.UpdateBerserkHaste()
             speed = speed/ (1 + addon_data.hunter.berserk_haste)
         end
-        if name == "蜘蛛之吻" then
+        if name == "Kiss of the Spider" then
             speed = speed/1.2
         end
-        if name == "语言诅咒" then
+        if name == "Curse of Tongues" then
             speed = speed/0.5
         end
     end
@@ -283,8 +313,8 @@ addon_data.hunter.OnUnitSpellCastStart = function(unit, spell_id)
         for id, spell_table in pairs(addon_data.hunter.shot_spell_ids) do
             if spell_id == id then
                 spell_name = addon_data.hunter.shot_spell_ids[spell_id].spell_name
-                if ((spell_name == '瞄准射击') and settings.show_aimedshot_cast_bar) or
-                   ((spell_name == '多重射击') and settings.show_multishot_cast_bar) then
+                if ((spell_name == 'Aimed Shot') and settings.show_aimedshot_cast_bar) or
+                   ((spell_name == 'Multi-Shot') and settings.show_multishot_cast_bar) then
                         addon_data.hunter.casting_shot = true
                         addon_data.hunter.cast_timer = 0
                         addon_data.hunter.frame.spell_bar:SetVertexColor(0.7, 0.4, 0, 1)
@@ -307,7 +337,8 @@ addon_data.hunter.OnUnitSpellCastSucceeded = function(unit, spell_id)
         -- If the spell is Auto Shot then reset the shot timer
         if addon_data.hunter.shot_spell_ids[spell_id] then
             spell_name = addon_data.hunter.shot_spell_ids[spell_id].spell_name
-            if spell_name == '自动射击' or spell_name == "Shoot" then
+            if addon_data.hunter.is_spell_auto_shot(spell_id) or addon_data.hunter.is_spell_shoot(spell_id) then
+                hunter_bw_shot_timer = GetTime()
                 addon_data.hunter.last_shot_time = GetTime()
                 addon_data.hunter.ResetShotTimer()
             end
@@ -315,10 +346,11 @@ addon_data.hunter.OnUnitSpellCastSucceeded = function(unit, spell_id)
         -- Otherwise, set the cast bar to green
         if addon_data.hunter.shot_spell_ids[spell_id] then
             spell_name = addon_data.hunter.shot_spell_ids[spell_id].spell_name
-            if spell_name ~= '自动射击' and spell_name ~= "Shoot" then
+            if not addon_data.hunter.is_spell_auto_shot(spell_id) and not addon_data.hunter.is_spell_shoot(spell_id) then
                 addon_data.hunter.casting_shot = false
                 addon_data.hunter.frame.spell_bar:SetVertexColor(0, 0.5, 0, 1)
                 addon_data.hunter.frame.spell_bar:SetWidth(character_hunter_settings.width)
+                addon_data.hunter.frame.spell_bar_text:SetText("0.0")
             end
         end
     end
@@ -346,7 +378,7 @@ addon_data.hunter.OnUnitSpellCastFailed = function(unit, spell_id)
         if addon_data.hunter.casting and addon_data.hunter.casting_shot then
             addon_data.hunter.frame.spell_bar:SetVertexColor(0.7, 0, 0, 1)
             if character_hunter_settings.show_text then
-                addon_data.hunter.frame.spell_text_center:SetText("Failed")
+                addon_data.hunter.frame.spell_text_center:SetText("失败")
             end
             addon_data.hunter.frame.spell_bar:SetWidth(character_hunter_settings.width)
         end
@@ -360,20 +392,27 @@ end
 addon_data.hunter.OnUnitSpellCastInterrupted = function(unit, spell_id)
     if unit == 'player' then
         if addon_data.hunter.shot_spell_ids[spell_id] then
-            if addon_data.hunter.shot_spell_ids[spell_id].spell_name ~= '自动射击' then
+            if not addon_data.hunter.is_spell_auto_shot(spell_id) and not addon_data.hunter.is_spell_shoot(spell_id) then
                 addon_data.hunter.casting = false
             end
         end
         for id, spell_table in pairs(addon_data.hunter.shot_spell_ids) do
-            if (spell_id == id) and (addon_data.hunter.shot_spell_ids[spell_id].spell_name ~= '自动射击') then
+            if (spell_id == id) and not addon_data.hunter.is_spell_auto_shot(spell_id) and not addon_data.hunter.is_spell_shoot(spell_id) then
                 addon_data.hunter.casting_shot = false
                 addon_data.hunter.frame.spell_bar:SetVertexColor(0.7, 0, 0, 1)
                 if character_hunter_settings.show_text then
-                    addon_data.hunter.frame.spell_text_center:SetText("射击打断")
+                    addon_data.hunter.frame.spell_text_center:SetText("打断")
                 end
                 addon_data.hunter.frame.spell_bar:SetWidth(character_hunter_settings.width)
             end
         end
+    end
+end
+
+addon_data.hunter.OnUnitSpellCastFailedQuiet = function(unit, spell_id)
+    local settings = character_hunter_settings
+    if settings.enabled and unit == "player" and addon_data.hunter.is_spell_auto_shot(spell_id) then
+        -- addon_data.hunter.shot_timer = addon_data.hunter.auto_cast_time + 0.5
     end
 end
 
@@ -426,6 +465,7 @@ addon_data.hunter.UpdateVisualsOnUpdate = function()
             frame.auto_shot_cast_bar:SetWidth(math.max(auto_shot_cast_width, 0.001))
         end
         if addon_data.hunter.casting_shot then
+            frame.spell_bar_text:SetText(tostring(addon_data.utils.SimpleRound(addon_data.hunter.cast_time - addon_data.hunter.cast_timer, 0.1)))
             frame:SetSize(settings.width, (settings.height * 2) + 2)
             frame.spell_bar:SetAlpha(1)
             new_width = settings.width * (addon_data.hunter.cast_timer / addon_data.hunter.cast_time)
@@ -443,6 +483,7 @@ addon_data.hunter.UpdateVisualsOnUpdate = function()
                 new_alpha = 0
                 frame:SetSize(settings.width, settings.height)
                 frame.spell_text_center:SetText("")
+                frame.spell_bar_text:SetText("")
             end
             frame.spell_bar:SetAlpha(new_alpha)
             frame.spell_spark:Hide()
@@ -478,7 +519,7 @@ addon_data.hunter.UpdateVisualsOnSettingsChange = function()
                 bgFile = "Interface/AddOns/WeaponSwingTimer/Images/Background", 
                 edgeFile = nil, 
                 tile = true, tileSize = 16, edgeSize = 16, 
-                insets = { left = 11, right = 11, top = 11, bottom = 11}})
+                insets = { left = 8, right = 8, top = 8, bottom = 8}})
         end
         frame.backplane:SetBackdropColor(0,0,0,settings.backplane_alpha)
         frame.shot_bar:ClearAllPoints()
@@ -493,8 +534,10 @@ addon_data.hunter.UpdateVisualsOnSettingsChange = function()
             frame.auto_shot_cast_bar:SetHeight(settings.height)
             frame.auto_shot_cast_bar:SetVertexColor(settings.auto_cast_r, settings.auto_cast_g, settings.auto_cast_b, settings.auto_cast_a)
         end
-        frame.shot_bar_text:SetPoint("RIGHT", -5, 0)
+        frame.shot_bar_text:SetPoint("TOPRIGHT", -5, -(settings.height / 2) + 5)
         frame.shot_bar_text:SetTextColor(1.0, 1.0, 1.0, 1.0)
+        frame.spell_bar_text:SetPoint("BOTTOMRIGHT", -5, (settings.height / 2) - 5)
+        frame.spell_bar_text:SetTextColor(1.0, 1.0, 1.0, 1.0)
         frame.shot_bar:SetHeight(settings.height)
         if settings.classic_bars then
             frame.shot_bar:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Bar')
@@ -536,9 +579,11 @@ addon_data.hunter.UpdateVisualsOnSettingsChange = function()
         if settings.show_text then
             frame.spell_text_center:Show()
             frame.shot_bar_text:Show()
+            frame.spell_bar_text:Show()
         else
             frame.spell_text_center:Hide()
             frame.shot_bar_text:Hide()
+            frame.spell_bar_text:Hide()
         end
     else
         frame:Hide()
@@ -586,7 +631,7 @@ addon_data.hunter.InitializeVisuals = function()
     frame.shot_bar = frame:CreateTexture(nil, "ARTWORK")
     -- Create the shot bar text
     frame.shot_bar_text = frame:CreateFontString(nil, "OVERLAY")
-    frame.shot_bar_text:SetFont("Fonts/FRIZQT__.ttf", 11)
+    frame.shot_bar_text:SetFont("Fonts/ARHei.ttf", 11)
     frame.shot_bar_text:SetJustifyV("CENTER")
     frame.shot_bar_text:SetJustifyH("CENTER")
     -- Create the multishot clip bar
@@ -595,12 +640,17 @@ addon_data.hunter.InitializeVisuals = function()
     frame.auto_shot_cast_bar = frame:CreateTexture(nil, "OVERLAY")
     -- Create the range spell shot bar
     frame.spell_bar = frame:CreateTexture(nil, "ARTWORK")
+    -- Create the spell bar text
+    frame.spell_bar_text = frame:CreateFontString(nil, "OVERLAY")
+    frame.spell_bar_text:SetFont("Fonts/ARHei.ttf", 11)
+    frame.spell_bar_text:SetJustifyV("CENTER")
+    frame.spell_bar_text:SetJustifyH("CENTER")
     -- Create the spell spark
     frame.spell_spark = frame:CreateTexture(nil,"OVERLAY")
     frame.spell_spark:SetTexture('Interface/AddOns/WeaponSwingTimer/Images/Spark')
     -- Create the range spell shot bar center text
     frame.spell_text_center = frame:CreateFontString(nil, "OVERLAY")
-    frame.spell_text_center:SetFont("Fonts/FRIZQT__.ttf", 11)
+    frame.spell_text_center:SetFont("Fonts/ARHei.ttf", 11)
     frame.spell_text_center:SetTextColor(1, 1, 1, 1)
     frame.spell_text_center:SetJustifyV("CENTER")
     frame.spell_text_center:SetJustifyH("LEFT")
@@ -814,7 +864,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     local panel = addon_data.hunter.config_frame
     local settings = character_hunter_settings
     -- Title Text
-    panel.title_text = addon_data.config.TextFactory(panel, "猎人 & 魔杖射击条设置", 20)
+    panel.title_text = addon_data.config.TextFactory(panel, "猎人 & 魔杖设置", 20)
     panel.title_text:SetPoint("TOPLEFT", 10 , -10)
     panel.title_text:SetTextColor(1, 0.9, 0, 1)
     
@@ -845,7 +895,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.classic_bars_checkbox = addon_data.config.CheckBoxFactory(
         "HunterClassicBarsCheckBox",
         panel,
-        " Classic 条",
+        " 经典风格",
         "Enables the classic texture for the shot bars.",
         addon_data.hunter.ClassicBarsCheckBoxOnClick)
     panel.classic_bars_checkbox:SetPoint("TOPLEFT", 10, -110)
@@ -854,7 +904,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.one_bar_checkbox = addon_data.config.CheckBoxFactory(
         "HunterOneBarCheckBox",
         panel,
-        " YaHT 条",
+        " YaHT条风格",
         "Changes the Auto Shot bar to a single bar that fills from left to right",
         addon_data.hunter.OneBarCheckBoxOnClick)
     panel.one_bar_checkbox:SetPoint("TOPLEFT", 10, -130)
@@ -863,7 +913,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.show_text_checkbox = addon_data.config.CheckBoxFactory(
         "HunterShowTextCheckBox",
         panel,
-        " 显示文本",
+        " 显示文字",
         "Enables the shot bar text.",
         addon_data.hunter.ShowTextCheckBoxOnClick)
     panel.show_text_checkbox:SetPoint("TOPLEFT", 10, -150)
@@ -872,7 +922,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.width_editbox = addon_data.config.EditBoxFactory(
         "HunterWidthEditBox",
         panel,
-        "条宽度",
+        "条的宽度",
         75,
         25,
         addon_data.hunter.WidthEditBoxOnEnter)
@@ -881,7 +931,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.height_editbox = addon_data.config.EditBoxFactory(
         "HunterHeightEditBox",
         panel,
-        "条高度",
+        "条的高度",
         75,
         25,
         addon_data.hunter.HeightEditBoxOnEnter)
@@ -910,7 +960,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
         'HunterCooldownColorPicker',
         panel,
         settings.cooldown_r, settings.cooldown_g, settings.cooldown_b, settings.cooldown_a,
-        '自动射击冷却颜色',
+        '自动射击装弹颜色',
         addon_data.hunter.CooldownColorPickerOnClick)
     panel.cooldown_color_picker:SetPoint('TOPLEFT', 205, -180)
     
@@ -919,7 +969,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
         'HunterAutoShotCastColorPicker',
         panel,
         settings.auto_cast_r, settings.auto_cast_g, settings.auto_cast_b, settings.auto_cast_a,
-        '自动射击施法颜色',
+        '自动射击施放颜色',
         addon_data.hunter.AutoShotCastColorPickerOnClick)
     panel.autoshot_cast_color_picker:SetPoint('TOPLEFT', 205, -200)
     
@@ -955,7 +1005,7 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
     panel.backplane_alpha_slider:SetPoint("TOPLEFT", 405, -190)
     
     -- Hunter Specific Settings Text
-    panel.hunter_text = addon_data.config.TextFactory(panel, "Hunter Specific Settings", 16)
+    panel.hunter_text = addon_data.config.TextFactory(panel, "猎人特殊设置", 16)
     panel.hunter_text:SetPoint("TOPLEFT", 10 , -250)
     panel.hunter_text:SetTextColor(1, 0.9, 0, 1)
     
@@ -1000,12 +1050,12 @@ addon_data.hunter.CreateConfigPanel = function(parent_panel)
         'HunterMultiClipColorPicker',
         panel,
         settings.clip_r, settings.clip_g, settings.clip_b, settings.clip_a,
-        '多重射击Clip颜色',
+        '多重射击clip条颜色',
         addon_data.hunter.MultiClipColorPickerOnClick)
     panel.multi_clip_color_picker:SetPoint('TOPLEFT', 205, -280)
     
     -- Add the explaination text
-    panel.explaination_text = addon_data.config.TextFactory(panel, "Bar Explaination", 16)
+    panel.explaination_text = addon_data.config.TextFactory(panel, "条形图说明(白色为可移动或施放,红色为不能移动或施放多重射击)", 16)
     panel.explaination_text:SetPoint("TOPLEFT", 10 , -400)
     panel.explaination_text:SetTextColor(1, 0.9, 0, 1)
     

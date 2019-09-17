@@ -1,0 +1,9 @@
+## Interface: 11302
+## Title: Better Quest Frame
+## Author: Cytoph
+## Version: 0.9.3
+## SavedVariables: BetterQuestFrameDB
+## X-Curse-Project-ID: 340570
+
+BetterQuestFrame.lua
+## Q-CAT-Version: 105

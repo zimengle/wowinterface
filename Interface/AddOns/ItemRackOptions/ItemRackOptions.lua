@@ -8,7 +8,7 @@ ItemRackOpt = {
 	selectedIcon = 0,
 	prevFrame = nil, -- previous subframe a frame should return to (ItemRackOptSubFrame1-x)
 	numSubFrames = 8, -- number of subframes
-	slotOrder = {1,2,3,15,5,4,19,9,16,17,14,13,12,11,8,7,6,10,6,7,8,11,12,13,14,17,16,9,19,4,5,15,3,2},
+	slotOrder = {1,2,3,15,5,4,19,9,16,17,18,0,14,13,12,11,8,7,6,10,6,7,8,11,12,13,14,0,18,17,16,9,19,4,5,15,3,2},
 	currentMarquee = 1,
 }
 
@@ -214,9 +214,7 @@ function ItemRackOpt.UpdateInv()
 				_G["ItemRackOptInv"..i.."Border"]:Show()
 			end
 		else
-			if i ~= 0 and i ~= 18 then
-				_,texture = GetInventorySlotInfo(ItemRack.SlotInfo[i].name)
-			end
+			_,texture = GetInventorySlotInfo(ItemRack.SlotInfo[i].name)
 		end
 		icon:SetTexture(texture)
 		item = _G["ItemRackOptInv"..i]
@@ -328,9 +326,7 @@ function ItemRackOpt.PopulateInvIcons()
 		if ItemRackOpt.Inv[i].id and ItemRackOpt.Inv[i].id~=0 then
 			_,texture = ItemRack.GetInfoByID(ItemRackOpt.Inv[i].id)
 		else
-			if i ~= 0 and i ~= 18 then
-				_,texture = GetInventorySlotInfo(ItemRack.SlotInfo[i].name)
-			end
+			_,texture = GetInventorySlotInfo(ItemRack.SlotInfo[i].name)
 		end
 		ItemRackOpt.Icons[i+1] = texture
 	end
@@ -405,8 +401,8 @@ function ItemRackOpt.SaveSet()
 			set.equip[i] = ItemRackOpt.Inv[i].id
 		end
 	end
-	set.equip[0] = nil
-	set.equip[18] = nil
+	-- set.equip[0] = nil
+	-- set.equip[18] = nil
 	ItemRackOpt.ValidateSetButtons()
 end
 
@@ -931,9 +927,9 @@ function ItemRackOpt.BindFrameOnKeyDown(self,key)
 		local oldAction = GetBindingAction(keyPressed)
 		if oldAction~="" and keyPressed~=ItemRackOpt.Binding.currentKey then
 			StaticPopupDialogs["ItemRackCONFIRMBINDING"] = {
-				text = NORMAL_FONT_COLOR_CODE..ItemRackOpt.Binding.keyPressed..FONT_COLOR_CODE_CLOSE.." 当前绑定到 "..NORMAL_FONT_COLOR_CODE..(GetBindingText(oldAction,"BINDING_NAME_") or "")..FONT_COLOR_CODE_CLOSE.."\n\n你想绑定 "..NORMAL_FONT_COLOR_CODE..keyPressed..FONT_COLOR_CODE_CLOSE.." 到 "..NORMAL_FONT_COLOR_CODE..ItemRackOpt.Binding.name..FONT_COLOR_CODE_CLOSE.."?",
-				button1 = "是",
-				button2 = "不",
+				text = NORMAL_FONT_COLOR_CODE..ItemRackOpt.Binding.keyPressed..FONT_COLOR_CODE_CLOSE.." is currently bound to "..NORMAL_FONT_COLOR_CODE..(GetBindingText(oldAction,"BINDING_NAME_") or "")..FONT_COLOR_CODE_CLOSE.."\n\nDo you want to bind "..NORMAL_FONT_COLOR_CODE..keyPressed..FONT_COLOR_CODE_CLOSE.." to "..NORMAL_FONT_COLOR_CODE..ItemRackOpt.Binding.name..FONT_COLOR_CODE_CLOSE.."?",
+				button1 = "Yes",
+				button2 = "No",
 				timeout = 0,
 				hideOnEscape = 1,
 				OnAccept = ItemRackOpt.SetKeyBinding,
@@ -955,7 +951,7 @@ function ItemRackOpt.SetKeyBinding()
 		ItemRackOpt.UnbindKey()
 		SetBindingClick(ItemRackOpt.Binding.keyPressed,ItemRackOpt.Binding.buttonName)
 	else
-		ItemRack.Print("对不起，你在战斗中不能绑键.")
+		ItemRack.Print("Sorry, you can't bind keys while in combat.")
 	end
 	ItemRackOpt.ResetBindFrame()
 	ItemRackOptBindFrame:Hide()
@@ -1118,7 +1114,7 @@ function ItemRackOpt.SortListScrollFrameUpdate()
 		idx = offset + i
 		if sortList and idx<=#(sortList) then
 			if sortList[idx]==0 then
-				name,texture,quality = "-- 队列在此结束 --","Interface\\Buttons\\UI-GroupLoot-Pass-Up",1
+				name,texture,quality = "-- stop queue here --","Interface\\Buttons\\UI-GroupLoot-Pass-Up",1
 			else
 				name,texture,_,quality = ItemRack.GetInfoByID(sortList[idx])
 			end
@@ -1247,7 +1243,7 @@ function ItemRackOpt.SortListOnEnter(self)
 	local list = ItemRackUser.Queues[ItemRackOpt.SelectedSlot]
 	if list[idx] then
 		if list[idx]==0 then
-			ItemRack.OnTooltip(self,"队列到此为止","如果你有一个可点击的具有被动效果的小饰品，并且如果没有更好的小饰品处于冷却状态，你想使用被动效果")
+			ItemRack.OnTooltip(self,"Stop Queue Here","Move this to mark an explicit end to an order. ie, if you have a clickable trinket with a passive effect, and would like to use the passive effect if no better trinkets are off cooldown.")
 		else
 			ItemRack.IDTooltip(self,list[idx])
 		end
@@ -1560,7 +1556,7 @@ function ItemRackOpt.EventEditPopulateFrame()
 		ItemRackOptEventEditBuffName:SetCursorPosition(0)
 		if event.Anymount then
 			ItemRackOptEventEditBuffAnyMount:SetChecked(true)
-			ItemRackOptEventEditBuffName:SetText("坐骑检测")
+			ItemRackOptEventEditBuffName:SetText("Any mount")
 		end
 		ItemRackOptEventEditBuffUnequip:SetChecked(event.Unequip)
 		ItemRackOptEventEditBuffNotInPVP:SetChecked(event.NotInPVP)
@@ -1696,8 +1692,8 @@ function ItemRackOpt.EventEditSave(override)
 		local oldName = ItemRackOpt.EventSelected and ItemRackOpt.EventList[ItemRackOpt.EventSelected][1] or ""
 		if (not ItemRackOpt.EventSelected and ItemRackEvents[eventName]) or (ItemRackEvents[eventName] and oldName~=eventName) then
 			StaticPopupDialogs["ItemRackConfirmEventOverwrite"] = {
-				text = "具有该名称的事件已存在.\n是否要覆盖它？",
-				button1 = "是", button2 = "不", timeout = 0, hideOnEscape = 1, whileDead = 1,
+				text = "An event with that name already exists.\nDo you want to overwrite it?",
+				button1 = "Yes", button2 = "No", timeout = 0, hideOnEscape = 1, whileDead = 1,
 				OnAccept = function() StaticPopupDialogs["ItemRackConfirmEventOverwrite"].OnCancel() ItemRackOpt.EventEditSave(1) end,
 				OnCancel = function() ItemRackOptEventEditSave:Enable() ItemRackOptEventEditCancel:Enable() end
 			}
@@ -1758,8 +1754,8 @@ function ItemRackOpt.EventEditDelete(override)
 	end
 	if not override then
 		StaticPopupDialogs["ItemRackConfirmEventDelete"] = {
-			text = "是否确实要删除事件 \""..eventName.."\"?",
-			button1 = "是", button2 = "不", timeout = 0, hideOnEscape = 1, whileDead = 1,
+			text = "Are you sure you want to delete the event \""..eventName.."\"?",
+			button1 = "Yes", button2 = "No", timeout = 0, hideOnEscape = 1, whileDead = 1,
 			OnAccept = function() StaticPopupDialogs["ItemRackConfirmEventDelete"].OnCancel() ItemRackOpt.EventEditDelete(1) end,
 			OnCancel = function() ItemRackOptEventNew:Enable() ItemRackOpt.ValidateEventListButtons() end
 		}

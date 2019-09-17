@@ -8,126 +8,126 @@ ConsolePortBarSetup = {
 	["disablecastonrelease"] = false,
 	["lock"] = true,
 	["disableCastBarHook"] = false,
-	["showbuttons"] = false,
-	["disablednd"] = false,
+	["classicBorders"] = true,
+	["defaultCastBar"] = false,
 	["layout"] = {
 		["CP_L_RIGHT"] = {
-			["size"] = 64,
+			["dir"] = "right",
 			["point"] = {
 				"LEFT", -- [1]
 				306, -- [2]
 				56, -- [3]
 			},
-			["dir"] = "right",
+			["size"] = 64,
 		},
 		["CP_R_LEFT"] = {
-			["size"] = 64,
+			["dir"] = "left",
 			["point"] = {
 				"RIGHT", -- [1]
 				-306, -- [2]
 				56, -- [3]
 			},
-			["dir"] = "left",
+			["size"] = 64,
 		},
 		["CP_T4"] = {
-			["size"] = 64,
+			["dir"] = "down",
 			["point"] = {
 				"RIGHT", -- [1]
 				-396, -- [2]
 				16, -- [3]
 			},
-			["dir"] = "down",
+			["size"] = 64,
 		},
 		["CP_L_UP"] = {
-			["size"] = 64,
+			["dir"] = "up",
 			["point"] = {
 				"LEFT", -- [1]
 				240, -- [2]
 				100, -- [3]
 			},
-			["dir"] = "up",
-		},
-		["CP_T3"] = {
 			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				396, -- [2]
-				16, -- [3]
-			},
-			["dir"] = "down",
-		},
-		["CP_R_UP"] = {
-			["size"] = 64,
-			["point"] = {
-				"RIGHT", -- [1]
-				-240, -- [2]
-				100, -- [3]
-			},
-			["dir"] = "up",
-		},
-		["CP_T1"] = {
-			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				456, -- [2]
-				56, -- [3]
-			},
-			["dir"] = "right",
-		},
-		["CP_L_LEFT"] = {
-			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				176, -- [2]
-				56, -- [3]
-			},
-			["dir"] = "left",
-		},
-		["CP_L_DOWN"] = {
-			["size"] = 64,
-			["point"] = {
-				"LEFT", -- [1]
-				240, -- [2]
-				16, -- [3]
-			},
-			["dir"] = "down",
-		},
-		["CP_R_RIGHT"] = {
-			["size"] = 64,
-			["point"] = {
-				"RIGHT", -- [1]
-				-176, -- [2]
-				56, -- [3]
-			},
-			["dir"] = "right",
 		},
 		["CP_T2"] = {
-			["size"] = 64,
+			["dir"] = "left",
 			["point"] = {
 				"RIGHT", -- [1]
 				-456, -- [2]
 				56, -- [3]
 			},
+			["size"] = 64,
+		},
+		["CP_R_RIGHT"] = {
+			["dir"] = "right",
+			["point"] = {
+				"RIGHT", -- [1]
+				-176, -- [2]
+				56, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_T1"] = {
+			["dir"] = "right",
+			["point"] = {
+				"LEFT", -- [1]
+				456, -- [2]
+				56, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_T3"] = {
+			["dir"] = "down",
+			["point"] = {
+				"LEFT", -- [1]
+				396, -- [2]
+				16, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_R_UP"] = {
+			["dir"] = "up",
+			["point"] = {
+				"RIGHT", -- [1]
+				-240, -- [2]
+				100, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_L_DOWN"] = {
+			["dir"] = "down",
+			["point"] = {
+				"LEFT", -- [1]
+				240, -- [2]
+				16, -- [3]
+			},
+			["size"] = 64,
+		},
+		["CP_L_LEFT"] = {
 			["dir"] = "left",
+			["point"] = {
+				"LEFT", -- [1]
+				176, -- [2]
+				56, -- [3]
+			},
+			["size"] = 64,
 		},
 		["CP_R_DOWN"] = {
-			["size"] = 64,
+			["dir"] = "down",
 			["point"] = {
 				"RIGHT", -- [1]
 				-240, -- [2]
 				16, -- [3]
 			},
-			["dir"] = "down",
+			["size"] = 64,
 		},
 	},
 	["mousewheel"] = false,
-	["hidepet"] = false,
-	["combatpethide"] = false,
-	["hideModifiers"] = false,
+	["showbuttons"] = false,
 	["showline"] = true,
+	["hideModifiers"] = false,
+	["combatpethide"] = false,
 	["showart"] = true,
 	["width"] = 1100,
 	["hidewatchbars"] = false,
-	["defaultCastBar"] = false,
-	["classicBorders"] = true,
+	["disablednd"] = false,
+	["hidepet"] = false,
 }

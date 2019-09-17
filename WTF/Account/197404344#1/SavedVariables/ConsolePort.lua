@@ -23,34 +23,34 @@ ConsolePortSettings = {
 	["forceController"] = "XBOX",
 	["CP_M1"] = "CP_TL2",
 	["TargetNearestUseNew"] = false,
-	["unitHotkeyPool"] = "player$;party%d$;raid%d+$",
-	["stickRadialType"] = 2,
+	["interactScrape"] = true,
+	["CP_T2"] = "CP_TR1",
 	["autoExtra"] = true,
-	["interactCache"] = true,
-	["stickRadialLocal"] = false,
+	["stickRadialType"] = 2,
+	["disableUI"] = false,
 	["actionBarStyle"] = 4,
-	["nameplateShowFriends"] = true,
-	["interactWith"] = false,
 	["type"] = "XBOX",
-	["mouseInvertYaw"] = false,
+	["interactWith"] = false,
+	["nameplateShowFriends"] = true,
 	["raidCursorDirect"] = false,
+	["mouseInvertYaw"] = false,
 	["id"] = "132119966022137425",
 	["calibration"] = {
-		["CP_L_UP"] = "F1",
 		["CP_L_RIGHT"] = "F2",
+		["CP_L_UP"] = "F1",
 		["CP_R_LEFT"] = "F12",
 		["CP_X_CENTER"] = "NUMPADMULTIPLY",
 		["CP_R_PULL"] = "",
-		["TOGGLERUN"] = "NUMPADDIVIDE",
+		["CP_X_RIGHT"] = "F6",
+		["CP_T1"] = "F7",
+		["CP_L_DOWN"] = "F3",
+		["CP_L_LEFT"] = "F4",
+		["CP_X_LEFT"] = "F5",
+		["CP_L_PULL"] = "",
 		["CP_R_RIGHT"] = "F10",
 		["CP_R_UP"] = "F9",
 		["CP_T2"] = "F8",
-		["CP_L_PULL"] = "",
-		["CP_X_LEFT"] = "F5",
-		["CP_L_LEFT"] = "F4",
-		["CP_L_DOWN"] = "F3",
-		["CP_T1"] = "F7",
-		["CP_X_RIGHT"] = "F6",
+		["TOGGLERUN"] = "NUMPADDIVIDE",
 		["CP_R_DOWN"] = "F11",
 	},
 	["nameplateShowFriendlyNPCs"] = true,
@@ -60,13 +60,98 @@ ConsolePortSettings = {
 	["CP_T1"] = "CP_TL1",
 	["mouseInvertPitch"] = false,
 	["autoSellJunk"] = true,
-	["disableUI"] = false,
-	["CP_T2"] = "CP_TR1",
-	["interactScrape"] = true,
+	["stickRadialLocal"] = false,
+	["interactCache"] = true,
+	["unitHotkeyPool"] = "player$;party%d$;raid%d+$",
 }
 ConsolePortCharacterSettings = {
 	["Typescript (战士) 沙尔图拉"] = {
 		["Type"] = "XBOX",
+		["BindingSet"] = {
+			["CP_T_L3"] = {
+			},
+			["CP_R_LEFT"] = {
+				[""] = "ACTIONBUTTON1",
+				["SHIFT-"] = "ACTIONBUTTON6",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON1",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON6",
+			},
+			["CP_X_CENTER"] = {
+				[""] = "TOGGLECHARACTER0",
+				["SHIFT-"] = "TOGGLESPELLBOOK",
+				["CTRL-"] = "TOGGLETALENTS",
+			},
+			["CP_T_R3"] = {
+			},
+			["CP_L_RIGHT"] = {
+				[""] = "ACTIONBUTTON12",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
+			},
+			["CP_L_UP"] = {
+				[""] = "MULTIACTIONBAR1BUTTON12",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON2",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON10",
+			},
+			["CP_R_RIGHT"] = {
+				[""] = "ACTIONBUTTON3",
+				["SHIFT-"] = "ACTIONBUTTON8",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
+			},
+			["CP_L_DOWN"] = {
+				[""] = "ACTIONBUTTON11",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON4",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
+			},
+			["CP_T2"] = {
+				[""] = "ACTIONBUTTON5",
+				["SHIFT-"] = "ACTIONBUTTON10",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
+				["CTRL-SHIFT-"] = "TOGGLEAUTORUN",
+			},
+			["CP_T1"] = {
+				[""] = "ACTIONBUTTON4",
+				["SHIFT-"] = "TARGETSCANENEMY",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+			},
+			["CP_L_LEFT"] = {
+				[""] = "MULTIACTIONBAR1BUTTON11",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+			},
+			["CP_R_UP"] = {
+				[""] = "ACTIONBUTTON2",
+				["SHIFT-"] = "ACTIONBUTTON7",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
+			},
+			["CP_X_LEFT"] = {
+				[""] = "OPENALLBAGS",
+				["SHIFT-"] = "TOGGLEWORLDMAP",
+				["CTRL-"] = "CP_CAMZOOMOUT",
+				["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
+			},
+			["CP_X_RIGHT"] = {
+				[""] = "TOGGLEGAMEMENU",
+				["SHIFT-"] = "MULTIACTIONBAR1BUTTON10",
+				["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",
+				["CTRL-SHIFT-"] = "OPENCHAT",
+			},
+			["CP_R_DOWN"] = {
+				[""] = "JUMP",
+				["SHIFT-"] = "ACTIONBUTTON9",
+				["CTRL-"] = "EXTRAACTIONBUTTON1",
+				["CTRL-SHIFT-"] = "CLICK ConsolePortUtilityToggle:LeftButton",
+			},
+		},
+		["Spec"] = 1,
+		["Class"] = "WARRIOR",
 		["Bar"] = {
 			["hideIcons"] = false,
 			["lockpet"] = false,
@@ -76,211 +161,128 @@ ConsolePortCharacterSettings = {
 			["disablecastonrelease"] = false,
 			["lock"] = true,
 			["disableCastBarHook"] = false,
-			["hidepet"] = false,
-			["disablednd"] = false,
+			["defaultCastBar"] = false,
+			["classicBorders"] = true,
 			["layout"] = {
 				["CP_L_RIGHT"] = {
-					["size"] = 64,
+					["dir"] = "right",
 					["point"] = {
 						"LEFT", -- [1]
 						306, -- [2]
 						56, -- [3]
 					},
-					["dir"] = "right",
+					["size"] = 64,
 				},
 				["CP_R_LEFT"] = {
-					["size"] = 64,
+					["dir"] = "left",
 					["point"] = {
 						"RIGHT", -- [1]
 						-306, -- [2]
 						56, -- [3]
 					},
-					["dir"] = "left",
+					["size"] = 64,
 				},
 				["CP_T4"] = {
-					["size"] = 64,
+					["dir"] = "down",
 					["point"] = {
 						"RIGHT", -- [1]
 						-396, -- [2]
 						16, -- [3]
 					},
-					["dir"] = "down",
+					["size"] = 64,
 				},
 				["CP_L_UP"] = {
-					["size"] = 64,
+					["dir"] = "up",
 					["point"] = {
 						"LEFT", -- [1]
 						240, -- [2]
 						100, -- [3]
 					},
-					["dir"] = "up",
-				},
-				["CP_L_LEFT"] = {
 					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						176, -- [2]
-						56, -- [3]
-					},
-					["dir"] = "left",
-				},
-				["CP_L_DOWN"] = {
-					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						240, -- [2]
-						16, -- [3]
-					},
-					["dir"] = "down",
-				},
-				["CP_T1"] = {
-					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						456, -- [2]
-						56, -- [3]
-					},
-					["dir"] = "right",
-				},
-				["CP_T2"] = {
-					["size"] = 64,
-					["point"] = {
-						"RIGHT", -- [1]
-						-456, -- [2]
-						56, -- [3]
-					},
-					["dir"] = "left",
-				},
-				["CP_R_UP"] = {
-					["size"] = 64,
-					["point"] = {
-						"RIGHT", -- [1]
-						-240, -- [2]
-						100, -- [3]
-					},
-					["dir"] = "up",
-				},
-				["CP_T3"] = {
-					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						396, -- [2]
-						16, -- [3]
-					},
-					["dir"] = "down",
 				},
 				["CP_R_RIGHT"] = {
-					["size"] = 64,
+					["dir"] = "right",
 					["point"] = {
 						"RIGHT", -- [1]
 						-176, -- [2]
 						56, -- [3]
 					},
+					["size"] = 64,
+				},
+				["CP_T3"] = {
+					["dir"] = "down",
+					["point"] = {
+						"LEFT", -- [1]
+						396, -- [2]
+						16, -- [3]
+					},
+					["size"] = 64,
+				},
+				["CP_T1"] = {
 					["dir"] = "right",
+					["point"] = {
+						"LEFT", -- [1]
+						456, -- [2]
+						56, -- [3]
+					},
+					["size"] = 64,
+				},
+				["CP_L_LEFT"] = {
+					["dir"] = "left",
+					["point"] = {
+						"LEFT", -- [1]
+						176, -- [2]
+						56, -- [3]
+					},
+					["size"] = 64,
+				},
+				["CP_L_DOWN"] = {
+					["dir"] = "down",
+					["point"] = {
+						"LEFT", -- [1]
+						240, -- [2]
+						16, -- [3]
+					},
+					["size"] = 64,
+				},
+				["CP_R_UP"] = {
+					["dir"] = "up",
+					["point"] = {
+						"RIGHT", -- [1]
+						-240, -- [2]
+						100, -- [3]
+					},
+					["size"] = 64,
+				},
+				["CP_T2"] = {
+					["dir"] = "left",
+					["point"] = {
+						"RIGHT", -- [1]
+						-456, -- [2]
+						56, -- [3]
+					},
+					["size"] = 64,
 				},
 				["CP_R_DOWN"] = {
-					["size"] = 64,
+					["dir"] = "down",
 					["point"] = {
 						"RIGHT", -- [1]
 						-240, -- [2]
 						16, -- [3]
 					},
-					["dir"] = "down",
+					["size"] = 64,
 				},
 			},
 			["mousewheel"] = false,
-			["showbuttons"] = true,
-			["combatpethide"] = false,
-			["hideModifiers"] = false,
+			["hidepet"] = false,
 			["showline"] = true,
+			["hideModifiers"] = false,
+			["combatpethide"] = false,
 			["showart"] = true,
 			["width"] = 1100,
 			["hidewatchbars"] = false,
-			["classicBorders"] = true,
-			["defaultCastBar"] = false,
-		},
-		["Spec"] = 1,
-		["Class"] = "WARRIOR",
-		["BindingSet"] = {
-			["CP_L_RIGHT"] = {
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
-				["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
-				[""] = "ACTIONBUTTON12",
-				["CTRL-SHIFT-"] = "TOGGLEQUESTLOG",
-			},
-			["CP_R_LEFT"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON1",
-				["SHIFT-"] = "ACTIONBUTTON6",
-				[""] = "ACTIONBUTTON1",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON6",
-			},
-			["CP_X_CENTER"] = {
-				["CTRL-"] = "TOGGLETALENTS",
-				["SHIFT-"] = "TOGGLESPELLBOOK",
-				[""] = "TOGGLECHARACTER0",
-			},
-			["CP_T_R3"] = {
-			},
-			["CP_T_L3"] = {
-			},
-			["CP_L_UP"] = {
-				[""] = "MULTIACTIONBAR1BUTTON12",
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
-			},
-			["CP_T1"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-				["SHIFT-"] = "TARGETNEARESTENEMY",
-				[""] = "ACTIONBUTTON4",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
-			},
-			["CP_R_UP"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
-				["SHIFT-"] = "ACTIONBUTTON7",
-				[""] = "ACTIONBUTTON2",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
-			},
-			["CP_L_LEFT"] = {
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-				["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-				[""] = "MULTIACTIONBAR1BUTTON11",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
-			},
-			["CP_X_LEFT"] = {
-				["CTRL-"] = "CP_CAMZOOMOUT",
-				["SHIFT-"] = "TOGGLEWORLDMAP",
-				[""] = "OPENALLBAGS",
-				["CTRL-SHIFT-"] = "REPLY",
-			},
-			["CP_T2"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
-				["SHIFT-"] = "ACTIONBUTTON10",
-				[""] = "ACTIONBUTTON5",
-				["CTRL-SHIFT-"] = "STARTAUTORUN",
-			},
-			["CP_L_DOWN"] = {
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
-				["SHIFT-"] = "MULTIACTIONBAR2BUTTON4",
-				[""] = "ACTIONBUTTON11",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
-			},
-			["CP_R_RIGHT"] = {
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
-				["SHIFT-"] = "ACTIONBUTTON8",
-				[""] = "ACTIONBUTTON3",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
-			},
-			["CP_X_RIGHT"] = {
-				["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",
-				["SHIFT-"] = "TOGGLEAUTORUN",
-				[""] = "TOGGLEGAMEMENU",
-				["CTRL-SHIFT-"] = "OPENCHAT",
-			},
-			["CP_R_DOWN"] = {
-				["CTRL-"] = "MULTIACTIONBAR3BUTTON1",
-				["SHIFT-"] = "ACTIONBUTTON9",
-				[""] = "JUMP",
-				["CTRL-SHIFT-"] = "CLICK ConsolePortUtilityToggle:LeftButton",
-			},
+			["disablednd"] = false,
+			["showbuttons"] = true,
 		},
 	},
 }
@@ -311,65 +313,8 @@ ConsolePortUIFrames = {
 	["Blizzard_ItemAlterationUI"] = {
 		"TransmogrifyFrame", -- [1]
 	},
-	["Blizzard_Collections"] = {
-		"CollectionsJournal", -- [1]
-		"WardrobeFrame", -- [2]
-	},
-	["Blizzard_AlliedRacesUI"] = {
-		"AlliedRacesFrame", -- [1]
-	},
-	["Blizzard_Calendar"] = {
-		"CalendarFrame", -- [1]
-	},
-	["Blizzard_AzeriteUI"] = {
-		"AzeriteEmpoweredItemUI", -- [1]
-	},
-	["Blizzard_QuestChoice"] = {
-		"QuestChoiceFrame", -- [1]
-	},
-	["Blizzard_ChallengesUI"] = {
-		"ChallengesKeystoneFrame", -- [1]
-	},
-	["Blizzard_EncounterJournal"] = {
-		"EncounterJournal", -- [1]
-	},
-	["Blizzard_AchievementUI"] = {
-		"AchievementFrame", -- [1]
-	},
-	["Blizzard_ArtifactUI"] = {
-		"ArtifactFrame", -- [1]
-		"ArtifactRelicForgeFrame", -- [2]
-	},
-	["Blizzard_InspectUI"] = {
-		"InspectFrame", -- [1]
-	},
-	["Blizzard_VoidStorageUI"] = {
-		"VoidStorageFrame", -- [1]
-	},
-	["Blizzard_AuctionUI"] = {
-		"AuctionFrame", -- [1]
-	},
-	["Blizzard_TrainerUI"] = {
-		"ClassTrainerFrame", -- [1]
-	},
-	["Blizzard_ObliterumUI"] = {
-		"ObliterumForgeFrame", -- [1]
-	},
-	["Blizzard_WarboardUI"] = {
-		"WarboardQuestChoiceFrame", -- [1]
-	},
-	["Blizzard_DeathRecap"] = {
-		"DeathRecapFrame", -- [1]
-	},
-	["Blizzard_GuildUI"] = {
-		"GuildFrame", -- [1]
-	},
-	["Blizzard_TradeSkillUI"] = {
-		"TradeSkillFrame", -- [1]
-	},
-	["Blizzard_TalentUI"] = {
-		nil, -- [1]
-		"TalentFrame", -- [2]
+	["Blizzard_LookingForGuildUI"] = {
+		"LookingForGuildFrame", -- [1]
 	},
 	["ConsolePort"] = {
 		"AddonList", -- [1]
@@ -436,8 +381,65 @@ ConsolePortUIFrames = {
 		"GroupLootFrame3", -- [62]
 		"GroupLootFrame4", -- [63]
 	},
-	["Blizzard_LookingForGuildUI"] = {
-		"LookingForGuildFrame", -- [1]
+	["Blizzard_TalentUI"] = {
+		nil, -- [1]
+		"TalentFrame", -- [2]
+	},
+	["Blizzard_AzeriteUI"] = {
+		"AzeriteEmpoweredItemUI", -- [1]
+	},
+	["Blizzard_QuestChoice"] = {
+		"QuestChoiceFrame", -- [1]
+	},
+	["Blizzard_Calendar"] = {
+		"CalendarFrame", -- [1]
+	},
+	["Blizzard_TrainerUI"] = {
+		"ClassTrainerFrame", -- [1]
+	},
+	["Blizzard_GuildUI"] = {
+		"GuildFrame", -- [1]
+	},
+	["Blizzard_ArtifactUI"] = {
+		"ArtifactFrame", -- [1]
+		"ArtifactRelicForgeFrame", -- [2]
+	},
+	["Blizzard_InspectUI"] = {
+		"InspectFrame", -- [1]
+	},
+	["Blizzard_VoidStorageUI"] = {
+		"VoidStorageFrame", -- [1]
+	},
+	["Blizzard_AuctionUI"] = {
+		"AuctionFrame", -- [1]
+	},
+	["Blizzard_EncounterJournal"] = {
+		"EncounterJournal", -- [1]
+	},
+	["Blizzard_ObliterumUI"] = {
+		"ObliterumForgeFrame", -- [1]
+	},
+	["Blizzard_WarboardUI"] = {
+		"WarboardQuestChoiceFrame", -- [1]
+	},
+	["Blizzard_DeathRecap"] = {
+		"DeathRecapFrame", -- [1]
+	},
+	["Blizzard_AchievementUI"] = {
+		"AchievementFrame", -- [1]
+	},
+	["Blizzard_TradeSkillUI"] = {
+		"TradeSkillFrame", -- [1]
+	},
+	["Blizzard_ChallengesUI"] = {
+		"ChallengesKeystoneFrame", -- [1]
+	},
+	["Blizzard_AlliedRacesUI"] = {
+		"AlliedRacesFrame", -- [1]
+	},
+	["Blizzard_Collections"] = {
+		"CollectionsJournal", -- [1]
+		"WardrobeFrame", -- [2]
 	},
 }
 ConsolePortUIConfig = {

@@ -196,8 +196,8 @@ end
 function ItemRack.ResetEvents(resetDefault,resetAll)
 	if not resetDefault and not resetAll then
 		StaticPopupDialogs["ItemRackConfirmResetEvents"] = {
-			text = "是只还原默认事件，还是擦除所有事件并还原为默认？",
-			button1 = "默认", button2 = "取消", button3 = "所有", timeout = 0, hideOnEscape = 1, whileDead = 1,
+			text = "Do you want to restore just Default events, or wipe All events and restore to default?",
+			button1 = "Default", button2 = "Cancel", button3 = "All", timeout = 0, hideOnEscape = 1, whileDead = 1,
 			OnAccept = function() ItemRack.ResetEvents(1) end,
 			OnAlt = function() ItemRack.ResetEvents(1,1) end,
 		}
@@ -396,7 +396,7 @@ function ItemRack.ProcessBuffEvent()
 				if events[eventName].Anymount then
 					buff = IsMounted() and not UnitOnTaxi("player")
 				else
-					buff = UnitAura("player",events[eventName].Buff)
+					buff = AuraUtil.FindAuraByName(events[eventName].Buff,"player")
 				end
 				setname = ItemRackUser.Events.Set[eventName]
 				isSetEquipped = ItemRack.IsSetEquipped(setname)

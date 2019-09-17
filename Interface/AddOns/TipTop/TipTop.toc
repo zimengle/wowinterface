@@ -16,3 +16,4 @@ Libs\AceGUI-3.0-SharedMediaWidgets\widget.xml
 
 TipTopOptions.lua
 tiptop.lua
+## Q-CAT-Version: 101

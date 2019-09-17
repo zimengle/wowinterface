@@ -8,3 +8,5 @@
 ## X-Website: https://github.com/EsreverWoW/ClassicAutoDismount
 
 ClassicAutoDismount.lua
+
+## Q-CAT-Version: 102

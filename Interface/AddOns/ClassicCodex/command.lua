@@ -15,6 +15,8 @@ SlashCmdList["CODEX"] = function(input, editBox)
         print("|cff33ffcc/codex|cffffffff meta <relation> [min, [max]] |cffcccccc - 在地图上显示相关目标、对象")
         print("|cff33ffcc/codex|cffffffff clean |cffcccccc - 清理地图")
         print("|cff33ffcc/codex|cffffffff reset |cffcccccc - 重置地图")
+        print("|cff33ffcc/codex|cffffffff showquest |cffcccccc - 在地图上显示当前选择的任务")
+        print("|cff33ffcc/codex|cffffffff hidequest |cffcccccc - 从地图上隐藏当前选择的任务")
         print("|cff33ffcc ->|cffffffff 可用关系:  |cff33ffccchests|r - 宝箱, |cff33ffccherbs|r - 草药, |cff33ffccmines|r - 矿物")
         return
     end
@@ -93,6 +95,16 @@ SlashCmdList["CODEX"] = function(input, editBox)
 
     if arg1 == "reset" then
         CodexQuest:ResetAll()
+        return
+    end
+
+    if arg1 == "showquest" then
+        CodexQuest:ShowCurrentQuest()
+        return
+    end
+
+    if arg1 == "hidequest" then
+        CodexQuest:HideCurrentQuest()
         return
     end
 

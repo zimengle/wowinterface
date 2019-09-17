@@ -8,6 +8,19 @@ https://muffinmangames.com
 *For skinning install the Masque addon
 
 Changes:
+v1.13.2.02:
+ - Hunters: Tracking, Aspect of the Monkey, Immolation Trap, marked as Mana users
+ - Druid: Aquatic form and Stance button
+ - Shaman: Strength of Earth Totem, Flametongue Weapon
+ - Updated some data for Openables, Quest Items, Rep
+ - Updated libraries
+ - NOTE: LOTS of items/spells are missing but there shouldn`t be any lua errors
+
+v1.13.2.01:
+ - Lots of cleanup to remove irrelevant BfA stuff
+ - Added many class abilities
+ - NOTE: LOTS of items/spells are missing but there shouldn`t be any lua errors
+
 v1.13.2.00:
  - Initial Release for Classic
  - NOTE: LOTS of items/spells are missing but there shouldn`t be any lua errors

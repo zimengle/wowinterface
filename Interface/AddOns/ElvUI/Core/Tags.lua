@@ -7,9 +7,10 @@ local translitMark = "!"
 
 --Lua functions
 local _G = _G
+local select = select
 local wipe = wipe
 local floor = floor
-local unpack, pairs = unpack, pairs
+local pairs = pairs
 local gmatch, gsub, format = gmatch, gsub, format
 local strfind, strmatch, utf8lower, utf8sub = strfind, strmatch, string.utf8lower, string.utf8sub
 --WoW API / Variables
@@ -21,8 +22,6 @@ local GetTime = GetTime
 local GetUnitSpeed = GetUnitSpeed
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
-local QuestDifficultyColors = QuestDifficultyColors
-local UnitAlternatePowerTextureInfo = UnitAlternatePowerTextureInfo
 local UnitClass = UnitClass
 local UnitClassification = UnitClassification
 local UnitGUID = UnitGUID
@@ -57,7 +56,12 @@ local GetQuestLogTitle = GetQuestLogTitle
 local UnitPVPName = UnitPVPName
 local LEVEL = LEVEL
 
--- GLOBALS: Hex, PowerBarColor, _TAGS
+local HasPetUI = HasPetUI
+local GetPetHappiness = GetPetHappiness
+local CreateTextureMarkup = CreateTextureMarkup
+local CreateAtlasMarkup = CreateAtlasMarkup
+-- GLOBALS: Hex, PowerBarColor, _TAGS, _COLORS
+-- GLOBALS: SPELL_POWER_MANA
 
 ------------------------------------------------------------------------
 --	Tags
@@ -428,7 +432,7 @@ ElvUF.Tags.Methods['difficultycolor'] = function(unit)
 	elseif (DiffColor >= -2) then
 		r, g, b = 1.0, 0.96, 0.41
 	elseif (-DiffColor <= GetQuestGreenRange()) then
-		r, g, b = .1, 1, .1
+		r, g, b = 0.251, 0.753, 0.251
 	else
 		r, g, b = 0.6, 0.6, 0.6
 	end

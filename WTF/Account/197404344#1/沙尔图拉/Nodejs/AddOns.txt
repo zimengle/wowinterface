@@ -33,3 +33,8 @@ Questie: enabled
 Spy: enabled
 ElvUI_QuestXP_Classic: enabled
 StatCompare: disabled
+Recount: enabled
+Details_EncounterDetails: enabled
+Details: disabled
+Prat-3.0: disabled
+Prat-3.0_Libraries: disabled

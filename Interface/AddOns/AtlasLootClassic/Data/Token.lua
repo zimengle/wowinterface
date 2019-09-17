@@ -171,6 +171,13 @@ local TOKEN = {
 	[18703] = { 18714, 18713, 18715 }, -- Ancient Petrified Leaf
 	[18646] = { 18665, 18646, 0, 18608, 18609 }, -- The Eye of Divinity
 	[18665] = 18646, -- The Eye of Shadow
+	[17074] = { 17074, 17223 }, -- Shadowstrike
+	[17223] = 17074, -- Thunderstrike
+	[18608] = { 18608, 18609 }, -- Benediction
+	[18609] = 18608, -- Anathema
+	[7733] = { 7733, 0, 7740, 7741 }, -- Staff of Prehistoria
+	[7740] = 7733, -- Gni'kiv Medallion
+	[7741] = 7733, -- The Shaft of Tsol
 
 	-- Quests
 	[10441] = { 10657, 10658, type = 3 }, -- Glowing Shard
@@ -230,6 +237,11 @@ local TOKEN = {
 	[22734] = 22727, -- Base of Atiesh
 	[22733] = 22727, -- Staff Head of Atiesh
 
+	-- UBRS key
+	[12219] = { 12219, 12336, 12335, 12337, 0, 12344 }, -- Unadorned Seal of Ascension
+	[12336] = 12219, -- Gemstone of Spirestone
+	[12335] = 12219, -- Gemstone of Smolderthorn
+	[12337] = 12219, -- Gemstone of Bloodaxe
 }
 for k, v in pairs(TOKEN) do
 	if TOKEN[v] then

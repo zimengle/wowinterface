@@ -22,7 +22,7 @@ TrinketMenuOptions = {
 	["ShowHotKeys"] = "OFF",
 	["Columns"] = 4,
 	["SetColumns"] = "OFF",
-	["IconPos"] = -100,
+	["IconPos"] = -5.38642622429668,
 	["SquareMinimap"] = "OFF",
 	["KeepDocked"] = "ON",
 }

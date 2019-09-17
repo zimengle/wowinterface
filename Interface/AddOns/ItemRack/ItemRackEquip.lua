@@ -47,7 +47,7 @@ end
 
 function ItemRack.EquipSet(setname)
 	if not setname or not ItemRackUser.Sets[setname] then
-		ItemRack.Print("装备集 \""..tostring(setname).."\" 不存在.")
+		ItemRack.Print("Set \""..tostring(setname).."\" doesn't exist.")
 		return
 	end
 	if ItemRack.NowCasting or ItemRack.AnythingLocked() then
@@ -226,7 +226,7 @@ function ItemRack.IterateSwapList(setname)
 		end
 	end
 	if ItemRack.AbortSwap then
-		ItemRack.Print("转换已停止. "..(ItemRack.AbortReasons[ItemRack.AbortSwap] or ""))
+		ItemRack.Print("Swap stopped. "..(ItemRack.AbortReasons[ItemRack.AbortSwap] or ""))
 	end
 end
 
@@ -286,8 +286,7 @@ function ItemRack.IsSetEquipped(setname,exact)
 		local id
 		for i in pairs(set) do
 			id = ItemRack.GetID(i)
---			if (exact and set[i]~=id) or (not exact and not ItemRack.SameID(set[i],ItemRack.GetID(i))) then
-			if (ItemRack.UpdateIRString(set[i]) ~= id) then
+			if (exact and set[i]~=id) or (not exact and not ItemRack.SameID(set[i],ItemRack.GetID(i))) then
 				return false
 			end
 		end
