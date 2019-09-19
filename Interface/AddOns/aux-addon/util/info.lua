@@ -8,36 +8,8 @@ AuxTooltip:SetScript('OnTooltipAddMoney', function(self, arg1)
     self.money = arg1
 end)
 
-do
-	local inventory_index_map = {
-		INVTYPE_AMMO = {0},
-		INVTYPE_HEAD = {1},
-		INVTYPE_NECK = {2},
-		INVTYPE_SHOULDER = {3},
-		INVTYPE_BODY = {4},
-		INVTYPE_CHEST = {5},
-		INVTYPE_ROBE = {5},
-		INVTYPE_WAIST = {6},
-		INVTYPE_LEGS = {7},
-		INVTYPE_FEET = {8},
-		INVTYPE_WRIST = {9},
-		INVTYPE_HAND = {10},
-		INVTYPE_FINGER = {11, 12},
-		INVTYPE_TRINKET = {13, 14},
-		INVTYPE_CLOAK = {15},
-		INVTYPE_2HWEAPON = {16, 17},
-		INVTYPE_WEAPONMAINHAND = {16, 17},
-		INVTYPE_WEAPON = {16, 17},
-		INVTYPE_WEAPONOFFHAND = {16, 17},
-		INVTYPE_HOLDABLE = {16, 17},
-		INVTYPE_SHIELD = {16, 17},
-		INVTYPE_RANGED = {18},
-		INVTYPE_RANGEDRIGHT = {18},
-		INVTYPE_TABARD = {19},
-	}
-	function M.inventory_index(slot)
-	    return unpack(inventory_index_map[slot] or T.temp-T.acquire())
-	end
+function M.duration_hours(duration_code)
+    return T.map(1, 2, 2, 8, 3, 24)[duration_code]
 end
 
 function M.container_item(bag, slot)
@@ -102,7 +74,9 @@ function M.auction(index, query_type)
 
     local name, texture, count, quality, usable, level, _, start_price, min_increment, buyout_price, high_bid, high_bidder, _, owner, _, sale_status, item_id, has_all_info = GetAuctionItemInfo(query_type, index)
 
-	if has_all_info then
+--    local ignore_owner = get_state().params.ignore_owner or aux.account_data.ignore_owner TODO
+
+    if has_all_info == true and (aux.account_data.ignore_owner or owner) then
         local link = GetAuctionItemLink(query_type, index)
         local item_id, suffix_id, unique_id, enchant_id = parse_link(link)
 
@@ -113,7 +87,6 @@ function M.auction(index, query_type)
         local aux_quantity = charges or count
         local blizzard_bid = high_bid > 0 and high_bid or start_price
         local bid_price = high_bid > 0 and (high_bid + min_increment) or start_price
-
         return T.map(
             'item_id', item_id,
             'suffix_id', suffix_id,
@@ -169,37 +142,6 @@ end
 function M.set_tooltip(itemstring, owner, anchor)
     GameTooltip:SetOwner(owner, anchor)
     GameTooltip:SetHyperlink(itemstring)
-end
-
-function M.set_shopping_tooltip(slot)
-    local index1, index2 = inventory_index(slot)
-    local tooltips = T.temp-T.acquire()
-    if index1 then
-        local tooltip = tooltip('inventory', 'player', index1)
-        if #tooltip > 0 then
-            tinsert(tooltips, tooltip)
-        end
-    end
-    if index2 then
-        local tooltip = tooltip('inventory', 'player', index2)
-        if #tooltip > 0 then
-            tinsert(tooltips, tooltip)
-        end
-    end
-
-    if tooltips[1] then
-        tinsert(tooltips[1], 1, T.temp-T.map('left_text', 'Currently Equipped', 'left_color', T.temp-T.list(.5, .5, .5)))
-        ShoppingTooltip1:SetOwner(GameTooltip, 'ANCHOR_NONE')
-        ShoppingTooltip1:SetPoint('TOPLEFT', GameTooltip, 'TOPRIGHT', 0, -10)
-        load_tooltip(ShoppingTooltip1, tooltips[1])
-    end
-
-    if tooltips[2] then
-        tinsert(tooltips[2], 1, T.temp-T.map('left_text', 'Currently Equipped', 'left_color', T.temp-T.list(.5, .5, .5)))
-        ShoppingTooltip2:SetOwner(ShoppingTooltip1, 'ANCHOR_NONE')
-        ShoppingTooltip2:SetPoint('TOPLEFT', ShoppingTooltip1, 'TOPRIGHT')
-        load_tooltip(ShoppingTooltip2, tooltips[2])
-    end
 end
 
 function M.tooltip_match(entry, tooltip)
@@ -357,16 +299,12 @@ function M.item_key(link)
 end
 
 function M.parse_link(link)
-    local _, _, item_id, enchant_id, suffix_id, unique_id, name = strfind(link, '|c%x%x%x%x%x%x%x%x|Hitem:(%d*):(%d*):(%d*):(%d*)[:0-9]*|h%[(.-)%]|h|r')
+    local _, _, item_id, enchant_id, suffix_id, unique_id, name = strfind(link, '|Hitem:(%d*):(%d*):::::(%d*):(%d*)[:0-9]*|h%[(.-)%]|h')
     return tonumber(item_id) or 0, tonumber(suffix_id) or 0, tonumber(unique_id) or 0, tonumber(enchant_id) or 0, name
 end
 
-function M.itemstring(item_id, suffix_id, unique_id, enchant_id)
-    return 'item:' .. (item_id or 0) .. ':' .. (enchant_id or 0) .. ':' .. (suffix_id or 0) .. ':' .. (unique_id or 0)
-end
-
 function M.item(item_id, suffix_id)
-    local itemstring = 'item:' .. (item_id or 0) .. ':0:' .. (suffix_id or 0) .. ':0'
+    local itemstring = 'item:' .. (item_id or 0) .. '::::::' .. (suffix_id or 0)
     local name, link, quality, level, requirement, class, subclass, max_stack, slot, texture, sell_price = GetItemInfo(itemstring)
     return name and T.map(
         'name', name,
@@ -384,6 +322,9 @@ function M.item(item_id, suffix_id)
 end
 
 function M.category_index(category)
+    if category == 'Weapon' then -- TODO retail apparently the names aren't always the same as from GetAuctionItemInfo?
+        return 1
+    end
     for i, v in ipairs(AuctionCategories) do
         if strupper(v.name) == strupper(category) then
             return i, v.name

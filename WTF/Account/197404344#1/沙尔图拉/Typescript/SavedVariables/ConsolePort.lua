@@ -82,7 +82,11 @@ ConsolePortBindingSet = {
 		},
 	}, -- [1]
 	[0] = {
-		["CP_T_L3"] = {
+		["CP_L_RIGHT"] = {
+			[""] = "ACTIONBUTTON12",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
 		},
 		["CP_R_LEFT"] = {
 			[""] = "ACTIONBUTTON1",
@@ -97,17 +101,37 @@ ConsolePortBindingSet = {
 		},
 		["CP_T_R3"] = {
 		},
-		["CP_L_RIGHT"] = {
-			[""] = "ACTIONBUTTON12",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
-		},
 		["CP_L_UP"] = {
 			[""] = "MULTIACTIONBAR1BUTTON12",
 			["SHIFT-"] = "MULTIACTIONBAR2BUTTON2",
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON10",
+		},
+		["CP_T_L3"] = {
+		},
+		["CP_X_LEFT"] = {
+			[""] = "OPENALLBAGS",
+			["SHIFT-"] = "TOGGLEWORLDMAP",
+			["CTRL-"] = "CP_CAMZOOMOUT",
+			["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
+		},
+		["CP_R_UP"] = {
+			[""] = "ACTIONBUTTON2",
+			["SHIFT-"] = "ACTIONBUTTON7",
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
+		},
+		["CP_L_LEFT"] = {
+			[""] = "MULTIACTIONBAR1BUTTON11",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+		},
+		["CP_T1"] = {
+			[""] = "ACTIONBUTTON4",
+			["SHIFT-"] = "TARGETNEARESTENEMY",
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
 		},
 		["CP_R_RIGHT"] = {
 			[""] = "ACTIONBUTTON3",
@@ -126,30 +150,6 @@ ConsolePortBindingSet = {
 			["SHIFT-"] = "ACTIONBUTTON10",
 			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
 			["CTRL-SHIFT-"] = "TOGGLEAUTORUN",
-		},
-		["CP_T1"] = {
-			[""] = "ACTIONBUTTON4",
-			["SHIFT-"] = "TARGETSCANENEMY",
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
-		},
-		["CP_L_LEFT"] = {
-			[""] = "MULTIACTIONBAR1BUTTON11",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
-		},
-		["CP_R_UP"] = {
-			[""] = "ACTIONBUTTON2",
-			["SHIFT-"] = "ACTIONBUTTON7",
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
-		},
-		["CP_X_LEFT"] = {
-			[""] = "OPENALLBAGS",
-			["SHIFT-"] = "TOGGLEWORLDMAP",
-			["CTRL-"] = "CP_CAMZOOMOUT",
-			["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
 		},
 		["CP_X_RIGHT"] = {
 			[""] = "TOGGLEGAMEMENU",
@@ -209,19 +209,21 @@ ConsolePortUtility = {
 		["action"] = "item",
 		["cursorID"] = 8076,
 	}, -- [1]
-	[5] = {
-		["value"] = "防御姿态",
-		["action"] = "spell",
-		["cursorID"] = 37,
-	},
-	[6] = {
-		["value"] = "科多兽诱引器",
-		["action"] = "item",
-		["cursorID"] = 13892,
-	},
-	[4] = {
+	nil, -- [2]
+	nil, -- [3]
+	{
 		["value"] = "英勇打击",
 		["action"] = "spell",
 		["cursorID"] = 24,
-	},
+	}, -- [4]
+	{
+		["value"] = "防御姿态",
+		["action"] = "spell",
+		["cursorID"] = 37,
+	}, -- [5]
+	{
+		["value"] = "科多兽诱引器",
+		["action"] = "item",
+		["cursorID"] = 13892,
+	}, -- [6]
 }

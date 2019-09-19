@@ -53,4 +53,3 @@ bind ; MULTIACTIONBAR1BUTTON5
 bind ' MULTIACTIONBAR1BUTTON6
 bind NUMPAD1 CLICK ItemRackTypescript沙尔图拉练级:LeftButton
 bind NUMPAD2 CLICK ItemRackTypescript沙尔图拉防御:LeftButton
-bind  CP_L_PULL

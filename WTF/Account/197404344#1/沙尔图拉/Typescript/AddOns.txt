@@ -7,7 +7,7 @@ AtlasLootClassic_Collections: enabled
 AtlasLootClassic_Crafting: enabled
 AtlasLootClassic_DungeonsAndRaids: enabled
 AtlasLootClassic_PvP: enabled
-ConsolePort: enabled
+ConsolePort: disabled
 ConsolePortBar: enabled
 ConsolePortAdvanced: enabled
 ConsolePortHelp: enabled
@@ -52,7 +52,7 @@ ItemTooltipProfessionIcons: enabled
 Leatrix_Maps: enabled
 TipTop: enabled
 WeaponSwingTimer: enabled
-ElvUI: disabled
+ElvUI: enabled
 ElvUI_OptionsUI: enabled
 Bagnon: disabled
 ItemRackOptions: enabled
@@ -67,3 +67,4 @@ Details_EncounterDetails: enabled
 Details: disabled
 Prat-3.0: disabled
 Prat-3.0_Libraries: disabled
+BetterQuestFrame: disabled

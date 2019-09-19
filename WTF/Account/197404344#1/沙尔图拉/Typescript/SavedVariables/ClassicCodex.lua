@@ -4,13 +4,13 @@ CodexConfig = {
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
 	["autoAccept"] = false,
-	["allQuestGivers"] = true,
 	["nameplateIcon"] = true,
-	["showFestival"] = true,
-	["autoTurnin"] = true,
-	["currentQuestGivers"] = true,
-	["trackingMethod"] = 1,
+	["allQuestGivers"] = true,
 	["spawnMarkerSize"] = 10,
+	["trackingMethod"] = 1,
+	["currentQuestGivers"] = true,
+	["autoTurnin"] = true,
+	["showFestival"] = true,
 	["questMarkerSize"] = 14,
 }
 CodexHiddenQuests = {
@@ -19,15 +19,15 @@ CodexBrowserFavorites = {
 	["items"] = {
 		[19033] = "斯拉提的工具",
 	},
-	["units"] = {
-		[4273] = "守护者奥达努斯",
-		[12677] = "猎影",
-		[12918] = "穆戈特酋长",
-		[3238] = "雷鳞蜥蜴",
+	["objets"] = {
 	},
 	["quests"] = {
 	},
-	["objets"] = {
+	["units"] = {
+		[4273] = "守护者奥达努斯",
+		[12677] = "猎影",
+		[3238] = "雷鳞蜥蜴",
+		[12918] = "穆戈特酋长",
 	},
 }
 CodexColors = {
@@ -49,6 +49,11 @@ CodexColors = {
 	["尤塞尔奈"] = {
 		0.486274509803922, -- [1]
 		0.305882352941177, -- [2]
+		0.588235294117647, -- [3]
+	},
+	["纳菲恩"] = {
+		0.886274509803922, -- [1]
+		0.52156862745098, -- [2]
 		0.588235294117647, -- [3]
 	},
 	["血法师莱诺雷"] = {

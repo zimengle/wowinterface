@@ -36,6 +36,26 @@ TomTomWaypointsM = {
 	["profiles"] = {
 		["Typescript - 沙尔图拉"] = {
 			[1411] = {
+				["1411:563259233.88416:720831866.17634:TomTom 路径点"] = {
+					1411, -- [1]
+					0.563259233884157, -- [2]
+					0.720831866176335, -- [3]
+					["minimap"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom 路径点",
+					["arrivaldistance"] = 15,
+					["callbacks"] = {
+						["distance"] = {
+						},
+						["world"] = {
+						},
+						["minimap"] = {
+						},
+					},
+					["crazy"] = true,
+					["persistent"] = true,
+					["world"] = true,
+				},
 				["1411:563259233.88416:720831866.17633:TomTom 路径点"] = {
 					1411, -- [1]
 					0.563259233884157, -- [2]
@@ -65,26 +85,6 @@ TomTomWaypointsM = {
 					["crazy"] = true,
 					["minimap"] = true,
 					["world"] = true,
-				},
-				["1411:563259233.88416:720831866.17634:TomTom 路径点"] = {
-					1411, -- [1]
-					0.563259233884157, -- [2]
-					0.720831866176335, -- [3]
-					["world"] = true,
-					["cleardistance"] = 10,
-					["title"] = "TomTom 路径点",
-					["arrivaldistance"] = 15,
-					["callbacks"] = {
-						["distance"] = {
-						},
-						["minimap"] = {
-						},
-						["world"] = {
-						},
-					},
-					["crazy"] = true,
-					["persistent"] = true,
-					["minimap"] = true,
 				},
 			},
 		},

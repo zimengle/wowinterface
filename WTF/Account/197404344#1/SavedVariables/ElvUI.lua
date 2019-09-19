@@ -11,7 +11,7 @@ ElvDB = {
 		},
 		["沙尔图拉"] = {
 			["Lua"] = 29970,
-			["Typescript"] = 1356471,
+			["Typescript"] = 1532472,
 		},
 	},
 	["class"] = {
@@ -101,7 +101,7 @@ ElvDB = {
 					["height"] = 10,
 				},
 			},
-			["currentTutorial"] = 10,
+			["currentTutorial"] = 9,
 			["general"] = {
 				["totems"] = {
 					["spacing"] = 8,
@@ -146,7 +146,6 @@ ElvDB = {
 				["fontSize"] = 10,
 				["panelColorConverted"] = true,
 				["panelHeight"] = 236,
-				["copyChatLines"] = true,
 			},
 			["layoutSet"] = "tank",
 			["movers"] = {

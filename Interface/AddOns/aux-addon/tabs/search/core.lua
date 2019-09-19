@@ -3,11 +3,11 @@ select(2, ...) 'aux.tabs.search'
 local aux = require 'aux'
 local info = require 'aux.util.info'
 
-local tab = aux.tab '浏览'
+local tab = aux.tab '搜索'
 
 StaticPopupDialogs.AUX_SEARCH_TABLE_FULL = {
-    text = '结果过多！\n本次搜索并未终止，但是不会显示更多的结果了。',
-    button1 = '确定',
+    text = '列表已满!\n此搜索的进一步结果仍将被处理，但不再显示在表中',
+    button1 = 'Ok',
     showAlert = 1,
     timeout = 0,
     hideOnEscape = 1,

@@ -483,7 +483,7 @@ end
 
 function blizzard_query(filter)
     local filters = filter.blizzard
-    local query = T.map('name', filters.name, 'exact', filters.exact)
+    local query = T.map('name', filters.name, 'exact', aux.index(filters.exact, 2))
     local item_id = filters.name and info.item_id(filters.name)
     local item_info = item_id and info.item(item_id)
     if filters.exact and item_info then
@@ -514,6 +514,10 @@ function validator(filter)
         end
     end
     return function(record)
+        local item_info_without_suffix = info.item(record.item_id) -- TODO retail is this always available?
+        if filter.blizzard.exact and (not item_info_without_suffix or strlower(item_info_without_suffix.name) ~= filter.blizzard.name) then
+            return false
+        end
         local stack = T.temp-T.acquire()
         for i = #filter.post, 1, -1 do
             local type, name, param = unpack(filter.post[i])

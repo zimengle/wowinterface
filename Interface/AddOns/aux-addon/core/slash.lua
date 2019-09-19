@@ -3,6 +3,8 @@ select(2, ...) 'aux.core.slash'
 local T = require 'T'
 local aux = require 'aux'
 local post = require 'aux.tabs.post'
+local info = require 'aux.util.info'
+local scan = require 'aux.core.scan'
 
 function status(enabled)
 	return (enabled and aux.color.green'on' or aux.color.red'off')
@@ -25,7 +27,7 @@ function SlashCmdList.AUX(command)
 	    aux.print('post bid ' .. status(aux.account_data.post_bid))
     elseif arguments[1] == 'post' and arguments[2] == 'duration' and  T.map('2', post.DURATION_2, '8', post.DURATION_8, '24', post.DURATION_24)[arguments[3]] then
         aux.account_data.post_duration = T.map('2', post.DURATION_2, '8', post.DURATION_8, '24', post.DURATION_24)[arguments[3]]
-        aux.print('post duration ' .. aux.color.blue(aux.account_data.post_duration / 60 .. 'h'))
+        aux.print('post duration ' .. aux.color.blue(info.duration_hours(aux.account_data.post_duration) .. 'h'))
     elseif arguments[1] == 'crafting' and arguments[2] == 'cost' then
 		aux.account_data.crafting_cost = not aux.account_data.crafting_cost
 		aux.print('crafting cost ' .. status(aux.account_data.crafting_cost))
@@ -53,12 +55,28 @@ function SlashCmdList.AUX(command)
         aux.account_data.unused_item_ids = {}
         aux.account_data.auctionable_items = {}
         aux.print('Item cache cleared.')
+    elseif arguments[1] == 'scan' then
+        if not aux.frame:IsShown() then
+            aux.print('Must be at the auction house to scan.')
+        elseif not select(2, CanSendAuctionQuery()) then
+            aux.print('Can only scan once every 15 minutes.')
+        else
+            aux.print('Scan started. Please wait...')
+            scan.start{
+                type = 'list',
+                get_all = true,
+                on_complete = function()
+                    aux.print('Scan complete.')
+                end,
+            }
+        end
 	else
 		aux.print('Usage:')
-		aux.print('- scale [' .. aux.color.blue(aux.account_data.scale) .. ']')
+        aux.print('- scan')
+        aux.print('- scale [' .. aux.color.blue(aux.account_data.scale) .. ']')
 		aux.print('- ignore owner [' .. status(aux.account_data.ignore_owner) .. ']')
 		aux.print('- post bid [' .. status(aux.account_data.post_bid) .. ']')
-        aux.print('- post duration [' .. aux.color.blue(aux.account_data.post_duration / 60 .. 'h') .. ']')
+        aux.print('- post duration [' .. aux.color.blue(info.duration_hours(aux.account_data.post_duration) .. 'h') .. ']')
         aux.print('- crafting cost [' .. status(aux.account_data.crafting_cost) .. ']')
 		aux.print('- tooltip value [' .. status(tooltip_settings.value) .. ']')
 		aux.print('- tooltip daily [' .. status(tooltip_settings.daily) .. ']')

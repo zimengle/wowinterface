@@ -1,5 +1,5 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 黑色小龙
+/target 黑色
 /target 蜘蛛
 /script SetRaidTarget("target",8)
 END

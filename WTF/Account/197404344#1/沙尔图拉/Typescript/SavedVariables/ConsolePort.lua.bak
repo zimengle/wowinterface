@@ -204,6 +204,11 @@ ConsolePortMouse = {
 	},
 }
 ConsolePortUtility = {
+	{
+		["value"] = "魔法甜面包",
+		["action"] = "item",
+		["cursorID"] = 8076,
+	}, -- [1]
 	[5] = {
 		["value"] = "防御姿态",
 		["action"] = "spell",

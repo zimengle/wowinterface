@@ -597,8 +597,6 @@ function AutoBarCategory:Initialize()
 
 	AutoBarCategoryList["Consumable.Cooldown.Stone.Mana.Other"] = AutoBarItems:new( "Consumable.Cooldown.Stone.Mana.Other", "Spell_Shadow_SealOfKings", "Consumable.Cooldown.Stone.Mana.Other")
 
-	AutoBarCategoryList["Consumable.Cooldown.Stone.Health.Other"] = AutoBarItems:new( "Consumable.Cooldown.Stone.Health.Other", "INV_Misc_Food_55", "Consumable.Cooldown.Stone.Health.Other")
-
 	AutoBarCategoryList["Consumable.Bandage.Basic"] = AutoBarItems:new( "Consumable.Bandage.Basic", "INV_Misc_Bandage_Netherweave_Heavy", "Consumable.Bandage.Basic")
 	AutoBarCategoryList["Consumable.Bandage.Basic"]:SetTargeted(true)
 
@@ -645,6 +643,11 @@ function AutoBarCategory:Initialize()
 	AutoBarCategoryList["Muffin.Food.Combo.Buff"] = AutoBarItems:new("Muffin.Food.Combo.Buff", "INV_Misc_Food_95_Grainbread", "Muffin.Food.Combo.Buff")
 	AutoBarCategoryList["Muffin.Food.Combo.Buff"]:SetNonCombat(true)
 
+	AutoBarCategoryList["Muffin.Stone.Mana"] = AutoBarItems:new("Muffin.Stones.Mana", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Mana")
+	AutoBarCategoryList["Muffin.Stone.Health"] = AutoBarItems:new("Muffin.Stones.Health", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Health")
+
+	AutoBarCategoryList["Muffin.Poison.Lethal"] = AutoBarItems:new("Muffin.Poison.Lethal", "INV_Misc_Food_95_Grainbread", "Muffin.Poison.Lethal")
+	AutoBarCategoryList["Muffin.Poison.Nonlethal"] = AutoBarItems:new("Muffin.Poison.Nonlethal", "INV_Misc_Food_95_Grainbread", "Muffin.Poison.Nonlethal")
 
 
 	AutoBarCategoryList["Consumable.Food.Edible.Combo.Conjured"] = AutoBarItems:new( "Consumable.Food.Edible.Combo.Conjured", "inv_misc_food_73cinnamonroll", "Consumable.Food.Edible.Combo.Conjured")
@@ -734,14 +737,6 @@ function AutoBarCategory:Initialize()
 
 
 	AutoBarCategoryList["Muffin.Misc.Reputation"] = AutoBarItems:new("Muffin.Misc.Reputation", "archaeology_5_0_mogucoin", "Muffin.Misc.Reputation")
-
-
-	AutoBarCategoryList["Consumable.Cooldown.Potion.Health.Anywhere"] = AutoBarItems:new("Consumable.Cooldown.Potion.Health.Anywhere", "INV_Alchemy_EndlessFlask_06", "Consumable.Cooldown.Potion.Health.Anywhere")
-
-	AutoBarCategoryList["Consumable.Cooldown.Potion.Health.Basic"] = AutoBarItems:new("Consumable.Cooldown.Potion.Health.Basic", "INV_Potion_54", "Consumable.Cooldown.Potion.Health.Basic")
-
-	AutoBarCategoryList["Consumable.Cooldown.Potion.Health.PvP"] = AutoBarItems:new("Consumable.Cooldown.Potion.Health.PvP", "INV_Potion_39", "Consumable.Cooldown.Potion.Health.PvP")
-	AutoBarCategoryList["Consumable.Cooldown.Potion.Health.PvP"]:SetBattleground(true)
 
 
 	AutoBarCategoryList["Consumable.Cooldown.Potion.Mana.Anywhere"] = AutoBarItems:new("Consumable.Cooldown.Potion.Mana.Anywhere", "INV_Alchemy_EndlessFlask_04", "Consumable.Cooldown.Potion.Mana.Anywhere")
@@ -955,21 +950,6 @@ function AutoBarCategory:Initialize()
 		"HUNTER", ABGCS:GetSpellNameByName("Aspect of the Wild"),
 	})
 
-
-	AutoBarCategoryList["Spell.Poison.Lethal"] = AutoBarSpells:new( "Spell.Poison.Lethal", spellIconList["Deadly Poison"], {
-		"ROGUE", ABGCS:GetSpellNameByName("Instant Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Deadly Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Wound Poison"),
-	})
-
-	AutoBarCategoryList["Spell.Poison.Nonlethal"] = AutoBarSpells:new( "Spell.Poison.Nonlethal", spellIconList["Crippling Poison"],
-	{
-		"ROGUE", ABGCS:GetSpellNameByName("Crippling Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Mind-numbing Poison"),
-	})
-
-
-
 	AutoBarCategoryList["Spell.Class.Buff"] = AutoBarSpells:new( "Spell.Class.Buff", spellIconList["Barkskin"],
 	{
 		"MAGE", ABGCS:GetSpellNameByName("Slow Fall"),
@@ -1059,6 +1039,7 @@ function AutoBarCategory:Initialize2()
 		"DRUID", ABGCS:GetSpellNameByName("Moonkin Form"),
 		"DRUID", ABGCS:GetSpellNameByName("Tree Form"),
 		"DRUID", ABGCS:GetSpellNameByName("Travel Form"),
+		"PALADIN", ABGCS:GetSpellNameByName("Devotion Aura"),
 		"WARRIOR", ABGCS:GetSpellNameByName("Defensive Stance"),
 	})
 
@@ -1100,11 +1081,6 @@ function AutoBarCategory:Initialize2()
 
 	AutoBarCategoryList["Spell.Buff.Weapon"] = AutoBarSpells:new("Spell.Buff.Weapon", spellIconList["Deadly Poison"],
 	{
-		"ROGUE", ABGCS:GetSpellNameByName("Deadly Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Wound Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Crippling Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Instant Poison"),
-		"ROGUE", ABGCS:GetSpellNameByName("Mind-numbing Poison"),
 		"SHAMAN", ABGCS:GetSpellNameByName("Flametongue Weapon"),
 		"SHAMAN", ABGCS:GetSpellNameByName("Rockbiter Weapon"),
 	})
@@ -1159,6 +1135,7 @@ function AutoBarCategory:Initialize2()
 		"HUNTER", ABGCS:GetSpellNameByName("Explosive Trap"),
 		"HUNTER", ABGCS:GetSpellNameByName("Freezing Trap"),
 		"HUNTER", ABGCS:GetSpellNameByName("Immolation Trap"),
+		"ROGUE",  ABGCS:GetSpellNameByName("Disarm Trap"),
 	})
 
 

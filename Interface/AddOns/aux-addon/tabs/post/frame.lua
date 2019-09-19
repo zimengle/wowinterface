@@ -46,7 +46,7 @@ do
     end)
     local label = gui.label(checkbox, gui.font_size.small)
     label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
-    label:SetText('显示隐藏的物品')
+    label:SetText('显示隐藏物品')
     show_hidden_checkbox = checkbox
 end
 
@@ -58,10 +58,10 @@ do
 	f:SetPoint('BOTTOMRIGHT', 0, 0)
 	inventory_listing = item_listing.new(
 		f,
-	    function(self, arg1)
-	        if arg1 == 'LeftButton' then
+	    function(self, button)
+	        if button == 'LeftButton' then
 	            update_item(self.item_record)
-	        elseif arg1 == 'RightButton' then
+	        elseif button == 'RightButton' then
 	            aux.set_tab(1)
 	            search_tab.set_filter(strlower(info.item(self.item_record.item_id).name) .. '/exact')
 	            search_tab.execute(nil, false)
@@ -75,11 +75,11 @@ end
 
 bid_listing = listing.new(frame.bid_listing)
 bid_listing:SetColInfo{
-    {name='已有\n拍卖', width=.17, align='CENTER'},
+    {name='拍卖数', width=.17, align='CENTER'},
     {name='剩余\n时间', width=.11, align='CENTER'},
-    {name='每组\n堆叠', width=.11, align='CENTER'},
-    {name='竞标价\n(每件)', width=.4, align='RIGHT'},
-    {name='平均\n物价比', width=.21, align='CENTER'},
+    {name='堆叠\n数量', width=.11, align='CENTER'},
+    {name='竞拍\n(每组)', width=.4, align='RIGHT'},
+    {name='% 价格\n对比', width=.21, align='CENTER'},
 }
 bid_listing:SetSelection(function(data)
 	return data.record == get_bid_selection() or data.record.historical_value and get_bid_selection() and get_bid_selection().historical_value
@@ -99,11 +99,11 @@ end)
 
 buyout_listing = listing.new(frame.buyout_listing)
 buyout_listing:SetColInfo{
-	{name='已有\n拍卖', width=.17, align='CENTER'},
+	{name='拍卖数', width=.17, align='CENTER'},
 	{name='剩余\n时间', width=.11, align='CENTER'},
-	{name='每组\n堆叠', width=.12, align='CENTER'},
+	{name='堆叠\n数量', width=.12, align='CENTER'},
 	{name='一口价\n(每件)', width=.4, align='RIGHT'},
-	{name='平均\n物价比', width=.20, align='CENTER'},
+	{name='% 价格\n对比', width=.20, align='CENTER'},
 }
 buyout_listing:SetSelection(function(data)
 	return data.record == get_buyout_selection() or data.record.historical_value and get_buyout_selection() and get_buyout_selection().historical_value
@@ -133,7 +133,7 @@ do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
     btn:SetText('发布')
-    btn:SetScript('OnClick', post_auctions)
+    btn:SetScript('OnClick', post_auction)
     post_button = btn
 end
 do
@@ -154,63 +154,49 @@ do
     item.button:SetScript('OnLeave', function()
         GameTooltip:Hide()
     end)
+    local function select_cursor_item()
+        local type, item_id, item_link = GetCursorInfo()
+        if type == 'item' then
+            local _, suffix_id = info.parse_link(item_link)
+            select_item(item_id .. ':' .. suffix_id)
+            ClearCursor()
+        end
+    end
+    item.button:HookScript('OnReceiveDrag', select_cursor_item)
+    item.button:HookScript('OnMouseDown', select_cursor_item)
+    item.button:HookScript('OnClick', select_cursor_item)
 end
 do
     local slider = gui.slider(frame.parameters)
     slider:SetValueStep(1)
-    slider:SetPoint('TOPLEFT', 13, -73)
+    slider:SetPoint('TOPLEFT', 13, -82)
     slider:SetWidth(190)
     slider:SetScript('OnValueChanged', function()
-        quantity_update(true)
+        refresh = true
     end)
     slider.editbox.change = function(self)
         slider:SetValue(self:GetNumber())
-        quantity_update(true)
+        prepare_stack()
     end
     slider.editbox:SetScript('OnTabPressed', function()
         if IsShiftKeyDown() then
             unit_buyout_price_input:SetFocus()
-        elseif stack_count_slider.editbox:IsVisible() then
-            stack_count_slider.editbox:SetFocus()
         else
             unit_start_price_input:SetFocus()
         end
     end)
     slider.editbox:SetNumeric(true)
     slider.editbox:SetMaxLetters(3)
-    slider.label:SetText('每组堆叠')
+    slider.label:SetText('堆叠数量')
     stack_size_slider = slider
 end
 do
-    local slider = gui.slider(frame.parameters)
-    slider:SetValueStep(1)
-    slider:SetPoint('TOPLEFT', stack_size_slider, 'BOTTOMLEFT', 0, -32)
-    slider:SetWidth(190)
-    slider:SetScript('OnValueChanged', function()
-        quantity_update()
-    end)
-    slider.editbox.change = function(self)
-        slider:SetValue(self:GetNumber())
-        quantity_update()
-    end
-    slider.editbox:SetScript('OnTabPressed', function()
-        if IsShiftKeyDown() then
-            stack_size_slider.editbox:SetFocus()
-        else
-            unit_start_price_input:SetFocus()
-        end
-    end)
-    slider.editbox:SetNumeric(true)
-    slider.label:SetText('出售组数')
-    stack_count_slider = slider
-end
-do
     local dropdown = gui.dropdown(frame.parameters)
-    dropdown:SetPoint('TOPLEFT', stack_count_slider, 'BOTTOMLEFT', 0, -22)
+    dropdown:SetPoint('TOPLEFT', stack_size_slider, 'BOTTOMLEFT', 0, -22)
     dropdown:SetWidth(90)
     local label = gui.label(dropdown, gui.font_size.small)
     label:SetPoint('BOTTOMLEFT', dropdown, 'TOPLEFT', -2, -3)
-    label:SetText('拍卖时限')
+    label:SetText('持续时间')
     UIDropDownMenu_Initialize(dropdown, initialize_duration_dropdown)
     dropdown:SetScript('OnShow', function(self)
         UIDropDownMenu_Initialize(self, initialize_duration_dropdown)
@@ -228,7 +214,7 @@ do
     end)
     local label = gui.label(checkbox, gui.font_size.small)
     label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
-    label:SetText('隐藏')
+    label:SetText('隐藏这个物品')
     hide_checkbox = checkbox
 end
 do
@@ -240,7 +226,7 @@ do
     editbox:SetFontSize(17)
     editbox:SetScript('OnTabPressed', function()
 	    if IsShiftKeyDown() then
-		    stack_count_slider.editbox:SetFocus()
+		    stack_size_slider.editbox:SetFocus()
 	    else
 		    unit_buyout_price_input:SetFocus()
 	    end
@@ -265,7 +251,7 @@ do
     do
         local label = gui.label(editbox, gui.font_size.small)
         label:SetPoint('BOTTOMLEFT', editbox, 'TOPLEFT', -2, 1)
-        label:SetText('竞标价(每件)')
+        label:SetText('起始价')
     end
     do
         local label = gui.label(editbox, 14)
@@ -309,7 +295,7 @@ do
     do
         local label = gui.label(editbox, gui.font_size.small)
         label:SetPoint('BOTTOMLEFT', editbox, 'TOPLEFT', -2, 1)
-        label:SetText('一口价(每件)')
+        label:SetText('一口价')
     end
     do
         local label = gui.label(editbox, 14)
@@ -331,11 +317,11 @@ function aux.handle.LOAD()
 		frame.bid_listing:Hide()
 		frame.buyout_listing:SetPoint('BOTTOMLEFT', frame.inventory, 'BOTTOMRIGHT', 2.5, 0)
 		buyout_listing:SetColInfo{
-			{name='已有拍卖', width=.15, align='CENTER'},
+			{name='拍卖数', width=.15, align='CENTER'},
 			{name='剩余时间', width=.15, align='CENTER'},
-			{name='每组堆叠', width=.15, align='CENTER'},
-			{name='一口价(每件)', width=.4, align='RIGHT'},
-			{name='平均物价比', width=.15, align='CENTER'},
+			{name='堆叠数量', width=.15, align='CENTER'},
+			{name='一口价 (每件)', width=.4, align='RIGHT'},
+			{name='% 价格对比', width=.15, align='CENTER'},
 		}
 	end
 end

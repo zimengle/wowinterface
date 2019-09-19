@@ -5,7 +5,7 @@ local aux = require 'aux'
 local scan_util = require 'aux.util.scan'
 local scan = require 'aux.core.scan'
 
-local tab = aux.tab '已发布'
+local tab = aux.tab '拍卖中'
 
 auction_records = T.acquire()
 
@@ -31,7 +31,7 @@ end
 function M.scan_auctions()
 
     status_bar:update_status(0, 0)
-    status_bar:set_text('正在扫描…')
+    status_bar:set_text('扫描拍卖中...')
 
     T.wipe(auction_records)
     update_listing()
@@ -42,12 +42,12 @@ function M.scan_auctions()
         end,
         on_complete = function()
             status_bar:update_status(1, 1)
-            status_bar:set_text('扫描完毕')
+            status_bar:set_text('扫描完成')
             update_listing()
         end,
         on_abort = function()
             status_bar:update_status(1, 1)
-            status_bar:set_text('取消扫描')
+            status_bar:set_text('扫描中止')
         end,
     }
 end

@@ -29,9 +29,9 @@ ConsolePortSettings = {
 	["interactCache"] = true,
 	["stickRadialLocal"] = false,
 	["actionBarStyle"] = 4,
-	["nameplateShowFriends"] = true,
+	["type"] = "XBOX",
 	["interactWith"] = false,
-	["mouseInvertPitch"] = false,
+	["nameplateShowFriends"] = true,
 	["mouseInvertYaw"] = false,
 	["raidCursorDirect"] = false,
 	["id"] = "132119966022137425",
@@ -58,7 +58,7 @@ ConsolePortSettings = {
 	["autoInteract"] = false,
 	["UIdisableHoldRepeat"] = false,
 	["CP_T1"] = "CP_TL1",
-	["type"] = "XBOX",
+	["mouseInvertPitch"] = false,
 	["autoSellJunk"] = true,
 	["disableUI"] = false,
 	["CP_T2"] = "CP_TR1",
@@ -115,14 +115,14 @@ ConsolePortCharacterSettings = {
 					},
 					["dir"] = "up",
 				},
-				["CP_L_LEFT"] = {
+				["CP_R_RIGHT"] = {
 					["size"] = 64,
 					["point"] = {
-						"LEFT", -- [1]
-						176, -- [2]
+						"RIGHT", -- [1]
+						-176, -- [2]
 						56, -- [3]
 					},
-					["dir"] = "left",
+					["dir"] = "right",
 				},
 				["CP_L_DOWN"] = {
 					["size"] = 64,
@@ -142,14 +142,14 @@ ConsolePortCharacterSettings = {
 					},
 					["dir"] = "right",
 				},
-				["CP_T2"] = {
+				["CP_T3"] = {
 					["size"] = 64,
 					["point"] = {
-						"RIGHT", -- [1]
-						-456, -- [2]
-						56, -- [3]
+						"LEFT", -- [1]
+						396, -- [2]
+						16, -- [3]
 					},
-					["dir"] = "left",
+					["dir"] = "down",
 				},
 				["CP_R_UP"] = {
 					["size"] = 64,
@@ -160,23 +160,23 @@ ConsolePortCharacterSettings = {
 					},
 					["dir"] = "up",
 				},
-				["CP_T3"] = {
-					["size"] = 64,
-					["point"] = {
-						"LEFT", -- [1]
-						396, -- [2]
-						16, -- [3]
-					},
-					["dir"] = "down",
-				},
-				["CP_R_RIGHT"] = {
+				["CP_T2"] = {
 					["size"] = 64,
 					["point"] = {
 						"RIGHT", -- [1]
-						-176, -- [2]
+						-456, -- [2]
 						56, -- [3]
 					},
-					["dir"] = "right",
+					["dir"] = "left",
+				},
+				["CP_L_LEFT"] = {
+					["size"] = 64,
+					["point"] = {
+						"LEFT", -- [1]
+						176, -- [2]
+						56, -- [3]
+					},
+					["dir"] = "left",
 				},
 				["CP_R_DOWN"] = {
 					["size"] = 64,

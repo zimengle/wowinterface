@@ -22,6 +22,7 @@ ConsolePortSettings = {
 	["disableSmartMouse"] = false,
 	["forceController"] = "XBOX",
 	["CP_M1"] = "CP_TL2",
+	["showAllAddons"] = false,
 	["TargetNearestUseNew"] = false,
 	["interactScrape"] = true,
 	["CP_T2"] = "CP_TR1",
@@ -29,9 +30,9 @@ ConsolePortSettings = {
 	["stickRadialType"] = 2,
 	["disableUI"] = false,
 	["actionBarStyle"] = 4,
-	["type"] = "XBOX",
+	["mouseInvertPitch"] = false,
 	["interactWith"] = false,
-	["nameplateShowFriends"] = true,
+	["type"] = "XBOX",
 	["raidCursorDirect"] = false,
 	["mouseInvertYaw"] = false,
 	["id"] = "132119966022137425",
@@ -58,7 +59,7 @@ ConsolePortSettings = {
 	["autoInteract"] = false,
 	["UIdisableHoldRepeat"] = false,
 	["CP_T1"] = "CP_TL1",
-	["mouseInvertPitch"] = false,
+	["nameplateShowFriends"] = true,
 	["autoSellJunk"] = true,
 	["stickRadialLocal"] = false,
 	["interactCache"] = true,
@@ -68,7 +69,11 @@ ConsolePortCharacterSettings = {
 	["Typescript (战士) 沙尔图拉"] = {
 		["Type"] = "XBOX",
 		["BindingSet"] = {
-			["CP_T_L3"] = {
+			["CP_L_RIGHT"] = {
+				[""] = "ACTIONBUTTON12",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
 			},
 			["CP_R_LEFT"] = {
 				[""] = "ACTIONBUTTON1",
@@ -83,17 +88,37 @@ ConsolePortCharacterSettings = {
 			},
 			["CP_T_R3"] = {
 			},
-			["CP_L_RIGHT"] = {
-				[""] = "ACTIONBUTTON12",
-				["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
-			},
 			["CP_L_UP"] = {
 				[""] = "MULTIACTIONBAR1BUTTON12",
 				["SHIFT-"] = "MULTIACTIONBAR2BUTTON2",
 				["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON10",
+			},
+			["CP_T_L3"] = {
+			},
+			["CP_X_LEFT"] = {
+				[""] = "OPENALLBAGS",
+				["SHIFT-"] = "TOGGLEWORLDMAP",
+				["CTRL-"] = "CP_CAMZOOMOUT",
+				["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
+			},
+			["CP_R_UP"] = {
+				[""] = "ACTIONBUTTON2",
+				["SHIFT-"] = "ACTIONBUTTON7",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
+			},
+			["CP_L_LEFT"] = {
+				[""] = "MULTIACTIONBAR1BUTTON11",
+				["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+				["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+			},
+			["CP_T1"] = {
+				[""] = "ACTIONBUTTON4",
+				["SHIFT-"] = "TARGETNEARESTENEMY",
+				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
 			},
 			["CP_R_RIGHT"] = {
 				[""] = "ACTIONBUTTON3",
@@ -112,30 +137,6 @@ ConsolePortCharacterSettings = {
 				["SHIFT-"] = "ACTIONBUTTON10",
 				["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
 				["CTRL-SHIFT-"] = "TOGGLEAUTORUN",
-			},
-			["CP_T1"] = {
-				[""] = "ACTIONBUTTON4",
-				["SHIFT-"] = "TARGETSCANENEMY",
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
-			},
-			["CP_L_LEFT"] = {
-				[""] = "MULTIACTIONBAR1BUTTON11",
-				["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-				["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
-			},
-			["CP_R_UP"] = {
-				[""] = "ACTIONBUTTON2",
-				["SHIFT-"] = "ACTIONBUTTON7",
-				["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
-				["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
-			},
-			["CP_X_LEFT"] = {
-				[""] = "OPENALLBAGS",
-				["SHIFT-"] = "TOGGLEWORLDMAP",
-				["CTRL-"] = "CP_CAMZOOMOUT",
-				["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
 			},
 			["CP_X_RIGHT"] = {
 				[""] = "TOGGLEGAMEMENU",
@@ -200,21 +201,21 @@ ConsolePortCharacterSettings = {
 					},
 					["size"] = 64,
 				},
-				["CP_R_RIGHT"] = {
-					["dir"] = "right",
+				["CP_L_LEFT"] = {
+					["dir"] = "left",
 					["point"] = {
-						"RIGHT", -- [1]
-						-176, -- [2]
+						"LEFT", -- [1]
+						176, -- [2]
 						56, -- [3]
 					},
 					["size"] = 64,
 				},
-				["CP_T3"] = {
-					["dir"] = "down",
+				["CP_T2"] = {
+					["dir"] = "left",
 					["point"] = {
-						"LEFT", -- [1]
-						396, -- [2]
-						16, -- [3]
+						"RIGHT", -- [1]
+						-456, -- [2]
+						56, -- [3]
 					},
 					["size"] = 64,
 				},
@@ -227,11 +228,11 @@ ConsolePortCharacterSettings = {
 					},
 					["size"] = 64,
 				},
-				["CP_L_LEFT"] = {
-					["dir"] = "left",
+				["CP_R_RIGHT"] = {
+					["dir"] = "right",
 					["point"] = {
-						"LEFT", -- [1]
-						176, -- [2]
+						"RIGHT", -- [1]
+						-176, -- [2]
 						56, -- [3]
 					},
 					["size"] = 64,
@@ -254,12 +255,12 @@ ConsolePortCharacterSettings = {
 					},
 					["size"] = 64,
 				},
-				["CP_T2"] = {
-					["dir"] = "left",
+				["CP_T3"] = {
+					["dir"] = "down",
 					["point"] = {
-						"RIGHT", -- [1]
-						-456, -- [2]
-						56, -- [3]
+						"LEFT", -- [1]
+						396, -- [2]
+						16, -- [3]
 					},
 					["size"] = 64,
 				},

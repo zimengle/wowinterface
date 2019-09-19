@@ -4,13 +4,13 @@ CodexConfig = {
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
 	["autoAccept"] = false,
-	["nameplateIcon"] = true,
 	["allQuestGivers"] = true,
+	["nameplateIcon"] = true,
+	["showFestival"] = true,
+	["autoTurnin"] = true,
+	["currentQuestGivers"] = true,
 	["trackingMethod"] = 1,
 	["spawnMarkerSize"] = 10,
-	["currentQuestGivers"] = true,
-	["autoTurnin"] = true,
-	["showFestival"] = true,
 	["questMarkerSize"] = 14,
 }
 CodexHiddenQuests = {
@@ -19,15 +19,15 @@ CodexBrowserFavorites = {
 	["items"] = {
 		[19033] = "斯拉提的工具",
 	},
-	["objets"] = {
-	},
-	["quests"] = {
-	},
 	["units"] = {
 		[4273] = "守护者奥达努斯",
 		[12677] = "猎影",
-		[3238] = "雷鳞蜥蜴",
 		[12918] = "穆戈特酋长",
+		[3238] = "雷鳞蜥蜴",
+	},
+	["quests"] = {
+	},
+	["objets"] = {
 	},
 }
 CodexColors = {

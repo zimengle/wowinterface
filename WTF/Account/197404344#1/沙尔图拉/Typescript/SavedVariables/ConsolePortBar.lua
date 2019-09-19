@@ -47,20 +47,20 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_T2"] = {
-			["dir"] = "left",
+		["CP_T3"] = {
+			["dir"] = "down",
 			["point"] = {
-				"RIGHT", -- [1]
-				-456, -- [2]
-				56, -- [3]
+				"LEFT", -- [1]
+				396, -- [2]
+				16, -- [3]
 			},
 			["size"] = 64,
 		},
-		["CP_R_RIGHT"] = {
-			["dir"] = "right",
+		["CP_L_LEFT"] = {
+			["dir"] = "left",
 			["point"] = {
-				"RIGHT", -- [1]
-				-176, -- [2]
+				"LEFT", -- [1]
+				176, -- [2]
 				56, -- [3]
 			},
 			["size"] = 64,
@@ -74,12 +74,12 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_T3"] = {
-			["dir"] = "down",
+		["CP_T2"] = {
+			["dir"] = "left",
 			["point"] = {
-				"LEFT", -- [1]
-				396, -- [2]
-				16, -- [3]
+				"RIGHT", -- [1]
+				-456, -- [2]
+				56, -- [3]
 			},
 			["size"] = 64,
 		},
@@ -101,11 +101,11 @@ ConsolePortBarSetup = {
 			},
 			["size"] = 64,
 		},
-		["CP_L_LEFT"] = {
-			["dir"] = "left",
+		["CP_R_RIGHT"] = {
+			["dir"] = "right",
 			["point"] = {
-				"LEFT", -- [1]
-				176, -- [2]
+				"RIGHT", -- [1]
+				-176, -- [2]
 				56, -- [3]
 			},
 			["size"] = 64,

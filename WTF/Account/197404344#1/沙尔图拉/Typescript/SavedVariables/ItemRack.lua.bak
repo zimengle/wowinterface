@@ -53,17 +53,16 @@ ItemRackUser = {
 		},
 		["~CombatQueue"] = {
 			["equip"] = {
-				[13] = "19120::::::::52:::11::::",
 			},
 		},
 		["坐骑"] = {
 			["equip"] = {
 				[13] = "11122::::::::50:::11::::",
 			},
-			["oldset"] = "练级1",
+			["oldset"] = "坐骑",
 			["icon"] = 132107,
 			["old"] = {
-				[13] = "19120::::::::52:::11::::",
+				[13] = "19120::::::::53:::11::::",
 			},
 		},
 		["练级1"] = {
@@ -98,32 +97,30 @@ ItemRackUser = {
 		},
 		["~Unequip"] = {
 			["equip"] = {
-				[13] = "19120::::::::52:::11::::",
 			},
 		},
 	},
 	["EnableQueues"] = "ON",
-	["CurrentSet"] = "练级1",
+	["EnableEvents"] = "ON",
 	["Alpha"] = 1,
 	["ItemsUsed"] = {
 	},
 	["Events"] = {
 		["Enabled"] = {
-			["骑术装"] = true,
 		},
 		["Set"] = {
 			["骑术装"] = "坐骑",
 		},
 	},
+	["Hidden"] = {
+	},
+	["SetMenuWrap"] = "OFF",
 	["Queues"] = {
 		{
 			"6686::::::::33:::1::::", -- [1]
 			0, -- [2]
 		}, -- [1]
 	},
-	["SetMenuWrap"] = "OFF",
-	["Hidden"] = {
-	},
 	["MenuScale"] = 0.85,
-	["EnableEvents"] = "ON",
+	["CurrentSet"] = "坐骑",
 }

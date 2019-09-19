@@ -15,10 +15,10 @@ local HEAD_HEIGHT = 27
 local HEAD_SPACE = 2
 
 local TIME_LEFT_STRINGS = {
-	aux.color.red'30m', -- Short
-	aux.color.orange'2h', -- Medium
-	aux.color.yellow'8h', -- Long
-	aux.color.blue'24h', -- Very Long
+	aux.color.red'30分', -- Short
+	aux.color.orange'2小时', -- Medium
+	aux.color.yellow'8小时', -- Long
+	aux.color.blue'24小时', -- Very Long
 }
 
 function item_column_init(rt, cell)
@@ -65,7 +65,7 @@ end
 
 M.search_columns = {
     {
-        title = '名称',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -87,7 +87,7 @@ M.search_columns = {
         end,
     },
     {
-        title = '已有\n拍卖',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -111,7 +111,7 @@ M.search_columns = {
         end,
     },
     {
-        title = '每组\n堆叠',
+        title = '堆叠\n数量',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -133,7 +133,7 @@ M.search_columns = {
         end,
     },
     {
-        title = '出售者',
+        title = '卖家',
         width = .13,
         align = 'CENTER',
         fill = function(cell, record)
@@ -152,7 +152,7 @@ M.search_columns = {
         end,
     },
     {
-        title = {'竞标价\n(每件)', '竞标价\n(每组)'},
+        title = {'一口价\n(每件)', '竞拍\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -218,7 +218,7 @@ M.search_columns = {
         end,
     },
     {
-        title = '平均\n物价比',
+        title = '% 对比\n价格',
         width = .08,
         align = 'CENTER',
         fill = function(cell, record)
@@ -235,7 +235,7 @@ M.search_columns = {
 
 M.auctions_columns = {
     {
-        title = '名称',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -257,7 +257,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = '已有\n拍卖',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -278,7 +278,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = '每组\n堆叠',
+        title = '堆叠\n数量',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -300,7 +300,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = {'竞标价\n(每件)', '竞标价\n(每组)'},
+        title = {'竞拍\n(每件)', '竞拍\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -348,11 +348,11 @@ M.auctions_columns = {
         end,
     },
     {
-        title = '最高出价',
+        title = '最高出价者',
         width = .21,
         align = 'CENTER',
         fill = function(cell, record)
-            cell.text:SetText(record.high_bidder or aux.color.red '无人竞标')
+            cell.text:SetText(record.high_bidder or aux.color.red '无竞拍')
         end,
         cmp = function(record_a, record_b, desc)
             if not record_a.high_bidder and not record_b.high_bidder then
@@ -370,7 +370,7 @@ M.auctions_columns = {
 
 M.bids_columns = {
     {
-        title = '名称',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -379,7 +379,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = '已有\n拍卖',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -400,7 +400,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = '每组\n堆叠',
+        title = '堆叠\n数量',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -422,7 +422,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = '出售者',
+        title = '卖家',
         width = .13,
         align = 'CENTER',
         fill = function(cell, record)
@@ -441,7 +441,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = {'竞标价\n(每件)', '竞标价\n(每组)'},
+        title = {'竞拍\n(每件)', '竞拍\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -495,9 +495,9 @@ M.bids_columns = {
         fill = function(cell, record)
             local status
             if record.high_bidder then
-                status = aux.color.yellow'最高出价'
+                status = aux.color.yellow'最高出价者'
             else
-                status = aux.color.red'竞标失败'
+                status = aux.color.red'竞价更高'
             end
             cell.text:SetText(status)
         end,
@@ -566,9 +566,9 @@ local methods = {
         local row = self:GetParent().row
         if row.record then
 	        GameTooltip:SetOwner(self, 'ANCHOR_RIGHT')
-            info.load_tooltip(GameTooltip, row.record.tooltip)
-	        tooltip.extend_tooltip(GameTooltip, row.record.link, row.record.aux_quantity)
-            info.set_shopping_tooltip(row.record.slot)
+            GameTooltip:SetHyperlink(row.record.link)
+            GameTooltip_ShowCompareItem()
+--            info.set_shopping_tooltip(row.record.slot)
         end
     end,
 
@@ -580,11 +580,11 @@ local methods = {
         local rt = self.rt
         if rt.expanded[self.expandKey] then
             GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-            GameTooltip:AddLine('双击折叠并且只显示最便宜的拍卖', 1, 1, 1, true)
+            GameTooltip:AddLine('双击可折叠此物品并仅显示最便宜的拍卖', 1, 1, 1, true)
             GameTooltip:Show()
         elseif self.expandable then
             GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-            GameTooltip:AddLine('双击展开并且显示全部拍卖', 1, 1, 1, true)
+            GameTooltip:AddLine('双击可展开此物品并显示所有拍卖', 1, 1, 1, true)
             GameTooltip:Show()
         end
 
@@ -599,7 +599,7 @@ local methods = {
     end,
 
     OnClick = function(self, button)
-        if IsModifiedClick() then
+        if IsControlKeyDown() or IsShiftKeyDown() then
             HandleModifiedItemClick(self.record.link)
         else
             local selection = self.rt:GetSelection()

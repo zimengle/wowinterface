@@ -1,13 +1,13 @@
 
 AtlasLootClassicDB = {
+	["global"] = {
+		["__addonrevision"] = 1010010,
+	},
 	["profileKeys"] = {
 		["Typescript - 伦鲁迪洛尔"] = "Typescript - 伦鲁迪洛尔",
 		["Nodejs - 沙尔图拉"] = "Nodejs - 沙尔图拉",
 		["Typescript - 沙尔图拉"] = "Typescript - 沙尔图拉",
 		["Lua - 沙尔图拉"] = "Lua - 沙尔图拉",
-	},
-	["global"] = {
-		["__addonrevision"] = 1010010,
 	},
 	["profiles"] = {
 		["Typescript - 伦鲁迪洛尔"] = {
@@ -32,13 +32,13 @@ AtlasLootClassicDB = {
 					nil, -- [1]
 					nil, -- [2]
 					"CENTER", -- [3]
-					-1.74887657165527, -- [4]
-					0.58299708366394, -- [5]
+					-1.99990773200989, -- [4]
+					1.00003039836884, -- [5]
 				},
 				["selected"] = {
 					nil, -- [1]
-					"BlackrockDepths", -- [2]
-					nil, -- [3]
+					"TheTempleOfAtal'Hakkar", -- [2]
+					11, -- [3]
 					1, -- [4]
 					0, -- [5]
 				},

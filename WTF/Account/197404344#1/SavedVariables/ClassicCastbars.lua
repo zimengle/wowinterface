@@ -20,7 +20,12 @@ ClassicCastbarsDB = {
 		["showCastInfoOnly"] = false,
 		["width"] = 106,
 		["textPositionY"] = 0,
-		["showTimer"] = false,
+		["statusColor"] = {
+			1, -- [1]
+			0.7, -- [2]
+			0, -- [3]
+			1, -- [4]
+		},
 		["statusColorChannel"] = {
 			0, -- [1]
 			1, -- [2]
@@ -34,12 +39,7 @@ ClassicCastbarsDB = {
 		},
 		["height"] = 11,
 		["iconPositionY"] = 0,
-		["statusColor"] = {
-			1, -- [1]
-			0.7, -- [2]
-			0, -- [3]
-			1, -- [4]
-		},
+		["showTimer"] = false,
 		["textColor"] = {
 			1, -- [1]
 			1, -- [2]
@@ -68,7 +68,12 @@ ClassicCastbarsDB = {
 		["showCastInfoOnly"] = false,
 		["width"] = 150,
 		["textPositionY"] = 0,
-		["showTimer"] = false,
+		["statusColor"] = {
+			1, -- [1]
+			0.7, -- [2]
+			0, -- [3]
+			1, -- [4]
+		},
 		["statusColorChannel"] = {
 			0, -- [1]
 			1, -- [2]
@@ -82,12 +87,7 @@ ClassicCastbarsDB = {
 		},
 		["height"] = 15,
 		["iconPositionY"] = 0,
-		["statusColor"] = {
-			1, -- [1]
-			0.7, -- [2]
-			0, -- [3]
-			1, -- [4]
-		},
+		["showTimer"] = false,
 		["textColor"] = {
 			1, -- [1]
 			1, -- [2]

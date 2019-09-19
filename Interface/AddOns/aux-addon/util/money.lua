@@ -3,9 +3,9 @@ select(2, ...) 'aux.util.money'
 local T = require 'T'
 local aux = require 'aux'
 
-M.GOLD_TEXT = '|cffffd70ag|r'
-M.SILVER_TEXT = '|cffc7c7cfs|r'
-M.COPPER_TEXT = '|cffeda55fc|r'
+M.GOLD_TEXT = '|cffffd70a金|r'
+M.SILVER_TEXT = '|cffc7c7cf银|r'
+M.COPPER_TEXT = '|cffeda55f铜|r'
 
 local COPPER_PER_GOLD = 10000
 local COPPER_PER_SILVER = 100

@@ -9,7 +9,7 @@ aux-addon: enabled
 ClassicCastbars: enabled
 ClassicCastbars_Options: enabled
 ClassicCodex: enabled
-ConsolePort: enabled
+ConsolePort: disabled
 ConsolePortBar: enabled
 ConsolePortAdvanced: enabled
 ConsolePortHelp: enabled
@@ -24,7 +24,7 @@ Leatrix_Maps: enabled
 QuestLogEx: enabled
 TipTop: enabled
 WeaponSwingTimer: enabled
-ElvUI: disabled
+ElvUI: enabled
 ElvUI_OptionsUI: enabled
 ConsolePortUI: disabled
 ConsolePortUI_NPC: disabled
@@ -38,3 +38,4 @@ Details_EncounterDetails: enabled
 Details: disabled
 Prat-3.0: disabled
 Prat-3.0_Libraries: disabled
+BetterQuestFrame: disabled

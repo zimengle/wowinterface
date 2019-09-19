@@ -1,6 +1,7 @@
 ## Interface: 11302
 ## Author: shirsig
 ## Title: aux
+## Version: 0.3.1
 ## Notes: Auction House replacement
 ## SavedVariables: aux
 
@@ -26,7 +27,6 @@ core\slash.lua
 core\scan.lua
 util\scan.lua
 core\stack.lua
-core\post.lua
 core\tooltip.lua
 core\shortcut.lua
 
@@ -51,3 +51,7 @@ tabs\bids\frame.lua
 
 core\crafting.lua
 
+
+
+
+## Q-CAT-Version: 10

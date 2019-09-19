@@ -7,6 +7,14 @@ local filter_util = require 'aux.util.filter'
 local scan_util = require 'aux.util.scan'
 local scan = require 'aux.core.scan'
 
+StaticPopupDialogs.AUX_SCAN_ALERT = {
+    text = '其中一个查询已匹配!',
+    button1 = 'Ok',
+    showAlert = 1,
+    timeout = 0,
+    hideOnEscape = 1,
+}
+
 search_scan_id = 0
 
 function aux.handle.LOAD()
@@ -137,34 +145,26 @@ end
 
 function start_real_time_scan(query, search, continuation)
 
-	local ignore_page
 	if not search then
 		search = current_search()
-		query.blizzard_query.first_page = tonumber(continuation) or 0
-		query.blizzard_query.last_page = tonumber(continuation) or 0
+		query.blizzard_query.first_page = 0
+		query.blizzard_query.last_page = 0
 		ignore_page = not tonumber(continuation)
 	end
 
-	local next_page
 	local new_records = T.acquire()
 	search_scan_id = scan.start{
 		type = 'list',
 		queries = {query},
-		auto_buy_validator = search.auto_buy_validator,
 		on_scan_start = function()
 			search.status_bar:update_status(.9999, .9999)
-			search.status_bar:set_text('正在扫描最后一页…')
-		end,
-		on_page_loaded = function(_, _, last_page)
-			next_page = last_page
-			if last_page == 0 then
-				ignore_page = false
-			end
+			search.status_bar:set_text('扫描中 ...')
 		end,
 		on_auction = function(auction_record)
-			if not ignore_page then
-				tinsert(new_records, auction_record)
-			end
+            if (search.alert_validator or pass)(auction_record) then
+                StaticPopup_Show('AUX_SCAN_ALERT') -- TODO retail improve this
+            end
+			tinsert(new_records, auction_record)
 		end,
 		on_complete = function()
 			local map = T.temp-T.acquire()
@@ -184,15 +184,13 @@ function start_real_time_scan(query, search, continuation)
 				search.table:SetDatabase(search.records)
 			end
 
-			query.blizzard_query.first_page = next_page
-			query.blizzard_query.last_page = next_page
 			start_real_time_scan(query, search)
 		end,
 		on_abort = function()
 			search.status_bar:update_status(1, 1)
-			search.status_bar:set_text('暂停扫描')
+			search.status_bar:set_text('扫描已暂停')
 
-			search.continuation = next_page or not ignore_page and query.blizzard_query.first_page or true
+			search.continuation = true
 
 			if current_search() == search then
 				update_continuation()
@@ -226,13 +224,13 @@ function start_search(queries, continuation)
 	search_scan_id = scan.start{
 		type = 'list',
 		queries = queries,
-		auto_buy_validator = search.auto_buy_validator,
+        alert_validator = search.alert_validator,
 		on_scan_start = function()
 			search.status_bar:update_status(0, 0)
 			if continuation then
-				search.status_bar:set_text('恢复扫描…')
+				search.status_bar:set_text('恢复扫...')
 			else
-				search.status_bar:set_text('正在扫描…')
+				search.status_bar:set_text('扫描拍卖中...')
 			end
 		end,
 		on_page_loaded = function(_, total_scan_pages)
@@ -241,7 +239,7 @@ function start_search(queries, continuation)
 			total_scan_pages = max(total_scan_pages, 1)
 			current_page = min(current_page, total_scan_pages)
 			search.status_bar:update_status((current_query - 1) / #queries, current_page / total_scan_pages)
-			search.status_bar:set_text(format('扫描第 %d/%d 项中 (第 %d/%d 页)', current_query, total_queries, current_page, total_scan_pages))
+			search.status_bar:set_text(format('扫描中 %d / %d (%d / %d)', current_query, total_queries, current_page, total_scan_pages))
 		end,
 		on_page_scanned = function()
 			search.table:SetDatabase()
@@ -250,7 +248,10 @@ function start_search(queries, continuation)
 			current_query = current_query and current_query + 1 or start_query
 			current_page = current_page and 0 or start_page - 1
 		end,
-		on_auction = function(auction_record, ctrl)
+		on_auction = function(auction_record)
+            if (search.alert_validator or pass)(auction_record) then
+                StaticPopup_Show('AUX_SCAN_ALERT') -- TODO retail improve this
+            end
 			if #search.records < 2000 then
 				tinsert(search.records, auction_record)
 				if #search.records == 2000 then
@@ -260,7 +261,7 @@ function start_search(queries, continuation)
 		end,
 		on_complete = function()
 			search.status_bar:update_status(1, 1)
-			search.status_bar:set_text('扫描完毕')
+			search.status_bar:set_text('扫描完成')
 
 			if current_search() == search and frame.results:IsVisible() and #search.records == 0 then
 				set_subtab(SAVED)
@@ -271,7 +272,7 @@ function start_search(queries, continuation)
 		end,
 		on_abort = function()
 			search.status_bar:update_status(1, 1)
-			search.status_bar:set_text('暂停扫描')
+			search.status_bar:set_text('扫描已暂')
 
 			if current_query then
 				search.continuation = {current_query, current_page + 1}
@@ -335,7 +336,7 @@ function M.execute(_, resume, real_time)
 		search.first_page = first_page
 		search.last_page = last_page
 		search.real_time = real_time
-		search.auto_buy_validator = get_auto_buy_validator()
+		search.alert_validator = get_alert_validator()
 	end
 
 	local continuation = resume and current_search().continuation

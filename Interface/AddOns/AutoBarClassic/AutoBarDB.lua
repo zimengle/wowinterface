@@ -353,33 +353,23 @@ function AutoBar:InitializeDefaults()
 			shuffle = true,
 		}
 	end
+	if (not AutoBar.db.account.buttonList["AutoBarButtonMana"]) then
+		AutoBar.db.account.buttonList["AutoBarButtonMana"] = {
+			buttonKey = "AutoBarButtonMana",
+			buttonClass = "AutoBarButtonMana",
+			barKey = "AutoBarClassBarBasic",
+			defaultButtonIndex = 5,
+			enabled = true,
+			shuffle = true,
+		}
+	end
 	if (not AutoBar.db.account.buttonList["AutoBarButtonRecovery"]) then
 		AutoBar.db.account.buttonList["AutoBarButtonRecovery"] = {
 			buttonKey = "AutoBarButtonRecovery",
 			buttonClass = "AutoBarButtonRecovery",
 			barKey = "AutoBarClassBarBasic",
-			defaultButtonIndex = 5,
-			enabled = false,
-		}
-	end
-	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownPotionHealth"]) then
-		AutoBar.db.account.buttonList["AutoBarButtonCooldownPotionHealth"] = {
-			buttonKey = "AutoBarButtonCooldownPotionHealth",
-			buttonClass = "AutoBarButtonCooldownPotionHealth",
-			barKey = "AutoBarClassBarBasic",
 			defaultButtonIndex = 6,
 			enabled = false,
-			shuffle = true,
-		}
-	end
-	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownPotionMana"]) then
-		AutoBar.db.account.buttonList["AutoBarButtonCooldownPotionMana"] = {
-			buttonKey = "AutoBarButtonCooldownPotionMana",
-			buttonClass = "AutoBarButtonCooldownPotionMana",
-			barKey = "AutoBarClassBarBasic",
-			defaultButtonIndex = 7,
-			enabled = true,
-			shuffle = true,
 		}
 	end
 	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownPotionRejuvenation"]) then
@@ -402,26 +392,7 @@ function AutoBar:InitializeDefaults()
 			shuffle = true,
 		}
 	end
-	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownStoneHealth"]) then
-		AutoBar.db.account.buttonList["AutoBarButtonCooldownStoneHealth"] = {
-			buttonKey = "AutoBarButtonCooldownStoneHealth",
-			buttonClass = "AutoBarButtonCooldownStoneHealth",
-			barKey = "AutoBarClassBarBasic",
-			defaultButtonIndex = 10,
-			enabled = true,
-			shuffle = true,
-		}
-	end
-	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownStoneMana"]) then
-		AutoBar.db.account.buttonList["AutoBarButtonCooldownStoneMana"] = {
-			buttonKey = "AutoBarButtonCooldownStoneMana",
-			buttonClass = "AutoBarButtonCooldownStoneMana",
-			barKey = "AutoBarClassBarBasic",
-			defaultButtonIndex = 11,
-			enabled = true,
-			shuffle = true,
-		}
-	end
+
 
 	if (not AutoBar.db.account.buttonList["AutoBarButtonCooldownDrums"]) then
 		AutoBar.db.account.buttonList["AutoBarButtonCooldownDrums"] = {
@@ -690,7 +661,7 @@ function AutoBar:InitializeDefaults()
 		end
 	end
 
-	if (AutoBar.CLASS == "HUNTER") then
+	if (AutoBar.CLASS == "HUNTER" or AutoBar.CLASS == "ROGUE") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonTrap"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonTrap"] = {
 				buttonKey = "AutoBarButtonTrap",
@@ -942,15 +913,17 @@ function AutoBar:InitializeDefaults()
 	end
 
 
-	if (AutoBar.CLASS == "WARRIOR" or AutoBar.CLASS == "DRUID") then
+	if (AutoBar.CLASS == "WARRIOR" or AutoBar.CLASS == "DRUID" or AutoBar.CLASS == "PALADIN") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonStance"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonStance"] = {
 				buttonKey = "AutoBarButtonStance",
 				buttonClass = "AutoBarButtonStance",
-				barKey = "AutoBarClassBarWarrior",
+				barKey = AutoBar.classBar,
 				defaultButtonIndex = "*",
 				enabled = true,
 			}
+		elseif (AutoBar.db.class.buttonList["AutoBarButtonStance"].barKey ~= AutoBar.classBar) then
+			AutoBar.db.class.buttonList["AutoBarButtonStance"].barKey = AutoBar.classBar
 		end
 	end
 
@@ -960,7 +933,8 @@ function AutoBar:InitializeDefaults()
 		"AutoBarButtonRotationDrums", "AutoBarButtonAmmo",
 		"AutoBarButtonSeal", "AutoBarButtonOrderHall", "AutoBarButtonPowerShift",
 		"AutoBarButtonCooldownStoneCombat", "AutoBarButtonBoomkinTree",
-		"AutoBarButtonGuildSpell", "AutoBarButtonStagForm"
+		"AutoBarButtonGuildSpell", "AutoBarButtonStagForm", "AutoBarButtonCooldownStoneHealth",
+		"AutoBarButtonCooldownPotionHealth", "AutoBarButtonMillHerbs", "AutoBarButtonCooldownStoneMana",
 	}
 
 	for _, dep in ipairs(deprecated_buttons) do

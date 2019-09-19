@@ -50,7 +50,7 @@ end
 do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
-    btn:SetText('竞标')
+    btn:SetText('竞拍')
     btn:Disable()
     bid_button = btn
 end

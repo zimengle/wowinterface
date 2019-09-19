@@ -1,7 +1,7 @@
 ConsolePortUI: disabled
 ConsolePortUI_NPC: disabled
-ConsolePort: enabled
-ElvUI: disabled
+ConsolePort: disabled
+ElvUI: enabled
 ConsolePortBar: enabled
 StatCompare: disabled
 Recount: enabled
@@ -12,3 +12,4 @@ BigWigs_Core: enabled
 BigWigs_Options: enabled
 Prat-3.0: disabled
 Prat-3.0_Libraries: disabled
+BetterQuestFrame: disabled
