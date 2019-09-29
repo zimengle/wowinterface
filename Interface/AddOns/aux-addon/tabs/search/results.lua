@@ -1,6 +1,5 @@
 select(2, ...) 'aux.tabs.search'
 
-local T = require 'T'
 local aux = require 'aux'
 local info = require 'aux.util.info'
 local filter_util = require 'aux.util.filter'
@@ -14,8 +13,6 @@ StaticPopupDialogs.AUX_SCAN_ALERT = {
     timeout = 0,
     hideOnEscape = 1,
 }
-
-search_scan_id = 0
 
 function aux.handle.LOAD()
 	new_search()
@@ -77,7 +74,7 @@ do
 		while #searches > search_index do
 			tremove(searches)
 		end
-		local search = T.map('records', T.acquire(), 'filter_string', filter_string, 'first_page', first_page, 'last_page', last_page, 'real_time', real_time)
+		local search = { records = {}, filter_string = filter_string, first_page = first_page, last_page = last_page, real_time = real_time }
 		tinsert(searches, search)
 		if #searches > 5 then
 			tremove(searches, 1)
@@ -128,7 +125,7 @@ function update_continuation()
 end
 
 function discard_continuation()
-	scan.abort(search_scan_id)
+	scan.abort()
 	current_search().continuation = nil
 	update_continuation()
 end
@@ -145,36 +142,45 @@ end
 
 function start_real_time_scan(query, search, continuation)
 
-	if not search then
+    local ignore_page
+    if not search then
 		search = current_search()
-		query.blizzard_query.first_page = 0
-		query.blizzard_query.last_page = 0
+		query.blizzard_query.first_page = tonumber(continuation) or 0
+		query.blizzard_query.last_page = tonumber(continuation) or 0
 		ignore_page = not tonumber(continuation)
-	end
+    end
 
-	local new_records = T.acquire()
-	search_scan_id = scan.start{
+    local next_page
+	local new_records = {}
+	scan.start{
 		type = 'list',
 		queries = {query},
 		on_scan_start = function()
 			search.status_bar:update_status(.9999, .9999)
 			search.status_bar:set_text('扫描中 ...')
 		end,
-		on_auction = function(auction_record)
-            if (search.alert_validator or pass)(auction_record) then
-                StaticPopup_Show('AUX_SCAN_ALERT') -- TODO retail improve this
+        on_page_loaded = function(_, _, last_page)
+            next_page = last_page
+            if last_page == 0 then
+                ignore_page = false
             end
-			tinsert(new_records, auction_record)
+        end,
+		on_auction = function(auction_record)
+            if not ignore_page then
+                if (search.alert_validator or pass)(auction_record) then
+                    StaticPopup_Show('AUX_SCAN_ALERT') -- TODO retail improve this
+                end
+                tinsert(new_records, auction_record)
+            end
 		end,
 		on_complete = function()
-			local map = T.temp-T.acquire()
+			local map = {}
 			for _, record in pairs(search.records) do
 				map[record.sniping_signature] = record
 			end
 			for _, record in pairs(new_records) do
 				map[record.sniping_signature] = record
 			end
-			T.release(new_records)
 			new_records = aux.values(map)
 
 			if #new_records > 2000 then
@@ -184,13 +190,15 @@ function start_real_time_scan(query, search, continuation)
 				search.table:SetDatabase(search.records)
 			end
 
+            query.blizzard_query.first_page = next_page
+            query.blizzard_query.last_page = next_page
 			start_real_time_scan(query, search)
 		end,
 		on_abort = function()
 			search.status_bar:update_status(1, 1)
 			search.status_bar:set_text('扫描已暂停')
 
-			search.continuation = true
+			search.continuation = next_page or not ignore_page and query.blizzard_query.first_page or true
 
 			if current_search() == search then
 				update_continuation()
@@ -221,14 +229,14 @@ function start_search(queries, continuation)
 	end
 
 
-	search_scan_id = scan.start{
+	scan.start{
 		type = 'list',
 		queries = queries,
         alert_validator = search.alert_validator,
 		on_scan_start = function()
 			search.status_bar:update_status(0, 0)
 			if continuation then
-				search.status_bar:set_text('恢复扫...')
+				search.status_bar:set_text('恢复扫描...')
 			else
 				search.status_bar:set_text('扫描拍卖中...')
 			end
@@ -328,7 +336,7 @@ function M.execute(_, resume, real_time)
 			new_recent_search(filter_string, aux.join(aux.map(aux.copy(queries), function(filter) return filter.prettified end), ';'))
 		else
 			local search = current_search()
-			search.records = T.acquire()
+			search.records = {}
 			search.table:Reset()
 			search.table:SetDatabase(search.records)
 		end
@@ -357,7 +365,6 @@ function M.execute(_, resume, real_time)
 end
 
 do
-	local scan_id = 0
 	local IDLE, SEARCHING, FOUND = aux.enum(3)
 	local state = IDLE
 	local found_index
@@ -369,9 +376,9 @@ do
 			return
 		end
 
-		scan.abort(scan_id)
+		scan.abort()
 		state = SEARCHING
-		scan_id = scan_util.find(
+		scan_util.find(
 			record,
 			current_search().status_bar,
 			function()
@@ -391,7 +398,7 @@ do
 
 				if not record.high_bidder then
 					bid_button:SetScript('OnClick', function()
-						if scan_util.test(record, index) and search.table:ContainsRecord(record) then
+						if scan_util.test('list', record, index) and search.table:ContainsRecord(record) then
 							aux.place_bid('list', index, record.bid_price, record.bid_price < record.buyout_price and function()
 								info.bid_update(record)
 								search.table:SetDatabase()
@@ -405,7 +412,7 @@ do
 
 				if record.buyout_price > 0 then
 					buyout_button:SetScript('OnClick', function()
-						if scan_util.test(record, index) and search.table:ContainsRecord(record) then
+						if scan_util.test('list', record, index) and search.table:ContainsRecord(record) then
 							aux.place_bid('list', index, record.buyout_price, function() search.table:RemoveAuctionRecord(record) end)
 						end
 					end)
@@ -430,7 +437,7 @@ do
 			state = IDLE
 		elseif selection and state == IDLE then
 			find_auction(selection.record)
-		elseif state == FOUND and not scan_util.test(selection.record, found_index) then
+		elseif state == FOUND and not scan_util.test('list', selection.record, found_index) then
 			buyout_button:Disable()
 			bid_button:Disable()
 			if not aux.bid_in_progress() then

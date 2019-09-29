@@ -7,10 +7,13 @@ Guidelime.registerGuide(
 [OC]    千针石林
 [OC]====================================
 [OC]你当前的任务日志: 7/20
-     尘泥沼泽: (x) 风巢双足飞龙的毒囊 [QC1268 Suspicious Hoofprints] (x) 黑色盾牌
-     [OC]希尔斯布莱德: (  ) 海龟汤 (x) 人事调动
-     [OC]铁炉堡: (  ) 苏利·巴鲁的信
-     [OC]千针石林: (x) 防撞头盔
+     尘泥沼泽: |cFFFFFFFFX|r [QA1135 Highperch Venom]
+              [QC1268 Suspicious Hoofprints]
+              |cFFFFFFFFX|r [QA1253 The Black Shield]
+     [OC]希尔斯布莱德: |cFFFFFFFFO|r [QA555 Soothing Turtle Bisque]
+              |cFFFFFFFFX|r [QA563 Reassignment]
+     [OC]铁炉堡: |cFFFFFFFFO|r [QA637 Sully Balloo's Letter]
+     [OC]千针石林: |cFFFFFFFFX|r [QA1179 The Brassbolts Brothers]
 [OC]====================================
 [OC]跑到沙漠赛道
      [OC]侏儒周围

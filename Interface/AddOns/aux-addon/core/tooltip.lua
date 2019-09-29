@@ -1,6 +1,5 @@
 select(2, ...) 'aux.core.tooltip'
 
-local T = require 'T'
 local aux = require 'aux'
 local info = require 'aux.util.info'
 local money =  require 'aux.util.money'
@@ -17,13 +16,13 @@ function aux.handle.LOAD()
     settings = aux.character_data.tooltip
 --    do
 --        local inside_hook = false
-    for name, f in pairs(game_tooltip_hooks) do
-        hooksecurefunc(GameTooltip, name, function(self, ...)
-            if not self:IsForbidden() then
-                f(...)
-            end
-        end)
-    end
+--    for name, f in pairs(game_tooltip_hooks) do
+--        hooksecurefunc(GameTooltip, name, function(self, ...)
+--            if not self:IsForbidden() then
+--                f(...)
+--            end
+--        end)
+--    end
 
     ItemRefTooltip:HookScript('OnTooltipSetItem', function(self)
         local _, link = self:GetItem()
@@ -34,7 +33,7 @@ function aux.handle.LOAD()
 --            aux.hook(name, GameTooltip, function(...)
 --                game_tooltip_money = 0
 --                inside_hook = true
---                local tmp = T.list(aux.orig[GameTooltip][name](...))
+--                local tmp = {aux.orig[GameTooltip][name](...)}
 --                inside_hook = false
 --                f(...)
 --                return T.unpack(tmp)
@@ -52,7 +51,7 @@ function aux.handle.LOAD()
 --    local orig = SetItemRef
 --    function _G.SetItemRef(...)
 --        local _, link = GetItemInfo(...)
---        local tmp = T.list(orig(...))
+--        local tmp = {orig(...)}
 --        if link and not IsShiftKeyDown() and not IsControlKeyDown() then
 --            extend_tooltip(ItemRefTooltip, link, 1)
 --        end
@@ -63,12 +62,12 @@ end
 function extend_tooltip(tooltip, link, quantity)
     local item_id, suffix_id = info.parse_link(link)
     quantity = IsShiftKeyDown() and quantity or 1
-    local item_info = T.temp-info.item(item_id)
+    local item_info = info.item(item_id)
     if item_info then
         local distribution = disenchant.distribution(item_info.slot, item_info.quality, item_info.level)
         if #distribution > 0 then
             if settings.disenchant_distribution then
-                tooltip:AddLine('分解:', aux.color.tooltip.disenchant.distribution())
+                tooltip:AddLine('分解信息:', aux.color.tooltip.disenchant.distribution())
                 sort(distribution, function(a,b) return a.probability > b.probability end)
                 for _, event in ipairs(distribution) do
                     tooltip:AddLine(format('  %s%% %s (%s-%s)', event.probability * 100, info.display_name(event.item_id, true) or 'item:' .. event.item_id, event.min_quantity, event.max_quantity), aux.color.tooltip.disenchant.distribution())
@@ -92,7 +91,7 @@ function extend_tooltip(tooltip, link, quantity)
             tooltip:AddLine('商店: ' .. (price and money.to_string2(price * quantity) or UNKNOWN), aux.color.tooltip.merchant())
         end
     end
-    local auctionable = not item_info or info.auctionable(T.temp-info.tooltip('link', item_info.link), item_info.quality)
+    local auctionable = not item_info or info.auctionable(info.tooltip('link', item_info.link), item_info.quality)
     local item_key = (item_id or 0) .. ':' .. (suffix_id or 0)
     local value = history.value(item_key)
     if auctionable then
@@ -101,7 +100,7 @@ function extend_tooltip(tooltip, link, quantity)
         end
         if settings.daily  then
             local market_value = history.market_value(item_key)
-            tooltip:AddLine('今日: ' .. (market_value and money.to_string2(market_value * quantity) .. ' (' .. gui.percentage_historical(aux.round(market_value / value * 100)) .. ')' or UNKNOWN), aux.color.tooltip.value())
+            tooltip:AddLine('今日价值: ' .. (market_value and money.to_string2(market_value * quantity) .. ' (' .. gui.percentage_historical(aux.round(market_value / value * 100)) .. ')' or UNKNOWN), aux.color.tooltip.value())
         end
     end
 
@@ -211,7 +210,6 @@ function game_tooltip_hooks.SetAuctionSellItem()
     local name, _, quantity = GetAuctionSellItemInfo()
     if name then
         for slot in info.inventory() do
-            T.temp(slot)
             local link = GetContainerItemLink(unpack(slot))
             if link and select(5, info.parse_link(link)) == name then
                 extend_tooltip(GameTooltip, link, quantity)

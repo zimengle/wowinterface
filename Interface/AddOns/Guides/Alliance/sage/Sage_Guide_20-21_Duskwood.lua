@@ -7,8 +7,9 @@ Guidelime.registerGuide(
 [OC]    暮色森林
 [OC]===================================
 [OC]你当前的任务日志: 3/20
-     [OC]黑海岸: (  ) 健忘的勘察员
-     [OC]赤脊山: (x) 送往暴风城的信 (x) 马掌
+     [OC]黑海岸: |cFFFFFFFFO|r [QA943 The Absent Minded Prospector]
+     [OC]赤脊山: |cFFFFFFFFX|r [QA120 Messenger to Stormwind]
+              |cFFFFFFFFX|r [QA118 The Price of Shoes]
 [OC]===================================
 [OC]一路杀到夜色镇
      [OC]在第一条小路上向东移动

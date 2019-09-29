@@ -4,25 +4,26 @@ CodexConfig = {
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
 	["autoAccept"] = true,
-	["allQuestGivers"] = true,
+	["minimumDropChance"] = 2,
 	["nameplateIcon"] = true,
-	["showFestival"] = true,
-	["autoTurnin"] = true,
-	["currentQuestGivers"] = true,
-	["spawnMarkerSize"] = 10,
+	["allQuestGivers"] = true,
 	["trackingMethod"] = 1,
+	["spawnMarkerSize"] = 10,
+	["currentQuestGivers"] = true,
+	["autoTurnin"] = true,
+	["showFestival"] = true,
 	["questMarkerSize"] = 14,
 }
-CodexHistory = {
+CodexHiddenQuests = {
 }
 CodexBrowserFavorites = {
 	["items"] = {
 	},
-	["units"] = {
+	["objets"] = {
 	},
 	["quests"] = {
 	},
-	["objets"] = {
+	["units"] = {
 	},
 }
 CodexColors = {

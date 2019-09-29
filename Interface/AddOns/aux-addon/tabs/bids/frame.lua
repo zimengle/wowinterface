@@ -34,10 +34,6 @@ listing:SetHandler('OnClick', function(row, button)
 		search_tab.execute(nil, false)
 	end
 end)
-listing:SetHandler('OnSelectionChanged', function(rt, datum)
-    if not datum then return end
-    find_auction(datum.record)
-end)
 
 do
 	status_bar = gui.status_bar(frame)
@@ -52,6 +48,7 @@ do
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
     btn:SetText('竞拍')
     btn:Disable()
+    btn:SetScript('OnClick', function() place_bid() end)
     bid_button = btn
 end
 do
@@ -59,13 +56,6 @@ do
     btn:SetPoint('TOPLEFT', bid_button, 'TOPRIGHT', 5, 0)
     btn:SetText('一口价')
     btn:Disable()
+    btn:SetScript('OnClick', function() place_bid(true) end)
     buyout_button = btn
-end
-do
-    local btn = gui.button(frame)
-    btn:SetPoint('TOPLEFT', buyout_button, 'TOPRIGHT', 5, 0)
-    btn:SetText('刷新')
-    btn:SetScript('OnClick', function()
-        scan_auctions()
-    end)
 end

@@ -53,7 +53,8 @@
 
 
 local AutoBar = AutoBar
-
+local ABGCode = AutoBarGlobalCodeSpace
+local ABGData = AutoBarGlobalDataObject
 local L = AutoBarGlobalDataObject.locale
 
 local ROW_COLUMN_MAX = 32
@@ -234,6 +235,7 @@ function AutoBar:InitializeDefaults()
 	-- Create the various class bars
 	--
 
+	--TODO: This is a duplicate of data at the top of this file?
 	local class_bar_map =
 	{
 		DRUID = "AutoBarClassBarDruid",
@@ -253,75 +255,48 @@ function AutoBar:InitializeDefaults()
 		AutoBar.db.class.barList[class_bar_name] = get_class_bar_default_settings(AutoBar.CLASS)
 	end
 
+	-- A list of all buttons on the class bar that a class should have
+	local class_button_map =
+	{
+		DRUID =
+		{
+			"AutoBarButtonBear",
+			"AutoBarButtonCat",
+			"AutoBarButtonTravel",
+			"AutoBarButtonAquatic",
+			"AutoBarButtonMoonkin",
+			"AutoBarButtonTreeForm",
+			"AutoBarButtonStealth",
+			"AutoBarButtonDebuff",
+			"AutoBarButtonClassBuff",
+			"AutoBarButtonStance",
+			"AutoBarButtonShields",
+			"AutoBarButtonInterrupt",
+			"AutoBarButtonER",
+		},
+		MAGE =
+		{
+			"AutoBarButtonShields",
+			"AutoBarButtonStealth",
+			"AutoBarButtonConjure",
+			"AutoBarButtonInterrupt",
+			"AutoBarButtonER",
+			"AutoBarButtonClassBuff",
+		}
+	}
 
+	local my_class_buttons = class_button_map[AutoBar.CLASS] or {}
 
-	if (AutoBar.CLASS == "DRUID") then
-		if (not AutoBar.db.class.buttonList["AutoBarButtonBear"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonBear"] = {
-				buttonKey = "AutoBarButtonBear",
-				buttonClass = "AutoBarButtonBear",
-				barKey = "AutoBarClassBarDruid",
-				defaultButtonIndex = 1,
-				enabled = true,
-				noPopup = true,
-			}
-		end
-
-		if (not AutoBar.db.class.buttonList["AutoBarButtonCat"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonCat"] = {
-				buttonKey = "AutoBarButtonCat",
-				buttonClass = "AutoBarButtonCat",
-				barKey = "AutoBarClassBarDruid",
-				defaultButtonIndex = 2,
-				enabled = true,
-				noPopup = true,
-			}
-		end
-
-		if (not AutoBar.db.class.buttonList["AutoBarButtonTravel"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonTravel"] = {
-				buttonKey = "AutoBarButtonTravel",
-				buttonClass = "AutoBarButtonTravel",
+	for idx, button_name in ipairs(my_class_buttons) do
+		if (not AutoBar.db.class.buttonList[button_name]) then
+			AutoBar.db.class.buttonList[button_name] = {
+				buttonKey = button_name,
+				buttonClass = button_name,
 				barKey = AutoBar.classBar,
-				defaultButtonIndex = 3,
+				defaultButtonIndex = idx,
 				enabled = true,
-				noPopup = true,
 			}
 		end
-
-		if (not AutoBar.db.class.buttonList["AutoBarButtonAquatic"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonAquatic"] = {
-				buttonKey = "AutoBarButtonAquatic",
-				buttonClass = "AutoBarButtonAquatic",
-				barKey = AutoBar.classBar,
-				defaultButtonIndex = 3,
-				enabled = true,
-				noPopup = true,
-			}
-		end
-
-		if (not AutoBar.db.class.buttonList["AutoBarButtonMoonkin"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonMoonkin"] = {
-				buttonKey = "AutoBarButtonMoonkin",
-				buttonClass = "AutoBarButtonMoonkin",
-				barKey = AutoBar.classBar,
-				defaultButtonIndex = 5,
-				enabled = true,
-				noPopup = true,
-			}
-		end
-
-		if (not AutoBar.db.class.buttonList["AutoBarButtonTreeForm"]) then
-			AutoBar.db.class.buttonList["AutoBarButtonTreeForm"] = {
-				buttonKey = "AutoBarButtonTreeForm",
-				buttonClass = "AutoBarButtonTreeForm",
-				barKey = AutoBar.classBar,
-				defaultButtonIndex = 6,
-				enabled = true,
-				noPopup = true,
-			}
-		end
-
 	end
 
 	if (not AutoBar.db.account.buttonList["AutoBarButtonHearth"]) then
@@ -410,7 +385,7 @@ function AutoBar:InitializeDefaults()
 			barKey = "AutoBarClassBarBasic",
 			defaultButtonIndex = 15,
 			enabled = true,
-			disableConjure = true,
+			disableConjure = false,
 			include_combo_basic = true
 		}
 	end
@@ -618,7 +593,7 @@ function AutoBar:InitializeDefaults()
 				barKey = "AutoBarClassBarBasic",
 				defaultButtonIndex = "AutoBarButtonFood",
 				enabled = true,
-				disableConjure = true,
+				disableConjure = false,
 				}
 		end
 
@@ -675,7 +650,7 @@ function AutoBar:InitializeDefaults()
 	end
 
 
-	if (AutoBar.CLASS == "DRUID" or AutoBar.CLASS == "ROGUE" or AutoBar.CLASS == "MAGE" or AutoBar.CLASS == "HUNTER") then
+	if (AutoBar.CLASS == "ROGUE"or AutoBar.CLASS == "HUNTER") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonStealth"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonStealth"] = {
 				buttonKey = "AutoBarButtonStealth",
@@ -687,7 +662,7 @@ function AutoBar:InitializeDefaults()
 		end
 	end
 
-	if (AutoBar.CLASS == "DRUID" or AutoBar.CLASS == "HUNTER" or AutoBar.CLASS == "PALADIN" or AutoBar.CLASS == "WARLOCK") then
+	if (AutoBar.CLASS == "HUNTER" or AutoBar.CLASS == "PALADIN" or AutoBar.CLASS == "WARLOCK") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonDebuff"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonDebuff"] = {
 				buttonKey = "AutoBarButtonDebuff",
@@ -699,7 +674,7 @@ function AutoBar:InitializeDefaults()
 		end
 	end
 
-	if (AutoBar.CLASS == "MAGE" or AutoBar.CLASS == "WARLOCK") then
+	if (AutoBar.CLASS == "WARLOCK") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonConjure"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonConjure"] = {
 				buttonKey = "AutoBarButtonConjure",
@@ -745,7 +720,7 @@ function AutoBar:InitializeDefaults()
 		end
 	end
 
-	if (AutoBar.CLASS == "PALADIN" or AutoBar.CLASS == "WARLOCK") then
+	if (ABGCode:ClassInList(AutoBar.CLASS, "PALADIN", "WARLOCK")) then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonClassBuff"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonClassBuff"] = {
 				buttonKey = "AutoBarButtonClassBuff",
@@ -913,7 +888,7 @@ function AutoBar:InitializeDefaults()
 	end
 
 
-	if (AutoBar.CLASS == "WARRIOR" or AutoBar.CLASS == "DRUID" or AutoBar.CLASS == "PALADIN") then
+	if (AutoBar.CLASS == "WARRIOR"or AutoBar.CLASS == "PALADIN") then
 		if (not AutoBar.db.class.buttonList["AutoBarButtonStance"]) then
 			AutoBar.db.class.buttonList["AutoBarButtonStance"] = {
 				buttonKey = "AutoBarButtonStance",

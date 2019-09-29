@@ -7,11 +7,15 @@ Guidelime.registerGuide(
 [OC]    灰谷
 [OC]====================================
 [OC]你当前的任务日志: 7/20
-     [OC]黑海岸: (  ) 健忘的勘察员
-     [OC]暮色: (x) 斯塔文的传说 (  ) 仰望星空 (  ) 守夜人
-     [OC]西部荒野: (  ) 小鳄鱼皮 (  ) 夺回雕像 (  ) 大地上的脓疱
+     [OC]黑海岸: |cFFFFFFFFO|r [QA943 The Absent Minded Prospector]
+     [OC]暮色: |cFFFFFFFFX|r [QA78 The Legend of Stalvan]
+              |cFFFFFFFFO|r [QA181 Look To The Stars]
+              |cFFFFFFFFO|r [QA58 The Night Watch]
+     [OC]西部荒野: |cFFFFFFFFO|r [QA484 Young Crocolisk Skins]
+              |cFFFFFFFFO|r [QA281 Reclaiming Goods]
+              |cFFFFFFFFO|r [QA275 Blisters on The Land]
      [OC]|cFFFF0000可选:|r
-          [OC]暴风城: (  ) 南海镇
+          [OC]暴风城: |cFFFFFFFFO|r [QA538 Southshore]
 [OC]====================================
 [OC]阿斯特兰纳处
      辛德瑞尔·速火处, [QA1008 The Zoram Strand]

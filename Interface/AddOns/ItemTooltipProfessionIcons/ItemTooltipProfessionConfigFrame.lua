@@ -189,7 +189,7 @@ end
 
 
 local dialogHeader = frame:CreateFontString( nil, "OVERLAY", "GameTooltipText" )
-dialogHeader:SetFont( "Fonts\\FRIZQT__.TTF", 10, "THINOUTLINE" )
+dialogHeader:SetFont( "Fonts\\ARHei.TTF", 10, "THINOUTLINE" )
 dialogHeader:SetPoint( "TOPLEFT", 20, -20 )
 dialogHeader:SetText( "These options allow you control which icons are displayed on the item tooltips.\nThe quest icon can be filtered to display on items needed for quests of specific class/profession." )
 
@@ -215,15 +215,15 @@ QUEST_CHECK[ 0x00004 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1c", 45, -2
 
 
 local classQuestLabel = frame:CreateFontString( "ClassQuestLabel", "OVERLAY", "GameTooltipText" )
-classQuestLabel:SetFont( "Fonts\\FRIZQT__.TTF", 14, "THINOUTLINE" )
+classQuestLabel:SetFont( "Fonts\\ARHei.TTF", 14, "THINOUTLINE" )
 classQuestLabel:SetPoint( "TOPLEFT", 45, -255 )
 classQuestLabel:SetTextColor( 1, 0.85, 0.15 )
-classQuestLabel:SetText( "职业任务" )
+classQuestLabel:SetText( "Class Quests" )
 
-QUEST_CHECK[ 0x00008 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d1", 45, -270, " 小德", nil )
+QUEST_CHECK[ 0x00008 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d1", 45, -270, " 德鲁伊", nil )
 QUEST_CHECK[ 0x00010 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d2", 45, -290, " 猎人", nil )
 QUEST_CHECK[ 0x00020 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d3", 45, -310, " 法师", nil )
-QUEST_CHECK[ 0x00040 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d4", 245, -270, " 骑士", nil )
+QUEST_CHECK[ 0x00040 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d4", 245, -270, " 圣骑士", nil )
 QUEST_CHECK[ 0x00080 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d5", 245, -290, " 牧师", nil )
 QUEST_CHECK[ 0x00100 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d6", 245, -310, " 盗贼", nil )
 QUEST_CHECK[ 0x00200 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d7", 445, -270, " 萨满祭司", nil )
@@ -233,7 +233,7 @@ QUEST_CHECK[ 0x00800 ] = CreateCheckbox( "ItemTooltipIconsConfigCheck1d9", 445, 
 
 
 local profQuestLabel = frame:CreateFontString( "ProfQuestLabel", "OVERLAY", "GameTooltipText" )
-profQuestLabel:SetFont( "Fonts\\FRIZQT__.TTF", 14, "THINOUTLINE" )
+profQuestLabel:SetFont( "Fonts\\ARHei.TTF", 14, "THINOUTLINE" )
 profQuestLabel:SetPoint( "TOPLEFT", 45, -345 )
 profQuestLabel:SetTextColor( 1, 0.85, 0.15 )
 profQuestLabel:SetText( "专业任务" )
@@ -264,7 +264,7 @@ _G[ "ItemTooltipIconsConfigSlider0Low" ]:SetText( nil )
 _G[ "ItemTooltipIconsConfigSlider0High" ]:SetText( nil )
 
 iconSizeLabel = frame:CreateFontString( nil, "OVERLAY", "GameTooltipText" )
-iconSizeLabel:SetFont( "Fonts\\FRIZQT__.TTF", 12, "THINOUTLINE" )
+iconSizeLabel:SetFont( "Fonts\\ARHei.TTF", 12, "THINOUTLINE" )
 iconSizeLabel:SetPoint( "TOPLEFT", 225, -522 )
 
 iconDemoTexture = frame:CreateTexture( nil, "OVERLAY" )

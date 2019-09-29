@@ -7,10 +7,13 @@ Guidelime.registerGuide(
 [OC]    荆棘谷
 [OC]====================================
 [OC]你当前的任务日志: 7/20
-     [OC]希尔斯布莱德丘陵: (  ) 海龟汤 (x) 人事调动
-     [OC]铁炉堡: (  ) 苏利·巴鲁的信
-     [OC]千针石林: (x) 赫米特·奈辛瓦里二世 (x) 流放者马特克 (x) 给克拉维尔的零件
-     [OC](  ) 地精赞助商
+     [OC]希尔斯布莱德丘陵: |cFFFFFFFFO|r [QA555 Soothing Turtle Bisque]
+              |cFFFFFFFFX|r [QA563 Reassignment]
+     [OC]铁炉堡: |cFFFFFFFFO|r [QA637 Sully Balloo's Letter]
+     [OC]千针石林: |cFFFFFFFFX|r [QA5762 Hemet Nesingwary]
+              |cFFFFFFFFX|r [QA1106 Martek the Exiled]
+              |cFFFFFFFFX|r [QA1112 Parts for Kravel]
+              |cFFFFFFFFO|r [QA1180 Goblin Sponsorship]
 [OC]====================================
 [OC]藏宝海湾
      [OC](发现藏宝海湾)

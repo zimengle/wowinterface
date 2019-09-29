@@ -1,7 +1,7 @@
 
 AtlasLootClassicDB = {
 	["global"] = {
-		["__addonrevision"] = 1010010,
+		["__addonrevision"] = 1010012,
 	},
 	["profileKeys"] = {
 		["Typescript - 伦鲁迪洛尔"] = "Typescript - 伦鲁迪洛尔",
@@ -25,7 +25,7 @@ AtlasLootClassicDB = {
 		},
 		["Typescript - 沙尔图拉"] = {
 			["minimap"] = {
-				["minimapPos"] = 246.196701617585,
+				["minimapPos"] = 262.044627064539,
 			},
 			["GUI"] = {
 				["point"] = {
@@ -37,8 +37,8 @@ AtlasLootClassicDB = {
 				},
 				["selected"] = {
 					nil, -- [1]
-					"TheTempleOfAtal'Hakkar", -- [2]
-					11, -- [3]
+					"LowerBlackrockSpire", -- [2]
+					6, -- [3]
 					1, -- [4]
 					0, -- [5]
 				},

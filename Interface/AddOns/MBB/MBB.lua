@@ -81,7 +81,8 @@ MBB_Ignore = {
 	[41] = "PremadeFilter_MinimapButton",    -- PreMadeFilter
 	[42] = "GarrisonMinimapButton",
 	[43] = "QuestieFrame",
-	[44] = "Guidelime"
+	[44] = "Guidelime",
+	[45] = "MiniMapBattlefieldFrame"
 };
 
 MBB_IgnoreSize = {

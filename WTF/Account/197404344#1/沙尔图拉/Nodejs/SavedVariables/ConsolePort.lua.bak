@@ -2,6 +2,8 @@
 ConsolePortBindingSet = {
 	{
 	}, -- [1]
+	[0] = {
+	},
 }
 ConsolePortMouse = {
 	["Events"] = {

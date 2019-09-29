@@ -99,11 +99,11 @@ end)
 
 buyout_listing = listing.new(frame.buyout_listing)
 buyout_listing:SetColInfo{
-	{name='拍卖数', width=.17, align='CENTER'},
-	{name='剩余\n时间', width=.11, align='CENTER'},
-	{name='堆叠\n数量', width=.12, align='CENTER'},
-	{name='一口价\n(每件)', width=.4, align='RIGHT'},
-	{name='% 价格\n对比', width=.20, align='CENTER'},
+    {name='拍卖数', width=.17, align='CENTER'},
+    {name='剩余\n时间', width=.11, align='CENTER'},
+    {name='堆叠\n数量', width=.12, align='CENTER'},
+    {name='一口价\n(每件)', width=.4, align='RIGHT'},
+    {name='% 价格\n对比', width=.20, align='CENTER'},
 }
 buyout_listing:SetSelection(function(data)
 	return data.record == get_buyout_selection() or data.record.historical_value and get_buyout_selection() and get_buyout_selection().historical_value
@@ -179,29 +179,34 @@ do
         prepare_stack()
     end
     slider.editbox:SetScript('OnTabPressed', function()
-        if IsShiftKeyDown() then
-            unit_buyout_price_input:SetFocus()
-        else
-            unit_start_price_input:SetFocus()
+        if not IsShiftKeyDown() then
+            duration_selector:SetFocus()
         end
     end)
     slider.editbox:SetNumeric(true)
     slider.editbox:SetMaxLetters(3)
+    slider.editbox.reset_text = '1'
     slider.label:SetText('堆叠数量')
     stack_size_slider = slider
 end
 do
-    local dropdown = gui.dropdown(frame.parameters)
-    dropdown:SetPoint('TOPLEFT', stack_size_slider, 'BOTTOMLEFT', 0, -22)
-    dropdown:SetWidth(90)
-    local label = gui.label(dropdown, gui.font_size.small)
-    label:SetPoint('BOTTOMLEFT', dropdown, 'TOPLEFT', -2, -3)
-    label:SetText('持续时间')
-    UIDropDownMenu_Initialize(dropdown, initialize_duration_dropdown)
-    dropdown:SetScript('OnShow', function(self)
-        UIDropDownMenu_Initialize(self, initialize_duration_dropdown)
+    local selector = gui.selector(frame.parameters)
+    selector.selection_change = function() duration_selection_change() end
+    selector:SetPoint('TOPLEFT', stack_size_slider, 'BOTTOMLEFT', 0, -25)
+    selector:SetWidth(90)
+    selector:SetHeight(22)
+    selector:SetFontSize(17)
+    selector:SetScript('OnTabPressed', function()
+        if IsShiftKeyDown() then
+            stack_size_slider:SetFocus()
+        else
+            unit_start_price_input:SetFocus()
+        end
     end)
-    duration_dropdown = dropdown
+    local label = gui.label(selector, gui.font_size.small)
+    label:SetPoint('BOTTOMLEFT', selector, 'TOPLEFT', -2, 1)
+    label:SetText('持续时间')
+    duration_selector = selector
 end
 do
     local checkbox = gui.checkbox(frame.parameters)
@@ -317,11 +322,11 @@ function aux.handle.LOAD()
 		frame.bid_listing:Hide()
 		frame.buyout_listing:SetPoint('BOTTOMLEFT', frame.inventory, 'BOTTOMRIGHT', 2.5, 0)
 		buyout_listing:SetColInfo{
-			{name='拍卖数', width=.15, align='CENTER'},
-			{name='剩余时间', width=.15, align='CENTER'},
-			{name='堆叠数量', width=.15, align='CENTER'},
-			{name='一口价 (每件)', width=.4, align='RIGHT'},
-			{name='% 价格对比', width=.15, align='CENTER'},
+            {name='拍卖数', width=.15, align='CENTER'},
+            {name='剩余时间', width=.15, align='CENTER'},
+            {name='堆叠数量', width=.15, align='CENTER'},
+            {name='一口价 (每件)', width=.4, align='RIGHT'},
+            {name='% 价格对比', width=.15, align='CENTER'},
 		}
 	end
 end

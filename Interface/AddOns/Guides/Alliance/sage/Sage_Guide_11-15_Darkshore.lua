@@ -8,8 +8,11 @@ Guidelime.registerGuide(
 [OC]===================================
 [OC]你当前的任务日志: 0/20
      [OC]|cFFFF0000可选:|r
-          [OC]达纳苏斯: (x) 古树之林
-          [OC]洛克莫丹: (x) 卡尔·雷矛的订单 (  ) 保卫国王的领土 (  ) 挖掘场的补给品
+          [OC]达纳苏斯: |cFFFFFFFFX|r [QA952 Grove of the Ancients]
+          [OC]洛克莫丹: 
+              |cFFFFFFFFX|r [QA1338 Stormpike's Order]
+              |cFFFFFFFFO|r [QA237 In Defense of the King's Lands]
+              |cFFFFFFFFO|r [QA273 Resupplying the Excavation]
 [OC]===================================
 [OC]奥伯丁内
      [OC](发现奥伯丁)

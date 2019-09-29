@@ -1,5 +1,10 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 黑色
-/target 蜘蛛
+/target 
 /script SetRaidTarget("target",8)
+END
+VER 3 0000000000000003 "杰德" "132091"
+/target 杰德
+END
+VER 3 0000000000000002 "黑上" "132110"
+/5 黑上双德8人速刷开组, 来60DPS和奶
 END

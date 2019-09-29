@@ -9,8 +9,8 @@ addon.SPECIAL_MAP_INDEX = {monster = 60, item = 61, object = 62, npc = 63, LOC =
 addon.mapIcons = {}
 
 
-local function createIconFrame(t, index, minimap)
-    local f = CreateFrame("Button", addonName .. t .. index .. minimap, nil)
+local function createIconFrame(t, index)
+    local f = CreateFrame("Button")
     f.texture = f:CreateTexture(nil, "TOOLTIP")
 	addon.setMapIconTexture(f, t)
 	if t ~= "GOTO" then
@@ -94,8 +94,8 @@ local function createMapIcon(t, i)
 		i = #addon.mapIcons[t] + 1
 	end
 	addon.mapIcons[t][i] = {}
-	addon.mapIcons[t][i].map = createIconFrame(t, i, 0)
-	addon.mapIcons[t][i].minimap = createIconFrame(t, i, 1)
+	addon.mapIcons[t][i].map = createIconFrame(t, i)
+	addon.mapIcons[t][i].minimap = createIconFrame(t, i)
 	addon.mapIcons[t][i].index = i
 	addon.mapIcons[t][i].inUse = false
 	return addon.mapIcons[t][i]
@@ -129,12 +129,16 @@ local function getTooltip(element)
 			addon.getQuestText(element.attached.questId, element.attached.t, nil, element.step and element.step.active) 
 		if element.attached.t ~= "ACCEPT" then
 			local objectives
-			if element.attached.t == "TURNIN" or element.attached.objective == nil then
+			if element.attached.t == "TURNIN" then
 				objectives = true
-			else
+			elseif element.attached.objective ~= nil then
 				objectives = {element.attached.objective}
+			elseif element.objectives ~= nil then
+				objectives = element.objectives
+			else
+				objectives = true
 			end
-			local obj = addon.getQuestObjectiveText(element.attached.questId, objectives, "    ")
+			local obj = addon.getQuestObjectiveText(element.attached.questId, objectives, "    ", element.npcId, element.objectId)
 			if obj ~= "" then tooltip = tooltip .. "\n" .. obj end
 		end
 	end
@@ -299,13 +303,13 @@ function addon.showArrow(element)
 	if GuidelimeDataChar.showArrow then
 		if addon.arrowFrame == nil then
 			addon.arrowFrame = CreateFrame("FRAME", nil, UIParent)
-			addon.arrowFrame:SetWidth(GuidelimeDataChar.arrowSize)
-			addon.arrowFrame:SetHeight(GuidelimeDataChar.arrowSize)
 			addon.arrowFrame:SetPoint(GuidelimeDataChar.arrowRelative, UIParent, GuidelimeDataChar.arrowRelative, GuidelimeDataChar.arrowX, GuidelimeDataChar.arrowY)
 		    addon.arrowFrame.texture = addon.arrowFrame:CreateTexture(nil, "OVERLAY")
 		    addon.setArrowTexture()
 		    addon.arrowFrame.texture:SetAllPoints()
 			addon.arrowFrame:SetAlpha(GuidelimeDataChar.arrowAlpha)
+			addon.arrowFrame:SetWidth(GuidelimeDataChar.arrowSize)
+			addon.arrowFrame:SetHeight(GuidelimeDataChar.arrowSize)
 			addon.arrowFrame:SetMovable(true)
 			addon.arrowFrame:EnableMouse(true)
 			addon.arrowFrame:SetScript("OnMouseDown", function(this) 

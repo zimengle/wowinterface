@@ -389,12 +389,6 @@ end
 function NP:ConfigureAll()
 	--NP:StyleFilterConfigure() -- keep this at the top
 
-	local Scale = E.global.general.UIScale
-
-	C_NamePlate_SetNamePlateSelfSize(NP.db.plateSize.personalWidth * Scale, NP.db.plateSize.personalHeight * Scale)
-	C_NamePlate_SetNamePlateEnemySize(NP.db.plateSize.enemyWidth * Scale, NP.db.plateSize.enemyHeight * Scale)
-	C_NamePlate_SetNamePlateFriendlySize(NP.db.plateSize.friendlyWidth * Scale, NP.db.plateSize.friendlyHeight * Scale)
-
 	NP:PLAYER_REGEN_ENABLED()
 
 	if NP.db.units.PLAYER.enable and NP.db.units.PLAYER.useStaticPosition then
@@ -594,13 +588,6 @@ function NP:Initialize()
 		BlizzPlateManaBar:Hide()
 		BlizzPlateManaBar:UnregisterAllEvents()
 	end
-
-	hooksecurefunc(_G.NamePlateDriverFrame, "UpdateNamePlateOptions", function()
-		local Scale = E.global.general.UIScale
-		C_NamePlate_SetNamePlateSelfSize(NP.db.plateSize.personalWidth * Scale, NP.db.plateSize.personalHeight * Scale)
-		C_NamePlate_SetNamePlateEnemySize(NP.db.plateSize.enemyWidth * Scale, NP.db.plateSize.enemyHeight * Scale)
-		C_NamePlate_SetNamePlateFriendlySize(NP.db.plateSize.friendlyWidth * Scale, NP.db.plateSize.friendlyHeight * Scale)
-	end)
 
 	oUF:Spawn("player", "ElvNP_Player", "")
 

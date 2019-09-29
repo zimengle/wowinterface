@@ -14,6 +14,7 @@ DefaultCodexConfig = {
     ["colorBySpawn"] = true,
     ["questMarkerSize"] = 15,
     ["spawnMarkerSize"] = 15,
+    ["minimumDropChance"] = 2, -- (%) Hide markers with a drop probability less than this value
 }
 
 function textFactory(parent, value, size)
@@ -23,6 +24,18 @@ function textFactory(parent, value, size)
     text:SetJustifyH("CENTER")
     text:SetText(value)
     return text
+end
+
+function buttonFactory(parent, name, description, onClick)
+    local button = CreateFrame("Button", name, parent, "UIPanelButtonTemplate")
+    button:SetHeight(25)
+    button:SetWidth(400)
+    button:SetText(name)
+    button.tooltipText = description
+    button:SetScript("OnClick", function(self)
+        onClick(self)
+    end)
+    return button
 end
 
 function checkboxFactory(parent, name, description, onClick)
@@ -66,7 +79,7 @@ function editBoxFactory(parent, name, width, height, onEnter)
     return editBox
 end
 
-function sliderFactory(parent, name, title, minVal, maxVal, valStep, func)
+function sliderFactory(parent, name, title, minVal, maxVal, valStep, func, sliderWidth)
     local slider = CreateFrame("Slider", name, parent, "OptionsSliderTemplate")
     local editBox = CreateFrame("EditBox", "$parentEditBox", slider, "InputBoxTemplate")
     slider:SetMinMaxValues(minVal, maxVal)
@@ -79,6 +92,9 @@ function sliderFactory(parent, name, title, minVal, maxVal, valStep, func)
     slider.textHigh:SetText(floor(maxVal))
     slider.textLow:SetTextColor(0.8,0.8,0.8)
     slider.textHigh:SetTextColor(0.8,0.8,0.8)
+    if sliderWidth ~= nil then
+        slider:SetWidth(sliderWidth)
+    end
     slider:SetObeyStepOnDrag(true)
     editBox:SetSize(45,30)
     editBox:ClearAllPoints()
@@ -158,6 +174,9 @@ function UpdateConfigPanel(configPanel)
 
     configPanel.spawnMarkerSizeSlider:SetValue(CodexConfig.spawnMarkerSize)
     configPanel.spawnMarkerSizeSlider.editBox:SetCursorPosition(0)
+
+    configPanel.minimumDropChanceSlider:SetValue(CodexConfig.minimumDropChance)
+    configPanel.minimumDropChanceSlider.editBox:SetCursorPosition(0)
 
     -- for k, v in pairs(colorListPickers) do
     --     r, g, b = unpack(CodexConfig.colorList[k])
@@ -248,6 +267,24 @@ function createConfigPanel(parent)
         CodexMap:UpdateNodes()
     end)
     config.spawnMarkerSizeSlider:SetPoint("TOPLEFT", 325, -400)
+
+    config.minimumDropChanceSlider = sliderFactory(config, "minimumDropChance", "隐藏掉落概率低于(%)的物品", 0, 100, 1, function(self)
+        CodexConfig.minimumDropChance = tonumber(self:GetValue())
+        CodexQuest:ResetAll()
+    end, 424)
+    config.minimumDropChanceSlider:SetPoint("TOPLEFT", 45, -460)
+
+    config.showAllHiddenQuests = buttonFactory(config, "显示所有手动隐藏的任务", "显示所有通过Shift+点击隐藏的任务\n按住Shift并点击小地图或世界地图上的任务图标可以隐藏任务", function(self)
+        local size = Codex:tablelen(CodexHiddenQuests)
+        CodexHiddenQuests = {}
+        CodexQuest:ResetAll()
+        if size < 1 then
+            print('ClassicCodex: 您没有手动隐藏过任何任务，按住Shift并点击小地图或世界地图上的任务图标可以隐藏任务')
+        else
+            print('ClassicCodex: '..tostring(size)..'个隐藏任务已重新显示')
+        end
+    end)
+    config.showAllHiddenQuests:SetPoint("TOPLEFT", 15, -505)
 
     -- Marker Colors
     -- config.markerColorsTitle = textFactory(config, "Map Marker Colors", 20)

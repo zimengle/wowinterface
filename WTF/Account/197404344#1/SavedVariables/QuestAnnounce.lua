@@ -1,6 +1,7 @@
 
 QuestAnnounceDB = {
 	["profileKeys"] = {
+		["Nodejs - 沙尔图拉"] = "Default",
 		["Typescript - 沙尔图拉"] = "Default",
 		["Lua - 沙尔图拉"] = "Default",
 	},
@@ -14,8 +15,8 @@ QuestAnnounceDB = {
 				},
 				["settings"] = {
 					["enable"] = true,
-					["debug"] = false,
 					["sound"] = true,
+					["debug"] = false,
 					["every"] = 1,
 				},
 				["announceIn"] = {

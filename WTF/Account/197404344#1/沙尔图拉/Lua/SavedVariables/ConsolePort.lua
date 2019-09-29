@@ -26,6 +26,30 @@ ConsolePortBindingSet = {
 		},
 		["CP_T_L3"] = {
 		},
+		["CP_T1"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+			["SHIFT-"] = "TARGETNEARESTENEMY",
+			[""] = "ACTIONBUTTON4",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+		},
+		["CP_R_UP"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
+			["SHIFT-"] = "ACTIONBUTTON7",
+			[""] = "ACTIONBUTTON2",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
+		},
+		["CP_L_LEFT"] = {
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+			[""] = "MULTIACTIONBAR1BUTTON11",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+		},
+		["CP_X_LEFT"] = {
+			["CTRL-"] = "CP_CAMZOOMOUT",
+			["SHIFT-"] = "TOGGLEWORLDMAP",
+			[""] = "OPENALLBAGS",
+			["CTRL-SHIFT-"] = "REPLY",
+		},
 		["CP_T2"] = {
 			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
 			["SHIFT-"] = "ACTIONBUTTON10",
@@ -44,30 +68,6 @@ ConsolePortBindingSet = {
 			[""] = "ACTIONBUTTON3",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
 		},
-		["CP_X_LEFT"] = {
-			["CTRL-"] = "CP_CAMZOOMOUT",
-			["SHIFT-"] = "TOGGLEWORLDMAP",
-			[""] = "OPENALLBAGS",
-			["CTRL-SHIFT-"] = "REPLY",
-		},
-		["CP_L_LEFT"] = {
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-			[""] = "MULTIACTIONBAR1BUTTON11",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
-		},
-		["CP_R_UP"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
-			["SHIFT-"] = "ACTIONBUTTON7",
-			[""] = "ACTIONBUTTON2",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
-		},
-		["CP_T1"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-			["SHIFT-"] = "TARGETNEARESTENEMY",
-			[""] = "ACTIONBUTTON4",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
-		},
 		["CP_X_RIGHT"] = {
 			["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",
 			["SHIFT-"] = "TOGGLEAUTORUN",
@@ -81,15 +81,17 @@ ConsolePortBindingSet = {
 			["CTRL-SHIFT-"] = "CLICK ConsolePortUtilityToggle:LeftButton",
 		},
 	}, -- [1]
+	[0] = {
+	},
 }
 ConsolePortMouse = {
 	["Camera"] = {
 		["lookAround"] = false,
 		["test_cameraDynamicPitch"] = 0,
 		["test_cameraTargetFocusEnemyEnable"] = 0,
+		["cameraZoomSpeed"] = 20,
 		["test_cameraTargetFocusInteractEnable"] = 0,
 		["calculateYaw"] = false,
-		["cameraZoomSpeed"] = 20,
 	},
 	["Cursor"] = {
 		["Scroll"] = "CP_M1",
@@ -113,10 +115,10 @@ ConsolePortMouse = {
 		["GOSSIP_CLOSED"] = true,
 		["QUEST_COMPLETE"] = true,
 		["MERCHANT_SHOW"] = true,
-		["QUEST_PROGRESS"] = true,
-		["SHIPMENT_CRAFTER_OPENED"] = true,
-		["SHIPMENT_CRAFTER_CLOSED"] = true,
 		["LOOT_OPENED"] = true,
+		["SHIPMENT_CRAFTER_CLOSED"] = true,
+		["SHIPMENT_CRAFTER_OPENED"] = true,
+		["QUEST_PROGRESS"] = true,
 		["UNIT_SPELLCAST_FAILED"] = true,
 	},
 }

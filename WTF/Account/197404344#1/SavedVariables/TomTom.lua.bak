@@ -1,6 +1,7 @@
 
 TomTomDB = {
 	["profileKeys"] = {
+		["Nodejs - 沙尔图拉"] = "Default",
 		["Typescript - 沙尔图拉"] = "Default",
 		["Lua - 沙尔图拉"] = "Default",
 	},
@@ -30,12 +31,35 @@ TomTomDB = {
 TomTomWaypoints = nil
 TomTomWaypointsM = {
 	["profileKeys"] = {
+		["Nodejs - 沙尔图拉"] = "Nodejs - 沙尔图拉",
 		["Typescript - 沙尔图拉"] = "Typescript - 沙尔图拉",
 		["Lua - 沙尔图拉"] = "Lua - 沙尔图拉",
 	},
 	["profiles"] = {
+		["Nodejs - 沙尔图拉"] = {
+		},
 		["Typescript - 沙尔图拉"] = {
 			[1411] = {
+				["1411:563259233.88416:720831866.17634:TomTom 路径点"] = {
+					1411, -- [1]
+					0.563259233884157, -- [2]
+					0.720831866176335, -- [3]
+					["world"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom 路径点",
+					["arrivaldistance"] = 15,
+					["callbacks"] = {
+						["distance"] = {
+						},
+						["minimap"] = {
+						},
+						["world"] = {
+						},
+					},
+					["crazy"] = true,
+					["persistent"] = true,
+					["minimap"] = true,
+				},
 				["1411:563259233.88416:720831866.17633:TomTom 路径点"] = {
 					1411, -- [1]
 					0.563259233884157, -- [2]
@@ -65,26 +89,6 @@ TomTomWaypointsM = {
 					["crazy"] = true,
 					["minimap"] = true,
 					["world"] = true,
-				},
-				["1411:563259233.88416:720831866.17634:TomTom 路径点"] = {
-					1411, -- [1]
-					0.563259233884157, -- [2]
-					0.720831866176335, -- [3]
-					["world"] = true,
-					["cleardistance"] = 10,
-					["title"] = "TomTom 路径点",
-					["arrivaldistance"] = 15,
-					["callbacks"] = {
-						["distance"] = {
-						},
-						["minimap"] = {
-						},
-						["world"] = {
-						},
-					},
-					["crazy"] = true,
-					["persistent"] = true,
-					["minimap"] = true,
 				},
 			},
 		},

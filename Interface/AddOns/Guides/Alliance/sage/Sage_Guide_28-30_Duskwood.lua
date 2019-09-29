@@ -7,9 +7,14 @@ Guidelime.registerGuide(
 [OC]    暮色森林
 [OC]====================================
 [OC]你当前的任务日志: 5/20
-     [OC]暮色: (x) 斯塔文的传说 (  ) 仰望星空 (  ) 仰望星空
-     [OC]暴风城: (x) 失踪的使节
-     [OC]千针石林: (x) 防撞头盔
+     [OC]暮色: |cFFFFFFFFX|r [QA78 The Legend of Stalvan]
+              |cFFFFFFFFO|r [QA181 Look To The Stars]
+              |cFFFFFFFFO|r [QA58 The Night Watch]
+     [OC]暴风城: |cFFFFFFFFX|r [QA1243 The Missing Diplomat]
+     [OC]千针石林: |cFFFFFFFFX|r [QA1179 The Brassbolts Brothers]
+     [OC]|cFFFF0000可选:|r
+     [OC]暴风城
+              |cFFFFFFFFO|r [QA538 Southshore]
 [OC]====================================
 [OC]夜色镇内,
      [OC]跑到旅店

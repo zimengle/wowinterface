@@ -107,6 +107,10 @@ atl("AutoBarButtonOrderHallResource", "Order Hall Resources")
 atl("AutoBarButtonOrderHallTroop", "Order Hall Troops")
 atl("AutoBarButtonReputation", "Reputation")
 
+atl("AutoBarButtonMana", "Mana")
+atl("AutoBarButtonBuffWeapon", "Buff Weapon")
+atl("AutoBarButtonAquatic", "Aquatic")
+
 atl("NewButton", "New Button")
 atl("NewButtonTooltip", "Create a new custom button")
 
@@ -171,6 +175,7 @@ local quick_sets =
 	"Spell.ER",
 	"Spell.Interrupt",
 	"Spell.Mage.Conjure Food",
+	"Spell.Mage.Conjure Water",
 	"Spell.Pet Battle",
 	"Toys.ToyBox",
 	"Tradeskill.Tool.Fishing.Bait",
@@ -182,8 +187,8 @@ local quick_sets =
 	"Muffin.Order Hall.Nethershard",
 	"Spell.AquaticForm",
 	"Muffin.Misc.StartsQuest",
-	"Muffin.Stone.Mana",
-	"Muffin.Stone.Health",
+	"Muffin.Stones.Mana",
+	"Muffin.Stones.Health",
 	"Muffin.Poison.Nonlethal",
 	"Muffin.Poison.Lethal",
 }

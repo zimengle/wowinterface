@@ -13,7 +13,9 @@
 
 	<Include file="LibClassicDurations\LibClassicDurations.xml"/>
 	<Script file="LibClassicCasterino-1.0\LibClassicCasterino.lua"/>
+	<Script file="LibClassicHealComm\ChatThrottleLib.lua"/>
 	<Script file="LibClassicHealComm\LibClassicHealComm.lua"/>
+	<Include file="LibClassicThreat\lib.xml"/>
 	<Include file="LibSharedMedia-3.0\lib.xml"/>
 	<Script file="LibSimpleSticky\LibSimpleSticky.lua"/>
 	<Include file='oUF\oUF.xml'/>
@@ -28,4 +30,5 @@
 	<Include file="LibBase64-1.0\lib.xml"/>
 	<Script file="LibAnim\LibAnim.lua"/>
 	<Script file="LibTranslit-1.0\LibTranslit-1.0.lua"/>
+	<Script file="LibRangeCheck-2.0\LibRangeCheck-2.0.lua"/>
 </Ui>

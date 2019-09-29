@@ -5,3 +5,5 @@
 ## SavedVariables: POSX, POSY
 
 main.lua
+
+## Q-CAT-Version: 101

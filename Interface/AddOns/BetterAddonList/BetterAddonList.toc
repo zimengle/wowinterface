@@ -1,0 +1,13 @@
+## Interface: 11302
+## Title: BetterAddonList
+## Notes: Enhances the default AddOns list.
+## Author: Neb
+## Version: 1.0.8-classic1
+## X-Curse-Project-ID: 86704
+## SavedVariables: BetterAddonListDB
+
+locales.xml
+
+BetterAddonList.lua
+
+## Q-CAT-Version: 1

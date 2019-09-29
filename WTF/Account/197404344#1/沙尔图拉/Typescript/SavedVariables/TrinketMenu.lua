@@ -2,18 +2,19 @@
 TrinketMenuPerOptions = {
 	["Visible"] = "ON",
 	["MainScale"] = 1,
-	["XPos"] = 400,
+	["XPos"] = 335.883483886719,
 	["Alpha"] = 1,
 	["MainOrient"] = "HORIZONTAL",
 	["FirstUse"] = true,
 	["ItemsUsed"] = {
 	},
 	["Hidden"] = {
+		["19120"] = 1,
 	},
-	["MenuDock"] = "BOTTOMLEFT",
-	["MainDock"] = "BOTTOMRIGHT",
-	["YPos"] = 400,
 	["MenuScale"] = 1,
+	["MainDock"] = "BOTTOMRIGHT",
+	["YPos"] = 508.997985839844,
+	["MenuDock"] = "BOTTOMLEFT",
 	["MenuOrient"] = "VERTICAL",
 }
 TrinketMenuQueue = {
@@ -28,6 +29,9 @@ TrinketMenuQueue = {
 			"19120", -- [3]
 			"17774", -- [4]
 			"19141", -- [5]
+			"12846", -- [6]
+			"17759", -- [7]
+			"13965", -- [8]
 		}, -- [1]
 		[0] = {
 			0, -- [1]
@@ -35,6 +39,9 @@ TrinketMenuQueue = {
 			"19120", -- [3]
 			"17774", -- [4]
 			"19141", -- [5]
+			"12846", -- [6]
+			"17759", -- [7]
+			"13965", -- [8]
 		},
 	},
 	["Profiles"] = {

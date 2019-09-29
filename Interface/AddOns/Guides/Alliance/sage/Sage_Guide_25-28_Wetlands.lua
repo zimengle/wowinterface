@@ -7,11 +7,13 @@ Guidelime.registerGuide(
 [OC]    湿地
 [OC]====================================
 [OC]你当前的任务日志: 5/20
-     [OC]黑海岸: (  ) 健忘的勘察员
-     [OC]暮色: (x) 斯塔文的传说 (  ) 仰望星空 (  ) 守夜人
+     [OC]黑海岸: |cFFFFFFFFO|r [QA943 The Absent Minded Prospector]
+     [OC]暮色: |cFFFFFFFFX|r [QA78 The Legend of Stalvan]
+              |cFFFFFFFFO|r [QA181 Look To The Stars]
+              |cFFFFFFFFO|r [QA58 The Night Watch]
      [OC]湿地: (  ) 大地上的脓疱
      [OC]|cFFFF0000可选:|r
-          [OC]暴风城: (  ) 南海镇
+          [OC]暴风城: |cFFFFFFFFO|r [QA538 Southshore]
 [OC]====================================
 [OC]米港内
      [OC]旅店内

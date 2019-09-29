@@ -15,6 +15,9 @@ ABGCS:CacheSpellData(99, "Disorienting Roar");
 ABGCS:CacheSpellData(5215, "Prowl");
 ABGCS:CacheSpellData(22842, "Frenzied Regeneration");
 ABGCS:CacheSpellData(22570, "Mangle");
+ABGCS:CacheSpellData(1126, "Mark of the Wild");
+ABGCS:CacheSpellData(21849, "Gift of the Wild");
+ABGCS:CacheSpellData(467, "Thorns");
 ABGCS:CacheSpellData(5487, "Bear Form");
 ABGCS:CacheSpellData(768, "Cat Form");
 ABGCS:CacheSpellData(1066, "Aquatic Form");
@@ -54,6 +57,11 @@ ABGCS:CacheSpellData(13795, "Immolation Trap");
 
 
 --Mage
+ABGCS:CacheSpellData(168, "Frost Armor");
+ABGCS:CacheSpellData(1459, "Arcane Intellect");
+ABGCS:CacheSpellData(5504, "Conjure Water");
+ABGCS:CacheSpellData(587, "Conjure Food");
+
 ABGCS:CacheSpellData(11426, "Ice Barrier");
 ABGCS:CacheSpellData(130, "Slow Fall");
 --ABGCS:CacheSpellData(42955, "Conjure Refreshment");
@@ -75,6 +83,7 @@ ABGCS:CacheSpellData(11417, "Portal: Orgrimmar");
 ABGCS:CacheSpellData(3567, "Teleport: Orgrimmar");
 
 --Paladin
+ABGCS:CacheSpellData(498, "Divine Protection");
 ABGCS:CacheSpellData(642, "Divine Shield");
 ABGCS:CacheSpellData(1044, "Blessing of Freedom");
 ABGCS:CacheSpellData(1022, "Blessing of Protection");

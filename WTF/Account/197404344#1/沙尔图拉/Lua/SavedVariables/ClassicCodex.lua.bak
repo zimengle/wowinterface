@@ -4,13 +4,13 @@ CodexConfig = {
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
 	["autoAccept"] = true,
-	["nameplateIcon"] = true,
 	["allQuestGivers"] = true,
+	["nameplateIcon"] = true,
+	["showFestival"] = true,
+	["autoTurnin"] = true,
+	["currentQuestGivers"] = true,
 	["spawnMarkerSize"] = 10,
 	["trackingMethod"] = 1,
-	["currentQuestGivers"] = true,
-	["autoTurnin"] = true,
-	["showFestival"] = true,
 	["questMarkerSize"] = 14,
 }
 CodexHistory = {
@@ -18,11 +18,11 @@ CodexHistory = {
 CodexBrowserFavorites = {
 	["items"] = {
 	},
-	["objets"] = {
+	["units"] = {
 	},
 	["quests"] = {
 	},
-	["units"] = {
+	["objets"] = {
 	},
 }
 CodexColors = {

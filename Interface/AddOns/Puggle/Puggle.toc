@@ -1,0 +1,16 @@
+## Interface: 11302
+## Title: Puggle
+## Author: Cixi@Remulos
+## Notes: The easier way to find your group.
+## SavedVariables: Puggle_minimapPos, Puggle_showMinimapButton, Puggle_showMessageOnNewRequest, Puggle_playSoundOnNewRequest, Puggle_showLevelColorCoding, Puggle_showOnlyRelevant, Puggle_idleTimeout, Puggle_sortLatestFirst, Puggle_dungeonTags, Puggle_dungeonNames, Puggle_searchTags
+## SavedVariablesPerCharacter: Puggle_dungeonShow
+## OptionalDeps: LibStub, LibWho-2.0
+## Version: 1.9
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibWho-2.0\LibWho-2.0.lua
+
+Puggle.lua
+Puggle.xml
+
+## Q-CAT-Version: 2

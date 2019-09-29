@@ -1,5 +1,12 @@
 VER 3 0000000000000001 "xt" "INV_MISC_QUESTIONMARK"
-/target 安戈洛猩猩
-/target 蜘蛛
+/target 天灾勇士
 /script SetRaidTarget("target",8)
+END
+VER 3 0000000000000003 "杰德" "132091"
+/target 杰德
+END
+VER 3 0000000000000002 "黑上" "132110"
+/1 黑下1，2号宝石队开组，来DPS4=1
+/5 黑下1，2号宝石队开组，来DPS4=1
+/y 黑下1，2号宝石队开组，来DPS4=1
 END

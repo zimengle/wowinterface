@@ -7,12 +7,18 @@ Guidelime.registerGuide(
 [OC]    凄凉之地
 [OC]====================================
 [OC]你当前的任务日志: 12/20
-     [OC]奥特兰克山脉: (x) 更大的谜团
-     [OC]希尔斯布莱德丘陵: (x) 人事调动
-     铁炉堡: [QC1453 Reclaimers' Business in Desolace]
-     [OC]荆棘谷: (x) 供与求 (x) 调查营地 (x) 血顶巨魔的耳朵
-     [OC](x) 歌唱水晶碎片 (x) 克拉兹克的烹调锅 (x) 隐藏的钥匙 (x) 海潮之石
-     [OC]千针石林: (x) 流放者马特克 (x) 给克拉维尔的零件
+     [OC]奥特兰克山脉: |cFFFFFFFFX|r [QA525 Further Mysteries]
+     [OC]希尔斯布莱德丘陵: |cFFFFFFFFX|r [QA563 Reassignment]
+     铁炉堡: |cFFFFFFFFO|r [QA1453 Reclaimers' Business in Desolace]
+     [OC]荆棘谷: |cFFFFFFFFX|r [QA575 Supply and Demand]
+              |cFFFFFFFFX|r [QA201 Investigate the Camp]
+              |cFFFFFFFFX|r [QA189 Bloodscalp Ears]
+              |cFFFFFFFFX|r [QA605 Singing Blue Shards]
+              |cFFFFFFFFX|r [QA210 Krazek's Cookery]
+              |cFFFFFFFFX|r [QA328 The Hidden Key]
+              |cFFFFFFFFX|r [QA578 The Stone of the Tides]
+     [OC]千针石林: |cFFFFFFFFX|r [QA1106 Martek the Exiled]
+              |cFFFFFFFFX|r [QA1112 Parts for Kravel]
 [OC]====================================
 [OC]绕着山向东南跑
 

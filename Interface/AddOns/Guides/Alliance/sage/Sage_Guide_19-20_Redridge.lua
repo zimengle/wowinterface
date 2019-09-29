@@ -7,7 +7,7 @@ Guidelime.registerGuide(
 [OC]    赤脊山
 [OC]===================================
 [OC]你当前的任务日志: 1/20
-     [OC]黑海岸: (  ) 健忘的勘察员
+     [OC]黑海岸: |cFFFFFFFFO|r [QA943 The Absent Minded Prospector]
 [OC]===================================
 沿公路向东北方向到卫兵队长帕克, [QA244 Encroaching Gnolls]
      [OC](发现三角路口)

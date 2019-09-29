@@ -4,16 +4,17 @@ CodexConfig = {
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
 	["autoAccept"] = true,
+	["minimumDropChance"] = 2,
 	["allQuestGivers"] = true,
 	["nameplateIcon"] = true,
 	["showFestival"] = true,
 	["autoTurnin"] = true,
 	["currentQuestGivers"] = true,
-	["spawnMarkerSize"] = 10,
 	["trackingMethod"] = 1,
+	["spawnMarkerSize"] = 10,
 	["questMarkerSize"] = 14,
 }
-CodexHistory = {
+CodexHiddenQuests = {
 }
 CodexBrowserFavorites = {
 	["items"] = {

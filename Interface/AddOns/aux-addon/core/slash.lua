@@ -1,6 +1,5 @@
 select(2, ...) 'aux.core.slash'
 
-local T = require 'T'
 local aux = require 'aux'
 local post = require 'aux.tabs.post'
 local info = require 'aux.util.info'
@@ -25,8 +24,8 @@ function SlashCmdList.AUX(command)
     elseif arguments[1] == 'post' and arguments[2] == 'bid' then
         aux.account_data.post_bid = not aux.account_data.post_bid
 	    aux.print('post bid ' .. status(aux.account_data.post_bid))
-    elseif arguments[1] == 'post' and arguments[2] == 'duration' and  T.map('2', post.DURATION_2, '8', post.DURATION_8, '24', post.DURATION_24)[arguments[3]] then
-        aux.account_data.post_duration = T.map('2', post.DURATION_2, '8', post.DURATION_8, '24', post.DURATION_24)[arguments[3]]
+    elseif arguments[1] == 'post' and arguments[2] == 'duration' and  ({['2'] = post.DURATION_2, ['8'] = post.DURATION_8, ['24'] = post.DURATION_24})[arguments[3]] then
+        aux.account_data.post_duration = ({['2'] = post.DURATION_2, ['8'] = post.DURATION_8, ['24'] = post.DURATION_24})[arguments[3]]
         aux.print('post duration ' .. aux.color.blue(info.duration_hours(aux.account_data.post_duration) .. 'h'))
     elseif arguments[1] == 'crafting' and arguments[2] == 'cost' then
 		aux.account_data.crafting_cost = not aux.account_data.crafting_cost
@@ -55,6 +54,9 @@ function SlashCmdList.AUX(command)
         aux.account_data.unused_item_ids = {}
         aux.account_data.auctionable_items = {}
         aux.print('Item cache cleared.')
+    elseif arguments[1] == 'clear' and arguments[2] == 'post' then
+        aux.faction_data.post = {}
+        aux.print('Post data cleared.')
     elseif arguments[1] == 'scan' then
         if not aux.frame:IsShown() then
             aux.print('Must be at the auction house to scan.')
@@ -64,6 +66,7 @@ function SlashCmdList.AUX(command)
             aux.print('Scan started. Please wait...')
             scan.start{
                 type = 'list',
+                queries = {{blizzard_query = {}}},
                 get_all = true,
                 on_complete = function()
                     aux.print('Scan complete.')
@@ -85,5 +88,6 @@ function SlashCmdList.AUX(command)
 		aux.print('- tooltip disenchant value [' .. status(tooltip_settings.disenchant_value) .. ']')
 		aux.print('- tooltip disenchant distribution [' .. status(tooltip_settings.disenchant_distribution) .. ']')
 		aux.print('- clear item cache')
+        aux.print('- clear post')
     end
 end

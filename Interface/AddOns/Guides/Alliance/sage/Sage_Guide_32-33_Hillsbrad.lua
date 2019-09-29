@@ -7,12 +7,19 @@ Guidelime.registerGuide(
 [OC]    希尔斯布莱德
 [OC]====================================
 [OC]你当前的任务日志: 13/20
-     [OC]希尔斯布莱德丘陵: (  )海龟汤 (x) 人事调动
-     [OC]铁炉堡: (  ) 国王的礼物
+     [OC]希尔斯布莱德丘陵: |cFFFFFFFFO|r [QA555 Soothing Turtle Bisque]
+              |cFFFFFFFFX|r [QA563 Reassignment]
+     [OC]铁炉堡: |cFFFFFFFFO|r [QA689 A King's Tribute]
      [OC]血色修道院: (  ) 泰坦神话
-     [OC]荆棘谷: (x) 供与求 (x) 调查营地 (x) 血顶巨魔的耳朵
-     [OC](x) 歌唱水晶碎片 (x) 克拉兹克的烹调锅 (x) 隐藏的钥匙 (x) 海潮之石
-     [OC]千针石林: (x) 流放者马特克 (x) 给克拉维尔的零件
+     [OC]荆棘谷: |cFFFFFFFFX|r [QA575 Supply and Demand]
+              |cFFFFFFFFX|r [QA201 Investigate the Camp]
+              |cFFFFFFFFX|r [QA189 Bloodscalp Ears]
+              |cFFFFFFFFX|r [QA605 Singing Blue Shards]
+              |cFFFFFFFFX|r [QA210 Krazek's Cookery]
+              |cFFFFFFFFX|r [QA328 The Hidden Key]
+              |cFFFFFFFFX|r [QA578 The Stone of the Tides]
+     [OC]千针石林: |cFFFFFFFFX|r [QA1106 Martek the Exiled]
+              |cFFFFFFFFX|r [QA1112 Parts for Kravel]
 [OC]====================================
 [OC]南海镇
      达伦·玛尔维, [QA564 Costly Menace]

@@ -21,3 +21,5 @@ localization-ruRU.lua
 MBB.xml
 
 ## Q-CAT-Version: 105
+
+## Q-CAT-Version: 106

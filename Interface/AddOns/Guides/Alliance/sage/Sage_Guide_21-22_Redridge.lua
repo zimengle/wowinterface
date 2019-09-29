@@ -7,11 +7,15 @@ Guidelime.registerGuide(
 [OC]    赤脊山
 [OC]===================================
 [OC]你当前的任务日志: 9/20
-     [OC]黑海岸: (  ) 健忘的勘察员
-     [OC]暮色森林: (  ) 僵尸 (  ) 斯温的复仇 (  ) 惩罚图腾 (  ) 守夜人
-     [OC](  ) 仰望星空
-     [OC]赤脊山: (x) 回复弗纳 (x) 送往西部荒野的信
-     [OC]西部荒野: (  ) 迪菲亚兄弟会
+     [OC]黑海岸: |cFFFFFFFFO|r [QA943 The Absent Minded Prospector]
+     [OC]暮色森林: |cFFFFFFFFO|r [QA158 Zombie Juice]
+              |cFFFFFFFFO|r [QA95 Sven's Revenge]
+              |cFFFFFFFFO|r [QA101 The Totem of Infliction]
+              |cFFFFFFFFO|r [QA57 The Night Watch]
+              |cFFFFFFFFO|r [QA181 Look To The Stars]
+     [OC]赤脊山: |cFFFFFFFFX|r [QA119 Return to Verner]
+              |cFFFFFFFFX|r [QA144 Messenger to Westfall]
+     [OC]西部荒野: |cFFFFFFFFO|r [QA65 The Defias Brotherhood]
 [OC]===================================
 [OC]湖畔镇内
      卫兵豪维处, [QA128 Blackrock Bounty]

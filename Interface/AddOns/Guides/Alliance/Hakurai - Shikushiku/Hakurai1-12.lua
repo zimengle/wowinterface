@@ -4,7 +4,7 @@ Guidelime.registerGuide(
 [GA Alliance]
 注：我们的宗旨是只要路上有怪杀就不要无视它！只要它能给你经验！否则你就很有可能在一下步里落后经验。如果你学习了草药或者挖矿就一定要利用他们！[OC]
 本导航由Hakurai - Shikushiku编写，中文由Qcat汉化[OC]
-[G48.2,42.8Elwynn Forest]接受[QA783]
+[G48.2,42.8 Elwynn Forest]接受[QA783]
 [G48.8,41.6]提交[QT783]
 接受[QA7]
 [G48.2,42.8]接受 [QA5261]
@@ -144,13 +144,13 @@ Guidelime.registerGuide(
 [V]卖垃圾
 把草药或者矿邮寄给小号，如果有必要的话
 [G41.6,65.6]接受[QA1097]
-[G43,89.6]提交[QT114]
+[G43,89.6 Elwynn Forest]提交[QT114]
 [G34.6,84.4]提交[QT88]
 [V]卖垃圾
 [G24.5,74.7]接受[QA176]
 在它旁边提交[QT239]
 接受[QA11]
-[G60,19.4Westfall]跑到西部荒野，接受[QA36]
+[G60,19.4 Westfall]跑到西部荒野，接受[QA36]
 接受[QA151]
 接受[QA64]
 [G56.4,30.6]提交[QT36]
@@ -163,7 +163,7 @@ Guidelime.registerGuide(
 接受[QA6281]
 刷到 [XP10] ，如果你还没到的话。
 飞到 [F 暴风城]
-[G56.2,64.8Stormwind City]提交[QT61]
+[G56.2,64.8 Stormwind City]提交[QT61]
 [G57.2,57.2][V]卖垃圾, 如果你是战士，买一把弩武器和一些弹药。[OC]
 [T]学习弩技能[A Warrior]
 [T]学习其他武器技能[OC]
@@ -180,27 +180,27 @@ Guidelime.registerGuide(
 接受[QA1665][A Warrior]
 提交[QT1665][A Warrior]
 接受[QA1666][A Warrior]
-[G43.4,65.6Elwynn Forest]接受[QA5635] 闪金镇[OC][A Priest]
-[G38.8,26.4Stormwind City]提交[QT5635] 暴风城[OC][A Priest]
-[G44.4,66.2Elwynn Forest]术士，拾取[QA1685]为你的职业任务[OC][A Warlock]
-[G25,78Stormwind City]提交[QT1685][OC][A Warlock]
+[G43.4,65.6 Elwynn Forest]接受[QA5635] 闪金镇[OC][A Priest]
+[G38.8,26.4 Stormwind City]提交[QT5635] 暴风城[OC][A Priest]
+[G44.4,66.2 Elwynn Forest]术士，拾取[QA1685]为你的职业任务[OC][A Warlock]
+[G25,78 Stormwind City]提交[QT1685][OC][A Warlock]
 接受[QA1688][OC][A Warlock]
-[G43,65Elwynn Forest]接受[QA2205]在闪金镇郡训练[OC][A Rogue]
-[G75.8,59.8Stormwind City]提交[QT2205]暴风城[OC][A Rogue]
+[G43,65 Elwynn Forest]接受[QA2205]在闪金镇郡训练[OC][A Rogue]
+[G75.8,59.8 Stormwind City]提交[QT2205]暴风城[OC][A Rogue]
 接受[QA2206][OC][A Rogue]
-[G66.2,62.4Stormwind City]提交[QT6261]
+[G66.2,62.4 Stormwind City]提交[QT6261]
 接受[QA6285]
 飞回西部荒野[OC]
-[G56.8,47.2Westfall]提交[QT6285]
+[G56.8,47.2 Westfall]提交[QT6285]
 [V]卖垃圾
-[G47,87Elwynn Forest]盗贼, 走到这里，去做职业任务 [QC2206][A Rogue]
+[G47,87 Elwynn Forest]盗贼, 走到这里，去做职业任务 [QC2206][A Rogue]
 豺狼人还会掉落收货人的交易日程表,他会开始一个任务。
-[G32.2,85.4Elwynn Forest]去豺狼人那里杀了他们，为了 [QC11] 建议组队。
+[G32.2,85.4 Elwynn Forest]去豺狼人那里杀了他们，为了 [QC11] 建议组队。
 一旦有人组队，就杀了霍格，然后拾取。[QC176]
 杀死豺狼人直到你得到卷轴 并 接受[QA123]
 [G24.2,74.6]提交[QT11]
 在回闪金镇的路上, 刷迪菲亚和其他怪，直到你达到到10级 7000 xp 。 -- [XP10+7000]
-[G41.6,65.8Elwynn Forest][V]卖垃圾
+[G41.6,65.8 Elwynn Forest][V]卖垃圾
 [G42.2,65.8]提交[QT176]
 提交[QT123]
 接受[QA147]
@@ -218,17 +218,17 @@ Guidelime.registerGuide(
 刷鱼人，直到达到5200 xp，进入11级。 -- [XP11+5200]
 [G74,72.2]提交[QT46]
 [G79.4,68.6]提交[QT83]
-[G15.2,71.4Redridge Mountains]跑到赤脊山接受 [QA244], 小心路上的怪。。
+[G15.2,71.4 Redridge Mountains]跑到赤脊山接受 [QA244], 小心路上的怪。。
 [G30.8,60]提交[QT244]
 接受[QA246]
 从桥上跑过去，直到你发现止水湖。[OC]
 [G30.6,59.2]开鸟点，然后飞暴风城
-[G75.8,59.8Stormwind City]提交[QT2206][A Rogue]
-[G25,78Stormwind City]提交[QT1688][A Warlock]
+[G75.8,59.8 Stormwind City]提交[QT2206][A Rogue]
+[G25,78 Stormwind City]提交[QT1688][A Warlock]
 接受[QA1689][A Warlock]
 [G25.2,77.2]在螺旋楼梯下面, 下楼梯, 右转, 右, 右, 左, 在走廊中间左转. 用项链召唤空行者并杀死它 [QC1689][A Warlock]
 [G25,78]提交[QT1689][A Warlock]
-[G51.6,12.4Stormwind City]提交[QT1097]
+[G51.6,12.4 Stormwind City]提交[QT1097]
 接受[QA353]
 [NX 12 - 14 洛克莫丹]
 ]],"Hakurai - by Shikushiku 中文由Qcat汉化")

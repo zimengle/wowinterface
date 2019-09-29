@@ -1,0 +1,169 @@
+
+GSEOptions = {
+	["HideLoginMessage"] = false,
+	["DefaultImportAction"] = "MERGE",
+	["UseWLMExportFormat"] = true,
+	["COMMENT"] = "|cff55cc55",
+	["use2"] = false,
+	["STANDARDFUNCS"] = "|cff55ddcc",
+	["showGSEUsers"] = false,
+	["UnfoundSpellIDs"] = {
+	},
+	["showGSEoocqueue"] = true,
+	["Updated801"] = true,
+	["use14"] = false,
+	["CreateGlobalButtons"] = false,
+	["autoCreateMacroStubsClass"] = true,
+	["EQUALS"] = "|cffccddee",
+	["use11"] = false,
+	["sendDebugOutputToChatWindow"] = false,
+	["debug"] = false,
+	["DefaultDisabledMacroIcon"] = "Interface\\Icons\\INV_MISC_BOOK_08",
+	["Update2305"] = true,
+	["ActiveSequenceVersions"] = {
+	},
+	["use6"] = false,
+	["CommandColour"] = "|cFF00FF00",
+	["DisabledSequences"] = {
+	},
+	["UNKNOWN"] = "|cffff6666",
+	["DebugPrintModConditionsOnKeyPress"] = false,
+	["overflowPersonalMacros"] = false,
+	["autoCreateMacroStubsGlobal"] = false,
+	["Update2410"] = true,
+	["requireTarget"] = false,
+	["sendDebugOutputToDebugOutput"] = false,
+	["hideSoundErrors"] = false,
+	["ErroneousSpellID"] = {
+	},
+	["hideUIErrors"] = false,
+	["STRING"] = "|cff888888",
+	["clearUIErrors"] = false,
+	["Update2415"] = true,
+	["Update2411"] = true,
+	["TitleColour"] = "|cFFFF0000",
+	["PromptSample"] = true,
+	["initialised"] = true,
+	["resetOOC"] = true,
+	["DebugModules"] = {
+		["Translator"] = false,
+		["GUI"] = false,
+		["Storage"] = false,
+		["Editor"] = false,
+		["Versions"] = false,
+		["API"] = false,
+		["Viewer"] = false,
+		["Transmission"] = false,
+	},
+	["INDENT"] = "|cffccaa88",
+	["MacroResetModifiers"] = {
+		["Alt"] = false,
+		["LeftControl"] = false,
+		["LeftButton"] = false,
+		["LeftAlt"] = false,
+		["RightShift"] = false,
+		["RightAlt"] = false,
+		["AnyMod"] = false,
+		["Button5"] = false,
+		["LeftShift"] = false,
+		["Shift"] = false,
+		["Control"] = false,
+		["RightControl"] = false,
+		["MiddleButton"] = false,
+		["Button4"] = false,
+		["RightButton"] = false,
+	},
+	["filterList"] = {
+		["All"] = false,
+		["Spec"] = true,
+		["Global"] = true,
+		["Class"] = true,
+	},
+	["EmphasisColour"] = "|cFFFFFF00",
+	["UseVerboseExportFormat"] = false,
+	["WOWSHORTCUTS"] = "|cffddaaff",
+	["RealtimeParse"] = false,
+	["deleteOrphansOnLogout"] = false,
+	["useTranslator"] = false,
+	["UnfoundSpells"] = {
+	},
+	["AuthorColour"] = "|cFF00D1FF",
+	["AddInPacks"] = {
+		["Samples"] = {
+			["Name"] = "Samples",
+			["Version"] = "2.4.19",
+			["SequenceNames"] = {
+				"Assorted Sample Macros", -- [1]
+			},
+		},
+	},
+	["showMiniMap"] = {
+		["hide"] = true,
+	},
+	["CONCAT"] = "|cffcc7777",
+	["use12"] = false,
+	["use13"] = false,
+	["NormalColour"] = "|cFFFFFFFF",
+	["NUMBER"] = "|cffffaa00",
+	["saveAllMacrosLocal"] = true,
+	["setDefaultIconQuestionMark"] = true,
+	["KEYWORD"] = "|cff88bbdd",
+	["use1"] = false,
+}
+GSELibrary = {
+	{
+		["TAUNT"] = {
+			["Talents"] = "CLASSIC",
+			["Default"] = 1,
+			["Help"] = "Uses Mocking Blow (Battle Stance) or Taunt (Defensive Stance) depending on stance.  If you are in Beserking Stance it changes to Defensive Stance.",
+			["SpecID"] = 1,
+			["MacroVersions"] = {
+				{
+					"/cast [stance:1] 694; [stance:2] 355; [stance:3] 71", -- [1]
+					["PostMacro"] = {
+					},
+					["KeyPress"] = {
+					},
+					["StepFunction"] = "Sequential",
+					["PreMacro"] = {
+					},
+					["KeyRelease"] = {
+					},
+				}, -- [1]
+			},
+			["Author"] = "TimothyLuke",
+			["ManualIntervention"] = false,
+		},
+		["SAM_LOWLEVELWARR"] = {
+			["Talents"] = "CLASSIC",
+			["Default"] = 1,
+			["Help"] = "A simple Warrior Starter macro.",
+			["Author"] = "TimothyLuke",
+			["MacroVersions"] = {
+				{
+					"/cast [combat] 6547", -- [1]
+					"/cast [combat] 8198", -- [2]
+					"/cast [combat] 6192", -- [3]
+					"/cast [combat] 1715", -- [4]
+					"/cast [combat] 1608", -- [5]
+					["PostMacro"] = {
+					},
+					["KeyPress"] = {
+						"/startattack", -- [1]
+						"/targetenemy [noharm, dead]", -- [2]
+						"/cast [nocombat] 100", -- [3]
+					},
+					["KeyRelease"] = {
+					},
+					["PreMacro"] = {
+					},
+					["StepFunction"] = "Sequential",
+				}, -- [1]
+			},
+			["SpecID"] = 1,
+			["ManualIntervention"] = false,
+		},
+	}, -- [1]
+	[0] = {
+	},
+}

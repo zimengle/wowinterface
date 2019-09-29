@@ -7,8 +7,10 @@ Guidelime.registerGuide(
 [OC]    西部荒野
 [OC]===================================
 [OC]你当前的任务日志: 3/20
-     [OC]铁炉堡: (x) 寻找宾格斯
-     [OC]洛克莫丹: (  ) 保卫国王的领土 (  ) 挖掘场的补给品
+     [OC]铁炉堡: |cFFFFFFFFX|r [QA2039 Find Bingles]
+     [OC]洛克莫丹:
+              |cFFFFFFFFO|r [QA237 In Defense of the King's Lands]
+              |cFFFFFFFFO|r [QA273 Resupplying the Excavation]
 [OC]===================================
 [OC]向西南方向跑穿桥到西部荒野
      农夫法布隆处, [QA64 The Forgotten Heirloom]

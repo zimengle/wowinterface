@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 1.13.31 (18th September 2019)
+	-- 	Leatrix Maps 1.13.32 (25th September 2019)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,8 +12,8 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "1.13.31"
-	LeaMapsLC["RestartReq"] = false
+	LeaMapsLC["AddonVer"] = "1.13.32"
+	LeaMapsLC["RestartReq"] = true
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -39,6 +39,36 @@
 
 		-- Get player faction
 		local playerFaction = UnitFactionGroup("player")
+
+		----------------------------------------------------------------------
+		-- Use class icons
+		----------------------------------------------------------------------
+
+		if LeaMapsLC["UseClassIcons"] == "On" then
+
+			local WorldMapUnitPin, WorldMapUnitPinSizes
+			local partyTexture = "Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps_Icon.blp"
+
+			-- Set group icon textures
+			for pin in WorldMapFrame:EnumeratePinsByTemplate("GroupMembersPinTemplate") do
+				WorldMapUnitPin = pin
+				WorldMapUnitPinSizes = pin.dataProvider:GetUnitPinSizesTable()
+				WorldMapUnitPin:SetPinTexture("raid", partyTexture)
+				WorldMapUnitPin:SetPinTexture("party", partyTexture)
+				hooksecurefunc(WorldMapUnitPin, "UpdateAppearanceData", function(self)
+					self:SetPinTexture("raid", partyTexture)
+					self:SetPinTexture("party", partyTexture)
+				end)
+				break
+			end
+
+			-- Set party icon size and enable class colors
+			WorldMapUnitPinSizes.party = 20
+			WorldMapUnitPin:SetAppearanceField("party", "useClassColor", true)
+			WorldMapUnitPin:SetAppearanceField("raid", "useClassColor", true)
+			WorldMapUnitPin:SynchronizePinSizes()
+
+		end
 
 		----------------------------------------------------------------------
 		-- Lock map frame (must be before remove map border)
@@ -186,9 +216,6 @@
 				border:SetPoint("TOPLEFT", -5, 5)
 				border:SetPoint("BOTTOMRIGHT", 5, -5)
 				border:SetVertexColor(0, 0, 0, 0.5)
-
-				-- Assign file level scope to border (it's used for show coordinates)
-				LeaMapsLC.NoBorderTexture = border
 
 				-- Create drag button
 				local moveMap = LeaMapsLC:CreateButton("MoveMapButton", WorldMapFrame.ScrollContainer, "Drag", "TOPLEFT", 10, -10, 25, "")
@@ -1390,7 +1417,9 @@
 					hooksecurefunc(WorldMapFrame, "Show", function()
 						if not WorldMapFrame:IsMouseEnabled() then
 							WorldMapFrame:EnableMouse(true)
-							WorldMapFrame:SetScale(LeaMapsLC["MapScale"])
+							if LeaMapsLC["UseDefaultMap"] == "Off" then
+								WorldMapFrame:SetScale(LeaMapsLC["MapScale"])
+							end
 						end
 					end)
 				end
@@ -1695,6 +1724,7 @@
 	-- Set reload button status
 	function LeaMapsLC:ReloadCheck()
 		if	(LeaMapsLC["NoMapBorder"] ~= LeaMapsDB["NoMapBorder"])		-- Remove map border
+		or	(LeaMapsLC["UseClassIcons"] ~= LeaMapsDB["UseClassIcons"])	-- Use class colors
 		or	(LeaMapsLC["UseDefaultMap"] ~= LeaMapsDB["UseDefaultMap"])	-- Use default map
 		then
 			-- Enable the reload button
@@ -1953,6 +1983,24 @@
 				wipe(LeaMapsDB)
 				LeaMapsLC["NoSaveSettings"] = true
 				ReloadUI()
+			elseif str == "noflash" then
+				-- Create texture to reduce flashing (experimental)
+				if not LeaMapsLC["NoFlashTexture"] then
+					LeaMapsLC["NoFlashTexture"] = WorldMapFrame.ScrollContainer:CreateTexture(nil, "ARTWORK")
+					LeaMapsLC["NoFlashTexture"]:SetTexture("Interface\\TAXIFRAME\\TAXIMAP0")
+					LeaMapsLC["NoFlashTexture"]:SetAllPoints()
+					LeaMapsLC:Print("Texture loaded.")
+					LeaMapsLC:Print("Texture is now showing.")
+				else
+					if LeaMapsLC["NoFlashTexture"]:IsShown() then
+						LeaMapsLC["NoFlashTexture"]:Hide()
+						LeaMapsLC:Print("Texture is now hidden.")
+					else
+						LeaMapsLC["NoFlashTexture"]:Show()
+						LeaMapsLC:Print("Texture is now showing.")
+					end
+				end
+				return
 			elseif str == "admin" then
 				-- Preset profile (reload required)
 				LeaMapsLC["NoSaveSettings"] = true
@@ -1962,6 +2010,7 @@
 				LeaMapsDB["NoMapBorder"] = "On"
 				LeaMapsDB["RememberZoom"] = "On"
 				LeaMapsDB["EnlargePlayerArrow"] = "On"
+				LeaMapsDB["UseClassIcons"] = "On"
 				LeaMapsDB["UnlockMapFrame"] = "On"
 				LeaMapsDB["MapPosA"] = "CENTER"
 				LeaMapsDB["MapPosR"] = "CENTER"
@@ -2048,6 +2097,7 @@
 			LeaMapsLC:LoadVarChk("NoMapBorder", "On")					-- Remove map border
 			LeaMapsLC:LoadVarChk("RememberZoom", "On")					-- Remember zoom level
 			LeaMapsLC:LoadVarChk("EnlargePlayerArrow", "On")			-- Enlarge player arrow
+			LeaMapsLC:LoadVarChk("UseClassIcons", "On")					-- Use class icons
 			LeaMapsLC:LoadVarChk("UnlockMapFrame", "On")				-- Unlock map frame
 			LeaMapsLC:LoadVarAnc("MapPosA", "CENTER")					-- Map anchor
 			LeaMapsLC:LoadVarAnc("MapPosR", "CENTER")					-- Map relative
@@ -2100,6 +2150,7 @@
 			LeaMapsDB["NoMapBorder"] = LeaMapsLC["NoMapBorder"]
 			LeaMapsDB["RememberZoom"] = LeaMapsLC["RememberZoom"]
 			LeaMapsDB["EnlargePlayerArrow"] = LeaMapsLC["EnlargePlayerArrow"]
+			LeaMapsDB["UseClassIcons"] = LeaMapsLC["UseClassIcons"]
 			LeaMapsDB["UnlockMapFrame"] = LeaMapsLC["UnlockMapFrame"]
 			LeaMapsDB["MapPosA"] = LeaMapsLC["MapPosA"]
 			LeaMapsDB["MapPosR"] = LeaMapsLC["MapPosR"]
@@ -2231,9 +2282,10 @@
 	LeaMapsLC:MakeCB(PageF, "NoMapBorder", "Remove map border", 16, -92, true, "If checked, the map border will be removed.")
 	LeaMapsLC:MakeCB(PageF, "RememberZoom", "Remember zoom level", 16, -112, false, "If checked, opening the map will use the same zoom level from when you last closed it as long as the map zone has not changed.")
 	LeaMapsLC:MakeCB(PageF, "EnlargePlayerArrow", "Enlarge player arrow", 16, -132, false, "If checked, the player arrow will be larger.")
-	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 16, -152, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.  If you have removed the map border, a drag button will be shown in the top-left corner.")
-	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -172, false, "If checked, you will be able to set the opacity of the map.")
-	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -192, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will prevent you from unlocking the map or removing the map border.")
+	LeaMapsLC:MakeCB(PageF, "UseClassIcons", "Class colored icons", 16, -152, true, "If checked, group icons will use a modern, class-colored design.")
+	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 16, -172, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.  If you have removed the map border, a drag button will be shown in the top-left corner.")
+	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -192, false, "If checked, you will be able to set the opacity of the map.")
+	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -212, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will prevent you from unlocking the map or removing the map border.")
 
 	LeaMapsLC:MakeTx(PageF, "Elements", 225, -72)
 	LeaMapsLC:MakeCB(PageF, "RevealMap", "Show unexplored areas", 225, -92, false, "If checked, unexplored areas of the map will be shown.")

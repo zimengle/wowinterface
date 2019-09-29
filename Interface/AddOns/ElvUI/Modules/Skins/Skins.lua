@@ -77,8 +77,7 @@ function S:HandleInsetFrame(frame)
 	if frame.Bg then frame.Bg:Hide() end
 end
 
--- All frames that have a Portrait
-function S:HandlePortraitFrame(frame, setBackdrop)
+function S:HandleFrame(frame, setBackdrop, template, x1, y1, x2, y2)
 	assert(frame, "doesn't exist!")
 
 	local name = frame and frame.GetName and frame:GetName()
@@ -102,11 +101,15 @@ function S:HandlePortraitFrame(frame, setBackdrop)
 	end
 
 	if setBackdrop then
-		frame:CreateBackdrop('Transparent')
-		frame.backdrop:SetAllPoints()
+		frame:CreateBackdrop(template or 'Transparent')
 	else
-		frame:SetTemplate('Transparent')
+		frame:SetTemplate(template or 'Transparent')
 	end
+
+    if frame.backdrop then
+        frame.backdrop:Point('TOPLEFT', x1 or 0, y1 or 0)
+        frame.backdrop:Point('BOTTOMRIGHT', x2 or 0, y2 or 0)
+    end
 end
 
 function S:SetModifiedBackdrop()
@@ -682,7 +685,7 @@ end
 local handleCloseButtonOnEnter = function(btn) if btn.Texture then btn.Texture:SetVertexColor(unpack(E.media.rgbvaluecolor)) end end
 local handleCloseButtonOnLeave = function(btn) if btn.Texture then btn.Texture:SetVertexColor(1, 1, 1) end end
 
-function S:HandleCloseButton(f, point)
+function S:HandleCloseButton(f, point, x, y)
 	f:StripTextures()
 
 	if not f.Texture then
@@ -696,7 +699,7 @@ function S:HandleCloseButton(f, point)
 	end
 
 	if point then
-		f:Point("TOPRIGHT", point, "TOPRIGHT", 2, 2)
+		f:Point("TOPRIGHT", point, "TOPRIGHT", x or 2, y or 2)
 	end
 end
 
@@ -1259,6 +1262,22 @@ function S:ADDON_LOADED(_, addonName)
 	end
 end
 
+function S:PLAYER_ENTERING_WORLD()
+	for addonName, object in pairs(self.addonsToLoad) do
+		local isLoaded, isFinished = IsAddOnLoaded(addonName)
+		if isLoaded and isFinished then
+			S:CallLoadedAddon(addonName, object)
+		end
+	end
+
+	for index, loadFunc in ipairs(self.nonAddonsToLoad) do
+		xpcall(loadFunc, errorhandler)
+		self.nonAddonsToLoad[index] = nil
+	end
+
+	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+end
+
 function S:RegisterSkin(addonName, loadFunc, forceLoad, bypass)
 	if bypass then
 		self.allowBypass[addonName] = true
@@ -1301,18 +1320,6 @@ function S:Initialize()
 
 	S:SkinAce3()
 
-	for addonName, object in pairs(self.addonsToLoad) do
-		local isLoaded, isFinished = IsAddOnLoaded(addonName)
-		if isLoaded and isFinished then
-			S:CallLoadedAddon(addonName, object)
-		end
-	end
-
-	for index, loadFunc in ipairs(self.nonAddonsToLoad) do
-		xpcall(loadFunc, errorhandler)
-		self.nonAddonsToLoad[index] = nil
-	end
-
 	hooksecurefunc("TriStateCheckbox_SetState", function(_, checkButton)
 		if checkButton.forceSaturation then
 			local tex = checkButton:GetCheckedTexture()
@@ -1327,4 +1334,5 @@ function S:Initialize()
 end
 
 S:RegisterEvent('ADDON_LOADED')
+S:RegisterEvent('PLAYER_ENTERING_WORLD')
 E:RegisterModule(S:GetName())

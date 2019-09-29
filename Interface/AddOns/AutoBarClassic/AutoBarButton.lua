@@ -8,7 +8,7 @@
 
 local AutoBar = AutoBar
 
-local ABGCS = AutoBarGlobalCodeSpace
+local ABGCode = AutoBarGlobalCodeSpace
 local ABGData = AutoBarGlobalDataObject
 local spellIconList = ABGData.spell_icon_list
 
@@ -1181,6 +1181,7 @@ function AutoBarButtonConjure.prototype:init(parentBar, buttonDB)
 
 	if (AutoBar.CLASS == "MAGE") then
 		self:AddCategory("Spell.Mage.Conjure Food")
+		self:AddCategory("Spell.Mage.Conjure Water")
 	elseif (AutoBar.CLASS == "WARLOCK") then
 		self:AddCategory("Spell.Warlock.Create Healthstone")
 	end
@@ -1550,9 +1551,9 @@ AutoBar.Class["AutoBarButtonHeal"] = AutoBarButtonHeal
 function AutoBarButtonHeal.prototype:init(parentBar, buttonDB)
 	AutoBarButtonHeal.super.prototype.init(self, parentBar, buttonDB)
 
+	self:AddCategory("Muffin.Stones.Health")
 	self:AddCategory("Muffin.Potion.Health")
 	self:AddCategory("Muffin.Potion.Combo")
-	self:AddCategory("Muffin.Stones.Health")
 
 end
 
@@ -1657,7 +1658,7 @@ function AutoBarButtonRecovery.prototype:init(parentBar, buttonDB)
 		self:AddCategory("Muffin.Potion.Rage")
 	end
 
-	if  (AutoBar:ClassUsesMana(AutoBar.CLASS)) then
+	if  (ABGCode:ClassUsesMana(AutoBar.CLASS)) then
 		--self:AddCategory("Consumable.Potion.Recovery.Mana.Endless")
 		--self:AddCategory("Consumable.Potion.Recovery.Mana.Basic")
 
@@ -1713,7 +1714,7 @@ function AutoBarButtonCooldownPotionMana.prototype:init(parentBar, buttonDB)
 		self:AddCategory("Muffin.Potion.Rage")
 	end
 
-	if(AutoBar:ClassUsesMana(AutoBar.CLASS)) then
+	if(ABGCode:ClassUsesMana(AutoBar.CLASS)) then
 		self:AddCategory("Muffin.Potion.Mana")
 		--self:AddCategory("Consumable.Cooldown.Potion.Mana.Anywhere")
 	end
@@ -2048,7 +2049,7 @@ function AutoBarButtonTrinket2.prototype:SetupAttributes(button, bag, slot, spel
 	if ((equippedItemId == itemId) or (not bag)) then
 		AutoBarButtonTrinket2.super.prototype.SetupAttributes(self, button, bag, slot, spell, macroId, p_type_id, p_info_data, itemId, itemData)
 	else
-		local macroTexture = ABGCS:GetIconForItemID((tonumber(itemId)))
+		local macroTexture = ABGCode:GetIconForItemID((tonumber(itemId)))
 		local macroText = equipTrinket2String .. bag .." " .. slot -- "/equipslot [button:2] Z X Y" to do right click filtering
 
 		button.macroText = macroText
@@ -2068,9 +2069,10 @@ function AutoBarButtonWater.prototype:init(parentBar, buttonDB)
 	AutoBarButtonWater.super.prototype.init(self, parentBar, buttonDB)
 
 	if (AutoBar.CLASS == "MAGE" and not buttonDB.disableConjure) then
-		self:AddCategory("Consumable.Water.Conjure")
+		self:AddCategory("Spell.Mage.Conjure Water")
 	end
-	if (AutoBar:ClassUsesMana(AutoBar.CLASS)) then
+
+	if (ABGCode:ClassUsesMana(AutoBar.CLASS)) then
 		self:AddCategory("Consumable.Water.Percentage")
 		self:AddCategory("Consumable.Water.Basic")
 
@@ -2082,11 +2084,11 @@ end
 --	AutoBarButtonWater.super.prototype.Refresh(self, parentBar, buttonDB)
 --	if (AutoBar.CLASS == "MAGE") then
 --		if (buttonDB.disableConjure) then
---			self:DeleteCategory("Consumable.Water.Conjure")
+--			self:DeleteCategory("Spell.Mage.Conjure Water")
 --			buttonDB.castSpell = nil
 --			AutoBarCategoryList["Consumable.Water.Basic"]:SetCastList(nil)
 --		else
---			self:AddCategory("Consumable.Water.Conjure")
+--			self:AddCategory("Spell.Mage.Conjure Water")
 --		end
 --	end
 --end

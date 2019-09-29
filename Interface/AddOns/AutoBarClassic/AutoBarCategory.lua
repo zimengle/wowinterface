@@ -643,8 +643,8 @@ function AutoBarCategory:Initialize()
 	AutoBarCategoryList["Muffin.Food.Combo.Buff"] = AutoBarItems:new("Muffin.Food.Combo.Buff", "INV_Misc_Food_95_Grainbread", "Muffin.Food.Combo.Buff")
 	AutoBarCategoryList["Muffin.Food.Combo.Buff"]:SetNonCombat(true)
 
-	AutoBarCategoryList["Muffin.Stone.Mana"] = AutoBarItems:new("Muffin.Stones.Mana", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Mana")
-	AutoBarCategoryList["Muffin.Stone.Health"] = AutoBarItems:new("Muffin.Stones.Health", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Health")
+	AutoBarCategoryList["Muffin.Stones.Mana"] = AutoBarItems:new("Muffin.Stones.Mana", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Mana")
+	AutoBarCategoryList["Muffin.Stones.Health"] = AutoBarItems:new("Muffin.Stones.Health", "INV_Misc_Food_95_Grainbread", "Muffin.Stones.Health")
 
 	AutoBarCategoryList["Muffin.Poison.Lethal"] = AutoBarItems:new("Muffin.Poison.Lethal", "INV_Misc_Food_95_Grainbread", "Muffin.Poison.Lethal")
 	AutoBarCategoryList["Muffin.Poison.Nonlethal"] = AutoBarItems:new("Muffin.Poison.Nonlethal", "INV_Misc_Food_95_Grainbread", "Muffin.Poison.Nonlethal")
@@ -785,9 +785,6 @@ function AutoBarCategory:Initialize()
 	AutoBarCategoryList["Muffin.Food.Mana.Basic"]:SetNonCombat(true)
 
 
-	AutoBarCategoryList["Consumable.Water.Conjure"] = AutoBarSpells:new("Consumable.Water.Conjure", spellIconList["Conjure Refreshment"], {
---			"MAGE", ABGCS:GetSpellNameByName("Conjure Refreshment"),
-			})
 
 	AutoBarCategoryList["Consumable.Food.Conjure"] = AutoBarSpells:new("Consumable.Food.Conjure", spellIconList["Conjure Refreshment"], {
 --			"MAGE", ABGCS:GetSpellNameByName("Conjure Refreshment"),
@@ -928,8 +925,12 @@ function AutoBarCategory:Initialize()
 		"WARLOCK", ABGCS:GetSpellNameByName("Create Healthstone"),
 	})
 
-	AutoBarCategoryList["Spell.Mage.Conjure Food"] = AutoBarSpells:new( "Spell.Mage.Conjure Food", spellIconList["Conjure Refreshment"], nil, {
---		"MAGE", ABGCS:GetSpellNameByName("Conjure Refreshment"), ABGCS:GetSpellNameByName("Conjure Refreshment Table"),
+	AutoBarCategoryList["Spell.Mage.Conjure Food"] = AutoBarSpells:new( "Spell.Mage.Conjure Food", spellIconList["Conjure Refreshment"], {
+		"MAGE", ABGCS:GetSpellNameByName("Conjure Food"),
+	})
+
+	AutoBarCategoryList["Spell.Mage.Conjure Water"] = AutoBarSpells:new("Spell.Mage.Conjure Water", spellIconList["Conjure Refreshment"], {
+		"MAGE", ABGCS:GetSpellNameByName("Conjure Water"),
 	})
 
 
@@ -953,7 +954,11 @@ function AutoBarCategory:Initialize()
 	AutoBarCategoryList["Spell.Class.Buff"] = AutoBarSpells:new( "Spell.Class.Buff", spellIconList["Barkskin"],
 	{
 		"MAGE", ABGCS:GetSpellNameByName("Slow Fall"),
-		"PALADIN", ABGCS:GetSpellNameByName("Blessing of Might"),	--y
+		"MAGE", ABGCS:GetSpellNameByName("Arcane Intellect"),
+		"DRUID", ABGCS:GetSpellNameByName("Mark of the Wild"),
+		"DRUID", ABGCS:GetSpellNameByName("Gift of the Wild"),
+		"DRUID", ABGCS:GetSpellNameByName("Thorns"),
+		"PALADIN", ABGCS:GetSpellNameByName("Blessing of Might"),
 		"PALADIN", ABGCS:GetSpellNameByName("Blessing of Protection"),
 		"PALADIN", ABGCS:GetSpellNameByName("Blessing of Sacrifice"),
 		"PALADIN", ABGCS:GetSpellNameByName("Blessing of Salvation"),
@@ -1017,8 +1022,9 @@ function AutoBarCategory:Initialize()
 	AutoBarCategoryList["Spell.Shields"] = AutoBarSpells:new( "Spell.Shields", spellIconList["Ice Barrier"], nil,
 	{
 		"DRUID", 		ABGCS:GetSpellNameByName("Barkskin"), 	ABGCS:GetSpellNameByName("Barkskin"),
-		"MAGE", 			ABGCS:GetSpellNameByName("Ice Barrier"), ABGCS:GetSpellNameByName("Ice Barrier"),
-		"PALADIN", 		ABGCS:GetSpellNameByName("Divine Shield"), ABGCS:GetSpellNameByName("Divine Shield"),
+		"MAGE", 			ABGCS:GetSpellNameByName("Frost Armor"), ABGCS:GetSpellNameByName("Ice Barrier"),
+		"PALADIN", 		ABGCS:GetSpellNameByName("Divine Protection"), ABGCS:GetSpellNameByName("Divine Shield"),
+		"PALADIN", 		ABGCS:GetSpellNameByName("Divine Shield"), ABGCS:GetSpellNameByName("Divine Protection"),
 		"PRIEST", 		ABGCS:GetSpellNameByName("Power Word: Shield"), ABGCS:GetSpellNameByName("Power Word: Shield"),
 		"ROGUE", 		ABGCS:GetSpellNameByName("Evasion"), 		ABGCS:GetSpellNameByName("Evasion"),
 		"WARRIOR", 		ABGCS:GetSpellNameByName("Shield Block"), ABGCS:GetSpellNameByName("Shield Wall"),

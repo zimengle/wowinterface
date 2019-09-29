@@ -8,7 +8,8 @@ Guidelime.registerGuide(
 [OC]==================================
 [OC]你当前的任务日志: 0/20
      [OC]|cFFFF0000可选:|r
-          [OC]洛克莫丹: (x) 卡德雷尔的酒 (x) 森内尔的报告
+              |cFFFFFFFFX|r [QA414 Stout to Kadrell]
+              |cFFFFFFFFX|r [QA291 The Reports]
 [OC]==================================
 [OC]向南跑到国王之谷的地堡
      [OC](发现国王之谷)

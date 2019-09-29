@@ -26,35 +26,11 @@ ConsolePortBindingSet = {
 			[""] = "MULTIACTIONBAR1BUTTON12",
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 		},
-		["CP_T2"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
-			["SHIFT-"] = "ACTIONBUTTON10",
-			[""] = "ACTIONBUTTON5",
-			["CTRL-SHIFT-"] = "STARTAUTORUN",
-		},
-		["CP_L_DOWN"] = {
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON4",
-			[""] = "ACTIONBUTTON11",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
-		},
-		["CP_R_RIGHT"] = {
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
-			["SHIFT-"] = "ACTIONBUTTON8",
-			[""] = "ACTIONBUTTON3",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
-		},
 		["CP_X_LEFT"] = {
 			["CTRL-"] = "CP_CAMZOOMOUT",
 			["SHIFT-"] = "TOGGLEWORLDMAP",
 			[""] = "OPENALLBAGS",
 			["CTRL-SHIFT-"] = "REPLY",
-		},
-		["CP_L_LEFT"] = {
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-			[""] = "MULTIACTIONBAR1BUTTON11",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
 		},
 		["CP_R_UP"] = {
 			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
@@ -62,11 +38,35 @@ ConsolePortBindingSet = {
 			[""] = "ACTIONBUTTON2",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
 		},
+		["CP_L_LEFT"] = {
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+			[""] = "MULTIACTIONBAR1BUTTON11",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+		},
 		["CP_T1"] = {
 			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
 			["SHIFT-"] = "TARGETNEARESTENEMY",
 			[""] = "ACTIONBUTTON4",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+		},
+		["CP_R_RIGHT"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON3",
+			["SHIFT-"] = "ACTIONBUTTON8",
+			[""] = "ACTIONBUTTON3",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON8",
+		},
+		["CP_L_DOWN"] = {
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON8",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON4",
+			[""] = "ACTIONBUTTON11",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON12",
+		},
+		["CP_T2"] = {
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
+			["SHIFT-"] = "ACTIONBUTTON10",
+			[""] = "ACTIONBUTTON5",
+			["CTRL-SHIFT-"] = "STARTAUTORUN",
 		},
 		["CP_X_RIGHT"] = {
 			["CTRL-"] = "CLICK ConsolePortRaidCursorToggle:LeftButton",
@@ -82,11 +82,7 @@ ConsolePortBindingSet = {
 		},
 	}, -- [1]
 	[0] = {
-		["CP_L_RIGHT"] = {
-			[""] = "ACTIONBUTTON12",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
+		["CP_T_L3"] = {
 		},
 		["CP_R_LEFT"] = {
 			[""] = "ACTIONBUTTON1",
@@ -107,31 +103,11 @@ ConsolePortBindingSet = {
 			["CTRL-"] = "MULTIACTIONBAR2BUTTON6",
 			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON10",
 		},
-		["CP_T_L3"] = {
-		},
-		["CP_X_LEFT"] = {
-			[""] = "OPENALLBAGS",
-			["SHIFT-"] = "TOGGLEWORLDMAP",
-			["CTRL-"] = "CP_CAMZOOMOUT",
-			["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
-		},
-		["CP_R_UP"] = {
-			[""] = "ACTIONBUTTON2",
-			["SHIFT-"] = "ACTIONBUTTON7",
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
-		},
-		["CP_L_LEFT"] = {
-			[""] = "MULTIACTIONBAR1BUTTON11",
-			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
-			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
-		},
-		["CP_T1"] = {
-			[""] = "ACTIONBUTTON4",
-			["SHIFT-"] = "TARGETNEARESTENEMY",
-			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
-			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+		["CP_L_RIGHT"] = {
+			[""] = "ACTIONBUTTON12",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON3",
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON7",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON11",
 		},
 		["CP_R_RIGHT"] = {
 			[""] = "ACTIONBUTTON3",
@@ -151,6 +127,30 @@ ConsolePortBindingSet = {
 			["CTRL-"] = "MULTIACTIONBAR1BUTTON5",
 			["CTRL-SHIFT-"] = "TOGGLEAUTORUN",
 		},
+		["CP_T1"] = {
+			[""] = "ACTIONBUTTON4",
+			["SHIFT-"] = "TARGETSCANENEMY",
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON4",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON9",
+		},
+		["CP_L_LEFT"] = {
+			[""] = "MULTIACTIONBAR1BUTTON11",
+			["SHIFT-"] = "MULTIACTIONBAR2BUTTON1",
+			["CTRL-"] = "MULTIACTIONBAR2BUTTON5",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR2BUTTON9",
+		},
+		["CP_R_UP"] = {
+			[""] = "ACTIONBUTTON2",
+			["SHIFT-"] = "ACTIONBUTTON7",
+			["CTRL-"] = "MULTIACTIONBAR1BUTTON2",
+			["CTRL-SHIFT-"] = "MULTIACTIONBAR1BUTTON7",
+		},
+		["CP_X_LEFT"] = {
+			[""] = "OPENALLBAGS",
+			["SHIFT-"] = "TOGGLEWORLDMAP",
+			["CTRL-"] = "CP_CAMZOOMOUT",
+			["CTRL-SHIFT-"] = "CP_CAMZOOMIN",
+		},
 		["CP_X_RIGHT"] = {
 			[""] = "TOGGLEGAMEMENU",
 			["SHIFT-"] = "MULTIACTIONBAR1BUTTON10",
@@ -167,12 +167,12 @@ ConsolePortBindingSet = {
 }
 ConsolePortMouse = {
 	["Camera"] = {
-		["lookAround"] = false,
+		["lookAround"] = true,
 		["test_cameraDynamicPitch"] = 0,
 		["test_cameraTargetFocusEnemyEnable"] = 0,
-		["calculateYaw"] = false,
-		["test_cameraTargetFocusInteractEnable"] = 0,
 		["cameraZoomSpeed"] = 20,
+		["test_cameraTargetFocusInteractEnable"] = 0,
+		["calculateYaw"] = false,
 	},
 	["Cursor"] = {
 		["Scroll"] = "CP_M1",
@@ -196,10 +196,10 @@ ConsolePortMouse = {
 		["GOSSIP_CLOSED"] = true,
 		["QUEST_COMPLETE"] = true,
 		["MERCHANT_SHOW"] = true,
-		["QUEST_PROGRESS"] = true,
-		["SHIPMENT_CRAFTER_CLOSED"] = true,
-		["LOOT_OPENED"] = true,
 		["SHIPMENT_CRAFTER_OPENED"] = true,
+		["LOOT_OPENED"] = true,
+		["SHIPMENT_CRAFTER_CLOSED"] = true,
+		["QUEST_PROGRESS"] = true,
 		["UNIT_SPELLCAST_FAILED"] = true,
 	},
 }
