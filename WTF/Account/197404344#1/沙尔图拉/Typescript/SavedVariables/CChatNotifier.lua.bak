@@ -12,11 +12,41 @@ CChatNotifier_settings = {
 	["firstStart"] = false,
 }
 CChatNotifier_data = {
-	["黑上,黑石"] = {
+	["黑龙"] = {
+		["words"] = {
+			"黑龙", -- [1]
+		},
+		["active"] = true,
+	},
+	["黑下"] = {
+		["active"] = false,
+		["words"] = {
+			"黑下", -- [1]
+		},
+	},
+	["开门"] = {
+		["words"] = {
+			"开门", -- [1]
+		},
+		["active"] = true,
+	},
+	["黑上"] = {
 		["active"] = true,
 		["words"] = {
 			"黑上", -- [1]
-			"黑石", -- [2]
 		},
+	},
+	["周六,周日"] = {
+		["words"] = {
+			"周六", -- [1]
+			"周日", -- [2]
+		},
+		["active"] = true,
+	},
+	["公主"] = {
+		["words"] = {
+			"公主", -- [1]
+		},
+		["active"] = true,
 	},
 }

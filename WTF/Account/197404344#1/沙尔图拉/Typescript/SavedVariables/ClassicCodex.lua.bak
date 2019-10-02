@@ -3,15 +3,15 @@ CodexConfig = {
 	["showLowLevel"] = false,
 	["showHighLevel"] = true,
 	["colorBySpawn"] = true,
-	["autoAccept"] = false,
+	["autoAccept"] = true,
 	["minimumDropChance"] = 2,
+	["allQuestGivers"] = true,
 	["showFestival"] = true,
-	["nameplateIcon"] = true,
 	["trackingMethod"] = 1,
 	["spawnMarkerSize"] = 12,
 	["currentQuestGivers"] = true,
 	["autoTurnin"] = true,
-	["allQuestGivers"] = true,
+	["nameplateIcon"] = true,
 	["questMarkerSize"] = 15,
 }
 CodexHiddenQuests = {
@@ -25,11 +25,13 @@ CodexBrowserFavorites = {
 	["quests"] = {
 	},
 	["units"] = {
+		[12899] = "埃克托兹",
 		[12918] = "穆戈特酋长",
 		[12677] = "猎影",
 		[4273] = "守护者奥达努斯",
-		[3238] = "雷鳞蜥蜴",
 		[7406] = "奥格索普·奥布诺提斯",
+		[3238] = "雷鳞蜥蜴",
+		[10321] = "埃博斯塔夫",
 	},
 }
 CodexColors = {

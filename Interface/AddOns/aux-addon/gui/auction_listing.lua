@@ -650,11 +650,11 @@ local methods = {
         if not rt.rowInfo.single_item then
             if rt.expanded[self.expandKey] then
                 GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-                GameTooltip:AddLine('Double-click to collapse this item.', 1, 1, 1, true)
+                GameTooltip:AddLine('双击可折叠此物品', 1, 1, 1, true)
                 GameTooltip:Show()
             elseif self.expandable then
                 GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-                GameTooltip:AddLine('Double-click to expand this item.', 1, 1, 1, true)
+                GameTooltip:AddLine('双击可展开此物品', 1, 1, 1, true)
                 GameTooltip:Show()
             end
         end

@@ -1,15 +1,17 @@
 ﻿## Interface: 11302
 ## Title: Spy
-## Version: 1.0.6
+## Version: 1.0.8
 ## Notes: Detects and alerts you to the presence of nearby enemy players.
 ## Notes-ptBR: Detecta e alerta você da presença de jogadores inimigos.
 ## Notes-deDE: Detektiert und warnt Sie vor, in der Nähe befindlichen, Gegnern.
 ## Notes-zhTW: 偵測並警告你附近有敵方玩家出沒。
+## Notes-zhCN: 检测并提醒您附近有敌方玩家。
 ## Creator: Immolation
 ## Author: Slipjack
 ## X-Credits-ptBR: Localization: Kasth
 ## X-Credits-zhTW: Localization: Jaspy10
 ## X-Credits-deDE: Localization: Jana
+## X-Credits-deCN: Localization: Kidd8250
 ## OptionalDeps:  Ace3, LibSharedMedia-3.0, 
 ## SavedVariables: SpyDB
 ## SavedVariablesPerCharacter: SpyPerCharDB
@@ -36,4 +38,4 @@ List.lua
 SpyStats.xml
 SpyData.lua
 
-## Q-CAT-Version: 4
+## Q-CAT-Version: 5

@@ -48,9 +48,17 @@ VExRT = {
 	["Encounter"] = {
 		["list"] = {
 			["Typescript"] = {
+				"^1084^9^1569838796^28^0^40^54.88^贼鸡儿亮", -- [1]
+				"^1084^9^1569839324^467^0^40^54.88^贼鸡儿亮", -- [2]
+				"^1084^9^1569840314^0^0^40^54.88^贼鸡儿亮", -- [3]
+				"^1084^9^1569842538^431^0^40^54.88^馨喵喵", -- [4]
+				"^1084^9^1569844598^546^0^40^56.38^光消失的地方", -- [5]
+				"^1084^9^1569845806^451^0^40^56.38^Typescript", -- [6]
+				"^1084^9^1569923830^451^1^40^55.13^深海的孤独", -- [7]
 			},
 		},
 		["names"] = {
+			[1084] = "",
 		},
 	},
 	["Marks"] = {
@@ -61,9 +69,24 @@ VExRT = {
 		["default_userDuration"] = {
 		},
 		["gnGUIDs"] = {
-			["打德"] = 0,
+			["吃饭睡觉玩耍"] = 0,
 			["Typescript"] = 0,
+			["歸來仍是少年"] = 0,
 			["林暗艹惊风"] = 0,
+			["无尽杀戮"] = 0,
+			["打德"] = 0,
+			["落曰杀神"] = 0,
+			["魔兽村村长"] = 0,
+			["Victoria"] = 0,
+			["飞少"] = 0,
+			["基情冰"] = 0,
+			["林艺淼"] = 0,
+			["血夜无语"] = 0,
+			["秦赢吟兽"] = 0,
+			["埃啵蔑"] = 0,
+			["嗜血狂戦"] = 0,
+			["想死问过我没"] = 0,
+			["血达摩"] = 0,
 		},
 		["NoRaid"] = true,
 		["CDECol"] = {
@@ -257,18 +280,9 @@ VExRT = {
 	["Addon"] = {
 		["Timer"] = 0.1,
 		["Scale"] = 1,
-		["Version"] = 4050,
-		["PreVersion"] = 4050,
+		["Version"] = 4060,
+		["PreVersion"] = 4060,
 	},
-	["BossWatcher"] = {
-		["optionsDamageGraph"] = true,
-		["fightsNum"] = 2,
-		["optionsPositionsDist"] = true,
-		["optionsHealingGraph"] = true,
-		["trackingDamageSpells"] = {
-		},
-	},
-	["Profile"] = "default",
 	["InviteTool"] = {
 		["Words"] = "инв inv byd штм 123",
 		["InvByChat"] = true,
@@ -284,18 +298,23 @@ VExRT = {
 		["OnlyGuild"] = true,
 		["Rank"] = 1,
 	},
+	["Profiles"] = {
+	},
+	["Profile"] = "default",
+	["LootLink"] = {
+	},
 	["Note"] = {
 		["BlackNames"] = {
 		},
 		["FontSize"] = 12,
 		["AutoLoad"] = {
 		},
-		["Width"] = 200,
+		["Width"] = 200.000015258789,
 		["BlackLastUpdateName"] = {
 		},
 		["OnlyPromoted"] = true,
 		["Strata"] = "HIGH",
-		["Height"] = 100,
+		["Height"] = 100.000007629395,
 		["Black"] = {
 			"", -- [1]
 			"", -- [2]
@@ -328,6 +347,12 @@ VExRT = {
 		["sync_data"] = {
 		},
 	},
-	["Profiles"] = {
+	["BossWatcher"] = {
+		["optionsDamageGraph"] = true,
+		["fightsNum"] = 2,
+		["optionsPositionsDist"] = true,
+		["optionsHealingGraph"] = true,
+		["trackingDamageSpells"] = {
+		},
 	},
 }

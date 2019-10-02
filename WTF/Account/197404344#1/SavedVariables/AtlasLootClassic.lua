@@ -37,9 +37,9 @@ AtlasLootClassicDB = {
 				},
 				["selected"] = {
 					nil, -- [1]
-					"LowerBlackrockSpire", -- [2]
-					6, -- [3]
-					1, -- [4]
+					"MoltenCore", -- [2]
+					13, -- [3]
+					3, -- [4]
 					0, -- [5]
 				},
 			},

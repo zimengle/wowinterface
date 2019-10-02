@@ -1,9 +1,0 @@
-<Bindings>
-	<Binding name = "Toggle UI" header = "" category = "Puggle">
-		Puggle_MinimapButton_OnClick()
-	</Binding>
-	<Binding name = "Toggle notification sound " header = "" category = "Puggle">
-		Puggle_ToggleSound()
-	</Binding>
-
-</Bindings>

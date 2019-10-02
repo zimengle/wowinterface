@@ -46,8 +46,8 @@ aux-addon: enabled
 ClassicCastbars: enabled
 ClassicCastbars_Options: enabled
 ClassicCodex: enabled
-Guides: enabled
-Guidelime: enabled
+Guides: disabled
+Guidelime: disabled
 ItemTooltipProfessionIcons: enabled
 Leatrix_Maps: enabled
 TipTop: enabled
@@ -87,7 +87,7 @@ ItemRack: enabled
 LittleWigs: enabled
 Maekor-Overpower-Alert: enabled
 MaxCam: enabled
-Puggle: enabled
+Puggle: disabled
 QuestAnnounce: enabled
 SilverDragon: enabled
 SilverDragon_Classic: enabled
@@ -101,8 +101,9 @@ GSE_LDB: enabled
 CharacterStatsClassic: enabled
 ElvUI_LocationPlus: enabled
 ClassicThreatMeter: enabled
-ExRT: disabled
+ExRT: enabled
 BiSTracker: enabled
 alaTalentEmu: enabled
 CChatNotifier: enabled
 TradeLog: enabled
+ClassicLFG: disabled

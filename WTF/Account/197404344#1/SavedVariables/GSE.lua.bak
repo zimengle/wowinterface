@@ -39,12 +39,12 @@ GSEOptions = {
 	["hideUIErrors"] = false,
 	["STRING"] = "|cff888888",
 	["clearUIErrors"] = false,
-	["Update2415"] = true,
+	["resetOOC"] = true,
 	["Update2411"] = true,
 	["TitleColour"] = "|cFFFF0000",
 	["PromptSample"] = true,
 	["initialised"] = true,
-	["resetOOC"] = true,
+	["INDENT"] = "|cffccaa88",
 	["DebugModules"] = {
 		["Translator"] = false,
 		["GUI"] = false,
@@ -55,7 +55,7 @@ GSEOptions = {
 		["Viewer"] = false,
 		["Transmission"] = false,
 	},
-	["INDENT"] = "|cffccaa88",
+	["Update2415"] = true,
 	["MacroResetModifiers"] = {
 		["Alt"] = false,
 		["LeftControl"] = false,
@@ -74,10 +74,10 @@ GSEOptions = {
 		["RightButton"] = false,
 	},
 	["filterList"] = {
-		["All"] = false,
-		["Spec"] = true,
-		["Global"] = true,
 		["Class"] = true,
+		["All"] = false,
+		["Global"] = true,
+		["Spec"] = true,
 	},
 	["EmphasisColour"] = "|cFFFFFF00",
 	["UseVerboseExportFormat"] = false,
@@ -116,6 +116,7 @@ GSELibrary = {
 			["Talents"] = "CLASSIC",
 			["Default"] = 1,
 			["Help"] = "Uses Mocking Blow (Battle Stance) or Taunt (Defensive Stance) depending on stance.  If you are in Beserking Stance it changes to Defensive Stance.",
+			["Author"] = "TimothyLuke",
 			["SpecID"] = 1,
 			["MacroVersions"] = {
 				{
@@ -124,20 +125,20 @@ GSELibrary = {
 					},
 					["KeyPress"] = {
 					},
-					["StepFunction"] = "Sequential",
-					["PreMacro"] = {
-					},
 					["KeyRelease"] = {
 					},
+					["PreMacro"] = {
+					},
+					["StepFunction"] = "Sequential",
 				}, -- [1]
 			},
-			["Author"] = "TimothyLuke",
 			["ManualIntervention"] = false,
 		},
 		["SAM_LOWLEVELWARR"] = {
 			["Talents"] = "CLASSIC",
 			["Default"] = 1,
 			["Help"] = "A simple Warrior Starter macro.",
+			["SpecID"] = 1,
 			["Author"] = "TimothyLuke",
 			["MacroVersions"] = {
 				{
@@ -153,14 +154,13 @@ GSELibrary = {
 						"/targetenemy [noharm, dead]", -- [2]
 						"/cast [nocombat] 100", -- [3]
 					},
-					["KeyRelease"] = {
-					},
+					["StepFunction"] = "Sequential",
 					["PreMacro"] = {
 					},
-					["StepFunction"] = "Sequential",
+					["KeyRelease"] = {
+					},
 				}, -- [1]
 			},
-			["SpecID"] = 1,
 			["ManualIntervention"] = false,
 		},
 	}, -- [1]

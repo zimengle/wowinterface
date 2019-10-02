@@ -1,7 +1,7 @@
 ## Interface: 11302
 ## Author: shirsig
 ## Title: aux
-## Version: 0.5.1
+## Version: 0.5.9
 ## Notes: Auction House replacement
 ## SavedVariables: aux
 
@@ -52,4 +52,4 @@ core\crafting.lua
 
 
 
-## Q-CAT-Version: 12
+## Q-CAT-Version: 14

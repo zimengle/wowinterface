@@ -88,8 +88,8 @@ function ItemRackOpt.OnLoad(self)
 
 		{type="check",optset=ItemRackUser,variable="SetMenuWrap",label="装备菜单换行",tooltip="Check this to set a fixed value when the menu wraps to a new row.  Uncheck to let ItemRack decide."},
 
-		{type="number",optset=ItemRackUser,variable="SetMenuWrapValue",depend="SetMenuWrap",button=ItemRackOptSetMenuWrapValue,label="When to wrap",tooltip="When 'Set menu wrap' checked, this is the number of menu items before wrapping to a new row/column."},
-		{type="slider",optset=ItemRackUser,button=ItemRackOptSetMenuWrapValueSlider,depend="SetMenuWrap",variable="SetMenuWrapValue",label="When to wrap",tooltip="When 'Set menu wrap' checked, this is the number of menu items before wrapping to a new row/column.", min=1, max=30, step=1, form="%d"},
+		{type="number",optset=ItemRackUser,variable="SetMenuWrapValue",depend="SetMenuWrap",button=ItemRackOptSetMenuWrapValue,label="何时换行",tooltip="When 'Set menu wrap' checked, this is the number of menu items before wrapping to a new row/column."},
+		{type="slider",optset=ItemRackUser,button=ItemRackOptSetMenuWrapValueSlider,depend="SetMenuWrap",variable="SetMenuWrapValue",label="何时换行",tooltip="When 'Set menu wrap' checked, this is the number of menu items before wrapping to a new row/column.", min=1, max=30, step=1, form="%d"},
 
 		{type="label",label="全局设置"},
 		{type="check",optset=ItemRackSettings,variable="MenuOnShift",label="转换菜单",tooltip="Only show menu while Shift is held down."},
@@ -100,19 +100,19 @@ function ItemRackOpt.OnLoad(self)
 		{type="check",optset=ItemRackSettings,variable="NotifyThirty",label="30秒时通告",tooltip="Announce when an item you used is at 30 seconds cooldown."},
 		{type="check",optset=ItemRackSettings,variable="NotifyChatAlso",label="通告在聊天框",tooltip="Send cooldown notifications to chat also."},
 		{type="check",optset=ItemRackSettings,variable="ShowTooltips",label="显示鼠标提示",tooltip="Show tooltips like the one you're reading now."},
-		{type="check",optset=ItemRackSettings,variable="TinyTooltips",depend="ShowTooltips",label="Tiny Tooltips",tooltip="Shrink item tooltips to display only name, cooldown and durability."},
-		{type="check",optset=ItemRackSettings,variable="TooltipFollow",depend="ShowTooltips",label="Tooltips at pointer",tooltip="Show tooltips near the mouse."},
+		{type="check",optset=ItemRackSettings,variable="TinyTooltips",depend="ShowTooltips",label="迷你鼠标提示",tooltip="Shrink item tooltips to display only name, cooldown and durability."},
+		{type="check",optset=ItemRackSettings,variable="TooltipFollow",depend="ShowTooltips",label="鼠标提示跟随",tooltip="Show tooltips near the mouse."},
 		{type="check",optset=ItemRackSettings,variable="CooldownCount",label="冷却数字",tooltip="Display the cooldown time as a number over items."},
-		{type="check",optset=ItemRackSettings,variable="LargeNumbers",depend="CooldownCount",label="Large numbers",tooltip="Use a larger font for cooldown numbers."},
-		{type="check",optset=ItemRackSettings,variable="Cooldown90",depend="CooldownCount",label="Countdown at 90",tooltip="Use seconds instead of minutes starting at 90 seconds remaining."},
+		{type="check",optset=ItemRackSettings,variable="LargeNumbers",depend="CooldownCount",label="大数字",tooltip="Use a larger font for cooldown numbers."},
+		{type="check",optset=ItemRackSettings,variable="Cooldown90",depend="CooldownCount",label="90秒CD倒计时",tooltip="Use seconds instead of minutes starting at 90 seconds remaining."},
 		{type="check",optset=ItemRackSettings,variable="AllowEmpty",label="允许空槽",tooltip="Add an empty slot to menus of equipped items."},
 		{type="check",optset=ItemRackSettings,variable="AllowHidden",label="允许隐藏装备",tooltip="Enable Alt+clicking of menu items to hide/show them in the menu.  Hold Alt as you enter a menu to show all."},
 		{type="check",optset=ItemRackSettings,variable="HideTradables",label="隐藏可交易物",tooltip="Prevent tradable items from showing up in the menu."},
 		{type="check",optset=ItemRackSettings,variable="ShowMinimap",label="显示小地图按钮",tooltip="Show the minimap button to access options or change sets."},
-		{type="check",optset=ItemRackSettings,variable="SquareMinimap",depend="ShowMinimap",label="Square minimap",tooltip="If you use a square minimap, make the button drag along square edge."},
-		{type="check",optset=ItemRackSettings,variable="MinimapTooltip",depend="ShowMinimap",label="Show minimap tooltip",tooltip="If tooltips enabled, show what mouse clicks will do when clicking the minimap button."},
-		{type="check",optset=ItemRackSettings,variable="TrinketMenuMode",label="TrinketMenu模式",tooltip="When mouseover of either trinket slot, open anchored to the top trinket.  Left click of a menu item will equip to the top trinket.  Right click will equip to the bottom trinket."},
-		{type="check",optset=ItemRackSettings,variable="AnchorOther",depend="TrinketMenuMode",label="Anchor other trinket",tooltip="In TrinketMenu mode, trinket menus dock to the top trinket.  Check this to anchor them to the bottom trinket."},
+		{type="check",optset=ItemRackSettings,variable="SquareMinimap",depend="ShowMinimap",label="方形小地图",tooltip="If you use a square minimap, make the button drag along square edge."},
+		{type="check",optset=ItemRackSettings,variable="MinimapTooltip",depend="ShowMinimap",label="显示小地图鼠标提示",tooltip="If tooltips enabled, show what mouse clicks will do when clicking the minimap button."},
+		{type="check",optset=ItemRackSettings,variable="TrinketMenuMode",label="TrinketMenu(饰品)模式",tooltip="When mouseover of either trinket slot, open anchored to the top trinket.  Left click of a menu item will equip to the top trinket.  Right click will equip to the bottom trinket."},
+		{type="check",optset=ItemRackSettings,variable="AnchorOther",depend="TrinketMenuMode",label="锚定其他饰品",tooltip="In TrinketMenu mode, trinket menus dock to the top trinket.  Check this to anchor them to the bottom trinket."},
 		{type="check",optset=ItemRackSettings,variable="EquipToggle",label="装备集切换",tooltip="When a set is equipped, if it's already equipped, unequip it."},
 		{type="check",optset=ItemRackSettings,variable="ShowHotKeys",label="显示快捷绑键",tooltip="Display key bindings on buttons"},
 		{type="check",optset=ItemRackSettings,variable="EquipOnSetPick",label="选项中就装备",tooltip="Check this to equip sets and items when selecting items in options or from the dropdown in the Sets tab."},
@@ -867,9 +867,9 @@ end
 function ItemRackOpt.BindFrameOnShow()
 	if not ItemRackOpt.Binding then return end
 	ItemRackOpt.HideCurrentSubFrame()
-	ItemRackOpt.Binding.currentKey=GetBindingKey("CLICK "..ItemRackOpt.Binding.buttonName..":LeftButton") or "Not bound"
+	ItemRackOpt.Binding.currentKey=GetBindingKey("CLICK "..ItemRackOpt.Binding.buttonName..":LeftButton") or "无绑定"
 	ItemRackOptBindFrameBindee:SetText(ItemRackOpt.Binding.name)
-	ItemRackOptBindFrameCurrently:SetText("Currently: "..ItemRackOpt.Binding.currentKey)
+	ItemRackOptBindFrameCurrently:SetText("当前: "..ItemRackOpt.Binding.currentKey)
 end
 
 function ItemRackOpt.BindFrameOnHide()
@@ -1188,7 +1188,7 @@ function ItemRackOpt.ValidateSortButtons()
 		local baseID = ItemRack.GetIRString(list[selected],true)
 		ItemRackOptItemStatsPriority:SetChecked(ItemRackItems[baseID] and ItemRackItems[baseID].priority or false)
 		ItemRackOptItemStatsKeepEquipped:SetChecked(ItemRackItems[baseID] and ItemRackItems[baseID].keep or false)
-		ItemRackOptItemStatsDelay:SetText((ItemRackItems[baseID] and ItemRackItems[baseID].delay) or false)
+		ItemRackOptItemStatsDelay:SetText((ItemRackItems[baseID] and ItemRackItems[baseID].delay) or "0")
 	else
 		ItemRackOptSortMoveDelete:Disable()
 		ItemRackOptItemStatsFrame:Hide()
@@ -1529,7 +1529,7 @@ end
 
 function ItemRackOpt.EventEditClearFrame()
 	ItemRackOptEventEditNameEdit:SetText("")
-	ItemRackOptEventEditTypeDropText:SetText("Pick one")
+	ItemRackOptEventEditTypeDropText:SetText("选择一个")
 	ItemRackOptEventEditBuffName:SetText("")
 	ItemRackOptEventEditBuffAnyMount:SetChecked(false)
 	ItemRackOptEventEditBuffUnequip:SetChecked(false)
@@ -1556,7 +1556,7 @@ function ItemRackOpt.EventEditPopulateFrame()
 		ItemRackOptEventEditBuffName:SetCursorPosition(0)
 		if event.Anymount then
 			ItemRackOptEventEditBuffAnyMount:SetChecked(true)
-			ItemRackOptEventEditBuffName:SetText("Any mount")
+			ItemRackOptEventEditBuffName:SetText("任何坐骑")
 		end
 		ItemRackOptEventEditBuffUnequip:SetChecked(event.Unequip)
 		ItemRackOptEventEditBuffNotInPVP:SetChecked(event.NotInPVP)

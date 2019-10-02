@@ -11,7 +11,7 @@ ElvDB = {
 		},
 		["沙尔图拉"] = {
 			["Lua"] = 29970,
-			["Typescript"] = 2517865,
+			["Typescript"] = 4317437,
 		},
 	},
 	["class"] = {
@@ -55,17 +55,17 @@ ElvDB = {
 							["frequentUpdates"] = true,
 						},
 					},
+					["pettarget"] = {
+						["health"] = {
+							["frequentUpdates"] = true,
+						},
+					},
 					["targettarget"] = {
 						["health"] = {
 							["frequentUpdates"] = true,
 						},
 					},
 					["pet"] = {
-						["health"] = {
-							["frequentUpdates"] = true,
-						},
-					},
-					["pettarget"] = {
 						["health"] = {
 							["frequentUpdates"] = true,
 						},
@@ -101,7 +101,7 @@ ElvDB = {
 					["width"] = 222,
 				},
 			},
-			["currentTutorial"] = 5,
+			["currentTutorial"] = 8,
 			["general"] = {
 				["totems"] = {
 					["spacing"] = 8,
@@ -249,30 +249,31 @@ ElvDB = {
 							["yOffset"] = 0,
 						},
 					},
-					["boss"] = {
-						["infoPanel"] = {
-							["height"] = 17,
+					["player"] = {
+						["classbar"] = {
+							["height"] = 14,
 						},
-						["debuffs"] = {
-							["numrows"] = 1,
-							["sizeOverride"] = 27,
-							["maxDuration"] = 300,
-							["yOffset"] = -16,
+						["power"] = {
+							["height"] = 22,
+							["attachTextTo"] = "InfoPanel",
 						},
-						["portrait"] = {
-							["camDistanceScale"] = 2,
-							["width"] = 45,
+						["healPrediction"] = {
+							["showOverAbsorbs"] = false,
+						},
+						["disableMouseoverGlow"] = true,
+						["health"] = {
+							["attachTextTo"] = "InfoPanel",
+							["frequentUpdates"] = true,
 						},
 						["castbar"] = {
-							["width"] = 246,
+							["insideInfoPanel"] = false,
+							["width"] = 405,
+							["height"] = 40,
 						},
-						["height"] = 60,
-						["buffs"] = {
-							["maxDuration"] = 300,
-							["sizeOverride"] = 27,
-							["yOffset"] = 16,
+						["height"] = 82,
+						["infoPanel"] = {
+							["enable"] = true,
 						},
-						["width"] = 246,
 					},
 					["raid40"] = {
 						["enable"] = false,
@@ -346,32 +347,6 @@ ElvDB = {
 							["size"] = 12,
 						},
 					},
-					["player"] = {
-						["classbar"] = {
-							["height"] = 14,
-						},
-						["power"] = {
-							["height"] = 22,
-							["attachTextTo"] = "InfoPanel",
-						},
-						["healPrediction"] = {
-							["showOverAbsorbs"] = false,
-						},
-						["disableMouseoverGlow"] = true,
-						["health"] = {
-							["attachTextTo"] = "InfoPanel",
-							["frequentUpdates"] = true,
-						},
-						["castbar"] = {
-							["insideInfoPanel"] = false,
-							["width"] = 405,
-							["height"] = 40,
-						},
-						["height"] = 82,
-						["infoPanel"] = {
-							["enable"] = true,
-						},
-					},
 					["party"] = {
 						["height"] = 74,
 						["rdebuffs"] = {
@@ -381,6 +356,31 @@ ElvDB = {
 							["height"] = 13,
 						},
 						["width"] = 231,
+					},
+					["boss"] = {
+						["infoPanel"] = {
+							["height"] = 17,
+						},
+						["debuffs"] = {
+							["numrows"] = 1,
+							["sizeOverride"] = 27,
+							["maxDuration"] = 300,
+							["yOffset"] = -16,
+						},
+						["portrait"] = {
+							["camDistanceScale"] = 2,
+							["width"] = 45,
+						},
+						["castbar"] = {
+							["width"] = 246,
+						},
+						["height"] = 60,
+						["buffs"] = {
+							["maxDuration"] = 300,
+							["sizeOverride"] = 27,
+							["yOffset"] = 16,
+						},
+						["width"] = 246,
 					},
 				},
 				["colors"] = {
@@ -547,9 +547,9 @@ ElvDB = {
 				["ElvAB_6"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-488,330",
 				["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-50,50",
 				["ElvUF_TankMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,50,995",
+				["TotemBarMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,463,50",
 				["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,200",
 				["ElvUF_PlayerMover"] = "BOTTOM,ElvUIParent,BOTTOM,-230,140",
-				["TotemBarMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,463,50",
 				["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-50,50",
 				["AlertFrameMover"] = "TOP,ElvUIParent,TOP,0,-50",
 				["ReputationBarMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-50,-228",
@@ -891,6 +891,9 @@ ElvPrivateDB = {
 		["Typescript - 伦鲁迪洛尔"] = {
 		},
 		["Typescript - 沙尔图拉"] = {
+			["general"] = {
+				["chatBubbleName"] = true,
+			},
 			["auras"] = {
 				["disableBlizzard"] = false,
 				["masque"] = {
@@ -904,7 +907,7 @@ ElvPrivateDB = {
 				},
 			},
 			["theme"] = "class",
-			["install_complete"] = "1.03",
+			["install_complete"] = "1.12",
 		},
 		["Lua - 沙尔图拉"] = {
 			["install_complete"] = "1.08",

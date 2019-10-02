@@ -45,12 +45,12 @@ GSEOptions = {
 	["PromptSample"] = true,
 	["STRING"] = "|cff888888",
 	["requireTarget"] = false,
-	["resetOOC"] = true,
+	["INDENT"] = "|cffccaa88",
 	["Update2411"] = true,
 	["TitleColour"] = "|cFFFF0000",
 	["hideUIErrors"] = false,
 	["initialised"] = true,
-	["INDENT"] = "|cffccaa88",
+	["Update2415"] = true,
 	["DebugModules"] = {
 		["Translator"] = false,
 		["GUI"] = false,
@@ -61,7 +61,7 @@ GSEOptions = {
 		["Viewer"] = false,
 		["Transmission"] = false,
 	},
-	["Update2415"] = true,
+	["resetOOC"] = true,
 	["MacroResetModifiers"] = {
 		["Alt"] = false,
 		["LeftControl"] = false,
@@ -80,10 +80,10 @@ GSEOptions = {
 		["RightShift"] = false,
 	},
 	["filterList"] = {
-		["Class"] = true,
-		["All"] = false,
-		["Global"] = true,
 		["Spec"] = true,
+		["Class"] = true,
+		["Global"] = true,
+		["All"] = false,
 	},
 	["EmphasisColour"] = "|cFFFFFF00",
 	["UseVerboseExportFormat"] = false,
@@ -116,8 +116,6 @@ GSELibrary = {
 			["Talents"] = "CLASSIC",
 			["Default"] = 1,
 			["Help"] = "Uses Mocking Blow (Battle Stance) or Taunt (Defensive Stance) depending on stance.  If you are in Beserking Stance it changes to Defensive Stance.",
-			["Author"] = "TimothyLuke",
-			["SpecID"] = 1,
 			["MacroVersions"] = {
 				{
 					"/cast [stance:1] 694; [stance:2] 355; [stance:3] 71", -- [1]
@@ -132,14 +130,14 @@ GSELibrary = {
 					},
 				}, -- [1]
 			},
+			["Author"] = "TimothyLuke",
+			["SpecID"] = 1,
 			["ManualIntervention"] = false,
 		},
 		["SAM_LOWLEVELWARR"] = {
 			["Talents"] = "CLASSIC",
 			["Default"] = 1,
 			["Help"] = "A simple Warrior Starter macro.",
-			["SpecID"] = 1,
-			["Author"] = "TimothyLuke",
 			["MacroVersions"] = {
 				{
 					"/cast [combat] 6547", -- [1]
@@ -161,6 +159,8 @@ GSELibrary = {
 					["StepFunction"] = "Sequential",
 				}, -- [1]
 			},
+			["SpecID"] = 1,
+			["Author"] = "TimothyLuke",
 			["ManualIntervention"] = false,
 		},
 	}, -- [1]

@@ -1,7 +1,7 @@
 
 AutoCarrotDB = {
 	["enabled"] = true,
-	["trinketId"] = 13965,
+	["trinketId"] = 19120,
 	["ridingGloves"] = true,
 	["mithrilSpurs"] = true,
 }

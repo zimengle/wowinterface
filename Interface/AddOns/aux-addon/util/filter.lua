@@ -142,7 +142,8 @@ M.filters = {
         input_type = 'money',
         validator = function(amount)
             return function(auction_record)
-                local disenchant_value = disenchant.value(auction_record.slot, auction_record.quality, auction_record.level)
+                local item_info = info.item(auction_record.item_id)
+                local disenchant_value = item_info and disenchant.value(item_info.slot, item_info.quality, item_info.level)
                 return disenchant_value and disenchant_value - auction_record.bid_price >= amount
             end
         end
@@ -152,7 +153,8 @@ M.filters = {
         input_type = 'money',
         validator = function(amount)
             return function(auction_record)
-                local disenchant_value = disenchant.value(auction_record.slot, auction_record.quality, auction_record.level)
+                local item_info = info.item(auction_record.item_id)
+                local disenchant_value = item_info and disenchant.value(item_info.slot, item_info.quality, item_info.level)
                 return auction_record.buyout_price > 0 and disenchant_value and disenchant_value - auction_record.buyout_price >= amount
             end
         end
@@ -191,61 +193,61 @@ M.filters = {
 function operator(str)
     local operator = str == 'not' and {'operator', 'not', 1}
     for name in aux.iter('and', 'or') do
-	    local arity = select(3, strfind(str, '^' .. name .. '(%d*)$'))
-	    if arity then
-		    arity = tonumber(arity)
-		    operator = not (arity and arity < 2) and {'operator', name, arity}
-	    end
+        local arity = select(3, strfind(str, '^' .. name .. '(%d*)$'))
+        if arity then
+            arity = tonumber(arity)
+            operator = not (arity and arity < 2) and {'operator', name, arity}
+        end
     end
     return operator or nil
 end
 
 do
-	local mt = {
-		__call = function(self, str, i)
-			if not str then
-				self.max_level = self.max_level or self.min_level
-				return self
-			end
-			if self.exact then return end
-			local number = tonumber(select(3, strfind(str, '^(%d+)$')) or nil)
-			if number then
-				if number >= 1 and number <= 60 then
-					for _, key in ipairs{'min_level', 'max_level'} do
-						if not self[key] then
-							self[key] = {str, number}
-							return {'blizzard', key, str, number}
-						end
-					end
-				end
-			end
-			for _, parser in pairs{
-				{'class', info.category_index},
-				{'subclass', function(...) return info.subcategory_index(aux.index(self.class, 2) or 0, ...) end},
-				{'slot', function(...) return info.subsubcategory_index(aux.index(self.class, 2) == 2 and 2 or 0, aux.index(self.subclass, 2) or 0, ...) end},
-				{'quality', info.item_quality_index}
-            } do
-				if not self[parser[1]] then
-					local index, label = parser[2](str)
-					if index then
-						self[parser[1]] = {label, index}
-						return {'blizzard', parser[1], label, index}
-					end
-				end
+    local mt = {
+        __call = function(self, str, i)
+            if not str then
+                self.max_level = self.max_level or self.min_level
+                return self
             end
-			if not self[str] and (str == 'usable' or str == 'exact' and self.name and aux.size(self) == 1) then
-				self[str] = {str, 1}
-				return {'blizzard', str, str, 1}
-			elseif i == 1 and strlen(str) <= 63 then
-				self.name = unquote(str)
-				return {'blizzard', 'name', unquote(str), str}
---				return nil, 'The name filter must not be longer than 63 characters' TODO
-			end
-		end,
-	}
-	function blizzard_filter_parser()
-	    return setmetatable({}, mt)
-	end
+            if self.exact then return end
+            local number = tonumber(select(3, strfind(str, '^(%d+)$')) or nil)
+            if number then
+                if number >= 1 and number <= 60 then
+                    for _, key in ipairs{'min_level', 'max_level'} do
+                        if not self[key] then
+                            self[key] = {str, number}
+                            return {'blizzard', key, str, number}
+                        end
+                    end
+                end
+            end
+            for _, parser in pairs{
+                {'class', info.category_index},
+                {'subclass', function(...) return info.subcategory_index(aux.index(self.class, 2) or 0, ...) end},
+                {'slot', function(...) return info.subsubcategory_index(aux.index(self.class, 2) == 2 and 2 or 0, aux.index(self.subclass, 2) or 0, ...) end},
+                {'quality', info.item_quality_index}
+            } do
+                if not self[parser[1]] then
+                    local index, label = parser[2](str)
+                    if index then
+                        self[parser[1]] = {label, index}
+                        return {'blizzard', parser[1], label, index}
+                    end
+                end
+            end
+            if not self[str] and (str == 'usable' or str == 'exact' and self.name and aux.size(self) == 1) then
+                self[str] = {str, 1}
+                return {'blizzard', str, str, 1}
+            elseif i == 1 and strlen(str) <= 63 then
+                self.name = unquote(str)
+                return {'blizzard', 'name', unquote(str), str}
+--              return nil, 'The name filter must not be longer than 63 characters' TODO
+            end
+        end,
+    }
+    function blizzard_filter_parser()
+        return setmetatable({}, mt)
+    end
 end
 
 function parse_parameter(input_type, str)
@@ -270,10 +272,10 @@ function M.parse_filter_string(str)
 
     local i = 1
     while parts[i] do
-	    local operator = operator(parts[i])
+        local operator = operator(parts[i])
         if operator then
             tinsert(post_filter, operator)
-	        tinsert(filter, operator)
+            tinsert(filter, operator)
         elseif filters[parts[i]] then
             local input_type = filters[parts[i]].input_type
             if input_type ~= '' then
@@ -293,15 +295,15 @@ function M.parse_filter_string(str)
             end
             tinsert(filter, post_filter[#post_filter])
         else
-	        local part = blizzard_filter_parser(parts[i], i)
-	        if part then
-		        tinsert(filter, part)
-	        elseif parts[i] ~= '' then
-		        tinsert(post_filter, {'filter', 'tooltip', parts[i]})
-		        tinsert(filter, post_filter[#post_filter])
-	        else
-	            return nil, 'Empty modifier'
-	        end
+            local part = blizzard_filter_parser(parts[i], i)
+            if part then
+                tinsert(filter, part)
+            elseif parts[i] ~= '' then
+                tinsert(post_filter, {'filter', 'tooltip', parts[i]})
+                tinsert(filter, post_filter[#post_filter])
+            else
+                return nil, 'Empty modifier'
+            end
         end
         i = i + 1
     end
@@ -350,7 +352,7 @@ function M.queries(filter_string)
     for _, str in ipairs(parts) do
         local query, _, error = query(str)
         if not query then
-	        return nil, error
+            return nil, error
         else
             tinsert(queries, query)
         end
@@ -407,7 +409,7 @@ function suggestions(filter)
 
     -- item names
     if #filter.components == 0 then
-	    for _, name in ipairs(aux.account_data.auctionable_items) do
+        for _, name in ipairs(aux.account_data.auctionable_items) do
             tinsert(suggestions, name .. '/exact')
         end
     end
@@ -418,17 +420,17 @@ end
 function M.filter_string(components)
     local query_builder = query_builder()
     for _, component in ipairs(components) do
-	    if component[1] == 'blizzard' then
-		    query_builder.append(component[4] or component[3])
+        if component[1] == 'blizzard' then
+            query_builder.append(component[4] or component[3])
         elseif component[1] == 'operator' then
             query_builder.append(component[2] .. (component[2] ~= 'not' and tonumber(component[3]) or ''))
         elseif component[1] == 'filter' then
             query_builder.append(component[2])
             local parameter = component[3]
             if parameter then
-	            if filter_util.filters[component[2]].input_type == 'money' then
-		            parameter = money.to_string(money.from_string(parameter), nil, true, nil, true)
-	            end
+                if filter_util.filters[component[2]].input_type == 'money' then
+                    parameter = money.to_string(money.from_string(parameter), nil, true, nil, true)
+                end
                 query_builder.append(parameter)
             end
         end
@@ -439,33 +441,33 @@ end
 function prettified_filter_string(filter)
     local prettified = query_builder()
     for i, component in ipairs(filter.components) do
-	    if component[1] == 'blizzard' then
-		    if component[2] == 'name' then
-			    if filter.blizzard.exact then
-			        prettified.append(info.display_name(info.item_id(component[3])) or aux.color.orange('[' .. component[3] .. ']'))
-			    elseif component[3] ~= '' then
-				    prettified.append(aux.color.label.enabled(component[3]))
-			    end
-		    elseif component[2] ~= 'exact' then
-			    prettified.append(aux.color.orange(component[3]))
-		    end
+        if component[1] == 'blizzard' then
+            if component[2] == 'name' then
+                if filter.blizzard.exact then
+                    prettified.append(info.display_name(info.item_id(component[3])) or aux.color.orange('[' .. component[3] .. ']'))
+                elseif component[3] ~= '' then
+                    prettified.append(aux.color.label.enabled(component[3]))
+                end
+            elseif component[2] ~= 'exact' then
+                prettified.append(aux.color.orange(component[3]))
+            end
         elseif component[1] == 'operator' then
-			prettified.append(aux.color.orange(component[2] .. (component[2] ~= 'not' and tonumber(component[3]) or '')))
+            prettified.append(aux.color.orange(component[2] .. (component[2] ~= 'not' and tonumber(component[3]) or '')))
         elseif component[1] == 'filter' then
             if i == 1 or component[2] ~= 'tooltip' then
                 prettified.append(aux.color.orange(component[2]))
             end
             local parameter = component[3]
             if parameter then
-	            if component[2] == 'item' then
-		            prettified.append(info.display_name(info.item_id(parameter)) or aux.color.label.enabled('[' .. parameter .. ']'))
-	            else
-		            if filters[component[2]].input_type == 'money' then
-			            prettified.append(money.to_string(money.from_string(parameter), nil, true, aux.color.label.enabled))
-		            else
-			            prettified.append(aux.color.label.enabled(parameter))
-		            end
-	            end
+                if component[2] == 'item' then
+                    prettified.append(info.display_name(info.item_id(parameter)) or aux.color.label.enabled('[' .. parameter .. ']'))
+                else
+                    if filters[component[2]].input_type == 'money' then
+                        prettified.append(money.to_string(money.from_string(parameter), nil, true, aux.color.label.enabled))
+                    else
+                        prettified.append(aux.color.label.enabled(parameter))
+                    end
+                end
             end
         end
     end
@@ -481,7 +483,7 @@ function M.quote(name)
 end
 
 function M.unquote(name)
-	return select(3, strfind(name, '^<(.*)>$')) or name
+    return select(3, strfind(name, '^<(.*)>$')) or name
 end
 
 function blizzard_query(filter)
@@ -501,9 +503,9 @@ function blizzard_query(filter)
         query.slot = slot_index
         query.quality = item_info.quality
     else
-	    for key in aux.iter('min_level', 'max_level', 'class', 'subclass', 'slot', 'usable', 'quality') do
+        for key in aux.iter('min_level', 'max_level', 'class', 'subclass', 'slot', 'usable', 'quality') do
             query[key] = aux.index(filters[key], 2)
-	    end
+        end
     end
     return query
 end
@@ -511,7 +513,7 @@ end
 function validator(filter)
     local validators = {}
     for i, component in pairs(filter.post) do
-	    local type, name, param = unpack(component)
+        local type, name, param = unpack(component)
         if type == 'filter' then
             validators[i] = filters[name].validator(parse_parameter(filters[name].input_type, param))
         end
@@ -548,10 +550,10 @@ end
 function M.query_builder()
     local filter
     return {
-		append = function(part)
+        append = function(part)
             filter = not filter and part or filter .. '/' .. part
         end,
-		get = function()
+        get = function()
             return filter or ''
         end
     }

@@ -39,6 +39,38 @@ TomTomWaypointsM = {
 		["Nodejs - 沙尔图拉"] = {
 		},
 		["Typescript - 沙尔图拉"] = {
+			[1446] = {
+				["1446:635442239.50736:486619832.93977:TomTom 路径点"] = {
+					1446, -- [1]
+					0.635442239507362, -- [2]
+					0.486619832939768, -- [3]
+					["arrivaldistance"] = 15,
+					["callbacks"] = {
+						["distance"] = {
+							[10] = nil --[[ skipped inline function ]],
+							[15] = nil --[[ skipped inline function ]],
+						},
+						["world"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+						["minimap"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+					},
+					["persistent"] = true,
+					["desc"] = "TomTom 路径点",
+					["silent"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom 路径点",
+					["crazy"] = true,
+					["minimap"] = true,
+					["world"] = true,
+				},
+			},
 			[1411] = {
 				["1411:563259233.88416:720831866.17634:TomTom 路径点"] = {
 					1411, -- [1]

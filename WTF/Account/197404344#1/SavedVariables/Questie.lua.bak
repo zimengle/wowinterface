@@ -13,12 +13,12 @@ QuestieConfig = {
 		},
 		["Typescript - 沙尔图拉"] = {
 			["_tom_waypoint"] = {
-				1423, -- [1]
-				0.2654, -- [2]
-				0.7473, -- [3]
+				1445, -- [1]
+				0.5666, -- [2]
+				0.8772, -- [3]
 				["minimap"] = true,
 				["cleardistance"] = 10,
-				["title"] = "纳萨诺斯·凋零者",
+				["title"] = "埃博斯塔夫",
 				["arrivaldistance"] = 15,
 				["callbacks"] = {
 					["distance"] = {
@@ -169,6 +169,7 @@ QuestieConfig = {
 				[596] = true,
 				[7829] = true,
 				[597] = true,
+				[4768] = true,
 				[1195] = true,
 				[1196] = true,
 				[1197] = true,
@@ -363,156 +364,173 @@ QuestieConfig = {
 				[1503] = true,
 				[4985] = true,
 				[1505] = true,
+				[4004] = true,
+				[55296] = true,
 				[6024] = true,
 				[189] = true,
+				[907] = true,
+				[8465] = true,
+				[8464] = true,
 				[5021] = true,
 				[379] = true,
+				[5202] = true,
+				[8461] = true,
 				[190] = true,
 				[5041] = true,
+				[7201] = true,
 				[5049] = true,
+				[8366] = true,
 				[3042] = true,
+				[8365] = true,
+				[8273] = true,
 				[191] = true,
+				[7849] = true,
+				[7850] = true,
 				[8150] = true,
 				[5085] = true,
 				[4081] = true,
 				[5093] = true,
+				[7848] = true,
 				[192] = true,
+				[5741] = true,
+				[7846] = true,
 				[6136] = true,
+				[7845] = true,
 				[5121] = true,
 				[4102] = true,
-				[6148] = true,
+				[7844] = true,
 				[193] = true,
-				[6147] = true,
+				[7843] = true,
 				[6164] = true,
-				[55296] = true,
+				[7841] = true,
 				[5149] = true,
 				[5153] = true,
 				[4134] = true,
-				[907] = true,
+				[3501] = true,
 				[194] = true,
 				[4146] = true,
-				[8465] = true,
-				[8464] = true,
+				[7839] = true,
+				[7828] = true,
 				[5181] = true,
-				[5211] = true,
-				[8461] = true,
-				[7845] = true,
+				[896] = true,
+				[573] = true,
+				[3801] = true,
 				[195] = true,
-				[8366] = true,
-				[5158] = true,
-				[8273] = true,
-				[7850] = true,
+				[7731] = true,
+				[7729] = true,
+				[3844] = true,
+				[6146] = true,
 				[3122] = true,
-				[7849] = true,
-				[7848] = true,
+				[3845] = true,
+				[6147] = true,
 				[196] = true,
 				[5233] = true,
 				[784] = true,
 				[5241] = true,
-				[6133] = true,
-				[7846] = true,
+				[7701] = true,
+				[7541] = true,
 				[786] = true,
 				[8460] = true,
 				[197] = true,
-				[7844] = true,
+				[7069] = true,
 				[788] = true,
-				[7843] = true,
+				[5514] = true,
 				[789] = true,
 				[5281] = true,
 				[790] = true,
-				[7841] = true,
+				[7067] = true,
 				[791] = true,
-				[3501] = true,
+				[7066] = true,
 				[792] = true,
-				[7839] = true,
-				[7828] = true,
+				[7065] = true,
+				[5534] = true,
 				[4290] = true,
 				[794] = true,
-				[896] = true,
-				[5405] = true,
-				[3801] = true,
-				[7731] = true,
-				[7729] = true,
-				[2161] = true,
-				[25] = true,
-				[3844] = true,
-				[5142] = true,
-				[3845] = true,
-				[6384] = true,
-				[6394] = true,
-				[7701] = true,
-				[7541] = true,
-				[7201] = true,
-				[5381] = true,
-				[5385] = true,
-				[201] = true,
-				[7069] = true,
-				[804] = true,
-				[5401] = true,
-				[805] = true,
-				[5544] = true,
-				[806] = true,
-				[7067] = true,
-				[7066] = true,
-				[4402] = true,
-				[808] = true,
-				[7065] = true,
-				[809] = true,
-				[5441] = true,
-				[5581] = true,
 				[7044] = true,
 				[1151] = true,
 				[7029] = true,
-				[812] = true,
 				[7028] = true,
 				[6981] = true,
+				[2161] = true,
+				[25] = true,
 				[903] = true,
 				[6805] = true,
+				[6804] = true,
+				[6384] = true,
+				[6641] = true,
+				[4244] = true,
+				[6628] = true,
+				[6627] = true,
+				[5381] = true,
+				[5385] = true,
+				[201] = true,
+				[6622] = true,
+				[804] = true,
+				[5401] = true,
+				[805] = true,
+				[6621] = true,
+				[806] = true,
+				[6602] = true,
+				[4294] = true,
+				[4402] = true,
+				[808] = true,
+				[4451] = true,
+				[809] = true,
+				[5441] = true,
+				[6584] = true,
+				[6583] = true,
+				[6582] = true,
+				[6570] = true,
+				[812] = true,
+				[4494] = true,
+				[6461] = true,
+				[6567] = true,
+				[6566] = true,
 				[6504] = true,
 				[815] = true,
-				[6804] = true,
+				[6562] = true,
 				[816] = true,
-				[6641] = true,
+				[6548] = true,
 				[817] = true,
-				[4285] = true,
+				[6503] = true,
 				[818] = true,
-				[6628] = true,
+				[6542] = true,
 				[819] = true,
 				[6544] = true,
 				[4502] = true,
 				[4506] = true,
 				[821] = true,
-				[6627] = true,
-				[6622] = true,
+				[6482] = true,
+				[6462] = true,
 				[6568] = true,
 				[823] = true,
-				[6621] = true,
+				[4974] = true,
 				[824] = true,
 				[5561] = true,
 				[825] = true,
-				[6567] = true,
+				[6421] = true,
 				[826] = true,
-				[6566] = true,
+				[5057] = true,
 				[827] = true,
-				[6562] = true,
+				[6394] = true,
 				[828] = true,
-				[6548] = true,
+				[5084] = true,
 				[829] = true,
 				[5601] = true,
 				[830] = true,
-				[6542] = true,
+				[6390] = true,
 				[208] = true,
-				[6503] = true,
+				[6386] = true,
 				[832] = true,
-				[6482] = true,
-				[6462] = true,
-				[6461] = true,
-				[834] = true,
-				[4984] = true,
-				[835] = true,
-				[6421] = true,
-				[836] = true,
 				[5094] = true,
+				[5152] = true,
+				[6284] = true,
+				[834] = true,
+				[6282] = true,
+				[835] = true,
+				[5229] = true,
+				[836] = true,
+				[6148] = true,
 				[837] = true,
 				[4642] = true,
 				[838] = true,
@@ -520,29 +538,29 @@ QuestieConfig = {
 				[7723] = true,
 				[7727] = true,
 				[840] = true,
-				[6390] = true,
-				[6386] = true,
+				[5234] = true,
+				[6144] = true,
 				[3362] = true,
 				[842] = true,
 				[3366] = true,
 				[843] = true,
-				[5152] = true,
+				[6133] = true,
 				[844] = true,
-				[8365] = true,
+				[5721] = true,
 				[845] = true,
 				[1690] = true,
 				[846] = true,
-				[6284] = true,
+				[209] = true,
 				[847] = true,
-				[6282] = true,
+				[831] = true,
 				[848] = true,
-				[5236] = true,
+				[6029] = true,
 				[849] = true,
-				[6146] = true,
+				[6027] = true,
 				[850] = true,
 				[7815] = true,
 				[213] = true,
-				[6144] = true,
+				[6021] = true,
 				[852] = true,
 				[2383] = true,
 				[853] = true,
@@ -550,77 +568,77 @@ QuestieConfig = {
 				[1707] = true,
 				[7847] = true,
 				[855] = true,
-				[209] = true,
-				[831] = true,
+				[5944] = true,
+				[5942] = true,
 				[1712] = true,
 				[857] = true,
-				[6029] = true,
+				[5941] = true,
 				[858] = true,
 				[4810] = true,
-				[6027] = true,
+				[232] = true,
 				[1718] = true,
 				[1719] = true,
-				[573] = true,
-				[6021] = true,
+				[5901] = true,
+				[5887] = true,
 				[3442] = true,
 				[3444] = true,
 				[3446] = true,
 				[863] = true,
-				[5802] = true,
+				[5881] = true,
 				[864] = true,
 				[3454] = true,
 				[865] = true,
-				[5944] = true,
-				[232] = true,
+				[5862] = true,
+				[5861] = true,
 				[3462] = true,
 				[867] = true,
-				[5901] = true,
-				[868] = true,
-				[5887] = true,
-				[869] = true,
-				[5881] = true,
-				[870] = true,
-				[5862] = true,
-				[871] = true,
-				[5861] = true,
-				[872] = true,
 				[1183] = true,
-				[873] = true,
+				[868] = true,
 				[5845] = true,
+				[869] = true,
+				[5802] = true,
+				[870] = true,
+				[5781] = true,
+				[871] = true,
+				[5763] = true,
+				[872] = true,
+				[5762] = true,
+				[873] = true,
+				[5742] = true,
 				[874] = true,
 				[5961] = true,
 				[875] = true,
-				[5781] = true,
+				[5727] = true,
 				[876] = true,
-				[5763] = true,
+				[5726] = true,
 				[877] = true,
 				[3506] = true,
 				[878] = true,
 				[110] = true,
 				[879] = true,
-				[5762] = true,
+				[5581] = true,
 				[880] = true,
 				[3518] = true,
 				[881] = true,
-				[5742] = true,
+				[5544] = true,
 				[882] = true,
-				[5741] = true,
+				[4505] = true,
 				[3528] = true,
-				[5727] = true,
-				[5726] = true,
+				[5536] = true,
+				[5535] = true,
 				[7064] = true,
 				[7068] = true,
-				[4507] = true,
-				[5536] = true,
+				[5501] = true,
+				[5405] = true,
 				[3542] = true,
 				[887] = true,
-				[5535] = true,
+				[5242] = true,
 				[888] = true,
 				[5050] = true,
 				[5054] = true,
 				[5058] = true,
 				[890] = true,
-				[5534] = true,
+				[5238] = true,
 				[891] = true,
 				[3562] = true,
 				[892] = true,
@@ -630,13 +648,13 @@ QuestieConfig = {
 				[894] = true,
 				[5098] = true,
 				[895] = true,
-				[5514] = true,
+				[5236] = true,
 				[1791] = true,
 				[1792] = true,
-				[5501] = true,
+				[5235] = true,
 				[6145] = true,
-				[5242] = true,
-				[5238] = true,
+				[5232] = true,
+				[5230] = true,
 				[899] = true,
 				[6161] = true,
 				[900] = true,
@@ -647,12 +665,12 @@ QuestieConfig = {
 				[2583] = true,
 				[2585] = true,
 				[4147] = true,
-				[5235] = true,
-				[5234] = true,
+				[5228] = true,
+				[5211] = true,
 				[905] = true,
-				[5232] = true,
+				[5210] = true,
 				[906] = true,
-				[5230] = true,
+				[5206] = true,
 				[2601] = true,
 				[2603] = true,
 				[2605] = true,
@@ -660,24 +678,24 @@ QuestieConfig = {
 				[3632] = true,
 				[3634] = true,
 				[1819] = true,
-				[5229] = true,
+				[5204] = true,
 				[3640] = true,
 				[3642] = true,
 				[2621] = true,
 				[1824] = true,
 				[1825] = true,
-				[5228] = true,
+				[5203] = true,
 				[914] = true,
 				[8462] = true,
-				[5210] = true,
-				[4243] = true,
-				[5204] = true,
-				[5203] = true,
-				[2641] = true,
-				[5202] = true,
 				[5168] = true,
+				[4243] = true,
 				[5165] = true,
 				[5163] = true,
+				[2641] = true,
+				[5159] = true,
+				[5158] = true,
+				[5157] = true,
+				[5156] = true,
 				[1838] = true,
 				[1839] = true,
 				[1840] = true,
@@ -686,81 +704,81 @@ QuestieConfig = {
 				[1843] = true,
 				[1844] = true,
 				[1845] = true,
-				[5159] = true,
+				[5155] = true,
 				[924] = true,
 				[1848] = true,
 				[6365] = true,
-				[5157] = true,
-				[5156] = true,
-				[5155] = true,
+				[5147] = true,
+				[5142] = true,
+				[5096] = true,
 				[2681] = true,
 				[6385] = true,
-				[5147] = true,
-				[6393] = true,
-				[5096] = true,
-				[6401] = true,
 				[5086] = true,
-				[5084] = true,
+				[6393] = true,
 				[5064] = true,
-				[5057] = true,
-				[2701] = true,
+				[6401] = true,
 				[216] = true,
 				[1221] = true,
 				[1691] = true,
 				[2661] = true,
-				[6441] = true,
+				[2701] = true,
+				[4984] = true,
 				[566] = true,
 				[4982] = true,
-				[936] = true,
 				[4981] = true,
-				[2721] = true,
-				[4974] = true,
+				[6441] = true,
 				[2864] = true,
 				[4966] = true,
-				[235] = true,
+				[936] = true,
 				[4941] = true,
+				[2721] = true,
 				[4921] = true,
 				[4904] = true,
 				[2978] = true,
-				[3762] = true,
+				[235] = true,
 				[4862] = true,
-				[2743] = true,
 				[4842] = true,
 				[4841] = true,
 				[1177] = true,
+				[3762] = true,
 				[902] = true,
+				[2743] = true,
+				[4743] = true,
+				[4742] = true,
+				[4735] = true,
 				[4734] = true,
 				[4726] = true,
 				[4724] = true,
+				[4542] = true,
 				[4491] = true,
 				[3784] = true,
-				[4542] = true,
+				[4509] = true,
 				[4503] = true,
 				[2767] = true,
 				[4511] = true,
-				[4509] = true,
+				[4507] = true,
 				[5542] = true,
-				[4505] = true,
+				[6569] = true,
 				[238] = true,
 				[3802] = true,
 				[2781] = true,
-				[4494] = true,
-				[4451] = true,
+				[6585] = true,
 				[4449] = true,
 				[4301] = true,
 				[4300] = true,
-				[4294] = true,
+				[6601] = true,
 				[4293] = true,
 				[4291] = true,
+				[4287] = true,
 				[3822] = true,
 				[2801] = true,
-				[4287] = true,
+				[4285] = true,
 				[6629] = true,
-				[4244] = true,
+				[4148] = true,
 				[959] = true,
 				[1918] = true,
-				[4148] = true,
 				[4133] = true,
+				[4003] = true,
 				[4002] = true,
 				[4001] = true,
 				[962] = true,
@@ -15955,6 +15973,1220 @@ QuestieConfig = {
 					["Event"] = "Quest",
 					["SubType"] = "Complete",
 				}, -- [1293]
+				{
+					["Party"] = {
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5206,
+					["Timestamp"] = 1569647404,
+				}, -- [1294]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [6]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+					["Level"] = 60,
+					["Quest"] = 5206,
+					["Timestamp"] = 1569648816,
+				}, -- [1295]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [6]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5941,
+					["Timestamp"] = 1569648817,
+				}, -- [1296]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [7]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+					["Level"] = 60,
+					["Quest"] = 5941,
+					["Timestamp"] = 1569649283,
+				}, -- [1297]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "隨風暗影",
+							["Level"] = 60,
+						}, -- [7]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5721,
+					["Timestamp"] = 1569649284,
+				}, -- [1298]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [8]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+					["Level"] = 60,
+					["Quest"] = 5721,
+					["Timestamp"] = 1569651413,
+				}, -- [1299]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [8]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5942,
+					["Timestamp"] = 1569651414,
+				}, -- [1300]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "海琴烟",
+							["Level"] = 60,
+						}, -- [7]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+					["Level"] = 60,
+					["Quest"] = 5942,
+					["Timestamp"] = 1569651455,
+				}, -- [1301]
+				{
+					["Party"] = {
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5382,
+					["Timestamp"] = 1569665528,
+				}, -- [1302]
+				{
+					["Party"] = {
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "术士",
+							["Name"] = "叶公",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+					["Level"] = 60,
+					["Quest"] = 5341,
+					["Timestamp"] = 1569665569,
+				}, -- [1303]
+				{
+					["Party"] = {
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["SubType"] = "Complete",
+					["Event"] = "Quest",
+					["Timestamp"] = 1569750835,
+					["Quest"] = 4742,
+					["Level"] = 60,
+				}, -- [1304]
+				{
+					["Party"] = {
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "牧师",
+							["Name"] = "兑泽",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["SubType"] = "Accept",
+					["Event"] = "Quest",
+					["Timestamp"] = 1569750835,
+					["Quest"] = 4743,
+					["Level"] = 60,
+				}, -- [1305]
+				{
+					["Party"] = {
+						{
+							["Class"] = "牧师",
+							["Name"] = "Ruinstars",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "牧师",
+							["Name"] = "Ruinstars",
+							["Level"] = 60,
+						}, -- [2]
+					},
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+					["Level"] = 60,
+					["Quest"] = 4743,
+					["Timestamp"] = 1569756826,
+				}, -- [1306]
+				{
+					["Party"] = {
+					},
+					["Level"] = 60,
+					["Quest"] = 6569,
+					["Timestamp"] = 1569762892,
+					["SubType"] = "Complete",
+					["Event"] = "Quest",
+				}, -- [1307]
+				{
+					["Party"] = {
+					},
+					["Level"] = 60,
+					["Quest"] = 6570,
+					["Timestamp"] = 1569762893,
+					["SubType"] = "Accept",
+					["Event"] = "Quest",
+				}, -- [1308]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["Timestamp"] = 1569764053,
+					["Quest"] = 6570,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1309]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["Timestamp"] = 1569764054,
+					["Quest"] = 6582,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1310]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["Timestamp"] = 1569764056,
+					["Quest"] = 6583,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1311]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+					},
+					["Timestamp"] = 1569764057,
+					["Quest"] = 6584,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1312]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [8]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [9]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [10]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [11]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [12]
+					},
+					["Timestamp"] = 1569768139,
+					["Quest"] = 6582,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1313]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [8]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [9]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [10]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [11]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [12]
+					},
+					["Timestamp"] = 1569768140,
+					["Quest"] = 6583,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1314]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [8]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [9]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [10]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [11]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [12]
+					},
+					["Timestamp"] = 1569768141,
+					["Quest"] = 6584,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1315]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [8]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [9]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [10]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [11]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [12]
+					},
+					["Timestamp"] = 1569768142,
+					["Quest"] = 6585,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1316]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+					},
+					["Timestamp"] = 1569769604,
+					["Quest"] = 6585,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1317]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [6]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [7]
+					},
+					["Timestamp"] = 1569769605,
+					["Quest"] = 6601,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1318]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+					},
+					["Timestamp"] = 1569770324,
+					["Quest"] = 6601,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1319]
+				{
+					["Party"] = {
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "法师",
+							["Name"] = "荣耀丶",
+							["Level"] = 60,
+						}, -- [5]
+					},
+					["Timestamp"] = 1569770325,
+					["Quest"] = 6602,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1320]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [5]
+					},
+					["Level"] = 60,
+					["Quest"] = 6602,
+					["Timestamp"] = 1569814560,
+					["SubType"] = "Complete",
+					["Event"] = "Quest",
+				}, -- [1321]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [4]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "林艺淼",
+							["Level"] = 60,
+						}, -- [5]
+					},
+					["Level"] = 60,
+					["Quest"] = 4768,
+					["Timestamp"] = 1569814656,
+					["SubType"] = "Complete",
+					["Event"] = "Quest",
+				}, -- [1322]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Level"] = 60,
+					["Quest"] = 4735,
+					["Timestamp"] = 1569814809,
+					["SubType"] = "Complete",
+					["Event"] = "Quest",
+				}, -- [1323]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "淡然焰",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Level"] = 60,
+					["Quest"] = 5522,
+					["Timestamp"] = 1569814810,
+					["SubType"] = "Accept",
+					["Event"] = "Quest",
+				}, -- [1324]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Timestamp"] = 1569917937,
+					["Quest"] = 4003,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1325]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [1]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [2]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [3]
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [4]
+					},
+					["Timestamp"] = 1569917938,
+					["Quest"] = 4004,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1326]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [1]
+					},
+					["Timestamp"] = 1569918065,
+					["Quest"] = 4004,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Complete",
+				}, -- [1327]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [1]
+					},
+					["Timestamp"] = 1569918066,
+					["Quest"] = 5728,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Accept",
+				}, -- [1328]
+				{
+					["Party"] = {
+						{
+							["Class"] = "潜行者",
+							["Name"] = "旮旯戏果",
+							["Level"] = 60,
+						}, -- [1]
+					},
+					["Timestamp"] = 1569918070,
+					["Quest"] = 5728,
+					["Level"] = 60,
+					["Event"] = "Quest",
+					["SubType"] = "Abandon",
+				}, -- [1329]
 			},
 			["TrackerHiddenObjectives"] = {
 			},
@@ -15963,32 +17195,34 @@ QuestieConfig = {
 			["TrackedQuests"] = {
 				[4145] = true,
 				[5544] = true,
+				[4742] = true,
 				[5056] = true,
 				[4289] = true,
 				[6804] = true,
-				[3881] = true,
+				[6022] = true,
+				[4503] = true,
 				[5235] = true,
 				[3505] = true,
-				[3517] = true,
-				[4503] = true,
+				[1445] = true,
+				[3881] = true,
 				[3883] = true,
 				[6805] = true,
 				[8464] = true,
 				[5542] = true,
 				[6042] = true,
-				[1445] = true,
-				[4081] = true,
 				[4501] = true,
+				[4081] = true,
 				[3568] = true,
+				[5082] = true,
 				[4984] = true,
 				[5229] = true,
 				[5543] = true,
-				[5082] = true,
+				[5206] = true,
 				[5086] = true,
 				[3601] = true,
-				[4971] = true,
+				[3517] = true,
 				[5098] = true,
-				[6022] = true,
+				[4971] = true,
 			},
 		},
 		["Lua - 沙尔图拉"] = {

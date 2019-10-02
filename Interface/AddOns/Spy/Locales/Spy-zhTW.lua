@@ -39,7 +39,7 @@ Spy 不會顯示被加入到忽略清單中的玩家。透過滑鼠右鍵選單�
 滑鼠右鍵選單也可以設定將某人加入到即殺清單的原因。如果你想要輸入不在清單中的原因，請在其他清單中使用 "自行輸入原因..."。
 
 
-|cffffd000Author: Slipjack |cffffffff
+|cffffd000作者: Slipjack |cffffffff
 
 ]]
 L["EnableSpy"] = "啟用"

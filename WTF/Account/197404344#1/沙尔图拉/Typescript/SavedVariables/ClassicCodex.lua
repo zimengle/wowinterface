@@ -5,13 +5,13 @@ CodexConfig = {
 	["colorBySpawn"] = true,
 	["autoAccept"] = true,
 	["questMarkerSize"] = 15,
+	["nameplateIcon"] = true,
 	["allQuestGivers"] = true,
-	["showFestival"] = true,
 	["autoTurnin"] = true,
 	["currentQuestGivers"] = true,
 	["spawnMarkerSize"] = 12,
 	["trackingMethod"] = 1,
-	["nameplateIcon"] = true,
+	["showFestival"] = true,
 	["minimumDropChance"] = 2,
 }
 CodexHiddenQuests = {
@@ -21,10 +21,12 @@ CodexBrowserFavorites = {
 		[19033] = "斯拉提的工具",
 	},
 	["units"] = {
+		[10321] = "埃博斯塔夫",
 		[12918] = "穆戈特酋长",
 		[12677] = "猎影",
 		[4273] = "守护者奥达努斯",
 		[3238] = "雷鳞蜥蜴",
+		[12899] = "埃克托兹",
 		[7406] = "奥格索普·奥布诺提斯",
 	},
 	["quests"] = {

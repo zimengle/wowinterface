@@ -16,13 +16,13 @@ function aux.handle.LOAD()
     settings = aux.character_data.tooltip
 --    do
 --        local inside_hook = false
---    for name, f in pairs(game_tooltip_hooks) do
---        hooksecurefunc(GameTooltip, name, function(self, ...)
---            if not self:IsForbidden() then
---                f(...)
---            end
---        end)
---    end
+    for name, f in pairs(game_tooltip_hooks) do
+        hooksecurefunc(GameTooltip, name, function(self, ...)
+            if not self:IsForbidden() then
+                f(...)
+            end
+        end)
+    end
 
     ItemRefTooltip:HookScript('OnTooltipSetItem', function(self)
         local _, link = self:GetItem()
@@ -75,7 +75,7 @@ function extend_tooltip(tooltip, link, quantity)
             end
             if settings.disenchant_value then
                 local disenchant_value = disenchant.value(item_info.slot, item_info.quality, item_info.level)
-                tooltip:AddLine('分解: ' .. (disenchant_value and money.to_string2(disenchant_value) or UNKNOWN), aux.color.tooltip.disenchant.value())
+                tooltip:AddLine('分解价值: ' .. (disenchant_value and money.to_string2(disenchant_value) or UNKNOWN), aux.color.tooltip.disenchant.value())
             end
         end
     end

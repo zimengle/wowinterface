@@ -85,7 +85,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<FontString name="$parentName" font="GameFontHighlight" justifyH="LEFT" text="Defender of the Timbermaw">
+				<FontString name="$parentName" font="GameFontHighlight" justifyH="LEFT" text="木喉防御者">
 					<Size>
 						<AbsDimension x="164" y="22"/>
 					</Size>
@@ -282,7 +282,7 @@
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
-				<FontString name="$parentText" inherits="GameFontHighlight" justifyH="LEFT" justifyV="CENTER" text="Pick one">
+				<FontString name="$parentText" inherits="GameFontHighlight" justifyH="LEFT" justifyV="CENTER" text="选择一个">
 					<Size>
 						<AbsDimension x="120" y="20"/>
 					</Size>
@@ -589,7 +589,7 @@
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
-				<FontString name="$parentName" font="GameFontHighlightSmall" justifyH="LEFT" text="Event Name">
+				<FontString name="$parentName" font="GameFontHighlightSmall" justifyH="LEFT" text="事件名字">
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset x="46" y="0"/>
@@ -714,7 +714,7 @@
 					</Anchors>
 					<Color r=".5" g=".5" b=".5"/>
 				</FontString>
-				<FontString name="$parentName" font="GameFontHighlightSmall" justifyH="LEFT" text="Set Name">
+				<FontString name="$parentName" font="GameFontHighlightSmall" justifyH="LEFT" text="装备名">
 					<Anchors>
 						<Anchor point="TOPLEFT" relativeTo="$parentIcon" relativePoint="TOPRIGHT"/>
 						<Anchor point="BOTTOMRIGHT" relativeTo="$parentKey" relativePoint="BOTTOMLEFT"/>
@@ -864,7 +864,7 @@
 			</Layer>
 		</Layers>
 		<Frames>
-			<Button name="ItemRackOptTab1" inherits="ItemRackTabTemplate" id="1" text="Config">
+			<Button name="ItemRackOptTab1" inherits="ItemRackTabTemplate" id="1" text="配置">
 				<Anchors>
 					<Anchor point="TOPRIGHT">
 						<Offset>
@@ -873,17 +873,17 @@
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ItemRackOptTab2" inherits="ItemRackTabTemplate" id="2" text="Sets">
+			<Button name="ItemRackOptTab2" inherits="ItemRackTabTemplate" id="2" text="装备">
 				<Anchors>
 					<Anchor point="TOPRIGHT" relativeTo="ItemRackOptTab1" relativePoint="TOPLEFT"/>
 				</Anchors>
 			</Button>
-			<Button name="ItemRackOptTab3" inherits="ItemRackTabTemplate" id="3" text="Events">
+			<Button name="ItemRackOptTab3" inherits="ItemRackTabTemplate" id="3" text="事件">
 				<Anchors>
 					<Anchor point="TOPRIGHT" relativeTo="ItemRackOptTab2" relativePoint="TOPLEFT"/>
 				</Anchors>
 			</Button>
-			<Button name="ItemRackOptTab4" inherits="ItemRackTabTemplate" id="4" text="Queue">
+			<Button name="ItemRackOptTab4" inherits="ItemRackTabTemplate" id="4" text="队列">
 				<Anchors>
 					<Anchor point="TOPRIGHT" relativeTo="ItemRackOptTab3" relativePoint="TOPLEFT"/>
 				</Anchors>
@@ -1109,7 +1109,7 @@
 			<Frame name="ItemRackOptSubFrame3" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ItemRackOptEventsLabel" inherits="GameFontHighlightSmall" text="Check an event to enable it:">
+						<FontString name="ItemRackOptEventsLabel" inherits="GameFontHighlightSmall" text="启用一个事件:">
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
@@ -1121,21 +1121,21 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Button name="ItemRackOptEventEdit" inherits="ItemRackOptButtonTemplate" text="Edit">
+					<Button name="ItemRackOptEventEdit" inherits="ItemRackOptButtonTemplate" text="编辑">
 						<Anchors>
 							<Anchor point="BOTTOM">
 								<Offset x="0" y="4"/>
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptEventDelete" inherits="ItemRackOptButtonTemplate" text="Delete">
+					<Button name="ItemRackOptEventDelete" inherits="ItemRackOptButtonTemplate" text="删除">
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="ItemRackOptEventEdit" relativePoint="LEFT">
 								<Offset x="-4" y="0"/>
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptEventNew" inherits="ItemRackOptButtonTemplate" text="New">
+					<Button name="ItemRackOptEventNew" inherits="ItemRackOptButtonTemplate" text="新建">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="ItemRackOptEventEdit" relativePoint="RIGHT">
 								<Offset x="4" y="0"/>
@@ -1260,7 +1260,7 @@
 			<Frame name="ItemRackOptSubFrame4" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="BACKGROUND">
-						<FontString font="GameFontNormalLarge" text="Choose a slot to set up its auto queue order.">
+						<FontString font="GameFontNormalLarge" text="选择一个插槽以设置其自动队列顺序.">
 							<Size>
 								<AbsDimension x="120" y="100"/>
 							</Size>
@@ -1288,10 +1288,10 @@
 			<!-- Options frame -->
 			<Frame name="ItemRackOptSubFrame1" inherits="ItemRackOptSubFrameTemplate">
 				<Frames>
-					<Button name="ItemRackOptKeyBindings" inherits="ItemRackOptListButtonTemplate" text="Slot Key Bindings"/>
-					<Button name="ItemRackOptResetBar" inherits="ItemRackOptListButtonTemplate" text="Reset Buttons"/>
-					<Button name="ItemRackOptResetEvents" inherits="ItemRackOptListButtonTemplate" text="Reset Events"/>
-					<Button name="ItemRackOptResetEverything" inherits="ItemRackOptListButtonTemplate" text="Reset Everything"/>
+					<Button name="ItemRackOptKeyBindings" inherits="ItemRackOptListButtonTemplate" text="插槽按键绑定"/>
+					<Button name="ItemRackOptResetBar" inherits="ItemRackOptListButtonTemplate" text="复位按钮"/>
+					<Button name="ItemRackOptResetEvents" inherits="ItemRackOptListButtonTemplate" text="重置事件"/>
+					<Button name="ItemRackOptResetEverything" inherits="ItemRackOptListButtonTemplate" text="重置所有"/>
 					<Slider name="ItemRackOptButtonSpacingSlider" inherits="ItemRackOptSliderTemplate"/>
 					<Slider name="ItemRackOptAlphaSlider" inherits="ItemRackOptSliderTemplate"/>
 					<Slider name="ItemRackOptMainScaleSlider" inherits="ItemRackOptSliderTemplate"/>
@@ -1412,7 +1412,7 @@
 			<Frame name="ItemRackOptSubFrame2" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ItemRackOptSetsChooseLabel" inherits="GameFontHighlightSmall" text="Choose a name and icon:">
+						<FontString name="ItemRackOptSetsChooseLabel" inherits="GameFontHighlightSmall" text="选择名字和图标:">
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
@@ -1699,7 +1699,7 @@
 						</Frames>
 					</Frame>
 
-					<Button name="ItemRackOptSetsSaveButton" inherits="ItemRackOptButtonTemplate" text="Save">
+					<Button name="ItemRackOptSetsSaveButton" inherits="ItemRackOptButtonTemplate" text="保存">
 						<Anchors>
 							<Anchor point="TOPRIGHT" relativeTo="ItemRackOptSetsIconFrame" relativePoint="BOTTOMRIGHT">
 								<Offset>
@@ -1708,7 +1708,7 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptSetsBindButton" inherits="ItemRackOptButtonTemplate" text="Bind Key">
+					<Button name="ItemRackOptSetsBindButton" inherits="ItemRackOptButtonTemplate" text="绑键">
 						<Anchors>
 							<Anchor point="TOPRIGHT" relativeTo="ItemRackOptSetsSaveButton" relativePoint="BOTTOMRIGHT">
 								<Offset>
@@ -1717,7 +1717,7 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptSetsDeleteButton" inherits="ItemRackOptButtonTemplate" text="Delete">
+					<Button name="ItemRackOptSetsDeleteButton" inherits="ItemRackOptButtonTemplate" text="删除">
 						<Anchors>
 							<Anchor point="TOPRIGHT" relativeTo="ItemRackOptSetsBindButton" relativePoint="TOPLEFT">
 								<Offset>
@@ -1767,7 +1767,7 @@
 			<Frame name="ItemRackOptSubFrame5" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ItemRackOptPickSetsChooseLabel" inherits="GameFontHighlightSmall" text="Choose a set:">
+						<FontString name="ItemRackOptPickSetsChooseLabel" inherits="GameFontHighlightSmall" text="选择一个装备:">
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
@@ -1927,7 +1927,7 @@
 			<Frame name="ItemRackOptBindFrame" inherits="ItemRackOptSubFrameTemplate" enableMouse="true" enableKeyboard="true">
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString font="GameFontNormalLarge" text="Press a key to bind">
+						<FontString font="GameFontNormalLarge" text="请按键绑定">
 							<Anchors>
 								<Anchor point="TOP">
 									<Offset>
@@ -1965,7 +1965,7 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Button name="ItemRackOptBindCancel" inherits="ItemRackOptListButtonTemplate" text="Cancel">
+					<Button name="ItemRackOptBindCancel" inherits="ItemRackOptListButtonTemplate" text="取消">
 						<Size>
 							<AbsDimension x="60" y="26"/>
 						</Size>
@@ -1982,7 +1982,7 @@
 							</OnClick>
 						</Scripts> already defined -->
 					</Button>
-					<Button name="ItemRackOptBindUnbind" inherits="ItemRackOptListButtonTemplate" text="Unbind">
+					<Button name="ItemRackOptBindUnbind" inherits="ItemRackOptListButtonTemplate" text="解绑">
 						<Size>
 							<AbsDimension x="60" y="26"/>
 						</Size>
@@ -2024,7 +2024,7 @@
 			<Frame name="ItemRackOptSubFrame6" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="BACKGROUND">
-						<FontString font="GameFontNormalLarge" justifyH="CENTER" text="Select a slot to bind to a key.">
+						<FontString font="GameFontNormalLarge" justifyH="CENTER" text="选择要绑定到按键的插槽.">
 							<Size>
 								<AbsDimension x="128" y="60"/>
 							</Size>
@@ -2039,7 +2039,7 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Button name="ItemRackOptSlotBindCancel" inherits="ItemRackOptListButtonTemplate" text="Cancel">
+					<Button name="ItemRackOptSlotBindCancel" inherits="ItemRackOptListButtonTemplate" text="取消">
 						<Size>
 							<AbsDimension x="60" y="26"/>
 						</Size>
@@ -2309,7 +2309,7 @@
 											</Anchors>
 											<TexCoords left="0.09375" right="0.90625" top="0" bottom="1.0"/>
 										</Texture>
-										<FontString font="GameFontHighlightSmall" justifyH="RIGHT" text="Delay">
+										<FontString font="GameFontHighlightSmall" justifyH="RIGHT" text="延迟">
 											<Anchors>
 												<Anchor point="RIGHT" relativePoint="LEFT">
 													<Offset>
@@ -2318,7 +2318,7 @@
 												</Anchor>
 											</Anchors>
 										</FontString>
-										<FontString font="GameFontHighlightSmall" justifyH="LEFT" text="sec">
+										<FontString font="GameFontHighlightSmall" justifyH="LEFT" text="秒">
 											<Anchors>
 												<Anchor point="LEFT" relativePoint="RIGHT">
 													<Offset>
@@ -2478,7 +2478,7 @@
 			<Frame name="ItemRackOptSubFrame8" inherits="ItemRackOptSubFrameTemplate">
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ItemRackOptEventEditNameLabel" inherits="GameFontHighlightSmall" text="Name of event:">
+						<FontString name="ItemRackOptEventEditNameLabel" inherits="GameFontHighlightSmall" text="事件名字:">
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset x="20" y="-12"/>
@@ -2486,7 +2486,7 @@
 							</Anchors>
 							<Color r="0.75" g="0.75" b="0.75"/>
 						</FontString>
-						<FontString name="ItemRackOptEventEditTypeLabel" inherits="GameFontHighlightSmall" text="Type of event:">
+						<FontString name="ItemRackOptEventEditTypeLabel" inherits="GameFontHighlightSmall" text="事件类型:">
 							<Anchors>
 								<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditNameLabel" relativePoint="BOTTOMLEFT">
 									<Offset x="0" y="-32"/>
@@ -2511,14 +2511,14 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptEventEditSave" inherits="ItemRackOptButtonTemplate" text="Save">
+					<Button name="ItemRackOptEventEditSave" inherits="ItemRackOptButtonTemplate" text="保存">
 						<Anchors>
 							<Anchor point="BOTTOM">
 								<Offset x="0" y="4"/>
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="ItemRackOptEventEditCancel" inherits="ItemRackOptButtonTemplate" text="Cancel">
+					<Button name="ItemRackOptEventEditCancel" inherits="ItemRackOptButtonTemplate" text="取消">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="ItemRackOptEventEditSave" relativePoint="RIGHT">
 								<Offset x="4" y="0"/>
@@ -2571,17 +2571,17 @@
 									</Anchor>
 								</Anchors>
 							</Button>
-							<Button name="ItemRackOptEventEditPickTypeStance" inherits="ItemRackOptEventEditPickTypeTemplate" text="Stance">
+							<Button name="ItemRackOptEventEditPickTypeStance" inherits="ItemRackOptEventEditPickTypeTemplate" text="姿态">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditPickTypeBuff" relativePoint="BOTTOMLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ItemRackOptEventEditPickTypeZone" inherits="ItemRackOptEventEditPickTypeTemplate" text="Zone">
+							<Button name="ItemRackOptEventEditPickTypeZone" inherits="ItemRackOptEventEditPickTypeTemplate" text="区域">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditPickTypeStance" relativePoint="BOTTOMLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ItemRackOptEventEditPickTypeScript" inherits="ItemRackOptEventEditPickTypeTemplate" text="Script">
+							<Button name="ItemRackOptEventEditPickTypeScript" inherits="ItemRackOptEventEditPickTypeTemplate" text="脚本">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditPickTypeZone" relativePoint="BOTTOMLEFT"/>
 								</Anchors>
@@ -2614,7 +2614,7 @@
 						</Anchors>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="ItemRackOptEventEditBuffLabel" inherits="GameFontHighlightSmall" text="Name of the buff:">
+								<FontString name="ItemRackOptEventEditBuffLabel" inherits="GameFontHighlightSmall" text="buff名字:">
 									<Anchors>
 										<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditTypeLabel" relativePoint="BOTTOMLEFT">
 											<Offset x="0" y="-36"/>
@@ -2677,7 +2677,7 @@
 						</Anchors>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="ItemRackOptEventEditStanceLabel" inherits="GameFontHighlightSmall" text="Which stance or form:">
+								<FontString name="ItemRackOptEventEditStanceLabel" inherits="GameFontHighlightSmall" text="哪个姿态或形态:">
 									<Anchors>
 										<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditTypeLabel" relativePoint="BOTTOMLEFT">
 											<Offset x="0" y="-36"/>
@@ -2685,7 +2685,7 @@
 									</Anchors>
 									<Color r="0.75" g="0.75" b="0.75"/>
 								</FontString>
-								<FontString name="ItemRackOptEventEditStanceNote" inherits="GameFontHighlightSmall" justifyH="LEFT" text="You can use the stance number or the name of the stance/form. The name will only work for Druids, Rogues and Warriors.">
+								<FontString name="ItemRackOptEventEditStanceNote" inherits="GameFontHighlightSmall" justifyH="LEFT" text="你可以使用姿态编号或站姿/形态的名字。这个名字只适用于德鲁伊，盗贼和战士。">
 									<Size>
 										<AbsDimension x="160" y="60"/>
 									</Size>
@@ -2738,7 +2738,7 @@
 						</Anchors>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="ItemRackOptEventEditZoneLabel" inherits="GameFontHighlightSmall" text="List zone(s), one per line:">
+								<FontString name="ItemRackOptEventEditZoneLabel" inherits="GameFontHighlightSmall" text="列表区域，每行一个:">
 									<Anchors>
 										<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditTypeLabel" relativePoint="BOTTOMLEFT">
 											<Offset x="0" y="-36"/>
@@ -2866,7 +2866,7 @@
 						</Anchors>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="ItemRackOptEventEditScriptTriggerLabel" inherits="GameFontHighlightSmall" text="Event Trigger:">
+								<FontString name="ItemRackOptEventEditScriptTriggerLabel" inherits="GameFontHighlightSmall" text="事件触发器:">
 									<Anchors>
 										<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditTypeLabel" relativePoint="BOTTOMLEFT">
 											<Offset x="0" y="-36"/>
@@ -2874,7 +2874,7 @@
 									</Anchors>
 									<Color r="0.75" g="0.75" b="0.75"/>
 								</FontString>
-								<FontString name="ItemRackOptEventEditScriptEditLabel" inherits="GameFontHighlightSmall" text="Event Script:">
+								<FontString name="ItemRackOptEventEditScriptEditLabel" inherits="GameFontHighlightSmall" text="事件脚本:">
 									<Anchors>
 										<Anchor point="TOPLEFT" relativeTo="ItemRackOptEventEditScriptTriggerLabel" relativePoint="BOTTOMLEFT">
 											<Offset x="0" y="-32"/>
@@ -2985,7 +2985,7 @@
 									</OnClick>
 								</Scripts>
 							</Button>
-							<Button name="ItemRackOptEventEditExpand" inherits="ItemRackOptButtonTemplate" text="Editor">
+							<Button name="ItemRackOptEventEditExpand" inherits="ItemRackOptButtonTemplate" text="编辑">
 								<Anchors>
 									<Anchor point="RIGHT" relativeTo="ItemRackOptEventEditSave" relativePoint="LEFT">
 										<Offset x="-4" y="0"/>
@@ -3045,7 +3045,7 @@
 		</Backdrop>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString name="ItemRackFloatingEditorTitle" font="GameFontHighlight" justifyH="LEFT" justifyV="CENTER" text="Event Script:">
+				<FontString name="ItemRackFloatingEditorTitle" font="GameFontHighlight" justifyH="LEFT" justifyV="CENTER" text="事件脚本:">
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset x="16" y="-8"/>
@@ -3218,7 +3218,7 @@
 					<TexCoords left=".5" right=".625" top=".25" bottom=".375"/>
 				</PushedTexture>
 			</Button>
-			<Button name="ItemRackFloatingEditorSave" inherits="ItemRackOptButtonTemplate" text="Save">
+			<Button name="ItemRackFloatingEditorSave" inherits="ItemRackOptButtonTemplate" text="保存">
 				<Size>
 					<AbsDimension x="42" y="20"/>
 				</Size>
@@ -3228,7 +3228,7 @@
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ItemRackFloatingEditorTest" inherits="ItemRackOptButtonTemplate" text="Test">
+			<Button name="ItemRackFloatingEditorTest" inherits="ItemRackOptButtonTemplate" text="测试">
 				<Size>
 					<AbsDimension x="42" y="20"/>
 				</Size>
@@ -3238,7 +3238,7 @@
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ItemRackFloatingEditorUndo" inherits="ItemRackOptButtonTemplate" text="Undo">
+			<Button name="ItemRackFloatingEditorUndo" inherits="ItemRackOptButtonTemplate" text="撤消">
 				<Size>
 					<AbsDimension x="42" y="20"/>
 				</Size>
